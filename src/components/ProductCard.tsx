@@ -17,6 +17,10 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const handleAddToCart = () => {
+    alert(`${product.name} adicionado ao carrinho!`);
+  };
+
   return (
     <Card className="group relative overflow-hidden bg-gradient-card border-border hover:border-accent/50 transition-all duration-300 hover:shadow-card-urban">
       <div className="relative overflow-hidden">
@@ -42,6 +46,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* Quick Add Button */}
         <Button 
           size="sm" 
+          onClick={handleAddToCart}
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-accent text-accent-foreground hover:bg-accent/90"
         >
           <ShoppingCart className="w-4 h-4 mr-2" />

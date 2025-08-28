@@ -40,9 +40,9 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-urban rounded-lg flex items-center justify-center">
                 <span className="text-lg font-bold text-background">Z</span>
               </div>
-              <span className="font-heading font-bold text-2xl text-foreground">
-                Distrito Z LG
-              </span>
+            <span className="font-heading font-bold text-2xl text-foreground">
+              Distrito ZLG
+            </span>
             </div>
             
             <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
@@ -133,7 +133,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center space-x-1 mb-4 md:mb-0">
-            <span>© 2024 Distrito Z LG. Feito com</span>
+            <span>© 2024 Distrito ZLG. Feito com</span>
             <Heart className="w-4 h-4 text-neon-pink fill-current" />
             <span>na quebrada.</span>
           </div>

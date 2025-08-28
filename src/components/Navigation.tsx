@@ -22,7 +22,7 @@ const Navigation = () => {
               <span className="text-sm font-bold text-background">Z</span>
             </div>
             <span className="font-heading font-bold text-xl text-foreground">
-              Distrito Z LG
+              Distrito ZLG
             </span>
           </div>
 
@@ -37,7 +37,11 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+            >
               <ShoppingBag className="w-4 h-4 mr-2" />
               Carrinho
             </Button>
@@ -66,7 +70,11 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-fit">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-fit"
+              >
                 <ShoppingBag className="w-4 h-4 mr-2" />
                 Carrinho
               </Button>

@@ -37,8 +37,8 @@ const About = () => {
             <span className="bg-gradient-urban bg-clip-text text-transparent">HISTÓRIA</span>
           </h2>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Nascemos nas ruas, crescemos com a cultura. A <strong className="text-accent">Distrito Z LG</strong> é mais 
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Nascemos nas ruas, crescemos com a cultura. A <strong className="text-accent">Distrito ZLG</strong> é mais 
               que uma marca - somos um movimento que veste a autenticidade da juventude urbana.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -60,7 +60,7 @@ const About = () => {
                 criar roupas que representassem nossa vibe, nossa cultura, nosso jeito de ver o mundo.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Das conversas no ponto de ônibus nasceu a Distrito Z LG. O "Z" representa a zona onde 
+                Das conversas no ponto de ônibus nasceu a Distrito ZLG. O "Z" representa a zona onde 
                 a criatividade não tem limites, e "LG" são as iniciais dos fundadores que ousaram sonhar grande.
               </p>
             </CardContent>
