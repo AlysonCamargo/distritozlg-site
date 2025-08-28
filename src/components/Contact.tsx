@@ -146,12 +146,12 @@ const Contact = () => {
                       Acompanhe nossos lançamentos e bastidores
                     </p>
                     <a 
-                      href="https://instagram.com/distritozott" 
+                      href="https://www.instagram.com/distritozlg/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-accent hover:text-accent/80 font-medium transition-colors"
                     >
-                      @distritozott
+                      @distritozlg
                     </a>
                   </div>
                 </div>
@@ -166,10 +166,10 @@ const Contact = () => {
                       Para parcerias e dúvidas
                     </p>
                     <a 
-                      href="mailto:contato@distritozott.com.br" 
+                      href="mailto:contato@distritozlg.com.br" 
                       className="text-accent hover:text-accent/80 font-medium transition-colors"
                     >
-                      contato@distritozott.com.br
+                      contato@zlg.com.br
                     </a>
                   </div>
                 </div>
@@ -184,12 +184,12 @@ const Contact = () => {
                       Atendimento direto e rápido
                     </p>
                     <a 
-                      href="https://wa.me/5511999999999" 
+                      href="https://wa.me/5511972988072" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-accent hover:text-accent/80 font-medium transition-colors"
                     >
-                      (11) 99999-9999
+                      (11) 97298-8072
                     </a>
                   </div>
                 </div>
@@ -201,8 +201,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Localização</h4>
                     <p className="text-muted-foreground">
-                      São Paulo - SP<br />
-                      Zona Leste representa!
+                      Bragança Paulista - SP<br />
+                      Interior representa!
                     </p>
                   </div>
                 </div>

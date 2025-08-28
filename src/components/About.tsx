@@ -42,7 +42,7 @@ const About = () => {
               que uma marca - somos um movimento que veste a autenticidade da juventude urbana.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Desde 2020, criamos camisetas que falam a linguagem da rua. Cada peça é pensada para quem 
+              Desde 2025, criamos camisetas que falam a linguagem da rua. Cada peça é pensada para quem 
               não tem medo de se expressar, para quem vive intensamente e quer que sua roupa reflita essa energia.
             </p>
           </div>
@@ -56,12 +56,11 @@ const About = () => {
                 De Onde Viemos
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Tudo começou quando uns amigos se juntaram no final de 2019 com uma ideia simples: 
+                Tudo começou quando dois amigos se juntaram no começo de 2025 com uma ideia simples: 
                 criar roupas que representassem nossa vibe, nossa cultura, nosso jeito de ver o mundo.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Das conversas no ponto de ônibus nasceu a Distrito ZLG. O "Z" representa a zona onde 
-                a criatividade não tem limites, e "LG" são as iniciais dos fundadores que ousaram sonhar grande.
+                Das conversas no ponto de ônibus nasceu a Distrito ZLG. O "ZLG" são as iniciais dos fundadores que ousaram sonhar grande.
               </p>
             </CardContent>
           </Card>

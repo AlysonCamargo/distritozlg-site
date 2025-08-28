@@ -4,13 +4,13 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'Instagram',
-      href: 'https://instagram.com/distritozott',
+      href: 'https://instagram.com/distritozlg',
       icon: Instagram,
       color: 'text-neon-pink hover:text-neon-pink/80'
     },
     {
       name: 'Email',
-      href: 'mailto:contato@distritozott.com.br',
+      href: 'mailto:contato@distritozlg.com.br',
       icon: Mail,
       color: 'text-neon-cyan hover:text-neon-cyan/80'
     },
@@ -93,16 +93,16 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <p className="text-muted-foreground">
                 <strong className="text-foreground">WhatsApp:</strong><br />
-                (11) 99999-9999
+                (11) 97298-8072
               </p>
               <p className="text-muted-foreground">
                 <strong className="text-foreground">Email:</strong><br />
-                contato@distritozott.com.br
+                contato@distritozlg.com.br
               </p>
               <p className="text-muted-foreground">
                 <strong className="text-foreground">Localização:</strong><br />
-                São Paulo - SP<br />
-                Zona Leste
+                Bragança Paulista - SP<br />
+                Interior
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center space-x-1 mb-4 md:mb-0">
-            <span>© 2024 Distrito ZLG. Feito com</span>
+            <span>© 2025 Distrito ZLG. Feito com</span>
             <Heart className="w-4 h-4 text-neon-pink fill-current" />
             <span>na quebrada.</span>
           </div>

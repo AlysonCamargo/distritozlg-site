@@ -17,8 +17,11 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const handleAddToCart = () => {
-    alert(`${product.name} adicionado ao carrinho!`);
+  const handleBuyOnWhatsApp = () => {
+    const phoneNumber = "5511972988072"; // WhatsApp em formato internacional (sem + e espaços)
+    const message = `Olá! Tenho interesse na camiseta "${product.name}" (R$ ${product.price.toFixed(2)}). Ainda está disponível?`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
   };
 
   return (
@@ -43,14 +46,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
-        {/* Quick Add Button */}
+        {/* Botão WhatsApp */}
         <Button 
           size="sm" 
-          onClick={handleAddToCart}
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-accent text-accent-foreground hover:bg-accent/90"
+          onClick={handleBuyOnWhatsApp}
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-green-500 text-white hover:bg-green-600"
         >
           <ShoppingCart className="w-4 h-4 mr-2" />
-          Adicionar
+          Comprar no WhatsApp
         </Button>
       </div>
 
