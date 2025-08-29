@@ -74,6 +74,16 @@ const Catalog = () => {
       category: 'oversized',
       isNew: true,
     },
+    {
+      id: 7,
+      name: 'Adidas 2',
+      price: 79.90,
+      image: 'https://i.imgur.com/cAYrtzY.jpeg',
+      imageFront: 'https://i.imgur.com/cAYrtzY.jpeg',
+      imageBack: 'https://i.imgur.com/1cGpPr3.jpeg',
+      category: 'oversized',
+      isNew: true,
+    },
   ];
 
   const filteredProducts =
