@@ -24,7 +24,7 @@ const Catalog = () => {
       image: 'https://i.imgur.com/yOReSmA.png',
       imageFront: 'https://i.imgur.com/yOReSmA.png',
       imageBack: 'https://i.imgur.com/7qAKAXl.jpeg',
-      category: 'Over Sized',
+      category: 'oversized',
       isNew: true,
     },
     {
@@ -34,7 +34,7 @@ const Catalog = () => {
       image: 'https://i.imgur.com/FOS4m5o.jpeg',
       imageFront: 'https://i.imgur.com/FOS4m5o.jpeg',
       imageBack: 'https://i.imgur.com/q3ssR3Q.jpeg',
-      category: 'Over Sized',
+      category: 'oversized',
       isNew: true,
     },
     {
@@ -44,7 +44,7 @@ const Catalog = () => {
       image: 'https://i.imgur.com/BSAGk6W.jpeg',
       imageFront: 'https://i.imgur.com/BSAGk6W.jpeg',
       imageBack: 'https://i.imgur.com/yU7ufKw.jpeg',
-      category: 'Over Sized',
+      category: 'oversized',
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ const Catalog = () => {
       image: 'https://i.imgur.com/D2ZPDQJ.jpeg',
       imageFront: 'https://i.imgur.com/D2ZPDQJ.jpeg',
       imageBack: 'https://i.imgur.com/F1rsV9n.jpeg',
-      category: 'Over Sized',
+      category: 'oversized',
     },
     {
       id: 5,
@@ -62,7 +62,7 @@ const Catalog = () => {
       image: 'https://i.imgur.com/vPkQNhI.jpeg',
       imageFront: 'https://i.imgur.com/vPkQNhI.jpeg',
       imageBack: 'https://i.imgur.com/LOuk17w.jpeg',
-      category: 'Over Sized',
+      category: 'oversized',
     },
     {
       id: 6,
@@ -71,7 +71,7 @@ const Catalog = () => {
       image: 'https://i.imgur.com/4HhzQUn.jpeg',
       imageFront: 'https://i.imgur.com/4HhzQUn.png',
       imageBack: 'https://i.imgur.com/jOeV4L9.jpeg',
-      category: 'Over Sized',
+      category: 'oversized',
       isNew: true,
     },
   ];
