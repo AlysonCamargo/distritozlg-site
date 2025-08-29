@@ -23,7 +23,7 @@ const Contact = () => {
     const body = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
 
     // Gera o link mailto
-    const mailtoLink = `mailto:contato.mcgm@gmail.com?subject=${encodeURIComponent(subject || "Contato")}&body=${body}`;
+    const mailtoLink = `mailto:mcgm@gmail.com?subject=${encodeURIComponent(subject || "Contato")}&body=${body}`;
 
     // Abre o cliente de e-mail do usuário
     window.location.href = mailtoLink;
