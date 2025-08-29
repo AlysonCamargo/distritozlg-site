@@ -12,5 +12,5 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
-  base: "./", // 👈 importante para rodar no Vercel
+  base: "/distritozlg-site/", // 👈 ESSENCIAL pro Vercel carregar assets certos
 });
