@@ -37,14 +37,6 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-            >
-              <ShoppingBag className="w-4 h-4 mr-2" />
-              Carrinho
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -70,14 +62,6 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-fit"
-              >
-                <ShoppingBag className="w-4 h-4 mr-2" />
-                Carrinho
-              </Button>
             </div>
           </div>
         )}
