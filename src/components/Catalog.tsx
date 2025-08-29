@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ProductCard from './ProductCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ProductCarousel from './ProductCarousel';
 
 const Catalog = () => {
   const [selectedCategory, setSelectedCategory] = useState('todos');
@@ -21,6 +22,8 @@ const Catalog = () => {
       name: 'Off White',
       price: 79.90,
       image: 'https://i.imgur.com/yOReSmA.png',
+      imageFront: 'https://i.imgur.com/yOReSmA.png',
+      imageBack: 'https://i.imgur.com/7qAKAXl.jpeg',
       category: 'Over Sized',
       isNew: true,
     },
@@ -29,6 +32,8 @@ const Catalog = () => {
       name: 'The North',
       price: 79.90,
       image: 'https://i.imgur.com/FOS4m5o.jpeg',
+      imageFront: 'https://i.imgur.com/FOS4m5o.jpeg',
+      imageBack: 'https://i.imgur.com/q3ssR3Q.jpeg',
       category: 'Over Sized',
       isNew: true,
     },
@@ -37,6 +42,8 @@ const Catalog = () => {
       name: 'Adidas',
       price: 79.90,
       image: 'https://i.imgur.com/BSAGk6W.jpeg',
+      imageFront: 'https://i.imgur.com/BSAGk6W.jpeg',
+      imageBack: 'https://i.imgur.com/yU7ufKw.jpeg',
       category: 'Over Sized',
     },
     {
@@ -44,6 +51,8 @@ const Catalog = () => {
       name: 'Casa Blanca',
       price: 79.90,
       image: 'https://i.imgur.com/D2ZPDQJ.jpeg',
+      imageFront: 'https://i.imgur.com/D2ZPDQJ.jpeg',
+      imageBack: 'https://i.imgur.com/F1rsV9n.jpeg',
       category: 'Over Sized',
     },
     {
@@ -51,13 +60,17 @@ const Catalog = () => {
       name: 'New Balance',
       price: 79.90,
       image: 'https://i.imgur.com/vPkQNhI.jpeg',
+      imageFront: 'https://i.imgur.com/vPkQNhI.jpeg',
+      imageBack: 'https://i.imgur.com/LOuk17w.jpeg',
       category: 'Over Sized',
     },
     {
       id: 6,
       name: 'Supreme',
       price: 79.90,
-      image: 'https://i.imgur.com/4HhzQUn.png',
+      image: 'https://i.imgur.com/4HhzQUn.jpeg',
+      imageFront: 'https://i.imgur.com/4HhzQUn.png',
+      imageBack: 'https://i.imgur.com/jOeV4L9.jpeg',
       category: 'Over Sized',
       isNew: true,
     },
@@ -140,11 +153,11 @@ const Catalog = () => {
         </div>
       </div>
 
-      {/* Modal de Detalhes */}
-      {isModalOpen && selectedProduct && (
+{/* Modal de Detalhes */}
+{isModalOpen && selectedProduct && (
   <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_var(--neon-green)] border border-gray-700 max-w-md w-full p-6 relative animate-fade-in transition-transform duration-300 text-white">
-      
+
       {/* Botão de fechar */}
       <button
         onClick={closeModal}
@@ -154,14 +167,8 @@ const Catalog = () => {
         &times;
       </button>
 
-      {/* Imagem do produto */}
-      <div className="mb-4">
-        <img
-          src={selectedProduct.image}
-          alt={selectedProduct.name}
-          className="w-full h-auto rounded-lg shadow-md"
-        />
-      </div>
+      {/* Carrossel frente/costas */}
+      <ProductCarousel product={selectedProduct} />
 
       {/* Informações do produto */}
       <div className="space-y-2 text-center">
@@ -194,6 +201,8 @@ const Catalog = () => {
     </div>
   </div>
 )}
+
+
 
 
 
