@@ -16,8 +16,17 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+
+    const { name, email, subject, message } = formData;
+
+    // Monta o corpo do e-mail
+    const body = `Nome: ${name}%0AEmail: ${email}%0AMensagem: ${message}`;
+
+    // Gera o link mailto
+    const mailtoLink = `mailto:contato.mcgm@gmail.com?subject=${encodeURIComponent(subject || "Contato")}&body=${body}`;
+
+    // Abre o cliente de e-mail do usuário
+    window.location.href = mailtoLink;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

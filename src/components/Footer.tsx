@@ -139,7 +139,6 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <span>CNPJ: 00.000.000/0001-00</span>
             <span>Todos os direitos reservados</span>
           </div>
         </div>
