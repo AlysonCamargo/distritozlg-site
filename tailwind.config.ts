@@ -18,6 +18,39 @@ export default {
 			}
 		},
 		extend: {
+			keyframes: {
+				'accordion-down': {
+				  from: { height: '0' },
+				  to: { height: 'var(--radix-accordion-content-height)' }
+				},
+				'accordion-up': {
+				  from: { height: 'var(--radix-accordion-content-height)' },
+				  to: { height: '0' }
+				},
+				// 👇 Adiciona a animação fade-in
+				'fade-in': {
+				  from: {
+					opacity: '0',
+					transform: 'scale(0.95)'
+				  },
+				  to: {
+					opacity: '1',
+					transform: 'scale(1)'
+				  }
+				  
+				}
+			  },
+			  animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				// 👇 Registra a animação fade-in
+				'fade-in': 'fade-in 0.3s ease-out'
+			  },
+			  
+			boxShadow: {
+				neon: '0 0 20px var(--neon-green)',
+  			},
+				
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -112,6 +145,7 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
+			
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

@@ -2,11 +2,11 @@ import { useState } from 'react';
 import ProductCard from './ProductCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import urbanNightsImg from '@/assets/tshirt-urban-nights.jpg';
-import neonDreamsImg from '@/assets/tshirt-neon-dreams.jpg';
 
 const Catalog = () => {
   const [selectedCategory, setSelectedCategory] = useState('todos');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const categories = [
     { id: 'todos', name: 'Todos', count: 6 },
@@ -15,7 +15,6 @@ const Catalog = () => {
     { id: 'oversized', name: 'Over Sized', count: 6 },
   ];
 
-  // Mock products data
   const products = [
     {
       id: 1,
@@ -64,9 +63,23 @@ const Catalog = () => {
     },
   ];
 
-  const filteredProducts = selectedCategory === 'todos' 
-    ? products 
-    : products.filter(product => product.category.toLowerCase() === selectedCategory);
+  const filteredProducts =
+    selectedCategory === 'todos'
+      ? products
+      : products.filter(
+          (product) =>
+            product.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   return (
     <section id="catalog" className="py-20 bg-background">
@@ -76,7 +89,9 @@ const Catalog = () => {
           <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
             <span className="text-foreground">NOSSO</span>
             <br />
-            <span className="bg-gradient-urban bg-clip-text text-transparent">CATÁLOGO</span>
+            <span className="bg-gradient-urban bg-clip-text text-transparent">
+              CATÁLOGO
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
@@ -88,7 +103,7 @@ const Catalog = () => {
           {categories.map((category) => (
             <Button
               key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
+              variant={selectedCategory === category.id ? 'default' : 'outline'}
               onClick={() => setSelectedCategory(category.id)}
               className={`${
                 selectedCategory === category.id
@@ -107,14 +122,16 @@ const Catalog = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <div key={product.id} onClick={() => handleProductClick(product)} className="cursor-pointer">
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
 
         {/* Load More */}
         <div className="text-center">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
             className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
           >
@@ -122,6 +139,65 @@ const Catalog = () => {
           </Button>
         </div>
       </div>
+
+      {/* Modal de Detalhes */}
+      {isModalOpen && selectedProduct && (
+  <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
+    <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_var(--neon-green)] border border-gray-700 max-w-md w-full p-6 relative animate-fade-in transition-transform duration-300 text-white">
+      
+      {/* Botão de fechar */}
+      <button
+        onClick={closeModal}
+        className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
+
+      {/* Imagem do produto */}
+      <div className="mb-4">
+        <img
+          src={selectedProduct.image}
+          alt={selectedProduct.name}
+          className="w-full h-auto rounded-lg shadow-md"
+        />
+      </div>
+
+      {/* Informações do produto */}
+      <div className="space-y-2 text-center">
+        <h3 className="text-2xl font-bold">{selectedProduct.name}</h3>
+        <p className="text-lg">
+          <span className="font-semibold">Preço:</span> R$ {selectedProduct.price.toFixed(2)}
+        </p>
+        <p className="text-sm">
+          <span className="font-semibold">Categoria:</span> {selectedProduct.category}
+        </p>
+        {selectedProduct.isNew && (
+          <span className="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full">
+            Novo!
+          </span>
+        )}
+        <p className="text-sm text-gray-300 mt-4 leading-relaxed">
+          Esta camiseta é feita com materiais de alta qualidade, ideal para quem busca estilo e conforto no dia a dia urbano.
+        </p>
+
+        {/* Botão WhatsApp */}
+        <a
+          href={`https://wa.me/5511972988072?text=Olá! Tenho interesse na camiseta *${selectedProduct.name}* no valor de *R$ ${selectedProduct.price.toFixed(2)}*.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_var(--neon-green)]"
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+
     </section>
   );
 };
