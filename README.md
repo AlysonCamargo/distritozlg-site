@@ -22,7 +22,7 @@ Ele é responsivo, possui design inspirado no universo urbano e integra botões 
 
 ---
 
-🖼️ Funcionalidades principais
+## 🖼️ Funcionalidades principais
 
 Catálogo de camisetas com fotos e descrições
 
