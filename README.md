@@ -1,28 +1,44 @@
-# DistritoZLG-Site
+# 🛍️ DistritoZLG-Site
 
-Repositório do site **distritozlg**, desenvolvido com tecnologias modernas como Vite, TypeScript, React, Tailwind CSS e shadcn-ui.
-
----
-
-##  Sobre o projeto
-
-Este projeto é o frontend de um site construído com foco em desempenho, interface responsiva e estilo elegante. Baseado em tecnologias como React + TypeScript, o projeto possui integração com tailwindcss e componentes estilizados via **shadcn-ui**.
+Repositório do site oficial da **Distrito ZLG**, marca de streetwear urbano, desenvolvido com foco em **desempenho, responsividade e estilo moderno**.  
+Construído com **Vite, TypeScript, React, Tailwind CSS e shadcn-ui**.
 
 ---
 
-##  Tecnologias usadas
+## 📋 Sobre o projeto
 
-- **Vite** – empacotador rápido para desenvolvimento
-- **TypeScript** – tipagem estática confiável
-- **React** – biblioteca de UI moderna
-- **shadcn-ui** – conjunto de componentes esteticamente agradáveis
-- **Tailwind CSS** – framework CSS utilitário
-- 
+O site foi criado para apresentar o catálogo de camisetas da marca de forma dinâmica, simples e estilosa.  
+Ele é responsivo, possui design inspirado no universo urbano e integra botões de compra que levam direto ao **WhatsApp da loja**.
+
 ---
 
-##  Guia de instalação e execução
+## ⚙️ Tecnologias usadas
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/AlysonCamargo/distritozlg-site.git
-   cd distritozlg-site
+- [Vite](https://vitejs.dev/) – empacotador rápido para desenvolvimento  
+- [TypeScript](https://www.typescriptlang.org/) – tipagem estática confiável  
+- [React](https://react.dev/) – biblioteca de UI moderna  
+- [Tailwind CSS](https://tailwindcss.com/) – framework CSS utilitário  
+- [shadcn-ui](https://ui.shadcn.com/) – biblioteca de componentes esteticamente agradáveis  
+
+---
+
+🖼️ Funcionalidades principais
+
+Catálogo de camisetas com fotos e descrições
+
+Filtros de categorias (ex: Oversized)
+
+Botão Comprar que redireciona direto para o WhatsApp da loja
+
+Layout responsivo para desktop e mobile
+
+---
+
+
+## 🚀 Como rodar o projeto
+
+### 1. Clone o repositório:
+```bash
+git clone https://github.com/AlysonCamargo/distritozlg-site.git
+cd distritozlg-site
+npm run dev
