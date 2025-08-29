@@ -4,18 +4,14 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: '/distritozlg-site/', // esse é o nome do repositório no GitHub Pages
-  build: {
-    outDir: 'docs', // manda o build para docs/
-  },
-  plugins: [
-    react(),
-    mode === 'development' && componentTagger(),
-  ].filter(Boolean),
+export default defineConfig({
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+  build: {
+    outDir: "dist", // garante saída no dist
+  },
+});
