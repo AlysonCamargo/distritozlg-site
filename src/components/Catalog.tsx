@@ -13,7 +13,7 @@ const Catalog = () => {
     { id: 'todos', name: 'Todos', count: 6 },
     { id: 'dry fit', name: 'Dry Fit', count: 0 },
     { id: 'malha egipcia', name: 'Malha Egípcia', count: 0 },
-    { id: 'oversized', name: 'Over Sized', count: 6 },
+    { id: 'oversized', name: 'Oversized', count: 6 },
   ];
 
   const products = [
