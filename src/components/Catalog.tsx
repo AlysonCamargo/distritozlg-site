@@ -17,7 +17,7 @@ const Catalog = () => {
     { id: 'regatas', name: 'Regatas', count: 1},
     { id: 'caneladas', name: 'Caneladas', count: 1},
     { id: 'shorts moletom', name: 'Shorts Moletom', count: 3},
-    { id: 'shorts dry fit', name: 'Shorts Dry fit', count: 1},
+    { id: 'shorts dry fit', name: 'Shorts Dry fit', count: 2},
   ];
 
   const products = [
