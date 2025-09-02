@@ -1,25 +1,22 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import ProductCard from './ProductCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ProductCarousel from './ProductCarousel';
 
-const Catalog = () => {
-  const [selectedCategory, setSelectedCategory] = useState('todos');
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+// Mover dados para arquivos separados (simulando importação)
+const categories = [
+  { id: 'todos', name: 'Todos' },
+  { id: 'dryfit', name: 'Dryfit'},
+  { id: 'malha egipcia', name: 'Malha Egípcia' },
+  { id: 'oversized', name: 'Oversized' },
+  { id: 'calça cargo', name: 'Calça Cargo' },
+  { id: 'regatas', name: 'Regatas' },
+  { id: 'caneladas', name: 'Caneladas' },
+  { id: 'shorts moletom', name: 'Shorts Moletom' },
+  { id: 'shorts dry fit', name: 'Shorts Dry fit' },
+];
 
-  const categories = [
-    { id: 'todos', name: 'Todos' },
-    { id: 'dryfit', name: 'Dryfit'},
-    { id: 'malha egipcia', name: 'Malha Egípcia' },
-    { id: 'oversized', name: 'Oversized' },
-    { id: 'calça cargo', name: 'Calça Cargo' },
-    { id: 'regatas', name: 'Regatas' },
-    { id: 'caneladas', name: 'Caneladas' },
-    { id: 'shorts moletom', name: 'Shorts Moletom' },
-    { id: 'shorts dry fit', name: 'Shorts Dry fit' },
-  ];
 
   const products = [
     {
@@ -770,141 +767,199 @@ const Catalog = () => {
 
   ];
 
-  const filteredProducts =
-  selectedCategory === 'todos'
-    ? products
-    : products.filter(
-        (product) =>
-          product.category.toLowerCase() === selectedCategory.toLowerCase()
+  const ITEMS_PER_PAGE = 12;
+
+  const Catalog = () => {
+    const [selectedCategory, setSelectedCategory] = useState('todos');
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
+  
+    // Calcular contagens por categoria apenas uma vez
+    const categoryCounts = useMemo(() => {
+      const counts = { todos: products.length };
+      categories.forEach(category => {
+        if (category.id !== 'todos') {
+          counts[category.id] = products.filter(p => 
+            p.category.toLowerCase() === category.id.toLowerCase()
+          ).length;
+        }
+      });
+      return counts;
+    }, []);
+  
+    // Filtrar produtos de forma eficiente
+    const filteredProducts = useMemo(() => {
+      if (selectedCategory === 'todos') return products;
+      
+      return products.filter(
+        product => product.category.toLowerCase() === selectedCategory.toLowerCase()
       );
-
-const handleProductClick = (product) => {
-  setSelectedProduct(product);
-  setIsModalOpen(true);
-};
-
-const closeModal = () => {
-  setIsModalOpen(false);
-  setSelectedProduct(null);
-};
-
-return (
-  <section id="catalog" className="py-20 bg-background">
-    <div className="container mx-auto px-4">
-      {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
-          <span className="text-foreground">NOSSO</span>
-          <br />
-          <span className="bg-gradient-urban bg-clip-text text-transparent">
-            CATÁLOGO
-          </span>
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
-        </p>
-      </div>
-
-      {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
-        {categories.map((category) => {
-          const count =
-            category.id === 'todos'
-              ? products.length
-              : products.filter(
-                  (product) =>
-                    product.category.toLowerCase() === category.id.toLowerCase()
-                ).length;
-
-          return (
-            <Button
-              key={category.id}
-              variant={selectedCategory === category.id ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`${
-                selectedCategory === category.id
-                  ? 'bg-gradient-urban text-background hover:shadow-glow'
-                  : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
-              } font-medium transition-all duration-300`}
-            >
-              {category.name}
-              <Badge
-                variant="secondary"
-                className="ml-2 bg-secondary text-secondary-foreground"
-              >
-                {count}
-              </Badge>
-            </Button>
-          );
-        })}
-      </div>
-
-      {/* Products Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {filteredProducts.map((product) => (
-          <div key={product.id} onClick={() => handleProductClick(product)} className="cursor-pointer">
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
-
-      {/* Load More */}
-      <div className="text-center">
-        <Button
-          variant="outline"
-          size="lg"
-          className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
-        >
-          Ver Mais Produtos
-        </Button>
-      </div>
-    </div>
-
-    {/* Modal de Detalhes */}
-    {isModalOpen && selectedProduct && (
-      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
-        <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_var(--neon-green)] border border-gray-700 max-w-md w-full p-6 relative animate-fade-in transition-transform duration-300 text-white">
-          <button
-            onClick={closeModal}
-            className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold"
-            aria-label="Fechar"
-          >
-            &times;
-          </button>
-
-          <ProductCarousel product={selectedProduct} />
-
-          <div className="space-y-2 text-center">
-            <h3 className="text-2xl font-bold">{selectedProduct.name}</h3>
-            <p className="text-lg">
-              <span className="font-semibold">Preço:</span> R$ {selectedProduct.price.toFixed(2)}
-            </p>
-            <p className="text-sm">
-              <span className="font-semibold">Tamanhos:</span> {selectedProduct.size}
-            </p>
-            {selectedProduct.isNew && (
-              <span className="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full">
-                Novo!
+    }, [selectedCategory]);
+  
+    // Produtos visíveis com paginação
+    const productsToShow = useMemo(() => 
+      filteredProducts.slice(0, visibleItems), 
+      [filteredProducts, visibleItems]
+    );
+  
+    const handleProductClick = useCallback((product) => {
+      setSelectedProduct(product);
+      setIsModalOpen(true);
+      // Desativar scroll do body quando o modal estiver aberto
+      document.body.style.overflow = 'hidden';
+    }, []);
+  
+    const closeModal = useCallback(() => {
+      setIsModalOpen(false);
+      setSelectedProduct(null);
+      // Reativar scroll do body
+      document.body.style.overflow = 'unset';
+    }, []);
+  
+    const loadMore = () => {
+      setVisibleItems(prev => prev + ITEMS_PER_PAGE);
+    };
+  
+    const handleCategoryChange = (categoryId) => {
+      setSelectedCategory(categoryId);
+      setVisibleItems(ITEMS_PER_PAGE); // Resetar paginação ao mudar categoria
+    };
+  
+    const hasMoreItems = visibleItems < filteredProducts.length;
+  
+    return (
+      <section id="catalog" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
+              <span className="text-foreground">NOSSO</span>
+              <br />
+              <span className="bg-gradient-urban bg-clip-text text-transparent">
+                CATÁLOGO
               </span>
-            )}
-            <p className="text-sm text-gray-300 mt-4 leading-relaxed">
-              Esta camiseta é feita com materiais de alta qualidade, ideal para quem busca estilo e conforto no dia a dia urbano.
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
             </p>
-
-            <a
-              href={`https://wa.me/5511972988072?text=Olá! Tenho interesse no produto *${selectedProduct.name}* no valor de *R$ ${selectedProduct.price.toFixed(2)}*.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_var(--neon-green)]"
-            >
-              Falar no WhatsApp
-            </a>
           </div>
+  
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12 px-2">
+            {categories.map((category) => (
+              <Button
+                key={category.id}
+                variant={selectedCategory === category.id ? 'default' : 'outline'}
+                onClick={() => handleCategoryChange(category.id)}
+                className={`${
+                  selectedCategory === category.id
+                    ? 'bg-gradient-urban text-background hover:shadow-glow'
+                    : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
+                } font-medium transition-all duration-300 mb-2`}
+              >
+                {category.name}
+                <Badge
+                  variant="secondary"
+                  className="ml-2 bg-secondary text-secondary-foreground"
+                >
+                  {categoryCounts[category.id]}
+                </Badge>
+              </Button>
+            ))}
+          </div>
+  
+          {/* Products Grid */}
+          {productsToShow.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+                {productsToShow.map((product) => (
+                  <div 
+                    key={product.id} 
+                    onClick={() => handleProductClick(product)} 
+                    className="cursor-pointer transform transition-transform hover:scale-105"
+                  >
+                    <ProductCard product={product} />
+                  </div>
+                ))}
+              </div>
+  
+              {/* Load More Button */}
+              {hasMoreItems && (
+                <div className="text-center">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={loadMore}
+                    className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
+                  >
+                    Ver Mais Produtos ({filteredProducts.length - visibleItems} restantes)
+                  </Button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">
+                Nenhum produto encontrado nesta categoria.
+              </p>
+            </div>
+          )}
         </div>
-      </div>
-    )}
-  </section>
-);
-};
-
-export default Catalog;
+  
+        {/* Modal de Detalhes */}
+        {isModalOpen && selectedProduct && (
+          <div 
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={closeModal}
+          >
+            <div 
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800"
+                aria-label="Fechar"
+              >
+                &times;
+              </button>
+  
+              <ProductCarousel product={selectedProduct} />
+  
+              <div className="space-y-2 text-center mt-4">
+                <h3 className="text-2xl font-bold">{selectedProduct.name}</h3>
+                <p className="text-lg">
+                  <span className="font-semibold">Preço:</span> R$ {selectedProduct.price.toFixed(2)}
+                </p>
+                <p className="text-sm">
+                  <span className="font-semibold">Tamanhos:</span> {selectedProduct.size}
+                </p>
+                <p className="text-sm">
+                  <span className="font-semibold">Categoria:</span> {selectedProduct.category}
+                </p>
+                {selectedProduct.isNew && (
+                  <span className="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full mt-2">
+                    Novo!
+                  </span>
+                )}
+                <p className="text-sm text-gray-300 mt-4 leading-relaxed">
+                </p>
+  
+                <a
+                  href={`https://wa.me/5511972988072?text=Olá! Tenho interesse no produto *${encodeURIComponent(selectedProduct.name)}* no valor de *R$ ${selectedProduct.price.toFixed(2)}*.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-block px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
+                >
+                  Falar no WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+    );
+  };
+  
+  export default Catalog;
