@@ -10,6 +10,7 @@ interface Product {
   image: string;
   category: string;
   isNew?: boolean;
+  size: string;
 }
 
 interface ProductCardProps {
@@ -19,7 +20,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const handleBuyOnWhatsApp = () => {
     const phoneNumber = "5511972988072"; // WhatsApp em formato internacional (sem + e espaços)
-    const message = `Olá! Tenho interesse na camiseta "${product.name}" (R$ ${product.price.toFixed(2)}). Ainda está disponível?`;
+    const message = `Olá! Tenho interesse no produto "${product.name}" (R$ ${product.price.toFixed(2)}). Ainda está disponível?`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
