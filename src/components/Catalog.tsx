@@ -3,18 +3,20 @@ import ProductCard from './ProductCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ProductCarousel from './ProductCarousel';
+import { Input } from '@/components/ui/input';
 
-// Mover dados para arquivos separados (simulando importação)
+
+// Categorias
 const categories = [
-  { id: 'todos', name: 'Todos' },
-  { id: 'dryfit', name: 'Dryfit'},
-  { id: 'malha egipcia', name: 'Malha Egípcia' },
-  { id: 'oversized', name: 'Oversized' },
-  { id: 'calça cargo', name: 'Calça Cargo' },
-  { id: 'regatas', name: 'Regatas' },
-  { id: 'caneladas', name: 'Caneladas' },
-  { id: 'shorts moletom', name: 'Shorts Moletom' },
-  { id: 'shorts dry fit', name: 'Shorts Dry fit' },
+{ id: 'todos', name: 'Todos' },
+{ id: 'dryfit', name: 'Dryfit'},
+{ id: 'malha egipcia', name: 'Malha Egípcia' },
+{ id: 'oversized', name: 'Oversized' },
+{ id: 'calça cargo', name: 'Calça Cargo' },
+{ id: 'regatas', name: 'Regatas' },
+{ id: 'caneladas', name: 'Caneladas' },
+{ id: 'shorts moletom', name: 'Shorts Moletom' },
+{ id: 'shorts dry fit', name: 'Shorts Dry fit' },
 ];
 
 
@@ -774,8 +776,10 @@ const categories = [
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedSize, setSelectedSize] = useState("");
   
-    // Calcular contagens por categoria apenas uma vez
+    // Contagem de produtos por categoria
     const categoryCounts = useMemo(() => {
       const counts = { todos: products.length };
       categories.forEach(category => {
@@ -788,16 +792,16 @@ const categories = [
       return counts;
     }, []);
   
-    // Filtrar produtos de forma eficiente
+    // Filtro (categoria + busca + tamanho)
     const filteredProducts = useMemo(() => {
-      if (selectedCategory === 'todos') return products;
-      
-      return products.filter(
-        product => product.category.toLowerCase() === selectedCategory.toLowerCase()
-      );
-    }, [selectedCategory]);
+      return products.filter(product => {
+        const matchesCategory = selectedCategory === 'todos' || product.category.toLowerCase() === selectedCategory.toLowerCase();
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesSize = !selectedSize || product.size.toLowerCase().includes(selectedSize.toLowerCase());
+        return matchesCategory && matchesSearch && matchesSize;
+      });
+    }, [selectedCategory, searchTerm, selectedSize]);
   
-    // Produtos visíveis com paginação
     const productsToShow = useMemo(() => 
       filteredProducts.slice(0, visibleItems), 
       [filteredProducts, visibleItems]
@@ -806,14 +810,12 @@ const categories = [
     const handleProductClick = useCallback((product) => {
       setSelectedProduct(product);
       setIsModalOpen(true);
-      // Desativar scroll do body quando o modal estiver aberto
       document.body.style.overflow = 'hidden';
     }, []);
   
     const closeModal = useCallback(() => {
       setIsModalOpen(false);
       setSelectedProduct(null);
-      // Reativar scroll do body
       document.body.style.overflow = 'unset';
     }, []);
   
@@ -823,7 +825,7 @@ const categories = [
   
     const handleCategoryChange = (categoryId) => {
       setSelectedCategory(categoryId);
-      setVisibleItems(ITEMS_PER_PAGE); // Resetar paginação ao mudar categoria
+      setVisibleItems(ITEMS_PER_PAGE);
     };
   
     const hasMoreItems = visibleItems < filteredProducts.length;
@@ -832,7 +834,7 @@ const categories = [
       <section id="catalog" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
               <span className="text-foreground">NOSSO</span>
               <br />
@@ -843,6 +845,28 @@ const categories = [
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
             </p>
+          </div>
+  
+          {/* Search & Filter */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
+            <Input
+              type="text"
+              placeholder="Buscar produto..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full md:w-1/3 bg-secondary border-border focus:border-accent"
+            />
+            <select
+              value={selectedSize}
+              onChange={(e) => setSelectedSize(e.target.value)}
+              className="px-4 py-2 rounded-lg bg-secondary border border-border text-foreground"
+            >
+              <option value="">Todos os Tamanhos</option>
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+            </select>
           </div>
   
           {/* Category Filter */}
@@ -884,7 +908,6 @@ const categories = [
                 ))}
               </div>
   
-              {/* Load More Button */}
               {hasMoreItems && (
                 <div className="text-center">
                   <Button
@@ -901,20 +924,20 @@ const categories = [
           ) : (
             <div className="text-center py-12">
               <p className="text-lg text-muted-foreground">
-                Nenhum produto encontrado nesta categoria.
+                Nenhum produto encontrado.
               </p>
             </div>
           )}
         </div>
   
-        {/* Modal de Detalhes */}
+        {/* Modal */}
         {isModalOpen && selectedProduct && (
           <div 
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn"
             onClick={closeModal}
           >
             <div 
-              className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative"
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative animate-scaleIn"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -943,15 +966,16 @@ const categories = [
                     Novo!
                   </span>
                 )}
-                <p className="text-sm text-gray-300 mt-4 leading-relaxed">
-                </p>
   
                 <a
                   href={`https://wa.me/5511972988072?text=Olá! Tenho interesse no produto *${encodeURIComponent(selectedProduct.name)}* no valor de *R$ ${selectedProduct.price.toFixed(2)}*.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-block px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
+                  className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
                 >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 12h.008v.008H7.5V12zM12 12h.008v.008H12V12zm4.5 0h.008v.008H16.5V12z" />
+                  </svg>
                   Falar no WhatsApp
                 </a>
               </div>
@@ -963,3 +987,4 @@ const categories = [
   };
   
   export default Catalog;
+  
