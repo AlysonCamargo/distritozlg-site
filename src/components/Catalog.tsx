@@ -22,36 +22,6 @@ const categories = [
 
   const products = [
     {
-      id: 3,
-      name: 'Adidas (GG)',
-      price: 79.90,
-      image: 'https://i.imgur.com/BSAGk6W.jpeg',
-      imageFront: 'https://i.imgur.com/BSAGk6W.jpeg',
-      imageBack: 'https://i.imgur.com/yU7ufKw.jpeg',
-      category: 'oversized',
-      size: 'GG',
-    },
-    {
-      id: 4,
-      name: 'Casa Blanca (GG)',
-      price: 79.90,
-      image: 'https://i.imgur.com/D2ZPDQJ.jpeg',
-      imageFront: 'https://i.imgur.com/D2ZPDQJ.jpeg',
-      imageBack: 'https://i.imgur.com/F1rsV9n.jpeg',
-      category: 'oversized',
-      size: 'GG',
-    },
-    {
-      id: 7,
-      name: 'Adidas 2 (GG)',
-      price: 79.90,
-      image: 'https://i.imgur.com/cAYrtzY.jpeg',
-      imageFront: 'https://i.imgur.com/cAYrtzY.jpeg',
-      imageBack: 'https://i.imgur.com/1cGpPr3.jpeg',
-      category: 'oversized',
-      size: 'GG',
-    },
-    {
       id: 8,
       name: 'Adidas Oeste (P)',
       price: 79.90,
