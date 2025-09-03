@@ -269,7 +269,7 @@ const categories = [
       price: 79.99,
       image: 'https://i.imgur.com/4DulVku.jpeg',
       imageFront: 'https://i.imgur.com/4DulVku.jpeg',
-      imageBack: 'https://i.imgur.com/acucJ.jpeg',
+      imageBack: 'https://i.imgur.com/UTE7tA1.jpeg',
       category: 'oversized',
       size: 'GG',
       isNew: true,
