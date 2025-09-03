@@ -23,7 +23,7 @@ const categories = [
   const products = [
     {
       id: 8,
-      name: 'Adidas Oeste (P)',
+      name: 'Adidas Oeste',
       price: 79.90,
       image: 'https://i.imgur.com/1p6YCx1.png',
       imageFront: 'https://i.imgur.com/1p6YCx1.png',
@@ -34,7 +34,7 @@ const categories = [
     },
     {
       id: 9,
-      name: 'Casa Blanca Air (P)',
+      name: 'Casa Blanca Air',
       price: 79.90,
       image: 'https://i.imgur.com/e6M5pIv.png',
       imageFront: 'https://i.imgur.com/e6M5pIv.png',
@@ -45,7 +45,7 @@ const categories = [
     },
     {
       id: 10,
-      name: 'Adidas Bordada (P)',
+      name: 'Adidas Bordada',
       price: 79.90,
       image: 'https://i.imgur.com/PA0Z5AE.png',
       imageFront: 'https://i.imgur.com/PA0Z5AE.png',
@@ -56,7 +56,7 @@ const categories = [
     },
     {
       id: 11,
-      name: 'Nike Sombras (M)',
+      name: 'Nike Sombras',
       price: 79.90,
       image: 'https://i.imgur.com/Fq8DnNj.png',
       imageFront: 'https://i.imgur.com/Fq8DnNj.png',
@@ -67,7 +67,7 @@ const categories = [
     },
     {
       id: 12,
-      name: 'Palm Angels Asas (M)',
+      name: 'Palm Angels Asas',
       price: 79.90,
       image: 'https://i.imgur.com/ssYI4Sz.png',
       imageFront: 'https://i.imgur.com/ssYI4Sz.png',
@@ -78,7 +78,7 @@ const categories = [
     },
     {
       id: 13,
-      name: 'Adidas Logo (M)',
+      name: 'Adidas Logo',
       price: 79.90,
       image: 'https://i.imgur.com/q4bGbT5.png',
       imageFront: 'https://i.imgur.com/q4bGbT5.png',
@@ -89,7 +89,7 @@ const categories = [
     },
     {
       id: 14,
-      name: 'Lacoste (M) (G)',
+      name: 'Lacoste',
       price: 79.90,
       image: 'https://i.imgur.com/1seksbz.png',
       imageFront: 'https://i.imgur.com/1seksbz.png',
@@ -100,7 +100,7 @@ const categories = [
     },
     {
       id: 15,
-      name: 'Palm Angels Olho (M)',
+      name: 'Palm Angels Olho',
       price: 79.90,
       image: 'https://i.imgur.com/7NjoZ6Y.png',
       imageFront: 'https://i.imgur.com/7NjoZ6Y.png',
@@ -111,7 +111,7 @@ const categories = [
     },
     {
       id: 16,
-      name: 'Off White Pinóquio (M)',
+      name: 'Off White Pinóquio',
       price: 79.90,
       image: 'https://i.imgur.com/5d0Kk57.png',
       imageFront: 'https://i.imgur.com/5d0Kk57.png',
@@ -122,7 +122,7 @@ const categories = [
     },
     {
       id: 17,
-      name: 'Air Bordado (M)',
+      name: 'Air Bordado',
       price: 79.90,
       image: 'https://i.imgur.com/nVkpglz.png',
       imageFront: 'https://i.imgur.com/nVkpglz.png',
@@ -133,7 +133,7 @@ const categories = [
     },
     {
       id: 18,
-      name: 'Balenciaga Bandida (G)',
+      name: 'Balenciaga Bandida',
       price: 79.90,
       image: 'https://i.imgur.com/ilCkz1B.png',
       imageFront: 'https://i.imgur.com/ilCkz1B.png',
@@ -144,7 +144,7 @@ const categories = [
     },
     {
       id: 19,
-      name: 'Nike Bordada Verde (G)',
+      name: 'Nike Bordada Verde',
       price: 79.99,
       image: 'https://i.imgur.com/2MCtO1a.png',
       imageFront: 'https://i.imgur.com/2MCtO1a.png',
@@ -155,7 +155,7 @@ const categories = [
     },
     {
       id: 21,
-      name: 'Nike Marrom (G)',
+      name: 'Nike Marrom',
       price: 79.99,
       image: 'https://i.imgur.com/owa3irz.png',
       imageFront: 'https://i.imgur.com/owa3irz.png',
@@ -166,7 +166,7 @@ const categories = [
     },
     {
       id: 23,
-      name: 'Travis Mostarda (G)',
+      name: 'Travis Mostarda',
       price: 79.99,
       image: 'https://i.imgur.com/wz6eGVK.png',
       imageFront: 'https://i.imgur.com/wz6eGVK.png',
@@ -177,7 +177,7 @@ const categories = [
     },
     {
       id: 24,
-      name: 'Travis Bege (G)',
+      name: 'Travis Bege',
       price: 79.99,
       image: 'https://i.imgur.com/CZdjuoW.png',
       imageFront: 'https://i.imgur.com/CZdjuoW.png',
@@ -188,7 +188,7 @@ const categories = [
     },
     {
       id: 25,
-      name: 'Abathing (G)',
+      name: 'Abathing',
       price: 79.99,
       image: 'https://i.imgur.com/Y0nn5nc.png',
       imageFront: 'https://i.imgur.com/Y0nn5nc.png',
@@ -199,7 +199,7 @@ const categories = [
     },
     {
       id: 26,
-      name: 'Casa Blanca Drinks (G)',
+      name: 'Casa Blanca Drinks',
       price: 79.99,
       image: 'https://i.imgur.com/B8hCEBJ.png',
       imageFront: 'https://i.imgur.com/B8hCEBJ.png',
@@ -210,7 +210,7 @@ const categories = [
     },
     {
       id: 27,
-      name: 'Jordan Bege (G)',
+      name: 'Jordan Bege',
       price: 79.99,
       image: 'https://i.imgur.com/djfWa3v.png',
       imageFront: 'https://i.imgur.com/djfWa3v.png',
@@ -221,7 +221,7 @@ const categories = [
     },
     {
       id: 28,
-      name: 'Adidas Verde (G)',
+      name: 'Adidas Verde',
       price: 79.99,
       image: 'https://i.imgur.com/IZ4QCcK.png',
       imageFront: 'https://i.imgur.com/IZ4QCcK.png',
@@ -232,7 +232,7 @@ const categories = [
     },
     {
       id: 30,
-      name: 'Adidas Tenis (G)',
+      name: 'Adidas Tenis',
       price: 79.99,
       image: 'https://i.imgur.com/alZhnji.jpeg',
       imageFront: 'https://i.imgur.com/alZhnji.jpeg',
@@ -243,7 +243,7 @@ const categories = [
     },
     {
       id: 31,
-      name: 'Adidas Jerry (G)',
+      name: 'Adidas Jerry',
       price: 79.99,
       image: 'https://i.imgur.com/Dd6Pthx.jpeg',
       imageFront: 'https://i.imgur.com/Dd6Pthx.jpeg',
@@ -254,150 +254,150 @@ const categories = [
     },
     {
       id: 32,
-      name: 'Neymar (GG)',
+      name: 'Neymar' ,
       price: 79.99,
       image: 'https://i.imgur.com/My9k0UL.jpeg',
       imageFront: 'https://i.imgur.com/My9k0UL.jpeg',
       imageBack: 'https://i.imgur.com/My9k0UL.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 33,
-      name: 'Balenciaga Street (GG)',
+      name: 'Balenciaga Street' ,
       price: 79.99,
       image: 'https://i.imgur.com/4DulVku.jpeg',
       imageFront: 'https://i.imgur.com/4DulVku.jpeg',
-      imageBack: 'https://i.imgur.com/acucggJ.jpeg',
+      imageBack: 'https://i.imgur.com/acucJ.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 34,
-      name: 'Nike Just Do It (GG)',
+      name: 'Nike Just Do It' ,
       price: 79.99,
       image: 'https://i.imgur.com/pq4gQ93.jpeg',
       imageFront: 'https://i.imgur.com/pq4gQ93.jpeg',
       imageBack: 'https://i.imgur.com/LHM7ca1.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 35,
-      name: 'Palm Angels Horizontal (GG)',
+      name: 'Palm Angels Horizontal' ,
       price: 79.99,
       image: 'https://i.imgur.com/leUFeC3.jpeg',
       imageFront: 'https://i.imgur.com/leUFeC3.jpeg',
       imageBack: 'https://i.imgur.com/P7lkxpx.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 36,
-      name: 'Palm Angels Rosa (GG)',
+      name: 'Palm Angels Rosa' ,
       price: 79.99,
       image: 'https://i.imgur.com/hc6P3Js.jpeg',
       imageFront: 'https://i.imgur.com/hc6P3Js.jpeg',
       imageBack: 'https://i.imgur.com/eDDOLQb.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 37,
-      name: 'Adidas Ronkib (GG)',
+      name: 'Adidas Ronkib' ,
       price: 79.99,
       image: 'https://i.imgur.com/UDFDixY.jpeg',
       imageFront: 'https://i.imgur.com/UDFDixY.jpeg',
       imageBack: 'https://i.imgur.com/H4cVTgV.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 38,
-      name: 'Casa Blanca Praia (GG)',
+      name: 'Casa Blanca Praia' ,
       price: 79.99,
       image: 'https://i.imgur.com/iA75Yqz.jpeg',
       imageFront: 'https://i.imgur.com/iA75Yqz.jpeg',
       imageBack: 'https://i.imgur.com/LQTGUpx.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 39,
-      name: 'Off White X (GG)',
+      name: 'Off White X' ,
       price: 79.99,
       image: 'https://i.imgur.com/ffsnOic.jpeg',
       imageFront: 'https://i.imgur.com/ffsnOic.jpeg',
       imageBack: 'https://i.imgur.com/uGWqTUk.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 40,
-      name: 'The North Preta (GG)',
+      name: 'The North Preta' ,
       price: 79.99,
       image: 'https://i.imgur.com/tPgpHEy.jpeg',
       imageFront: 'https://i.imgur.com/tPgpHEy.jpeg',
       imageBack: 'https://i.imgur.com/djbK26M.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 41,
-      name: 'Adidas Branca (GG)',
+      name: 'Adidas Branca' ,
       price: 79.99,
       image: 'https://i.imgur.com/SbihkTZ.jpeg',
       imageFront: 'https://i.imgur.com/SbihkTZ.jpeg',
       imageBack: 'https://i.imgur.com/dG5BxYE.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 42,
-      name: 'LA Asa (GG)',
+      name: 'LA Asa' ,
       price: 79.99,
       image: 'https://i.imgur.com/lJmLCYc.jpeg',
       imageFront: 'https://i.imgur.com/lJmLCYc.jpeg',
       imageBack: 'https://i.imgur.com/60VGWfr.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 43,
-      name: 'Los Angeles 32 (GG)',
+      name: 'Los Angeles 32' ,
       price: 79.99,
       image: 'https://i.imgur.com/bNnjDQ0.jpeg',
       imageFront: 'https://i.imgur.com/bNnjDQ0.jpeg',
       imageBack: 'https://i.imgur.com/bNnjDQ0.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 44,
-      name: 'Adidas Logo Giga (GG)',
+      name: 'Adidas Logo Giga' ,
       price: 79.99,
       image: 'https://i.imgur.com/JQGw7VA.jpeg',
       imageFront: 'https://i.imgur.com/JQGw7VA.jpeg',
       imageBack: 'https://i.imgur.com/JQGw7VA.jpeg',
       category: 'oversized',
-      size: 'GG',
+      size: '',
       isNew: true,
     },
     {
       id: 45,
-      name: 'Calça Cargo Azul Clara (G)',
+      name: 'Calça Cargo Azul Clara',
       price: 109.99,
       image: 'https://i.imgur.com/1glUoYs.jpeg',
       imageFront: 'https://i.imgur.com/1glUoYs.jpeg',
@@ -408,7 +408,7 @@ const categories = [
     },
     {
       id: 46,
-      name: 'Calça Cargo Preta (P) (M) (G)',
+      name: 'Calça Cargo Preta',
       price: 109.99,
       image: 'https://i.imgur.com/TIc0vP0.jpeg',
       imageFront: 'https://i.imgur.com/TIc0vP0.jpeg',
@@ -419,18 +419,18 @@ const categories = [
     },
     {
       id: 47,
-      name: 'Calça Cargo Azul Escuro (M) (G) (GG)',
+      name: 'Calça Cargo Azul Escuro',
       price: 109.99,
       image: 'https://i.imgur.com/pEUwDz8.jpeg',
       imageFront: 'https://i.imgur.com/pEUwDz8.jpeg',
       imageBack: 'https://i.imgur.com/rKj2JfR.jpeg',
       category: 'calça cargo',
-      size: 'M G GG',
+      size: 'M G ',
       isNew: true,
     },
     {
       id: 48,
-      name: 'Calça Cargo Preta Linhas Brancas (G)',
+      name: 'Calça Cargo Preta Linhas Brancas',
       price: 109.99,
       image: 'https://i.imgur.com/6mNgsTa.jpeg',
       imageFront: 'https://i.imgur.com/6mNgsTa.jpeg',
@@ -441,18 +441,18 @@ const categories = [
     },
     {
       id: 49,
-      name: 'Calça Cargo Grafite (M) (G) (GG)',
+      name: 'Calça Cargo Grafite',
       price: 109.99,
       image: 'https://i.imgur.com/dpqsfQ1.jpeg',
       imageFront: 'https://i.imgur.com/dpqsfQ1.jpeg',
       imageBack: 'https://i.imgur.com/mVpyDqr.jpeg',
       category: 'calça cargo',
-      size: 'M G GG',
+      size: 'M G ',
       isNew: true,
     },
     {
       id: 50,
-      name: 'Regata Canelada (P)',
+      name: 'Regata Canelada',
       price: 65.00,
       image: 'https://i.imgur.com/PIMsnzg.jpeg',
       imageFront: 'https://i.imgur.com/PIMsnzg.jpeg',
@@ -463,7 +463,7 @@ const categories = [
     },
     {
       id: 51,
-      name: 'Camiseta Canelada (M) (G)',
+      name: 'Camiseta Canelada',
       price: 65.00,
       image: 'https://i.imgur.com/TBWXZ5V.jpeg',
       imageFront: 'https://i.imgur.com/TBWXZ5V.jpeg',
@@ -474,7 +474,7 @@ const categories = [
     },
     {
       id: 52,
-      name: 'Short Moletom Nike Cinza (G)',
+      name: 'Short Moletom Nike Cinza',
       price: 70.00,
       image: 'https://i.imgur.com/YwvEL2m.jpeg',
       imageFront: 'https://i.imgur.com/YwvEL2m.jpeg',
@@ -485,7 +485,7 @@ const categories = [
     },
     {
       id: 53,
-      name: 'Short Moletom Nike Branco (G)',
+      name: 'Short Moletom Nike Branco',
       price: 70.00,
       image: 'https://i.imgur.com/Lq0AxC3.jpeg',
       imageFront: 'https://i.imgur.com/Lq0AxC3.jpeg',
@@ -496,7 +496,7 @@ const categories = [
     },
     {
       id: 54,
-      name: 'Short Moletom Nike Preto (G)',
+      name: 'Short Moletom Nike Preto',
       price: 70.00,
       image: 'https://i.imgur.com/P1MD307.jpeg',
       imageFront: 'https://i.imgur.com/P1MD307.jpeg',
@@ -507,7 +507,7 @@ const categories = [
     },
     {
       id: 55,
-      name: 'Short Dry Fit Nike Cinza (G)',
+      name: 'Short Dry Fit Nike Cinza ',
       price: 65.00,
       image: 'https://i.imgur.com/hYqz7uU.jpeg',
       imageFront: 'https://i.imgur.com/hYqz7uU.jpeg',
@@ -518,7 +518,7 @@ const categories = [
     },
     {
       id: 56,
-      name: 'Camiseta Diesel (P)',
+      name: 'Camiseta Diesel',
       price: 60.00,
       image: 'https://i.imgur.com/t2lqHWs.jpeg',
       imageFront: 'https://i.imgur.com/t2lqHWs.jpeg',
@@ -529,7 +529,7 @@ const categories = [
     },
     {
       id: 57,
-      name: 'Camiseta Boss Branca Logo Pequeno (M)',
+      name: 'Camiseta Boss Branca Logo Pequeno',
       price: 60.00,
       image: 'https://i.imgur.com/VxASolC.jpeg',
       imageFront: 'https://i.imgur.com/VxASolC.jpeg',
@@ -540,7 +540,7 @@ const categories = [
     },
     {
       id: 58,
-      name: 'Camiseta Diesel Bege Logo Esquerdo (P)',
+      name: 'Camiseta Diesel Bege Logo Esquerdo',
       price: 60.00,
       image: 'https://i.imgur.com/1hUI5QS.jpeg',
       imageFront: 'https://i.imgur.com/1hUI5QS.jpeg',
@@ -551,7 +551,7 @@ const categories = [
     },
     {
       id: 59,
-      name: 'Camiseta Diesel Branca Logo Giga (M)',
+      name: 'Camiseta Diesel Branca Logo Giga',
       price: 60.00,
       image: 'https://i.imgur.com/BvZpDix.jpeg',
       imageFront: 'https://i.imgur.com/BvZpDix.jpeg',
@@ -562,7 +562,7 @@ const categories = [
     },
     {
       id: 60,
-      name: 'Camiseta Diesel Bege Logo Pequeno (M)',
+      name: 'Camiseta Diesel Bege Logo Pequeno',
       price: 60.00,
       image: 'https://i.imgur.com/oSQur9d.jpeg',
       imageFront: 'https://i.imgur.com/oSQur9d.jpeg',
@@ -573,7 +573,7 @@ const categories = [
     },
     {
       id: 61,
-      name: 'Camiseta Boss Bege Logo Esq Pequeno (M)',
+      name: 'Camiseta Boss Bege Logo Esq Pequeno',
       price: 60.00,
       image: 'https://i.imgur.com/blRfZlb.jpeg',
       imageFront: 'https://i.imgur.com/blRfZlb.jpeg',
@@ -584,7 +584,7 @@ const categories = [
     },
     {
       id: 62,
-      name: 'Camiseta Boss Branca Logo Medio Direito (P)',
+      name: 'Camiseta Boss Branca Logo Medio Direit',
       price: 60.00,
       image: 'https://i.imgur.com/mqQb7XU.jpeg',
       imageFront: 'https://i.imgur.com/mqQb7XU.jpeg',
@@ -595,7 +595,7 @@ const categories = [
     },
     {
       id: 63,
-      name: 'Camiseta Boss Preta Logo Pequeno (P)',
+      name: 'Camiseta Boss Preta Logo Pequeno',
       price: 60.00,
       image: 'https://i.imgur.com/zwQ2DuO.jpeg',
       imageFront: 'https://i.imgur.com/zwQ2DuO.jpeg',
@@ -606,7 +606,7 @@ const categories = [
     },
     {
       id: 64,
-      name: 'Camiseta Diesel Branca D Vermelho (P)',
+      name: 'Camiseta Diesel Branca D Vermelho',
       price: 60.00,
       image: 'https://i.imgur.com/OKPqGzi.jpeg',
       imageFront: 'https://i.imgur.com/OKPqGzi.jpeg',
@@ -617,7 +617,7 @@ const categories = [
     },
     {
       id: 65,
-      name: 'Camiseta Boss Bege Logo Branco (P)',
+      name: 'Camiseta Boss Bege Logo Branco',
       price: 60.00,
       image: 'https://i.imgur.com/pGE39wd.jpeg',
       imageFront: 'https://i.imgur.com/pGE39wd.jpeg',
@@ -628,7 +628,7 @@ const categories = [
     },
     {
       id: 66,
-      name: 'Camiseta Boss Marrom Logo Peluciado (G)',
+      name: 'Camiseta Boss Marrom Logo Peluciado',
       price: 60.00,
       image: 'https://i.imgur.com/IMfUmPy.jpeg',
       imageFront: 'https://i.imgur.com/IMfUmPy.jpeg',
@@ -639,7 +639,7 @@ const categories = [
     },
     {
       id: 67,
-      name: 'Camiseta Diesel Branca Logo Pequeno (G)',
+      name: 'Camiseta Diesel Branca Logo Pequeno',
       price: 60.00,
       image: 'https://i.imgur.com/Rqz7Ucb.jpeg',
       imageFront: 'https://i.imgur.com/Rqz7Ucb.jpeg',
@@ -650,7 +650,7 @@ const categories = [
     },
     {
       id: 68,
-      name: 'Camiseta Nike Preta Logo Grande (P) (M) (G)',
+      name: 'Camiseta Nike Preta Logo Grande',
       price: 60.00,
       image: 'https://i.imgur.com/24UMzJc.png',
       imageFront: 'https://i.imgur.com/24UMzJc.png',
@@ -661,7 +661,7 @@ const categories = [
     },
     {
       id: 69,
-      name: 'Camiseta Nike Under Armour (P)',
+      name: 'Camiseta Nike Under Armour',
       price: 50.00,
       image: 'https://i.imgur.com/jFrFopE.png',
       imageFront: 'https://i.imgur.com/jFrFopE.png',
@@ -672,7 +672,7 @@ const categories = [
     },
     {
       id: 70,
-      name: 'Camiseta Nike Under Armour Bege (P) (M)',
+      name: 'Camiseta Nike Under Armour Bege',
       price: 50.00,
       image: 'https://i.imgur.com/xt2ffap.png',
       imageFront: 'https://i.imgur.com/xt2ffap.png',
@@ -683,7 +683,7 @@ const categories = [
     },
     {
       id: 71,
-      name: 'Camiseta Nike Preta Logo Pequena (P)',
+      name: 'Camiseta Nike Preta Logo Pequena',
       price: 60.00,
       image: 'https://i.imgur.com/GyCFFvF.png',
       imageFront: 'https://i.imgur.com/GyCFFvF.png',
@@ -694,7 +694,7 @@ const categories = [
     },
     {
       id: 72,
-      name: 'Camiseta Adidas Branca (M)',
+      name: 'Camiseta Adidas Branca',
       price: 50.00,
       image: 'https://i.imgur.com/sotwaXy.png',
       imageFront: 'https://i.imgur.com/sotwaXy.png',
@@ -802,7 +802,7 @@ const categories = [
               <option value="P">P</option>
               <option value="M">M</option>
               <option value="G">G</option>
-              <option value="GG">GG</option>
+              <option value=""></option>
             </select>
           </div>
   
@@ -898,11 +898,6 @@ const categories = [
                 <p className="text-sm">
                   <span className="font-semibold">Categoria:</span> {selectedProduct.category}
                 </p>
-                {selectedProduct.isNew && (
-                  <span className="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full mt-2">
-                    Novo!
-                  </span>
-                )}
   
                 <a
                   href={`https://wa.me/5511972988072?text=Olá! Tenho interesse no produto *${encodeURIComponent(selectedProduct.name)}* no valor de *R$ ${selectedProduct.price.toFixed(2)}*.`}
