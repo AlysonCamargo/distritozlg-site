@@ -52,7 +52,7 @@ const products = [
       price: 79.90,
       image: 'https://i.imgur.com/e6M5pIv.png',
       imageFront: 'https://i.imgur.com/e6M5pIv.png',
-      imageBack: 'https://i.imgur.com/e6M5pIv.png',
+      imageBack: 'https://i.imgur.com/82SeKoC.jpeg',
       category: 'oversized',
       isNew: true,
       size: 'P',
