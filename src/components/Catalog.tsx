@@ -223,17 +223,6 @@ const products = [
       isNew: true,
     },
     {
-      id: 27,
-      name: 'Jordan Bege',
-      price: 79.99,
-      image: 'https://i.imgur.com/djfWa3v.png',
-      imageFront: 'https://i.imgur.com/djfWa3v.png',
-      imageBack: 'https://i.imgur.com/djfWa3v.png',
-      category: 'oversized',
-      size: 'G',
-      isNew: true,
-    },
-    {
       id: 28,
       name: 'Adidas Verde',
       price: 79.99,
