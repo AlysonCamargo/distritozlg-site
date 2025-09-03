@@ -96,7 +96,7 @@ const categories = [
       imageBack: 'https://i.imgur.com/1seksbz.png',
       category: 'oversized',
       isNew: true,
-      size: 'M e G',
+      size: 'M G',
     },
     {
       id: 15,
@@ -260,7 +260,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/My9k0UL.jpeg',
       imageBack: 'https://i.imgur.com/My9k0UL.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -271,7 +271,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/4DulVku.jpeg',
       imageBack: 'https://i.imgur.com/acucJ.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -282,7 +282,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/pq4gQ93.jpeg',
       imageBack: 'https://i.imgur.com/LHM7ca1.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -293,7 +293,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/leUFeC3.jpeg',
       imageBack: 'https://i.imgur.com/P7lkxpx.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -304,7 +304,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/hc6P3Js.jpeg',
       imageBack: 'https://i.imgur.com/eDDOLQb.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -315,7 +315,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/UDFDixY.jpeg',
       imageBack: 'https://i.imgur.com/H4cVTgV.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -326,7 +326,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/iA75Yqz.jpeg',
       imageBack: 'https://i.imgur.com/LQTGUpx.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -337,7 +337,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/ffsnOic.jpeg',
       imageBack: 'https://i.imgur.com/uGWqTUk.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -348,7 +348,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/tPgpHEy.jpeg',
       imageBack: 'https://i.imgur.com/djbK26M.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -359,7 +359,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/SbihkTZ.jpeg',
       imageBack: 'https://i.imgur.com/dG5BxYE.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -370,7 +370,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/lJmLCYc.jpeg',
       imageBack: 'https://i.imgur.com/60VGWfr.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -381,7 +381,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/bNnjDQ0.jpeg',
       imageBack: 'https://i.imgur.com/bNnjDQ0.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -392,7 +392,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/JQGw7VA.jpeg',
       imageBack: 'https://i.imgur.com/JQGw7VA.jpeg',
       category: 'oversized',
-      size: '',
+      size: 'GG',
       isNew: true,
     },
     {
@@ -425,7 +425,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/pEUwDz8.jpeg',
       imageBack: 'https://i.imgur.com/rKj2JfR.jpeg',
       category: 'calça cargo',
-      size: 'M G ',
+      size: 'M G',
       isNew: true,
     },
     {
@@ -447,7 +447,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/dpqsfQ1.jpeg',
       imageBack: 'https://i.imgur.com/mVpyDqr.jpeg',
       category: 'calça cargo',
-      size: 'M G ',
+      size: 'M G',
       isNew: true,
     },
     {
@@ -656,7 +656,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/24UMzJc.png',
       imageBack: 'https://i.imgur.com/24UMzJc.png',
       category: 'dryfit',
-      size: 'P, M e G',
+      size: 'P, M G',
       isNew: true,
     },
     {
@@ -678,7 +678,7 @@ const categories = [
       imageFront: 'https://i.imgur.com/xt2ffap.png',
       imageBack: 'https://i.imgur.com/A9CuTxd.png',
       category: 'dryfit',
-      size: 'P e M',
+      size: 'P M',
       isNew: true,
     },
     {
@@ -802,7 +802,7 @@ const categories = [
               <option value="P">P</option>
               <option value="M">M</option>
               <option value="G">G</option>
-              <option value=""></option>
+              <option value="GG">GG</option>
             </select>
           </div>
   
