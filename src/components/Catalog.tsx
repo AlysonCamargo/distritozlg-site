@@ -1,26 +1,40 @@
-import { useState, useMemo, useCallback } from 'react';
-import ProductCard from './ProductCard';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import ProductCarousel from './ProductCarousel';
-import { Input } from '@/components/ui/input';
+// Catalog.tsx
+"use client";
 
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
+import ProductCard from "./ProductCard";
+import ProductCarousel from "./ProductCarousel";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 
-// Categorias
+// ===== Categorias  =====
 const categories = [
-{ id: 'todos', name: 'Todos' },
-{ id: 'dryfit', name: 'Dryfit'},
-{ id: 'malha egipcia', name: 'Malha Egípcia' },
-{ id: 'oversized', name: 'Oversized' },
-{ id: 'calça cargo', name: 'Calça Cargo' },
-{ id: 'regatas', name: 'Regatas' },
-{ id: 'caneladas', name: 'Caneladas' },
-{ id: 'shorts moletom', name: 'Shorts Moletom' },
-{ id: 'shorts dry fit', name: 'Shorts Dry fit' },
+  { id: "todos", name: "Todos" },
+  { id: "dryfit", name: "Dryfit" },
+  { id: "malha egipcia", name: "Malha Egípcia" },
+  { id: "oversized", name: "Oversized" },
+  { id: "calça cargo", name: "Calça Cargo" },
+  { id: "regatas", name: "Regatas" },
+  { id: "caneladas", name: "Caneladas" },
+  { id: "shorts moletom", name: "Shorts Moletom" },
+  { id: "shorts dry fit", name: "Shorts Dry fit" },
 ];
 
+// ===== Utilitários =====
+const strip = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 
-  const products = [
+const parseSizes = (s: string): string[] =>
+  s
+    .split(/[,\s]+/g)
+    .map((x) => x.replace(/[^A-Za-z]/g, "").toUpperCase())
+    .filter(Boolean);
+
+const BRL = (n: number) => new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
+
+type SortKey = "relevance" | "price-asc" | "price-desc" | "name-asc" | "newest";
+
+const products = [
     {
       id: 8,
       name: 'Adidas Oeste',
@@ -706,217 +720,336 @@ const categories = [
 
   ];
 
-  const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 12;
 
-  const Catalog = () => {
-    const [selectedCategory, setSelectedCategory] = useState('todos');
-    const [selectedProduct, setSelectedProduct] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [selectedSize, setSelectedSize] = useState("");
-  
-    // Contagem de produtos por categoria
-    const categoryCounts = useMemo(() => {
-      const counts = { todos: products.length };
-      categories.forEach(category => {
-        if (category.id !== 'todos') {
-          counts[category.id] = products.filter(p => 
-            p.category.toLowerCase() === category.id.toLowerCase()
-          ).length;
+export default function Catalog() {
+  // Estado
+  const [selectedCategory, setSelectedCategory] = useState<string>("todos");
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+  const [sort, setSort] = useState<SortKey>("relevance");
+
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  // ===== Acessibilidade do modal (ESC + focus trap + bloqueio scroll) =====
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+      if (e.key === "Tab" && dialogRef.current) {
+        const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (!first || !last) return;
+        if (e.shiftKey && document.activeElement === first) {
+          last.focus();
+          e.preventDefault();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          first.focus();
+          e.preventDefault();
         }
-      });
-      return counts;
-    }, []);
-  
-    // Filtro (categoria + busca + tamanho)
-    const filteredProducts = useMemo(() => {
-      return products.filter(product => {
-        const matchesCategory = selectedCategory === 'todos' || product.category.toLowerCase() === selectedCategory.toLowerCase();
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesSize = !selectedSize || product.size.toLowerCase().includes(selectedSize.toLowerCase());
-        return matchesCategory && matchesSearch && matchesSize;
-      });
-    }, [selectedCategory, searchTerm, selectedSize]);
-  
-    const productsToShow = useMemo(() => 
-      filteredProducts.slice(0, visibleItems), 
-      [filteredProducts, visibleItems]
-    );
-  
-    const handleProductClick = useCallback((product) => {
-      setSelectedProduct(product);
-      setIsModalOpen(true);
-      document.body.style.overflow = 'hidden';
-    }, []);
-  
-    const closeModal = useCallback(() => {
-      setIsModalOpen(false);
-      setSelectedProduct(null);
-      document.body.style.overflow = 'unset';
-    }, []);
-  
-    const loadMore = () => {
-      setVisibleItems(prev => prev + ITEMS_PER_PAGE);
+      }
     };
-  
-    const handleCategoryChange = (categoryId) => {
-      setSelectedCategory(categoryId);
-      setVisibleItems(ITEMS_PER_PAGE);
+
+    document.addEventListener("keydown", onKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    // foca no título do modal ao abrir
+    dialogRef.current?.querySelector<HTMLElement>("#product-title")?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = prevOverflow || "unset";
     };
-  
-    const hasMoreItems = visibleItems < filteredProducts.length;
-  
-    return (
-      <section id="catalog" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
-              <span className="text-foreground">NOSSO</span>
-              <br />
-              <span className="bg-gradient-urban bg-clip-text text-transparent">
-                CATÁLOGO
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
-            </p>
-          </div>
-  
-          {/* Search & Filter */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
-            <Input
-              type="text"
-              placeholder="Buscar produto..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full md:w-1/3 bg-secondary border-border focus:border-accent"
-            />
-            <select
-              value={selectedSize}
-              onChange={(e) => setSelectedSize(e.target.value)}
-              className="px-4 py-2 rounded-lg bg-secondary border border-border text-foreground"
-            >
-              <option value="">Todos os Tamanhos</option>
-              <option value="P">P</option>
-              <option value="M">M</option>
-              <option value="G">G</option>
-              <option value="GG">GG</option>
-            </select>
-          </div>
-  
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 px-2">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.id ? 'default' : 'outline'}
-                onClick={() => handleCategoryChange(category.id)}
-                className={`${
-                  selectedCategory === category.id
-                    ? 'bg-gradient-urban text-background hover:shadow-glow'
-                    : 'border-accent text-accent hover:bg-accent hover:text-accent-foreground'
-                } font-medium transition-all duration-300 mb-2`}
+  }, [isModalOpen]);
+
+  // ===== Contagem por categoria (considera busca + tamanhos) =====
+  const categoryCounts = useMemo(() => {
+    const q = strip(searchTerm);
+    const bySearch = (p: any) => strip(p.name).includes(q);
+    const bySizes = (p: any) =>
+      selectedSizes.length === 0 ||
+      selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
+
+    const base = products.filter((p) => bySearch(p) && bySizes(p));
+    const counts: Record<string, number> = { todos: base.length };
+    categories.forEach((c) => {
+      if (c.id !== "todos") {
+        counts[c.id] = base.filter((p) => strip(p.category) === strip(c.id)).length;
+      }
+    });
+    return counts;
+  }, [searchTerm, selectedSizes]);
+
+  // ===== Filtro + ordenação =====
+  const filteredProducts = useMemo(() => {
+    const q = strip(searchTerm);
+
+    const matchesCategory = (p: any) =>
+      selectedCategory === "todos" || strip(p.category) === strip(selectedCategory);
+
+    const matchesSearch = (p: any) => strip(p.name).includes(q);
+
+    const matchesSizes = (p: any) =>
+      selectedSizes.length === 0 ||
+      selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
+
+    let result = products.filter((p) => matchesCategory(p) && matchesSearch(p) && matchesSizes(p));
+
+    switch (sort) {
+      case "price-asc":
+        result.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        result.sort((a, b) => b.price - a.price);
+        break;
+      case "name-asc":
+        result.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "newest":
+        result.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+        break;
+      case "relevance":
+      default:
+        // mantém a ordem original (ou adapte com score se quiser)
+        break;
+    }
+
+    return result;
+  }, [selectedCategory, searchTerm, selectedSizes, sort]);
+
+  // Paginação incremental
+  const productsToShow = useMemo(() => filteredProducts.slice(0, visibleItems), [filteredProducts, visibleItems]);
+  const hasMoreItems = visibleItems < filteredProducts.length;
+
+  // Handlers
+  const handleProductClick = useCallback((product: any) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  }, []);
+
+  const loadMore = () => setVisibleItems((prev) => prev + ITEMS_PER_PAGE);
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setVisibleItems(ITEMS_PER_PAGE);
+  };
+
+  const toggleSize = (size: string) =>
+    setSelectedSizes((prev) => (prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]));
+
+  const clearFilters = () => {
+    setSearchTerm("");
+    setSelectedSizes([]);
+    setSelectedCategory("todos");
+    setSort("relevance");
+    setVisibleItems(ITEMS_PER_PAGE);
+  };
+
+  // ===== Render =====
+  return (
+    <section id="catalog" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
+            <span className="text-foreground">NOSSO</span>
+            <br />
+            <span className="bg-gradient-urban bg-clip-text text-transparent">CATÁLOGO</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
+          </p>
+        </div>
+
+        {/* Busca + filtros principais */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+          <Input
+            type="text"
+            placeholder="Buscar produto..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full md:w-1/3 bg-secondary border-border focus:border-accent"
+          />
+
+          {/* Filtro multi-select de tamanhos */}
+          <div className="flex items-center gap-2">
+            {["P", "M", "G", "GG"].map((s) => (
+              <button
+                key={s}
+                onClick={() => toggleSize(s)}
+                aria-pressed={selectedSizes.includes(s)}
+                className={`px-3 py-2 rounded border text-sm transition ${
+                  selectedSizes.includes(s)
+                    ? "bg-foreground text-background border-foreground"
+                    : "bg-secondary border-border text-foreground hover:bg-secondary/70"
+                }`}
               >
-                {category.name}
-                <Badge
-                  variant="secondary"
-                  className="ml-2 bg-secondary text-secondary-foreground"
-                >
-                  {categoryCounts[category.id]}
-                </Badge>
-              </Button>
+                {s}
+              </button>
             ))}
           </div>
-  
-          {/* Products Grid */}
-          {productsToShow.length > 0 ? (
-            <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-                {productsToShow.map((product) => (
-                  <div 
-                    key={product.id} 
-                    onClick={() => handleProductClick(product)} 
-                    className="cursor-pointer transform transition-transform hover:scale-105"
-                  >
-                    <ProductCard product={product} />
-                  </div>
-                ))}
-              </div>
-  
-              {hasMoreItems && (
-                <div className="text-center">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={loadMore}
-                    className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
-                  >
-                    Ver Mais Produtos ({filteredProducts.length - visibleItems} restantes)
-                  </Button>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground">
-                Nenhum produto encontrado.
-              </p>
-            </div>
-          )}
-        </div>
-  
-        {/* Modal */}
-        {isModalOpen && selectedProduct && (
-          <div 
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn"
-            onClick={closeModal}
+
+          {/* Ordenação */}
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortKey)}
+            className="px-4 py-2 rounded-lg bg-secondary border border-border text-foreground"
+            aria-label="Ordenar por"
           >
-            <div 
-              className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative animate-scaleIn"
-              onClick={(e) => e.stopPropagation()}
+            <option value="relevance">Relevância</option>
+            <option value="newest">Novidades</option>
+            <option value="price-asc">Preço: menor → maior</option>
+            <option value="price-desc">Preço: maior → menor</option>
+            <option value="name-asc">Nome (A→Z)</option>
+          </select>
+
+          <Button variant="ghost" onClick={clearFilters} className="text-sm">
+            Limpar filtros
+          </Button>
+        </div>
+
+        {/* Categorias */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10 px-2">
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              variant={selectedCategory === category.id ? "default" : "outline"}
+              onClick={() => handleCategoryChange(category.id)}
+              className={`${
+                selectedCategory === category.id
+                  ? "bg-gradient-urban text-background hover:shadow-glow"
+                  : "border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              } font-medium transition-all duration-300 mb-2`}
             >
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800"
-                aria-label="Fechar"
-              >
-                &times;
-              </button>
-  
-              <ProductCarousel product={selectedProduct} />
-  
-              <div className="space-y-2 text-center mt-4">
-                <h3 className="text-2xl font-bold">{selectedProduct.name}</h3>
-                <p className="text-lg">
-                  <span className="font-semibold">Preço:</span> R$ {selectedProduct.price.toFixed(2)}
-                </p>
-                <p className="text-sm">
-                  <span className="font-semibold">Tamanhos:</span> {selectedProduct.size}
-                </p>
-                <p className="text-sm">
-                  <span className="font-semibold">Categoria:</span> {selectedProduct.category}
-                </p>
-  
-                <a
-                  href={`https://wa.me/5511972988072?text=Olá! Tenho interesse no produto *${encodeURIComponent(selectedProduct.name)}* no valor de *R$ ${selectedProduct.price.toFixed(2)}*.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
+              {category.name}
+              <Badge variant="secondary" className="ml-2 bg-secondary text-secondary-foreground">
+                {categoryCounts[category.id] ?? 0}
+              </Badge>
+            </Button>
+          ))}
+        </div>
+
+        {/* Grid de produtos / Empty */}
+        {productsToShow.length > 0 ? (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+              {productsToShow.map((product: any) => (
+                <div
+                  key={product.id}
+                  onClick={() => handleProductClick(product)}
+                  className="cursor-pointer transform transition-transform hover:scale-105"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 12h.008v.008H7.5V12zM12 12h.008v.008H12V12zm4.5 0h.008v.008H16.5V12z" />
-                  </svg>
-                  Falar no WhatsApp
-                </a>
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+
+            {hasMoreItems && (
+              <div className="text-center">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={loadMore}
+                  className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
+                >
+                  Ver Mais Produtos ({filteredProducts.length - visibleItems} restantes)
+                </Button>
               </div>
+            )}
+          </>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-lg text-muted-foreground">Nenhum produto encontrado.</p>
+            <div className="mt-4">
+              <Button variant="ghost" onClick={clearFilters}>
+                Limpar filtros
+              </Button>
             </div>
           </div>
         )}
-      </section>
-    );
-  };
-  
-  export default Catalog;
-  
+      </div>
+
+      {/* Modal acessível */}
+      {isModalOpen && selectedProduct && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn"
+          onClick={closeModal}
+        >
+          <div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="product-title"
+            className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative animate-scaleIn"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800"
+              aria-label="Fechar"
+            >
+              ×
+            </button>
+
+            <ProductCarousel product={selectedProduct} />
+
+            <div className="space-y-2 text-center mt-4">
+              <h3 id="product-title" tabIndex={-1} className="text-2xl font-bold">
+                {selectedProduct.name}
+              </h3>
+              <p className="text-lg">
+                <span className="font-semibold">Preço:</span> {BRL(selectedProduct.price)}
+              </p>
+              <p className="text-sm">
+                <span className="font-semibold">Tamanhos:</span> {selectedProduct.size}
+              </p>
+              <p className="text-sm">
+                <span className="font-semibold">Categoria:</span> {selectedProduct.category}
+              </p>
+
+              {(() => {
+                const text = `Olá! Tenho interesse no produto *${selectedProduct.name}* no valor de *${BRL(
+                  selectedProduct.price
+                )}*.`;
+                const wa = `https://wa.me/5511972988072?text=${encodeURIComponent(text)}`;
+                return (
+                  <a
+                    href={wa}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
+                  >
+                    {/* Ícone simples */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 2H4C2.9 2 2 2.9 2 4v16l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                    </svg>
+                    Falar no WhatsApp
+                  </a>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
