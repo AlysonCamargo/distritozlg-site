@@ -16,7 +16,7 @@ const Footer = () => {
     },
     {
       name: 'Localização',
-      href: '#',
+      href: 'https://maps.app.goo.gl/87cntHo8MpEvmwTZ6',
       icon: MapPin,
       color: 'text-neon-purple hover:text-neon-purple/80'
     }
