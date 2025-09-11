@@ -7,6 +7,7 @@ import ProductCarousel from "./ProductCarousel";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { Tag } from "lucide-react";
 
 // ===== Categorias  =====
 const categories = [
@@ -833,20 +834,28 @@ export default function Catalog() {
         <div className="flex flex-wrap justify-center gap-2 mb-10 px-2">
           {categories.map((category) => (
             <Button
-              key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
-              onClick={() => handleCategoryChange(category.id)}
-              className={`${
-                selectedCategory === category.id
-                  ? "bg-gradient-urban text-background hover:shadow-glow"
-                  : "border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-              } font-medium transition-all duration-300 mb-2`}
-            >
-              {category.name}
-              <Badge variant="secondary" className="ml-2 bg-secondary text-secondary-foreground">
-                {categoryCounts[category.id] ?? 0}
-              </Badge>
-            </Button>
+  key={category.id}
+  variant={selectedCategory === category.id ? "default" : "outline"}
+  onClick={() => handleCategoryChange(category.id)}
+  className={`${
+    category.id === "promocoes"
+      ? "bg-gradient-to-r from-pink-500 to-red-500 text-white border-none hover:shadow-pink-500/50" 
+      : selectedCategory === category.id
+        ? "bg-gradient-urban text-background hover:shadow-glow"
+        : "border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+  } font-medium transition-all duration-300 mb-2 relative group overflow-hidden`}
+>
+  {category.id === "promocoes" && (
+    <span className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-20 transition-opacity"></span>
+  )}
+  <span className="flex items-center gap-2">
+    {category.id === "promocoes" && <Tag size={16} />} {/* Ícone */}
+    {category.name}
+    <Badge variant="secondary" className="ml-2 bg-secondary text-secondary-foreground">
+      {categoryCounts[category.id] ?? 0}
+    </Badge>
+  </span>
+</Button>
           ))}
         </div>
 
