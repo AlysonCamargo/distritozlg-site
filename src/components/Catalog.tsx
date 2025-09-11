@@ -79,6 +79,7 @@ const products = [
       imageBack: 'https://i.imgur.com/q4bGbT5.png',
       category: 'oversized',
       isNew: false,
+      isSale: true,
       size: 'M',
     },
     {
@@ -692,6 +693,24 @@ export default function Catalog() {
 
     let result = products.filter((p) => matchesCategory(p) && matchesSearch(p) && matchesSizes(p));
 
+    const sortRelevance = (a: any, b: any) => {
+      const isASale = a.isSale ? 1 : 0;
+      const isBSale = b.isSale ? 1 : 0;
+    
+      if (isASale !== isBSale) {
+        return isBSale - isASale; // Promos first
+      }
+    
+      const isANew = a.isNew ? 1 : 0;
+      const isBNew = b.isNew ? 1 : 0;
+    
+      if (isANew !== isBNew) {
+        return isBNew - isANew; // New items next
+      }
+    
+      return 0; // Maintain original order for others
+    };
+
     switch (sort) {
       case "price-asc":
         result.sort((a, b) => a.price - b.price);
@@ -707,7 +726,7 @@ export default function Catalog() {
         break;
       case "relevance":
       default:
-        // mantém a ordem original (ou adapte com score se quiser)
+        result.sort(sortRelevance);
         break;
     }
 
