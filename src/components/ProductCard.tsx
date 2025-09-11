@@ -137,7 +137,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
         {/* Preço */}
         <div className="mt-3 flex items-center justify-between">
-          <div className={`text-lg font-bold ${product.isSale ? 'text-red-500' : ''}`}>
+          <div className={`text-lg font-bold ${product.isSale ? 'text-green-500' : ''}`}>
             {BRL(product.price)}
           </div>
           <span className="text-xs text-muted-foreground">À vista</span>
