@@ -45,7 +45,7 @@ const products = [
       imageFront: 'https://i.imgur.com/1p6YCx1.png',
       imageBack: 'https://i.imgur.com/YECNULC.png',
       category: 'oversized',
-      isNew: false,
+      isNew: true,
       isSale: true,
       size: 'P',
     },

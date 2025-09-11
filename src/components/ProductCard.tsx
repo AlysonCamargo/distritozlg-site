@@ -84,19 +84,19 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           />
         )}
 
-        {/* Badge NOVO */}
-        {product.isNew && (
-          <Badge className="absolute left-2 top-2 bg-emerald-500 text-white shadow">
-            NOVO
-          </Badge>
-
-        )}
-
-        {product.isSale && (
-          <Badge variant="destructive" className="absolute top-2 left-2">
-            PROMOÇÃO
-          </Badge>
-        )}
+        {/* Selos de destaque */}
+        <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
+          {product.isSale && (
+            <Badge variant="destructive" className="bg-red-600 text-white font-bold rounded-full px-3 py-1 text-xs">
+              PROMOÇÃO
+            </Badge>
+          )}
+          {product.isNew && (
+            <Badge className="bg-indigo-500 text-white font-bold rounded-full px-3 py-1 text-xs">
+              NOVO
+            </Badge>
+          )}
+        </div>
 
         {/* Botão de favorito */}
         <button
@@ -137,7 +137,9 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
         {/* Preço */}
         <div className="mt-3 flex items-center justify-between">
-          <div className="text-lg font-bold">{BRL(product.price)}</div>
+          <div className={`text-lg font-bold ${product.isSale ? 'text-red-500' : ''}`}>
+            {BRL(product.price)}
+          </div>
           <span className="text-xs text-muted-foreground">À vista</span>
         </div>
 
