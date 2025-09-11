@@ -19,6 +19,7 @@ const categories = [
   { id: "caneladas", name: "Caneladas" },
   { id: "shorts moletom", name: "Shorts Moletom" },
   { id: "shorts dry fit", name: "Shorts Dry fit" },
+  { id: "promocoes", name: "Promoções" }, // Nova categoria
 ];
 
 // ===== Utilitários =====
@@ -44,6 +45,7 @@ const products = [
       imageBack: 'https://i.imgur.com/YECNULC.png',
       category: 'oversized',
       isNew: false,
+      isSale: true,
       size: 'P',
     },
     {
@@ -661,9 +663,14 @@ export default function Catalog() {
     const counts: Record<string, number> = { todos: base.length };
     categories.forEach((c) => {
       if (c.id !== "todos") {
-        counts[c.id] = base.filter((p) => strip(p.category) === strip(c.id)).length;
+        if (c.id === "promocoes") {
+          counts[c.id] = base.filter((p) => p.isSale).length;
+        } else {
+          counts[c.id] = base.filter((p) => strip(p.category) === strip(c.id)).length;
+        }
       }
     });
+    
     return counts;
   }, [searchTerm, selectedSizes]);
 
@@ -671,8 +678,11 @@ export default function Catalog() {
   const filteredProducts = useMemo(() => {
     const q = strip(searchTerm);
 
-    const matchesCategory = (p: any) =>
-      selectedCategory === "todos" || strip(p.category) === strip(selectedCategory);
+    const matchesCategory = (p: any) => {
+      if (selectedCategory === "todos") return true;
+      if (selectedCategory === "promocoes") return p.isSale; 
+      return strip(p.category) === strip(selectedCategory);
+    };
 
     const matchesSearch = (p: any) => strip(p.name).includes(q);
 

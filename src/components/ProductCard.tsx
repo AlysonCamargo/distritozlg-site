@@ -16,6 +16,7 @@ interface Product {
   imageFront: string;
   imageBack: string;
   isNew?: boolean;
+  isSale: boolean;
   size: string; // Mantido como string (ex.: "P", "M G", "P, M G")
 }
 
@@ -87,6 +88,13 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         {product.isNew && (
           <Badge className="absolute left-2 top-2 bg-emerald-500 text-white shadow">
             NOVO
+          </Badge>
+          
+        )}
+
+        {product.isSale && (
+          <Badge variant="destructive" className="absolute top-2 left-2">
+            PROMOÇÃO
           </Badge>
         )}
 

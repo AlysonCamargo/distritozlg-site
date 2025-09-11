@@ -44,6 +44,7 @@ const products = [
       imageBack: 'https://i.imgur.com/YECNULC.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'P',
     },
     {
@@ -55,6 +56,7 @@ const products = [
       imageBack: 'https://i.imgur.com/e6M5pIv.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'P',
     },
     {
@@ -66,6 +68,7 @@ const products = [
       imageBack: 'https://i.imgur.com/PA0Z5AE.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'P',
     },
     {
@@ -77,6 +80,7 @@ const products = [
       imageBack: 'https://i.imgur.com/6nwNbuM.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'M',
     },
     {
@@ -88,6 +92,7 @@ const products = [
       imageBack: 'https://i.imgur.com/bIYp6eL.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'M',
     },
     {
@@ -99,6 +104,7 @@ const products = [
       imageBack: 'https://i.imgur.com/q4bGbT5.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'M',
     },
     {
@@ -110,6 +116,7 @@ const products = [
       imageBack: 'https://i.imgur.com/1seksbz.png',
       category: 'oversized',
       isNew: false,
+isPromo: false,
       size: 'M G',
     },
     {
@@ -122,6 +129,7 @@ const products = [
       category: 'oversized',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 16,
@@ -133,6 +141,7 @@ const products = [
       category: 'oversized',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 17,
@@ -144,6 +153,7 @@ const products = [
       category: 'oversized',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 18,
@@ -155,6 +165,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 19,
@@ -166,6 +177,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 21,
@@ -177,6 +189,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 23,
@@ -188,6 +201,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 24,
@@ -199,6 +213,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 25,
@@ -210,6 +225,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 26,
@@ -221,6 +237,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 27,
@@ -232,6 +249,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 28,
@@ -243,6 +261,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 30,
@@ -254,6 +273,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 31,
@@ -265,6 +285,7 @@ const products = [
       category: 'oversized',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 32,
@@ -276,6 +297,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 33,
@@ -287,6 +309,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 34,
@@ -298,6 +321,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 35,
@@ -309,6 +333,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 36,
@@ -320,6 +345,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 37,
@@ -331,6 +357,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 38,
@@ -342,6 +369,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 39,
@@ -353,6 +381,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 40,
@@ -364,6 +393,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 41,
@@ -375,6 +405,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 42,
@@ -386,6 +417,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 43,
@@ -397,6 +429,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 44,
@@ -408,6 +441,7 @@ const products = [
       category: 'oversized',
       size: 'GG',
       isNew: false,
+isPromo: false,
     },
     {
       id: 45,
@@ -419,6 +453,7 @@ const products = [
       category: 'calça cargo',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 46,
@@ -430,6 +465,7 @@ const products = [
       category: 'calça cargo',
       size: 'P M G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 47,
@@ -441,6 +477,7 @@ const products = [
       category: 'calça cargo',
       size: 'M G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 48,
@@ -452,6 +489,7 @@ const products = [
       category: 'calça cargo',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 49,
@@ -463,6 +501,7 @@ const products = [
       category: 'calça cargo',
       size: 'M G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 50,
@@ -474,6 +513,7 @@ const products = [
       category: 'regatas',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 51,
@@ -485,6 +525,7 @@ const products = [
       category: 'caneladas',
       size: 'M G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 52,
@@ -496,6 +537,7 @@ const products = [
       category: 'shorts moletom',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 53,
@@ -507,6 +549,7 @@ const products = [
       category: 'shorts moletom',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 54,
@@ -518,6 +561,7 @@ const products = [
       category: 'shorts moletom',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 55,
@@ -529,6 +573,7 @@ const products = [
       category: 'shorts dry fit',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 56,
@@ -540,6 +585,7 @@ const products = [
       category: 'malha egipcia',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 57,
@@ -551,6 +597,7 @@ const products = [
       category: 'malha egipcia',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 58,
@@ -562,6 +609,7 @@ const products = [
       category: 'malha egipcia',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 59,
@@ -573,6 +621,7 @@ const products = [
       category: 'malha egipcia',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 60,
@@ -584,6 +633,7 @@ const products = [
       category: 'malha egipcia',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 61,
@@ -595,6 +645,7 @@ const products = [
       category: 'malha egipcia',
       size: 'M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 62,
@@ -606,6 +657,7 @@ const products = [
       category: 'malha egipcia',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 63,
@@ -617,6 +669,7 @@ const products = [
       category: 'malha egipcia',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 64,
@@ -628,6 +681,7 @@ const products = [
       category: 'malha egipcia',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 65,
@@ -639,6 +693,7 @@ const products = [
       category: 'malha egipcia',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 66,
@@ -650,6 +705,7 @@ const products = [
       category: 'malha egipcia',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 67,
@@ -661,6 +717,7 @@ const products = [
       category: 'malha egipcia',
       size: 'G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 68,
@@ -672,6 +729,7 @@ const products = [
       category: 'dryfit',
       size: 'P, M G',
       isNew: false,
+isPromo: false,
     },
     {
       id: 69,
@@ -683,6 +741,7 @@ const products = [
       category: 'dryfit',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 70,
@@ -694,6 +753,7 @@ const products = [
       category: 'dryfit',
       size: 'P M',
       isNew: false,
+isPromo: false,
     },
     {
       id: 71,
@@ -705,6 +765,7 @@ const products = [
       category: 'dryfit',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
     {
       id: 72,
@@ -716,6 +777,7 @@ const products = [
       category: 'dryfit',
       size: 'P',
       isNew: false,
+isPromo: false,
     },
 
   ];
