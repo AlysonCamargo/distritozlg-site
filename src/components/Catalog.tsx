@@ -43,7 +43,7 @@ const products = [
       imageFront: 'https://i.imgur.com/1p6YCx1.png',
       imageBack: 'https://i.imgur.com/YECNULC.png',
       category: 'oversized',
-      isNew: true,
+      isNew: false,
       size: 'P',
     },
     {
@@ -54,7 +54,7 @@ const products = [
       imageFront: 'https://i.imgur.com/e6M5pIv.png',
       imageBack: 'https://i.imgur.com/82SeKoC.jpeg',
       category: 'oversized',
-      isNew: true,
+      isNew: false,
       size: 'P',
     },
     {
@@ -65,19 +65,8 @@ const products = [
       imageFront: 'https://i.imgur.com/PA0Z5AE.png',
       imageBack: 'https://i.imgur.com/PA0Z5AE.png',
       category: 'oversized',
-      isNew: true,
+      isNew: false,
       size: 'P',
-    },
-    {
-      id: 11,
-      name: 'Nike Sombras',
-      price: 79.90,
-      image: 'https://i.imgur.com/Fq8DnNj.png',
-      imageFront: 'https://i.imgur.com/Fq8DnNj.png',
-      imageBack: 'https://i.imgur.com/6nwNbuM.png',
-      category: 'oversized',
-      isNew: true,
-      size: 'M',
     },
     {
       id: 13,
@@ -87,7 +76,7 @@ const products = [
       imageFront: 'https://i.imgur.com/q4bGbT5.png',
       imageBack: 'https://i.imgur.com/q4bGbT5.png',
       category: 'oversized',
-      isNew: true,
+      isNew: false,
       size: 'M',
     },
     {
@@ -98,7 +87,7 @@ const products = [
       imageFront: 'https://i.imgur.com/1seksbz.png',
       imageBack: 'https://i.imgur.com/1seksbz.png',
       category: 'oversized',
-      isNew: true,
+      isNew: false,
       size: 'M G',
     },
     {
@@ -110,7 +99,7 @@ const products = [
       imageBack: 'https://i.imgur.com/hkQZv9N.png',
       category: 'oversized',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 16,
@@ -121,7 +110,7 @@ const products = [
       imageBack: 'https://i.imgur.com/XQJPbav.png',
       category: 'oversized',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 17,
@@ -132,7 +121,7 @@ const products = [
       imageBack: 'https://i.imgur.com/nVkpglz.png',
       category: 'oversized',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 18,
@@ -143,7 +132,7 @@ const products = [
       imageBack: 'https://i.imgur.com/g8ADkCx.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 19,
@@ -154,7 +143,7 @@ const products = [
       imageBack: 'https://i.imgur.com/2MCtO1a.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 21,
@@ -165,7 +154,7 @@ const products = [
       imageBack: 'https://i.imgur.com/HWUsW7X.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 23,
@@ -176,7 +165,7 @@ const products = [
       imageBack: 'https://i.imgur.com/wz6eGVK.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 24,
@@ -187,7 +176,7 @@ const products = [
       imageBack: 'https://i.imgur.com/CZdjuoW.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 25,
@@ -198,7 +187,7 @@ const products = [
       imageBack: 'https://i.imgur.com/Y0nn5nc.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 26,
@@ -209,7 +198,7 @@ const products = [
       imageBack: 'https://i.imgur.com/VLFAcPC.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 28,
@@ -220,7 +209,7 @@ const products = [
       imageBack: 'https://i.imgur.com/IZ4QCcK.png',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 30,
@@ -231,7 +220,7 @@ const products = [
       imageBack: 'https://i.imgur.com/HrMAlCr.jpeg',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 31,
@@ -242,7 +231,7 @@ const products = [
       imageBack: 'https://i.imgur.com/klgJBer.jpeg',
       category: 'oversized',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 32,
@@ -253,7 +242,7 @@ const products = [
       imageBack: 'https://i.imgur.com/My9k0UL.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 33,
@@ -264,7 +253,7 @@ const products = [
       imageBack: 'https://i.imgur.com/UTE7tA1.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 34,
@@ -275,7 +264,7 @@ const products = [
       imageBack: 'https://i.imgur.com/LHM7ca1.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 36,
@@ -286,7 +275,7 @@ const products = [
       imageBack: 'https://i.imgur.com/eDDOLQb.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 37,
@@ -297,7 +286,7 @@ const products = [
       imageBack: 'https://i.imgur.com/H4cVTgV.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 38,
@@ -308,7 +297,7 @@ const products = [
       imageBack: 'https://i.imgur.com/LQTGUpx.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 39,
@@ -319,7 +308,7 @@ const products = [
       imageBack: 'https://i.imgur.com/uGWqTUk.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 41,
@@ -330,7 +319,7 @@ const products = [
       imageBack: 'https://i.imgur.com/dG5BxYE.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 43,
@@ -341,7 +330,7 @@ const products = [
       imageBack: 'https://i.imgur.com/bNnjDQ0.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 44,
@@ -352,18 +341,7 @@ const products = [
       imageBack: 'https://i.imgur.com/JQGw7VA.jpeg',
       category: 'oversized',
       size: 'GG',
-      isNew: true,
-    },
-    {
-      id: 45,
-      name: 'Calça Cargo Azul Clara',
-      price: 109.99,
-      image: 'https://i.imgur.com/1glUoYs.jpeg',
-      imageFront: 'https://i.imgur.com/1glUoYs.jpeg',
-      imageBack: 'https://i.imgur.com/iRgcBS1.jpeg',
-      category: 'calça cargo',
-      size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 46,
@@ -374,7 +352,7 @@ const products = [
       imageBack: 'https://i.imgur.com/L1Tw415.jpeg',
       category: 'calça cargo',
       size: 'P M G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 47,
@@ -385,7 +363,7 @@ const products = [
       imageBack: 'https://i.imgur.com/rKj2JfR.jpeg',
       category: 'calça cargo',
       size: 'M G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 48,
@@ -396,18 +374,7 @@ const products = [
       imageBack: 'https://i.imgur.com/1ICcYK0.jpeg',
       category: 'calça cargo',
       size: 'G',
-      isNew: true,
-    },
-    {
-      id: 49,
-      name: 'Calça Cargo Grafite',
-      price: 109.99,
-      image: 'https://i.imgur.com/dpqsfQ1.jpeg',
-      imageFront: 'https://i.imgur.com/dpqsfQ1.jpeg',
-      imageBack: 'https://i.imgur.com/mVpyDqr.jpeg',
-      category: 'calça cargo',
-      size: 'M G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 50,
@@ -418,7 +385,7 @@ const products = [
       imageBack: 'https://i.imgur.com/DX3sV7g.jpeg',
       category: 'regatas',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 51,
@@ -429,7 +396,7 @@ const products = [
       imageBack: 'https://i.imgur.com/TBWXZ5V.jpeg',
       category: 'caneladas',
       size: 'M G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 53,
@@ -440,7 +407,7 @@ const products = [
       imageBack: 'https://i.imgur.com/v8JKJTt.jpeg',
       category: 'shorts moletom',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 56,
@@ -451,7 +418,7 @@ const products = [
       imageBack: 'https://i.imgur.com/t2lqHWs.jpeg',
       category: 'malha egipcia',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 57,
@@ -462,7 +429,7 @@ const products = [
       imageBack: 'https://i.imgur.com/VxASolC.jpeg',
       category: 'malha egipcia',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 58,
@@ -473,7 +440,7 @@ const products = [
       imageBack: 'https://i.imgur.com/1hUI5QS.jpeg',
       category: 'malha egipcia',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 59,
@@ -484,7 +451,7 @@ const products = [
       imageBack: 'https://i.imgur.com/BvZpDix.jpeg',
       category: 'malha egipcia',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 60,
@@ -495,7 +462,7 @@ const products = [
       imageBack: 'https://i.imgur.com/oSQur9d.jpeg',
       category: 'malha egipcia',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 61,
@@ -506,7 +473,7 @@ const products = [
       imageBack: 'https://i.imgur.com/blRfZlb.jpeg',
       category: 'malha egipcia',
       size: 'M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 62,
@@ -517,7 +484,7 @@ const products = [
       imageBack: 'https://i.imgur.com/mqQb7XU.jpeg',
       category: 'malha egipcia',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 63,
@@ -528,7 +495,7 @@ const products = [
       imageBack: 'https://i.imgur.com/zwQ2DuO.jpeg',
       category: 'malha egipcia',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 64,
@@ -539,7 +506,7 @@ const products = [
       imageBack: 'https://i.imgur.com/OKPqGzi.jpeg',
       category: 'malha egipcia',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 65,
@@ -550,7 +517,7 @@ const products = [
       imageBack: 'https://i.imgur.com/pGE39wd.jpeg',
       category: 'malha egipcia',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 66,
@@ -561,7 +528,7 @@ const products = [
       imageBack: 'https://i.imgur.com/IMfUmPy.jpeg',
       category: 'malha egipcia',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 67,
@@ -572,7 +539,7 @@ const products = [
       imageBack: 'https://i.imgur.com/Rqz7Ucb.jpeg',
       category: 'malha egipcia',
       size: 'G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 68,
@@ -583,7 +550,7 @@ const products = [
       imageBack: 'https://i.imgur.com/24UMzJc.png',
       category: 'dryfit',
       size: 'P, M G',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 69,
@@ -594,7 +561,7 @@ const products = [
       imageBack: 'https://i.imgur.com/jFrFopE.png',
       category: 'dryfit',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 70,
@@ -605,7 +572,7 @@ const products = [
       imageBack: 'https://i.imgur.com/A9CuTxd.png',
       category: 'dryfit',
       size: 'P M',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 71,
@@ -616,7 +583,7 @@ const products = [
       imageBack: 'https://i.imgur.com/6g5LOKy.png',
       category: 'dryfit',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
     {
       id: 72,
@@ -627,7 +594,7 @@ const products = [
       imageBack: 'https://i.imgur.com/Wep6aUB.png',
       category: 'dryfit',
       size: 'P',
-      isNew: true,
+      isNew: false,
     },
 
   ];
