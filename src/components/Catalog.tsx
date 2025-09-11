@@ -7,7 +7,7 @@ import ProductCarousel from "./ProductCarousel";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Tag } from "lucide-react";
+import { Tag, Filter, X, Grid, List } from "lucide-react";
 
 // ===== Categorias  =====
 const categories = [
@@ -20,7 +20,7 @@ const categories = [
   { id: "caneladas", name: "Caneladas" },
   { id: "shorts moletom", name: "Shorts Moletom" },
   { id: "shorts dry fit", name: "Shorts Dry fit" },
-  { id: "promocoes", name: "Promoções" }, // Nova categoria
+  { id: "promocoes", name: "Promoções" },
 ];
 
 // ===== Utilitários =====
@@ -603,370 +603,574 @@ const products = [
 
   ];
 
-const ITEMS_PER_PAGE = 12;
+  const ITEMS_PER_PAGE = 12;
 
-export default function Catalog() {
-  // Estado
-  const [selectedCategory, setSelectedCategory] = useState<string>("todos");
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
-  const [sort, setSort] = useState<SortKey>("relevance");
-
-  const dialogRef = useRef<HTMLDivElement>(null);
-
-  // ===== Acessibilidade do modal (ESC + focus trap + bloqueio scroll) =====
-  useEffect(() => {
-    if (!isModalOpen) return;
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeModal();
-      if (e.key === "Tab" && dialogRef.current) {
-        const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
-        );
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (!first || !last) return;
-        if (e.shiftKey && document.activeElement === first) {
-          last.focus();
-          e.preventDefault();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          first.focus();
-          e.preventDefault();
+  export default function Catalog() {
+    // Estado
+    const [selectedCategory, setSelectedCategory] = useState<string>("todos");
+    const [selectedProduct, setSelectedProduct] = useState<any>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+    const [sort, setSort] = useState<SortKey>("relevance");
+    const [showOnlySale, setShowOnlySale] = useState(false);
+    const [showFilters, setShowFilters] = useState(false);
+    const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  
+    const dialogRef = useRef<HTMLDivElement>(null);
+    const filtersRef = useRef<HTMLDivElement>(null);
+  
+    // ===== Acessibilidade do modal (ESC + focus trap + bloqueio scroll) =====
+    useEffect(() => {
+      if (!isModalOpen) return;
+  
+      const onKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") closeModal();
+        if (e.key === "Tab" && dialogRef.current) {
+          const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+            'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+          );
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          if (!first || !last) return;
+          if (e.shiftKey && document.activeElement === first) {
+            last.focus();
+            e.preventDefault();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            first.focus();
+            e.preventDefault();
+          }
         }
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    // foca no título do modal ao abrir
-    dialogRef.current?.querySelector<HTMLElement>("#product-title")?.focus();
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = prevOverflow || "unset";
-    };
-  }, [isModalOpen]);
-
-  // ===== Contagem por categoria (considera busca + tamanhos) =====
-  const categoryCounts = useMemo(() => {
-    const q = strip(searchTerm);
-    const bySearch = (p: any) => strip(p.name).includes(q);
-    const bySizes = (p: any) =>
-      selectedSizes.length === 0 ||
-      selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
-
-    const base = products.filter((p) => bySearch(p) && bySizes(p));
-    const counts: Record<string, number> = { todos: base.length };
-    categories.forEach((c) => {
-      if (c.id !== "todos") {
-        if (c.id === "promocoes") {
-          counts[c.id] = base.filter((p) => p.isSale).length;
-        } else {
-          counts[c.id] = base.filter((p) => strip(p.category) === strip(c.id)).length;
+      };
+  
+      document.addEventListener("keydown", onKeyDown);
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+  
+      // foca no título do modal ao abrir
+      dialogRef.current?.querySelector<HTMLElement>("#product-title")?.focus();
+  
+      return () => {
+        document.removeEventListener("keydown", onKeyDown);
+        document.body.style.overflow = prevOverflow || "unset";
+      };
+    }, [isModalOpen]);
+  
+    // Fechar filtros ao clicar fora
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (filtersRef.current && !filtersRef.current.contains(event.target as Node)) {
+          setShowFilters(false);
         }
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+  
+    // ===== Contagem por categoria (considera busca + tamanhos) =====
+    const categoryCounts = useMemo(() => {
+      const q = strip(searchTerm);
+      const bySearch = (p: any) => strip(p.name).includes(q);
+      const bySizes = (p: any) =>
+        selectedSizes.length === 0 ||
+        selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
+      const bySale = (p: any) => !showOnlySale || p.isSale;
+  
+      const base = products.filter((p) => bySearch(p) && bySizes(p) && bySale(p));
+      const counts: Record<string, number> = { todos: base.length };
+      
+      categories.forEach((c) => {
+        if (c.id !== "todos") {
+          if (c.id === "promocoes") {
+            counts[c.id] = base.filter((p) => p.isSale).length;
+          } else {
+            counts[c.id] = base.filter((p) => strip(p.category) === strip(c.id)).length;
+          }
+        }
+      });
+      
+      return counts;
+    }, [searchTerm, selectedSizes, showOnlySale]);
+  
+    // ===== Filtro + ordenação =====
+    const filteredProducts = useMemo(() => {
+      const q = strip(searchTerm);
+  
+      const matchesCategory = (p: any) => {
+        if (selectedCategory === "todos") return true;
+        if (selectedCategory === "promocoes") return p.isSale;
+        return strip(p.category) === strip(selectedCategory);
+      };
+  
+      const matchesSearch = (p: any) => strip(p.name).includes(q);
+  
+      const matchesSizes = (p: any) =>
+        selectedSizes.length === 0 ||
+        selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
+  
+      const matchesSale = (p: any) => !showOnlySale || p.isSale;
+  
+      let result = products.filter((p) => 
+        matchesCategory(p) && 
+        matchesSearch(p) && 
+        matchesSizes(p) &&
+        matchesSale(p)
+      );
+  
+      const sortRelevance = (a: any, b: any) => {
+        const isASale = a.isSale ? 1 : 0;
+        const isBSale = b.isSale ? 1 : 0;
+      
+        if (isASale !== isBSale) {
+          return isBSale - isASale; // Promos first
+        }
+      
+        const isANew = a.isNew ? 1 : 0;
+        const isBNew = b.isNew ? 1 : 0;
+      
+        if (isANew !== isBNew) {
+          return isBNew - isANew; // New items next
+        }
+      
+        return 0; // Maintain original order for others
+      };
+  
+      switch (sort) {
+        case "price-asc":
+          result.sort((a, b) => a.price - b.price);
+          break;
+        case "price-desc":
+          result.sort((a, b) => b.price - a.price);
+          break;
+        case "name-asc":
+          result.sort((a, b) => a.name.localeCompare(b.name));
+          break;
+        case "newest":
+          result.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+          break;
+        case "relevance":
+        default:
+          result.sort(sortRelevance);
+          break;
       }
-    });
-    
-    return counts;
-  }, [searchTerm, selectedSizes]);
-
-  // ===== Filtro + ordenação =====
-  const filteredProducts = useMemo(() => {
-    const q = strip(searchTerm);
-
-    const matchesCategory = (p: any) => {
-      if (selectedCategory === "todos") return true;
-      if (selectedCategory === "promocoes") return p.isSale; 
-      return strip(p.category) === strip(selectedCategory);
+  
+      return result;
+    }, [selectedCategory, searchTerm, selectedSizes, sort, showOnlySale]);
+  
+    // Paginação incremental
+    const productsToShow = useMemo(() => filteredProducts.slice(0, visibleItems), [filteredProducts, visibleItems]);
+    const hasMoreItems = visibleItems < filteredProducts.length;
+  
+    // Handlers
+    const handleProductClick = useCallback((product: any) => {
+      setSelectedProduct(product);
+      setIsModalOpen(true);
+    }, []);
+  
+    const closeModal = useCallback(() => {
+      setIsModalOpen(false);
+      setSelectedProduct(null);
+    }, []);
+  
+    const loadMore = () => setVisibleItems((prev) => prev + ITEMS_PER_PAGE);
+  
+    const handleCategoryChange = (categoryId: string) => {
+      setSelectedCategory(categoryId);
+      setVisibleItems(ITEMS_PER_PAGE);
+      setShowFilters(false);
     };
-
-    const matchesSearch = (p: any) => strip(p.name).includes(q);
-
-    const matchesSizes = (p: any) =>
-      selectedSizes.length === 0 ||
-      selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
-
-    let result = products.filter((p) => matchesCategory(p) && matchesSearch(p) && matchesSizes(p));
-
-    const sortRelevance = (a: any, b: any) => {
-      const isASale = a.isSale ? 1 : 0;
-      const isBSale = b.isSale ? 1 : 0;
-    
-      if (isASale !== isBSale) {
-        return isBSale - isASale; // Promos first
-      }
-    
-      const isANew = a.isNew ? 1 : 0;
-      const isBNew = b.isNew ? 1 : 0;
-    
-      if (isANew !== isBNew) {
-        return isBNew - isANew; // New items next
-      }
-    
-      return 0; // Maintain original order for others
+  
+    const toggleSize = (size: string) =>
+      setSelectedSizes((prev) => (prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]));
+  
+    const clearFilters = () => {
+      setSearchTerm("");
+      setSelectedSizes([]);
+      setSelectedCategory("todos");
+      setSort("relevance");
+      setShowOnlySale(false);
+      setVisibleItems(ITEMS_PER_PAGE);
     };
-
-    switch (sort) {
-      case "price-asc":
-        result.sort((a, b) => a.price - b.price);
-        break;
-      case "price-desc":
-        result.sort((a, b) => b.price - a.price);
-        break;
-      case "name-asc":
-        result.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "newest":
-        result.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
-        break;
-      case "relevance":
-      default:
-        result.sort(sortRelevance);
-        break;
-    }
-
-    return result;
-  }, [selectedCategory, searchTerm, selectedSizes, sort]);
-
-  // Paginação incremental
-  const productsToShow = useMemo(() => filteredProducts.slice(0, visibleItems), [filteredProducts, visibleItems]);
-  const hasMoreItems = visibleItems < filteredProducts.length;
-
-  // Handlers
-  const handleProductClick = useCallback((product: any) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-  }, []);
-
-  const loadMore = () => setVisibleItems((prev) => prev + ITEMS_PER_PAGE);
-
-  const handleCategoryChange = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-    setVisibleItems(ITEMS_PER_PAGE);
-  };
-
-  const toggleSize = (size: string) =>
-    setSelectedSizes((prev) => (prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]));
-
-  const clearFilters = () => {
-    setSearchTerm("");
-    setSelectedSizes([]);
-    setSelectedCategory("todos");
-    setSort("relevance");
-    setVisibleItems(ITEMS_PER_PAGE);
-  };
-
-  // ===== Render =====
-  return (
-    <section id="catalog" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
-            <span className="text-foreground">NOSSO</span>
-            <br />
-            <span className="bg-gradient-urban bg-clip-text text-transparent">CATÁLOGO</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
-          </p>
-        </div>
-
-        {/* Busca + filtros principais */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
-          <Input
-            type="text"
-            placeholder="Buscar produto..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full md:w-1/3 bg-secondary border-border focus:border-accent"
-          />
-
-          {/* Filtro multi-select de tamanhos */}
-          <div className="flex items-center gap-2">
-            {["P", "M", "G", "GG"].map((s) => (
-              <button
-                key={s}
-                onClick={() => toggleSize(s)}
-                aria-pressed={selectedSizes.includes(s)}
-                className={`px-3 py-2 rounded border text-sm transition ${
-                  selectedSizes.includes(s)
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-secondary border-border text-foreground hover:bg-secondary/70"
-                }`}
-              >
-                {s}
-              </button>
-            ))}
+  
+    // Contador de filtros ativos
+    const activeFiltersCount = selectedSizes.length + (showOnlySale ? 1 : 0) + (searchTerm ? 1 : 0);
+  
+    // ===== Render =====
+    return (
+      <section id="catalog" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
+              <span className="text-foreground">NOSSO</span>
+              <br />
+              <span className="bg-gradient-urban bg-clip-text text-transparent">CATÁLOGO</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
+            </p>
           </div>
-
-          {/* Ordenação */}
-          <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value as SortKey)}
-            className="px-4 py-2 rounded-lg bg-secondary border border-border text-foreground"
-            aria-label="Ordenar por"
-          >
-            <option value="relevance">Relevância</option>
-            <option value="newest">Novidades</option>
-            <option value="price-asc">Preço: menor → maior</option>
-            <option value="price-desc">Preço: maior → menor</option>
-            <option value="name-asc">Nome (A→Z)</option>
-          </select>
-
-          <Button variant="ghost" onClick={clearFilters} className="text-sm">
-            Limpar filtros
-          </Button>
-        </div>
-
-        {/* Categorias */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10 px-2">
-          {categories.map((category) => (
-            <Button
-  key={category.id}
-  variant={selectedCategory === category.id ? "default" : "outline"}
-  onClick={() => handleCategoryChange(category.id)}
-  className={`${
-    category.id === "promocoes"
-      ? "bg-gradient-to-r from-pink-500 to-red-500 text-white border-none hover:shadow-pink-500/50" 
-      : selectedCategory === category.id
-        ? "bg-gradient-urban text-background hover:shadow-glow"
-        : "border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-  } font-medium transition-all duration-300 mb-2 relative group overflow-hidden`}
->
-  {category.id === "promocoes" && (
-    <span className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-20 transition-opacity"></span>
-  )}
-  <span className="flex items-center gap-2">
-    {category.id === "promocoes" && <Tag size={16} />} {/* Ícone */}
-    {category.name}
-    <Badge variant="secondary" className="ml-2 bg-secondary text-secondary-foreground">
-      {categoryCounts[category.id] ?? 0}
-    </Badge>
-  </span>
-</Button>
-          ))}
-        </div>
-
-        {/* Grid de produtos / Empty */}
-        {productsToShow.length > 0 ? (
-          <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-              {productsToShow.map((product: any) => (
-                <div
-                  key={product.id}
-                  onClick={() => handleProductClick(product)}
-                  className="cursor-pointer transform transition-transform hover:scale-105"
-                >
-                  <ProductCard product={product} />
-                </div>
-              ))}
+  
+          {/* Busca principal */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+            <div className="relative w-full md:w-1/3">
+              <Input
+                type="text"
+                placeholder="Buscar produto..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-secondary border-border focus:border-accent pl-10"
+              />
+              <svg 
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
             </div>
-
-            {hasMoreItems && (
-              <div className="text-center">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={loadMore}
-                  className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
+  
+            {/* Botão de filtros para mobile */}
+            <div className="md:hidden flex items-center gap-2 w-full">
+              <Button
+                variant="outline"
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center gap-2 w-full"
+              >
+                <Filter size={16} />
+                Filtros
+                {activeFiltersCount > 0 && (
+                  <Badge variant="secondary" className="ml-2">
+                    {activeFiltersCount}
+                  </Badge>
+                )}
+              </Button>
+  
+              {/* Toggle de visualização */}
+              <div className="flex border rounded-lg">
+                <button
+                  onClick={() => setViewMode("grid")}
+                  className={`p-2 ${viewMode === "grid" ? "bg-accent text-accent-foreground" : "bg-secondary"}`}
                 >
-                  Ver Mais Produtos ({filteredProducts.length - visibleItems} restantes)
-                </Button>
+                  <Grid size={16} />
+                </button>
+                <button
+                  onClick={() => setViewMode("list")}
+                  className={`p-2 ${viewMode === "list" ? "bg-accent text-accent-foreground" : "bg-secondary"}`}
+                >
+                  <List size={16} />
+                </button>
               </div>
-            )}
-          </>
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-lg text-muted-foreground">Nenhum produto encontrado.</p>
-            <div className="mt-4">
-              <Button variant="ghost" onClick={clearFilters}>
+            </div>
+  
+            {/* Ordenação para desktop */}
+            <div className="hidden md:flex items-center gap-2">
+              <select
+                value={sort}
+                onChange={(e) => setSort(e.target.value as SortKey)}
+                className="px-4 py-2 rounded-lg bg-secondary border border-border text-foreground"
+                aria-label="Ordenar por"
+              >
+                <option value="relevance">Relevância</option>
+                <option value="newest">Novidades</option>
+                <option value="price-asc">Preço: menor → maior</option>
+                <option value="price-desc">Preço: maior → menor</option>
+                <option value="name-asc">Nome (A→Z)</option>
+              </select>
+  
+              <Button variant="ghost" onClick={clearFilters} className="text-sm">
                 Limpar filtros
               </Button>
             </div>
           </div>
-        )}
-      </div>
-
-      {/* Modal acessível */}
-      {isModalOpen && selectedProduct && (
-        <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn"
-          onClick={closeModal}
-        >
-          <div
-            ref={dialogRef}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="product-title"
-            className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative animate-scaleIn"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800"
-              aria-label="Fechar"
-            >
-              ×
-            </button>
-
-            <ProductCarousel product={selectedProduct} />
-
-            <div className="space-y-2 text-center mt-4">
-              <h3 id="product-title" tabIndex={-1} className="text-2xl font-bold">
-                {selectedProduct.name}
-              </h3>
-              <p className="text-lg">
-                <span className="font-semibold">Preço:</span> {BRL(selectedProduct.price)}
-              </p>
-              <p className="text-sm">
-                <span className="font-semibold">Tamanhos:</span> {selectedProduct.size}
-              </p>
-              <p className="text-sm">
-                <span className="font-semibold">Categoria:</span> {selectedProduct.category}
-              </p>
-
-              {(() => {
-                const text = `Olá! Tenho interesse no produto *${selectedProduct.name}* no valor de *${BRL(
-                  selectedProduct.price
-                )}*.`;
-                const wa = `https://wa.me/5511972988072?text=${encodeURIComponent(text)}`;
-                return (
-                  <a
-                    href={wa}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
+  
+          {/* Layout principal */}
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Filtros laterais (desktop) */}
+            <div className="hidden md:block w-64 flex-shrink-0">
+              <div className="bg-secondary rounded-lg p-4 sticky top-24">
+                <h3 className="font-semibold mb-4">Filtros</h3>
+                
+                {/* Filtro de promoções */}
+                <div className="mb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="font-medium">Promoções</label>
+                    <Badge variant="secondary">{categoryCounts.promocoes || 0}</Badge>
+                  </div>
+                  <button
+                    onClick={() => setShowOnlySale(!showOnlySale)}
+                    className={`w-full p-3 rounded-lg text-left transition ${
+                      showOnlySale
+                        ? "bg-red-100 text-red-800 border border-red-300"
+                        : "bg-background border border-border hover:bg-accent/10"
+                    }`}
                   >
-                    {/* Ícone simples */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-5 h-5"
-                      aria-hidden="true"
+                    <div className="flex items-center justify-between">
+                      <span>Ver apenas promoções</span>
+                      {showOnlySale && <X size={16} />}
+                    </div>
+                  </button>
+                </div>
+  
+                {/* Filtro de tamanhos */}
+                <div className="mb-6">
+                  <h4 className="font-medium mb-3">Tamanhos</h4>
+                  <div className="grid grid-cols-3 gap-2">
+                    {["P", "M", "G", "GG"].map((s) => (
+                      <button
+                        key={s}
+                        onClick={() => toggleSize(s)}
+                        className={`p-2 rounded border text-sm transition ${
+                          selectedSizes.includes(s)
+                            ? "bg-foreground text-background border-foreground"
+                            : "bg-background border-border hover:bg-accent/10"
+                        }`}
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+  
+                {/* Categorias */}
+                <div>
+                  <h4 className="font-medium mb-3">Categorias</h4>
+                  <div className="space-y-2">
+                    {categories.map((category) => (
+                      <button
+                        key={category.id}
+                        onClick={() => handleCategoryChange(category.id)}
+                        className={`w-full p-2 rounded text-left transition flex items-center justify-between ${
+                          selectedCategory === category.id
+                            ? "bg-gradient-urban text-background"
+                            : "hover:bg-accent/10"
+                        }`}
+                      >
+                        <span>{category.name}</span>
+                        <Badge variant="secondary">{categoryCounts[category.id] || 0}</Badge>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            {/* Conteúdo principal */}
+            <div className="flex-1">
+              {/* Header de resultados */}
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-muted-foreground">
+                  {filteredProducts.length} produto{filteredProducts.length !== 1 ? 's' : ''} encontrado{filteredProducts.length !== 1 ? 's' : ''}
+                </p>
+                
+                {/* Ordenação para mobile */}
+                <div className="md:hidden flex items-center gap-2">
+                  <select
+                    value={sort}
+                    onChange={(e) => setSort(e.target.value as SortKey)}
+                    className="px-3 py-1 text-sm rounded bg-secondary border border-border"
+                    aria-label="Ordenar por"
+                  >
+                    <option value="relevance">Relevância</option>
+                    <option value="newest">Novidades</option>
+                    <option value="price-asc">Preço: menor</option>
+                    <option value="price-desc">Preço: maior</option>
+                    <option value="name-asc">Nome A-Z</option>
+                  </select>
+                </div>
+              </div>
+  
+              {/* Filtros mobile */}
+              {showFilters && (
+                <div ref={filtersRef} className="md:hidden bg-secondary rounded-lg p-4 mb-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="font-semibold">Filtros</h3>
+                    <button onClick={() => setShowFilters(false)}>
+                      <X size={20} />
+                    </button>
+                  </div>
+  
+                  {/* Filtro de promoções mobile */}
+                  <div className="mb-4">
+                    <button
+                      onClick={() => setShowOnlySale(!showOnlySale)}
+                      className={`w-full p-3 rounded-lg text-left transition ${
+                        showOnlySale
+                          ? "bg-red-100 text-red-800 border border-red-300"
+                          : "bg-background border border-border"
+                      }`}
                     >
-                      <path d="M20 2H4C2.9 2 2 2.9 2 4v16l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                    </svg>
-                    Falar no WhatsApp
-                  </a>
-                );
-              })()}
+                      <div className="flex items-center justify-between">
+                        <span>Ver apenas promoções</span>
+                        {showOnlySale && <X size={16} />}
+                      </div>
+                    </button>
+                  </div>
+  
+                  {/* Filtro de tamanhos mobile */}
+                  <div className="mb-4">
+                    <h4 className="font-medium mb-2">Tamanhos</h4>
+                    <div className="grid grid-cols-4 gap-2">
+                      {["P", "M", "G", "GG"].map((s) => (
+                        <button
+                          key={s}
+                          onClick={() => toggleSize(s)}
+                          className={`p-2 rounded border text-sm transition ${
+                            selectedSizes.includes(s)
+                              ? "bg-foreground text-background border-foreground"
+                              : "bg-background border-border"
+                          }`}
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+  
+                  {/* Categorias mobile */}
+                  <div>
+                    <h4 className="font-medium mb-2">Categorias</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {categories.map((category) => (
+                        <button
+                          key={category.id}
+                          onClick={() => handleCategoryChange(category.id)}
+                          className={`p-2 rounded text-left transition flex items-center justify-between ${
+                            selectedCategory === category.id
+                              ? "bg-gradient-urban text-background"
+                              : "bg-background"
+                          }`}
+                        >
+                          <span className="text-sm">{category.name}</span>
+                          <Badge variant="secondary" className="text-xs">
+                            {categoryCounts[category.id] || 0}
+                          </Badge>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+  
+              {/* Grid de produtos / Empty */}
+              {productsToShow.length > 0 ? (
+                <>
+                  <div className={`grid gap-6 mb-12 ${
+                    viewMode === "grid" 
+                      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" 
+                      : "grid-cols-1"
+                  }`}>
+                    {productsToShow.map((product: any) => (
+                      <div
+                        key={product.id}
+                        onClick={() => handleProductClick(product)}
+                        className="cursor-pointer transform transition-transform hover:scale-105"
+                      >
+                        <ProductCard product={product} />
+                      </div>
+                    ))}
+                  </div>
+  
+                  {hasMoreItems && (
+                    <div className="text-center">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={loadMore}
+                        className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
+                      >
+                        Ver Mais Produtos ({filteredProducts.length - visibleItems} restantes)
+                      </Button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-lg text-muted-foreground">Nenhum produto encontrado.</p>
+                  <div className="mt-4">
+                    <Button variant="ghost" onClick={clearFilters}>
+                      Limpar filtros
+                    </Button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      )}
-    </section>
-  );
-}
+  
+        {/* Modal acessível */}
+        {isModalOpen && selectedProduct && (
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn"
+            onClick={closeModal}
+          >
+            <div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="product-title"
+              className="bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-2xl shadow-[0_0_20px_5px_rgba(0,255,0,0.3)] border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto p-6 relative animate-scaleIn"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800"
+                aria-label="Fechar"
+              >
+                ×
+              </button>
+  
+              <ProductCarousel product={selectedProduct} />
+  
+              <div className="space-y-2 text-center mt-4">
+                <h3 id="product-title" tabIndex={-1} className="text-2xl font-bold">
+                  {selectedProduct.name}
+                </h3>
+                <p className="text-lg">
+                  <span className="font-semibold">Preço:</span> {BRL(selectedProduct.price)}
+                </p>
+                <p className="text-sm">
+                  <span className="font-semibold">Tamanhos:</span> {selectedProduct.size}
+                </p>
+                <p className="text-sm">
+                  <span className="font-semibold">Categoria:</span> {selectedProduct.category}
+                </p>
+  
+                {(() => {
+                  const text = `Olá! Tenho interesse no produto *${selectedProduct.name}* no valor de *${BRL(
+                    selectedProduct.price
+                  )}*.`;
+                  const wa = `https://wa.me/5511972988072?text=${encodeURIComponent(text)}`;
+                  return (
+                    <a
+                      href={wa}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 shadow-[0_0_10px_rgba(0,255,0,0.5)] font-medium"
+                    >
+                      {/* Ícone simples */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-5 h-5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 2H4C2.9 2 2 2.9 2 4v16l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                      </svg>
+                      Falar no WhatsApp
+                    </a>
+                  );
+                })()}
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+    );
+  }
