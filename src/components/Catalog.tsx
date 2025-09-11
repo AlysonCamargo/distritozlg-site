@@ -617,14 +617,14 @@ const products = [
     const [showOnlySale, setShowOnlySale] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  
+
     const dialogRef = useRef<HTMLDivElement>(null);
     const filtersRef = useRef<HTMLDivElement>(null);
-  
+
     // ===== Acessibilidade do modal (ESC + focus trap + bloqueio scroll) =====
     useEffect(() => {
       if (!isModalOpen) return;
-  
+
       const onKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape") closeModal();
         if (e.key === "Tab" && dialogRef.current) {
@@ -643,20 +643,20 @@ const products = [
           }
         }
       };
-  
+
       document.addEventListener("keydown", onKeyDown);
       const prevOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
-  
+
       // foca no título do modal ao abrir
       dialogRef.current?.querySelector<HTMLElement>("#product-title")?.focus();
-  
+
       return () => {
         document.removeEventListener("keydown", onKeyDown);
         document.body.style.overflow = prevOverflow || "unset";
       };
     }, [isModalOpen]);
-  
+
     // Fechar filtros ao clicar fora
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
@@ -664,13 +664,13 @@ const products = [
           setShowFilters(false);
         }
       };
-  
+
       document.addEventListener("mousedown", handleClickOutside);
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }, []);
-  
+
     // ===== Contagem por categoria (considera busca + tamanhos) =====
     const categoryCounts = useMemo(() => {
       const q = strip(searchTerm);
@@ -679,10 +679,10 @@ const products = [
         selectedSizes.length === 0 ||
         selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
       const bySale = (p: any) => !showOnlySale || p.isSale;
-  
+
       const base = products.filter((p) => bySearch(p) && bySizes(p) && bySale(p));
       const counts: Record<string, number> = { todos: base.length };
-      
+
       categories.forEach((c) => {
         if (c.id !== "todos") {
           if (c.id === "promocoes") {
@@ -692,53 +692,53 @@ const products = [
           }
         }
       });
-      
+
       return counts;
     }, [searchTerm, selectedSizes, showOnlySale]);
-  
+
     // ===== Filtro + ordenação =====
     const filteredProducts = useMemo(() => {
       const q = strip(searchTerm);
-  
+
       const matchesCategory = (p: any) => {
         if (selectedCategory === "todos") return true;
         if (selectedCategory === "promocoes") return p.isSale;
         return strip(p.category) === strip(selectedCategory);
       };
-  
+
       const matchesSearch = (p: any) => strip(p.name).includes(q);
-  
+
       const matchesSizes = (p: any) =>
         selectedSizes.length === 0 ||
         selectedSizes.some((s) => parseSizes(p.size || "").includes(s.toUpperCase()));
-  
+
       const matchesSale = (p: any) => !showOnlySale || p.isSale;
-  
-      let result = products.filter((p) => 
-        matchesCategory(p) && 
-        matchesSearch(p) && 
+
+      let result = products.filter((p) =>
+        matchesCategory(p) &&
+        matchesSearch(p) &&
         matchesSizes(p) &&
         matchesSale(p)
       );
-  
+
       const sortRelevance = (a: any, b: any) => {
         const isASale = a.isSale ? 1 : 0;
         const isBSale = b.isSale ? 1 : 0;
-      
+
         if (isASale !== isBSale) {
           return isBSale - isASale; // Promos first
         }
-      
+
         const isANew = a.isNew ? 1 : 0;
         const isBNew = b.isNew ? 1 : 0;
-      
+
         if (isANew !== isBNew) {
           return isBNew - isANew; // New items next
         }
-      
+
         return 0; // Maintain original order for others
       };
-  
+
       switch (sort) {
         case "price-asc":
           result.sort((a, b) => a.price - b.price);
@@ -757,36 +757,36 @@ const products = [
           result.sort(sortRelevance);
           break;
       }
-  
+
       return result;
     }, [selectedCategory, searchTerm, selectedSizes, sort, showOnlySale]);
-  
+
     // Paginação incremental
     const productsToShow = useMemo(() => filteredProducts.slice(0, visibleItems), [filteredProducts, visibleItems]);
     const hasMoreItems = visibleItems < filteredProducts.length;
-  
+
     // Handlers
     const handleProductClick = useCallback((product: any) => {
       setSelectedProduct(product);
       setIsModalOpen(true);
     }, []);
-  
+
     const closeModal = useCallback(() => {
       setIsModalOpen(false);
       setSelectedProduct(null);
     }, []);
-  
+
     const loadMore = () => setVisibleItems((prev) => prev + ITEMS_PER_PAGE);
-  
+
     const handleCategoryChange = (categoryId: string) => {
       setSelectedCategory(categoryId);
       setVisibleItems(ITEMS_PER_PAGE);
       setShowFilters(false);
     };
-  
+
     const toggleSize = (size: string) =>
       setSelectedSizes((prev) => (prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]));
-  
+
     const clearFilters = () => {
       setSearchTerm("");
       setSelectedSizes([]);
@@ -795,10 +795,10 @@ const products = [
       setShowOnlySale(false);
       setVisibleItems(ITEMS_PER_PAGE);
     };
-  
+
     // Contador de filtros ativos
     const activeFiltersCount = selectedSizes.length + (showOnlySale ? 1 : 0) + (searchTerm ? 1 : 0);
-  
+
     // ===== Render =====
     return (
       <section id="catalog" className="py-20 bg-background">
@@ -814,7 +814,7 @@ const products = [
               Cada peça é uma declaração. Encontre a camiseta que combina com seu estilo urbano.
             </p>
           </div>
-  
+
           {/* Busca principal */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
             <div className="relative w-full md:w-1/3">
@@ -825,16 +825,16 @@ const products = [
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-secondary border-border focus:border-accent pl-10"
               />
-              <svg 
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
-  
+
             {/* Botão de filtros para mobile */}
             <div className="md:hidden flex items-center gap-2 w-full">
               <Button
@@ -850,7 +850,7 @@ const products = [
                   </Badge>
                 )}
               </Button>
-  
+
               {/* Toggle de visualização */}
               <div className="flex border rounded-lg">
                 <button
@@ -867,7 +867,7 @@ const products = [
                 </button>
               </div>
             </div>
-  
+
             {/* Ordenação para desktop */}
             <div className="hidden md:flex items-center gap-2">
               <select
@@ -882,20 +882,20 @@ const products = [
                 <option value="price-desc">Preço: maior → menor</option>
                 <option value="name-asc">Nome (A→Z)</option>
               </select>
-  
+
               <Button variant="ghost" onClick={clearFilters} className="text-sm">
                 Limpar filtros
               </Button>
             </div>
           </div>
-  
+
           {/* Layout principal */}
           <div className="flex flex-col md:flex-row gap-6">
             {/* Filtros laterais (desktop) */}
             <div className="hidden md:block w-64 flex-shrink-0">
               <div className="bg-secondary rounded-lg p-4 sticky top-24">
                 <h3 className="font-semibold mb-4">Filtros</h3>
-                
+
                 {/* Filtro de promoções */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
@@ -916,7 +916,7 @@ const products = [
                     </div>
                   </button>
                 </div>
-  
+
                 {/* Filtro de tamanhos */}
                 <div className="mb-6">
                   <h4 className="font-medium mb-3">Tamanhos</h4>
@@ -936,7 +936,7 @@ const products = [
                     ))}
                   </div>
                 </div>
-  
+
                 {/* Categorias */}
                 <div>
                   <h4 className="font-medium mb-3">Categorias</h4>
@@ -959,7 +959,7 @@ const products = [
                 </div>
               </div>
             </div>
-  
+
             {/* Conteúdo principal */}
             <div className="flex-1">
               {/* Header de resultados */}
@@ -967,7 +967,7 @@ const products = [
                 <p className="text-muted-foreground">
                   {filteredProducts.length} produto{filteredProducts.length !== 1 ? 's' : ''} encontrado{filteredProducts.length !== 1 ? 's' : ''}
                 </p>
-                
+
                 {/* Ordenação para mobile */}
                 <div className="md:hidden flex items-center gap-2">
                   <select
@@ -984,7 +984,7 @@ const products = [
                   </select>
                 </div>
               </div>
-  
+
               {/* Filtros mobile */}
               {showFilters && (
                 <div ref={filtersRef} className="md:hidden bg-secondary rounded-lg p-4 mb-6">
@@ -994,7 +994,7 @@ const products = [
                       <X size={20} />
                     </button>
                   </div>
-  
+
                   {/* Filtro de promoções mobile */}
                   <div className="mb-4">
                     <button
@@ -1011,7 +1011,7 @@ const products = [
                       </div>
                     </button>
                   </div>
-  
+
                   {/* Filtro de tamanhos mobile */}
                   <div className="mb-4">
                     <h4 className="font-medium mb-2">Tamanhos</h4>
@@ -1031,7 +1031,7 @@ const products = [
                       ))}
                     </div>
                   </div>
-  
+
                   {/* Categorias mobile */}
                   <div>
                     <h4 className="font-medium mb-2">Categorias</h4>
@@ -1056,13 +1056,13 @@ const products = [
                   </div>
                 </div>
               )}
-  
+
               {/* Grid de produtos / Empty */}
               {productsToShow.length > 0 ? (
                 <>
                   <div className={`grid gap-6 mb-12 ${
-                    viewMode === "grid" 
-                      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" 
+                    viewMode === "grid"
+                      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
                       : "grid-cols-1"
                   }`}>
                     {productsToShow.map((product: any) => (
@@ -1075,7 +1075,7 @@ const products = [
                       </div>
                     ))}
                   </div>
-  
+
                   {hasMoreItems && (
                     <div className="text-center">
                       <Button
@@ -1084,7 +1084,7 @@ const products = [
                         onClick={loadMore}
                         className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 py-4"
                       >
-                        Ver Mais Produtos ({filteredProducts.length - visibleItems} restantes)
+                        Ver Mais ({filteredProducts.length - visibleItems})
                       </Button>
                     </div>
                   )}
@@ -1102,7 +1102,7 @@ const products = [
             </div>
           </div>
         </div>
-  
+
         {/* Modal acessível */}
         {isModalOpen && selectedProduct && (
           <div
@@ -1124,9 +1124,9 @@ const products = [
               >
                 ×
               </button>
-  
+
               <ProductCarousel product={selectedProduct} />
-  
+
               <div className="space-y-2 text-center mt-4">
                 <h3 id="product-title" tabIndex={-1} className="text-2xl font-bold">
                   {selectedProduct.name}
@@ -1140,7 +1140,7 @@ const products = [
                 <p className="text-sm">
                   <span className="font-semibold">Categoria:</span> {selectedProduct.category}
                 </p>
-  
+
                 {(() => {
                   const text = `Olá! Tenho interesse no produto *${selectedProduct.name}* no valor de *${BRL(
                     selectedProduct.price

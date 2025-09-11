@@ -89,7 +89,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           <Badge className="absolute left-2 top-2 bg-emerald-500 text-white shadow">
             NOVO
           </Badge>
-          
+
         )}
 
         {product.isSale && (
@@ -142,19 +142,19 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </div>
 
         {/* Ações */}
-        <div className="mt-4 flex gap-2">
+        <div className="mt-4 flex flex-col gap-2"> {/* Alterei para flex-col para empilhar os botões */}
           <Button
             onClick={(e) => {
               e.stopPropagation(); // não abrir modal do catálogo
               handleBuyOnWhatsApp();
             }}
-            className="flex-1 bg-green-500 hover:bg-green-600 text-white"
+            className="w-full bg-green-500 hover:bg-green-600 text-white"
           >
             Comprar no WhatsApp
           </Button>
 
-          {/* "Ver detalhes": não intercepta o click, deixa o wrapper do catálogo abrir o modal */}
-          <Button variant="outline" className="flex-1">
+          {/* O botão 'Ver detalhes' agora ocupará a largura total */}
+          <Button variant="outline" className="w-full">
             Ver detalhes
           </Button>
         </div>
