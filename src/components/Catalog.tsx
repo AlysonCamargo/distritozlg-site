@@ -754,6 +754,39 @@ const products = [
     isNew: true,
     size: "G"
   },
+  {
+    id: 87,
+    name: "Shorts Dry Fit Azul",
+    price: 69.99,
+    image: "https://i.imgur.com/rykWcyt.png",
+    imageFront: "https://i.imgur.com/rykWcyt.png",
+    imageBack: "https://i.imgur.com/ho1VC3g.png",
+    category: "shorts dry fit",
+    isNew: true,
+    size: "G"
+  },
+  {
+    id: 88,
+    name: "Shorts Dry Fit Cinza",
+    price: 69.99,
+    image: "https://i.imgur.com/UB0tJEb.png",
+    imageFront: "https://i.imgur.com/UB0tJEb.png",
+    imageBack: "https://i.imgur.com/OmOfNYH.png",
+    category: "shorts dry fit",
+    isNew: true,
+    size: "G"
+  },
+  {
+    id: 89,
+    name: "Shorts Dry Fit Preto",
+    price: 69.99,
+    image: "https://i.imgur.com/rM79xtt.png",
+    imageFront: "https://i.imgur.com/rM79xtt.png",
+    imageBack: "https://i.imgur.com/TFn1qar.png",
+    category: "shorts dry fit",
+    isNew: true,
+    size: "G"
+  },
 
 ];
 
