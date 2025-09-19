@@ -787,6 +787,138 @@ const products = [
     isNew: true,
     size: "G"
   },
+  {
+    id: 90,
+    name: "Dry Fit Nike Preta e Cinza",
+    price: 49.99,
+    image: "https://i.imgur.com/qMJRtsJ.png",
+    imageFront: "https://i.imgur.com/qMJRtsJ.png",
+    imageBack: "https://i.imgur.com/eCVSHG2.png",
+    category: "dryfit",
+    isNew: true,
+    size: "M e G"
+  },
+  {
+    id: 91,
+    name: "Dry Fit Nike Preta e Branca",
+    price: 49.99,
+    image: "https://i.imgur.com/aRXxU6H.jpeg",
+    imageFront: "https://i.imgur.com/aRXxU6H.jpeg",
+    imageBack: "https://i.imgur.com/jko3hhy.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "G"
+  },
+  {
+    id: 92,
+    name: "Dry Fit Nike Cinza e Preto",
+    price: 49.99,
+    image: "https://i.imgur.com/zihxEiE.jpeg",
+    imageFront: "https://i.imgur.com/zihxEiE.jpeg",
+    imageBack: "https://i.imgur.com/cy8Pe3T.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "P e M"
+  },
+  {
+    id: 93,
+    name: "Dry Fit Nike Azul e Branco",
+    price: 49.99,
+    image: "https://i.imgur.com/qaUGh8I.jpeg",
+    imageFront: "https://i.imgur.com/qaUGh8I.jpeg",
+    imageBack: "https://i.imgur.com/0JfatYm.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "P"
+  },
+  {
+    id: 94,
+    name: "Dry Fit Nike Logo na Direita",
+    price: 49.99,
+    image: "https://i.imgur.com/f3o8rg2.jpeg",
+    imageFront: "https://i.imgur.com/f3o8rg2.jpeg",
+    imageBack: "https://i.imgur.com/bt1fDMJ.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "P"
+  },
+  {
+    id: 95,
+    name: "Dry Fit Nike Azul e Branca",
+    price: 49.99,
+    image: "https://i.imgur.com/SLNWCDj.jpeg",
+    imageFront: "https://i.imgur.com/SLNWCDj.jpeg",
+    imageBack: "https://i.imgur.com/Czg37kT.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "M"
+  },
+  {
+    id: 96,
+    name: "Dry Fit Nike Azul e Branca Logo Aberto",
+    price: 49.99,
+    image: "https://i.imgur.com/qR5ZnqH.jpeg",
+    imageFront: "https://i.imgur.com/qR5ZnqH.jpeg",
+    imageBack: "https://i.imgur.com/9Ocqw3Y.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "P"
+  },
+  {
+    id: 97,
+    name: "Dry Fit Nike Logo Central",
+    price: 49.99,
+    image: "https://i.imgur.com/f3o8rg2.jpeg",
+    imageFront: "https://i.imgur.com/f3o8rg2.jpeg",
+    imageBack: "https://i.imgur.com/tdTxyn6.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "P M e G"
+  },
+  {
+    id: 98,
+    name: "Dry Fit Adidas Branca",
+    price: 49.99,
+    image: "https://i.imgur.com/3eUq5w7.jpeg",
+    imageFront: "https://i.imgur.com/3eUq5w7.jpeg",
+    imageBack: "https://i.imgur.com/jbMWBJy.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "M"
+  },
+  {
+    id: 99,
+    name: "Dry Fit Nike Bege",
+    price: 49.99,
+    image: "https://i.imgur.com/1KeOXiB.jpeg",
+    imageFront: "https://i.imgur.com/1KeOXiB.jpeg",
+    imageBack: "https://i.imgur.com/pubFB8C.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "M"
+  },
+  {
+    id: 100,
+    name: "Dry Fit Under Armour Bege",
+    price: 49.99,
+    image: "https://i.imgur.com/4zxeSIo.jpeg",
+    imageFront: "https://i.imgur.com/4zxeSIo.jpeg",
+    imageBack: "https://i.imgur.com/5BrvT2q.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "M"
+  },
+  {
+    id: 101,
+    name: "Dry Fit Under Armour Azul e Branca",
+    price: 49.99,
+    image: "https://i.imgur.com/fk3h2Yq.jpeg",
+    imageFront: "https://i.imgur.com/fk3h2Yq.jpeg",
+    imageBack: "https://i.imgur.com/a6Mn1xk.jpeg",
+    category: "dryfit",
+    isNew: true,
+    size: "G"
+  },
 
 ];
 
@@ -1092,8 +1224,8 @@ export default function Catalog() {
                 <button
                   onClick={() => setShowOnlySale(!showOnlySale)}
                   className={`w-full p-3 rounded-lg text-left transition ${showOnlySale
-                      ? "bg-red-100 text-red-800 border border-red-300"
-                      : "bg-background border border-border hover:bg-accent/10"
+                    ? "bg-red-100 text-red-800 border border-red-300"
+                    : "bg-background border border-border hover:bg-accent/10"
                     }`}
                 >
                   <div className="flex items-center justify-between">
@@ -1112,8 +1244,8 @@ export default function Catalog() {
                       key={s}
                       onClick={() => toggleSize(s)}
                       className={`p-2 rounded border text-sm transition ${selectedSizes.includes(s)
-                          ? "bg-foreground text-background border-foreground"
-                          : "bg-background border-border hover:bg-accent/10"
+                        ? "bg-foreground text-background border-foreground"
+                        : "bg-background border-border hover:bg-accent/10"
                         }`}
                     >
                       {s}
@@ -1131,8 +1263,8 @@ export default function Catalog() {
                       key={category.id}
                       onClick={() => handleCategoryChange(category.id)}
                       className={`w-full p-2 rounded text-left transition flex items-center justify-between ${selectedCategory === category.id
-                          ? "bg-gradient-urban text-background"
-                          : "hover:bg-accent/10"
+                        ? "bg-gradient-urban text-background"
+                        : "hover:bg-accent/10"
                         }`}
                     >
                       <span>{category.name}</span>
@@ -1184,8 +1316,8 @@ export default function Catalog() {
                   <button
                     onClick={() => setShowOnlySale(!showOnlySale)}
                     className={`w-full p-3 rounded-lg text-left transition ${showOnlySale
-                        ? "bg-red-100 text-red-800 border border-red-300"
-                        : "bg-background border border-border"
+                      ? "bg-red-100 text-red-800 border border-red-300"
+                      : "bg-background border border-border"
                       }`}
                   >
                     <div className="flex items-center justify-between">
@@ -1204,8 +1336,8 @@ export default function Catalog() {
                         key={s}
                         onClick={() => toggleSize(s)}
                         className={`p-2 rounded border text-sm transition ${selectedSizes.includes(s)
-                            ? "bg-foreground text-background border-foreground"
-                            : "bg-background border-border"
+                          ? "bg-foreground text-background border-foreground"
+                          : "bg-background border-border"
                           }`}
                       >
                         {s}
@@ -1223,8 +1355,8 @@ export default function Catalog() {
                         key={category.id}
                         onClick={() => handleCategoryChange(category.id)}
                         className={`p-2 rounded text-left transition flex items-center justify-between ${selectedCategory === category.id
-                            ? "bg-gradient-urban text-background"
-                            : "bg-background"
+                          ? "bg-gradient-urban text-background"
+                          : "bg-background"
                           }`}
                       >
                         <span className="text-sm">{category.name}</span>
@@ -1242,8 +1374,8 @@ export default function Catalog() {
             {productsToShow.length > 0 ? (
               <>
                 <div className={`grid gap-6 mb-12 ${viewMode === "grid"
-                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-                    : "grid-cols-1"
+                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                  : "grid-cols-1"
                   }`}>
                   {productsToShow.map((product: any) => (
                     <div
