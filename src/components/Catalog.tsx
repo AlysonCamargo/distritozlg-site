@@ -132,18 +132,6 @@ const products = [
     isNew: false,
   },
   {
-    id: 18,
-    name: 'Balenciaga Bandida',
-    price: 49.90,
-    image: 'https://i.imgur.com/ilCkz1B.png',
-    imageFront: 'https://i.imgur.com/ilCkz1B.png',
-    imageBack: 'https://i.imgur.com/g8ADkCx.png',
-    category: 'oversized',
-    size: 'G',
-    isNew: false,
-    isSale: true,
-  },
-  {
     id: 19,
     name: 'Nike Bordada Verde',
     price: 79.99,
@@ -647,17 +635,6 @@ const products = [
     size: "M"
   },
   {
-    id: 76,
-    name: "NEW BALANCE Athletic",
-    price: 79.99,
-    image: "https://i.imgur.com/Ceup2CE.jpeg",
-    imageFront: "https://i.imgur.com/Ceup2CE.jpeg",
-    imageBack: "https://i.imgur.com/6OqxbX1.jpeg",
-    category: "oversized",
-    isNew: true,
-    size: "GG"
-  },
-  {
     id: 77,
     name: "CASA BLANCA Tenis",
     price: 79.99,
@@ -719,17 +696,6 @@ const products = [
     image: "https://i.imgur.com/6WiIjka.jpeg",
     imageFront: "https://i.imgur.com/6WiIjka.jpeg",
     imageBack: "https://i.imgur.com/fwCWHPa.jpeg",
-    category: "oversized",
-    isNew: true,
-    size: "G"
-  },
-  {
-    id: 83,
-    name: "THE NORTH FACE Preta",
-    price: 79.99,
-    image: "https://i.imgur.com/YVtANaN.jpeg",
-    imageFront: "https://i.imgur.com/YVtANaN.jpeg",
-    imageBack: "https://i.imgur.com/xPKmFZG.jpeg",
     category: "oversized",
     isNew: true,
     size: "G"
