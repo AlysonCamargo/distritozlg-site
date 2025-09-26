@@ -898,6 +898,18 @@ const products = [
     isNew: true,
     size: "G"
   },
+  {
+    id: 102,
+    name: 'Nike Sombras',
+    price: 79.90,
+    image: 'https://i.imgur.com/Fq8DnNj.png',
+    imageFront: 'https://i.imgur.com/Fq8DnNj.png',
+    imageBack: 'https://i.imgur.com/6nwNbuM.png',
+    category: 'oversized',
+    isNew: true,
+    isPromo: false,
+    size: 'M',
+  },
 
 ];
 
