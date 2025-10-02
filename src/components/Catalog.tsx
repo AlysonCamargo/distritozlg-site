@@ -833,17 +833,6 @@ const products = [
     size: "M"
   },
   {
-    id: 96,
-    name: "Dry Fit Nike Azul e Branca Logo Aberto",
-    price: 49.99,
-    image: "https://i.imgur.com/qR5ZnqH.jpeg",
-    imageFront: "https://i.imgur.com/qR5ZnqH.jpeg",
-    imageBack: "https://i.imgur.com/9Ocqw3Y.jpeg",
-    category: "dryfit",
-    isNew: true,
-    size: "P"
-  },
-  {
     id: 97,
     name: "Dry Fit Nike Logo Central",
     price: 49.99,
