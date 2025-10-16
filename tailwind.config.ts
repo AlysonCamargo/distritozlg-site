@@ -46,10 +46,11 @@ export default {
 				// 👇 Registra a animação fade-in
 				'fade-in': 'fade-in 0.3s ease-out'
 			  },
-			  
 			boxShadow: {
 				neon: '0 0 20px var(--neon-green)',
-  			},
+				'card-urban': 'var(--shadow-card)',
+				'glow': 'var(--glow-accent)'
+			},
 				
 			colors: {
 				border: 'hsl(var(--border))',
@@ -111,11 +112,7 @@ export default {
 			backgroundImage: {
 				'gradient-urban': 'var(--gradient-urban)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)'
-			},
-			boxShadow: {
-				'neon': 'var(--shadow-neon)',
-				'card-urban': 'var(--shadow-card)',
+			// Removed duplicate boxShadow definition
 				'glow': 'var(--glow-accent)'
 			},
 			borderRadius: {
@@ -141,10 +138,7 @@ export default {
 					}
 				}
 			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			// Removed duplicate animation property
 			
 		}
 	},
