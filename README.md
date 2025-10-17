@@ -33,12 +33,3 @@ Botão Comprar que redireciona direto para o WhatsApp da loja
 Layout responsivo para desktop e mobile
 
 ---
-
-
-## 🚀 Como rodar o projeto
-
-### 1. Clone o repositório:
-```bash
-git clone https://github.com/AlysonCamargo/distritozlg-site.git
-cd distritozlg-site
-npm run dev
