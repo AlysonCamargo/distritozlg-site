@@ -132,17 +132,6 @@ const products = [
     isNew: false,
   },
   {
-    id: 19,
-    name: 'Nike Bordada Verde',
-    price: 79.99,
-    image: 'https://i.imgur.com/2MCtO1a.png',
-    imageFront: 'https://i.imgur.com/2MCtO1a.png',
-    imageBack: 'https://i.imgur.com/2MCtO1a.png',
-    category: 'oversized',
-    size: 'G',
-    isNew: false,
-  },
-  {
     id: 21,
     name: 'Nike Marrom',
     price: 79.99,
@@ -196,18 +185,6 @@ const products = [
     image: 'https://i.imgur.com/B8hCEBJ.png',
     imageFront: 'https://i.imgur.com/B8hCEBJ.png',
     imageBack: 'https://i.imgur.com/VLFAcPC.png',
-    category: 'oversized',
-    size: 'G',
-    isNew: false,
-    isSale: true,
-  },
-  {
-    id: 30,
-    name: 'Adidas Tenis',
-    price: 49.99,
-    image: 'https://i.imgur.com/alZhnji.jpeg',
-    imageFront: 'https://i.imgur.com/alZhnji.jpeg',
-    imageBack: 'https://i.imgur.com/HrMAlCr.jpeg',
     category: 'oversized',
     size: 'G',
     isNew: false,
@@ -601,17 +578,6 @@ const products = [
     size: "GG"
   },
   {
-    id: 78,
-    name: "THE NORTH FACE AMA",
-    price: 79.99,
-    image: "https://i.imgur.com/7zj2y4b.jpeg",
-    imageFront: "https://i.imgur.com/7zj2y4b.jpeg",
-    imageBack: "https://i.imgur.com/yvIeHEW.jpeg",
-    category: "oversized",
-    isNew: true,
-    size: "GG"
-  },
-  {
     id: 79,
     name: "HIGH",
     price: 79.99,
@@ -640,17 +606,6 @@ const products = [
     image: "https://i.imgur.com/xLTe9Eb.jpeg",
     imageFront: "https://i.imgur.com/xLTe9Eb.jpeg",
     imageBack: "https://i.imgur.com/B0Q4VZJ.jpeg",
-    category: "oversized",
-    isNew: true,
-    size: "G"
-  },
-  {
-    id: 82,
-    name: "NIKE Tênis",
-    price: 79.99,
-    image: "https://i.imgur.com/6WiIjka.jpeg",
-    imageFront: "https://i.imgur.com/6WiIjka.jpeg",
-    imageBack: "https://i.imgur.com/fwCWHPa.jpeg",
     category: "oversized",
     isNew: true,
     size: "G"
