@@ -311,7 +311,7 @@ const products = [
     imageBack: 'https://i.imgur.com/9ayZA73.png',
     category: 'calça cargo',
     size: 'P M G',
-    isNew: true,
+    isNew: false,
   },
   {
     id: 47,
@@ -322,7 +322,7 @@ const products = [
     imageBack: 'https://i.imgur.com/q0qEolS.png',
     category: 'calça cargo',
     size: 'M G',
-    isNew: true,
+    isNew: false,
   },
   {
     id: 48,
@@ -333,7 +333,7 @@ const products = [
     imageBack: 'https://i.imgur.com/U2rILSP.png',
     category: 'calça cargo',
     size: 'G',
-    isNew: true,
+    isNew: false,
   },
   {
     id: 50,
@@ -541,7 +541,7 @@ const products = [
     imageFront: "https://i.imgur.com/iMQdTPL.jpeg",
     imageBack: "https://i.imgur.com/Lat0Tx5.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -552,7 +552,7 @@ const products = [
     imageFront: "https://i.imgur.com/nQED1Tx.jpeg",
     imageBack: "https://i.imgur.com/hlP0eL3.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -563,7 +563,7 @@ const products = [
     imageFront: "https://i.imgur.com/im80xjC.jpeg",
     imageBack: "https://i.imgur.com/RJMUvm4.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -574,7 +574,7 @@ const products = [
     imageFront: "https://i.imgur.com/xl8wO5Y.jpeg",
     imageBack: "https://i.imgur.com/Tl4tWah.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "GG"
   },
   {
@@ -585,7 +585,7 @@ const products = [
     imageFront: "https://i.imgur.com/nJqmA2I.jpeg",
     imageBack: "https://i.imgur.com/iDaaxBA.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "GG"
   },
   {
@@ -596,7 +596,7 @@ const products = [
     imageFront: "https://i.imgur.com/gE6fSM5.jpeg",
     imageBack: "https://i.imgur.com/NAoKBs0.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "GG"
   },
   {
@@ -607,7 +607,7 @@ const products = [
     imageFront: "https://i.imgur.com/xLTe9Eb.jpeg",
     imageBack: "https://i.imgur.com/B0Q4VZJ.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -618,7 +618,7 @@ const products = [
     imageFront: "https://i.imgur.com/Cpi43xP.jpeg",
     imageBack: "https://i.imgur.com/2oyVDAu.jpeg",
     category: "oversized",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -629,7 +629,7 @@ const products = [
     imageFront: "https://i.imgur.com/ibLFXu4.png",
     imageBack: "https://i.imgur.com/fclwJOg.png",
     category: "calça cargo",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -640,7 +640,7 @@ const products = [
     imageFront: "https://i.imgur.com/ZFhmYQe.jpeg",
     imageBack: "https://i.imgur.com/t9W1Oto.jpeg",
     category: "calça cargo",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -651,7 +651,7 @@ const products = [
     imageFront: "https://i.imgur.com/rykWcyt.png",
     imageBack: "https://i.imgur.com/ho1VC3g.png",
     category: "shorts dry fit",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -662,7 +662,7 @@ const products = [
     imageFront: "https://i.imgur.com/UB0tJEb.png",
     imageBack: "https://i.imgur.com/OmOfNYH.png",
     category: "shorts dry fit",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -673,7 +673,7 @@ const products = [
     imageFront: "https://i.imgur.com/rM79xtt.png",
     imageBack: "https://i.imgur.com/TFn1qar.png",
     category: "shorts dry fit",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -684,7 +684,7 @@ const products = [
     imageFront: "https://i.imgur.com/qMJRtsJ.png",
     imageBack: "https://i.imgur.com/eCVSHG2.png",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "M e G"
   },
   {
@@ -695,7 +695,7 @@ const products = [
     imageFront: "https://i.imgur.com/aRXxU6H.jpeg",
     imageBack: "https://i.imgur.com/jko3hhy.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -706,7 +706,7 @@ const products = [
     imageFront: "https://i.imgur.com/zihxEiE.jpeg",
     imageBack: "https://i.imgur.com/cy8Pe3T.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "P e M"
   },
   {
@@ -717,7 +717,7 @@ const products = [
     imageFront: "https://i.imgur.com/qaUGh8I.jpeg",
     imageBack: "https://i.imgur.com/0JfatYm.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "P"
   },
   {
@@ -728,7 +728,7 @@ const products = [
     imageFront: "https://i.imgur.com/f3o8rg2.jpeg",
     imageBack: "https://i.imgur.com/bt1fDMJ.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "P"
   },
   {
@@ -739,7 +739,7 @@ const products = [
     imageFront: "https://i.imgur.com/SLNWCDj.jpeg",
     imageBack: "https://i.imgur.com/Czg37kT.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -750,7 +750,7 @@ const products = [
     imageFront: "https://i.imgur.com/f3o8rg2.jpeg",
     imageBack: "https://i.imgur.com/tdTxyn6.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "P M e G"
   },
   {
@@ -761,7 +761,7 @@ const products = [
     imageFront: "https://i.imgur.com/3eUq5w7.jpeg",
     imageBack: "https://i.imgur.com/jbMWBJy.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -772,7 +772,7 @@ const products = [
     imageFront: "https://i.imgur.com/1KeOXiB.jpeg",
     imageBack: "https://i.imgur.com/pubFB8C.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -783,7 +783,7 @@ const products = [
     imageFront: "https://i.imgur.com/4zxeSIo.jpeg",
     imageBack: "https://i.imgur.com/5BrvT2q.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "M"
   },
   {
@@ -794,7 +794,7 @@ const products = [
     imageFront: "https://i.imgur.com/fk3h2Yq.jpeg",
     imageBack: "https://i.imgur.com/a6Mn1xk.jpeg",
     category: "dryfit",
-    isNew: true,
+    isNew: false,
     size: "G"
   },
   {
@@ -805,7 +805,7 @@ const products = [
     imageFront: 'https://i.imgur.com/Fq8DnNj.png',
     imageBack: 'https://i.imgur.com/6nwNbuM.png',
     category: 'oversized',
-    isNew: true,
+    isNew: false,
     isPromo: false,
     size: 'M',
   },
