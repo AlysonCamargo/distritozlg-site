@@ -16,13 +16,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-heading font-black text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight">
-            <span className="text-foreground">ESTAMOS EM </span>
+            <span className="text-foreground">DISTRITO</span>
             <br />
-            <span className="bg-gradient-urban bg-clip-text text-transparent">GREVE</span>
+            <span className="bg-gradient-urban bg-clip-text text-transparent">ZLG</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
-            O DONO DA LOJA É CALOTEIRO
+            STREETWEAR QUE FALA A TUA LINGUAGEM
           </p>
           
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
