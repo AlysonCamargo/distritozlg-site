@@ -1252,18 +1252,6 @@ export const products: Product[] = [
     size: 'G'
   },
   {
-    id: 146,
-    name: 'Camiseta Oversized Nike 44',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1Ppa52oXA_kVXORjYDUBWNViBb3KpDEQO',
-    imageFront: 'https://lh3.googleusercontent.com/d/1Ppa52oXA_kVXORjYDUBWNViBb3KpDEQO',
-    imageBack: 'https://lh3.googleusercontent.com/d/1I77ucQvbhjzK76xOOxjhwFReNy_-5QRk',
-    category: 'Oversized',
-    isNew: true,
-    isSale: false,
-    size: 'G'
-  },
-  {
     id: 147,
     name: 'Camiseta Oversized Nike 45',
     price: 79.99,
