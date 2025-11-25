@@ -35,7 +35,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden pt-20 pb-10">
+    <section id="home" className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-20 pb-10">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
