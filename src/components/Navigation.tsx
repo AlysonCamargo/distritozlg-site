@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, ShoppingBag, Heart } from 'lucide-react';
+import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import { Input } from '@/components/ui/input';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { cartCount, setIsCartOpen } = useCart();
+  const { items: wishlistItems } = useWishlist();
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -16,11 +20,6 @@ const Navigation = () => {
     if (e.key === 'Enter') {
       const term = (e.target as HTMLInputElement).value;
       window.location.href = `/?q=${encodeURIComponent(term)}#catalog`;
-      // Reload to force Catalog to pick up the query param if it doesn't listen to popstate
-      // Actually Catalog listens to mount, so a reload is safest or we need a context.
-      // Since this is a simple app, we can just reload or let the hash change handle it if we were using a router.
-      // But we are using hash links.
-      // Let's just set the href.
     }
   };
 
@@ -62,10 +61,37 @@ const Navigation = () => {
                 </a>
               ))}
             </div>
+
+            <div className="flex items-center gap-4 border-l border-border pl-6">
+              <button className="relative group" onClick={() => { }}>
+                <Heart className="w-5 h-5 text-foreground group-hover:text-accent transition-colors" />
+                {wishlistItems.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    {wishlistItems.length}
+                  </span>
+                )}
+              </button>
+              <button className="relative group" onClick={() => setIsCartOpen(true)}>
+                <ShoppingBag className="w-5 h-5 text-foreground group-hover:text-accent transition-colors" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4 md:hidden">
+            <button className="relative" onClick={() => setIsCartOpen(true)}>
+              <ShoppingBag className="w-6 h-6 text-foreground" />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </button>
             <button
               className="text-foreground"
               onClick={() => setIsOpen(!isOpen)}

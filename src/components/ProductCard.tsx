@@ -1,7 +1,8 @@
-// ProductCard.tsx
 "use client";
 
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,12 +18,11 @@ interface Product {
   imageBack: string;
   isNew?: boolean;
   isSale: boolean;
-  size: string; // Mantido como string (ex.: "P", "M G", "P, M G")
+  size: string;
 }
 
 interface ProductCardProps {
   product: Product;
-  /** Se true, força carregamento "eager" da imagem (use nos primeiros cards da página) */
   priority?: boolean;
 }
 
@@ -30,27 +30,19 @@ const BRL = (n: number) =>
   new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
 
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
-  const [fav, setFav] = useState(false);
+  const { addItem } = useCart();
+  const { isInWishlist, toggleWishlist } = useWishlist();
+  const isFav = isInWishlist(product.id);
+
   const [frontLoaded, setFrontLoaded] = useState(false);
   const [backLoaded, setBackLoaded] = useState(false);
 
-  const phoneNumber = "5511972988072"; // WhatsApp em formato internacional (sem +, sem espaços)
   const frontSrc = product.imageFront || product.image;
   const backSrc = product.imageBack || product.image;
 
-  const handleBuyOnWhatsApp = () => {
-    const message = `Olá! Tenho interesse no produto "${product.name}" (${BRL(
-      product.price
-    )}). Ainda está disponível?`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <Card className="group overflow-hidden border hover:shadow-lg transition will-change-transform">
-      {/* Área de imagem com aspecto quadrado */}
       <div className="relative aspect-square overflow-hidden bg-secondary/40">
-        {/* Skeleton enquanto a frente não carrega */}
         {!frontLoaded && (
           <div
             className="absolute inset-0 animate-pulse bg-gradient-to-b from-neutral-800/30 to-neutral-700/30"
@@ -58,7 +50,6 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           />
         )}
 
-        {/* Imagem da frente */}
         <img
           src={frontSrc}
           alt={`Frente - ${product.name}`}
@@ -70,7 +61,6 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
                      ${frontLoaded ? "opacity-100" : "opacity-0"} group-hover:opacity-0`}
         />
 
-        {/* Imagem do verso (aparece no hover) */}
         {backSrc && (
           <img
             src={backSrc}
@@ -84,7 +74,6 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           />
         )}
 
-        {/* Selos de destaque */}
         <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
           {product.isSale && (
             <Badge variant="destructive" className="bg-red-600 text-white font-bold rounded-full px-3 py-1 text-xs">
@@ -98,24 +87,22 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           )}
         </div>
 
-        {/* Botão de favorito */}
         <button
           type="button"
           onClick={(e) => {
-            e.stopPropagation(); // evita abrir modal do catálogo
-            setFav((v) => !v);
+            e.stopPropagation();
+            toggleWishlist(product);
           }}
-          aria-pressed={fav}
-          aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+          aria-pressed={isFav}
+          aria-label={isFav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
           className="absolute right-2 top-2 inline-flex h-9 w-9 items-center justify-center rounded-full
                      bg-black/40 backdrop-blur text-white transition hover:bg-black/60 focus:outline-none
                      focus-visible:ring-2 focus-visible:ring-emerald-400"
         >
-          <Heart className={`h-5 w-5 ${fav ? "fill-current" : ""}`} />
+          <Heart className={`h-5 w-5 ${isFav ? "fill-current text-red-500" : ""}`} />
           <span className="sr-only">Favorito</span>
         </button>
 
-        {/* Overlay informativo (hover) */}
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 opacity-0
                      bg-gradient-to-t from-black/70 to-transparent p-2 text-center text-white
@@ -127,15 +114,12 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       </div>
 
       <CardContent className="p-4">
-        {/* Título */}
         <h3 className="text-base font-semibold leading-tight line-clamp-1">{product.name}</h3>
 
-        {/* Categoria e Tamanho */}
         <p className="mt-1 text-sm text-muted-foreground">
           {product.category} • Tam: {product.size}
         </p>
 
-        {/* Preço */}
         <div className="mt-3 flex items-center justify-between">
           <div className={`text-lg font-bold ${product.isSale ? 'text-green-500' : ''}`}>
             {BRL(product.price)}
@@ -143,19 +127,17 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           <span className="text-xs text-muted-foreground">À vista</span>
         </div>
 
-        {/* Ações */}
-        <div className="mt-4 flex flex-col gap-2"> {/* Alterei para flex-col para empilhar os botões */}
+        <div className="mt-4 flex flex-col gap-2">
           <Button
             onClick={(e) => {
-              e.stopPropagation(); // não abrir modal do catálogo
-              handleBuyOnWhatsApp();
+              e.stopPropagation();
+              addItem(product, product.size.split(',')[0].trim());
             }}
-            className="w-full bg-green-500 hover:bg-green-600 text-white"
+            className="w-full bg-foreground hover:bg-foreground/90 text-background font-bold"
           >
-            Comprar no WhatsApp
+            Adicionar ao Carrinho
           </Button>
 
-          {/* O botão 'Ver detalhes' agora ocupará a largura total */}
           <Button variant="outline" className="w-full">
             Ver detalhes
           </Button>

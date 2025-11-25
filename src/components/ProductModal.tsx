@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
-import { X } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { X, ShoppingBag } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductCarousel from "./ProductCarousel";
@@ -21,6 +22,16 @@ const parseSizes = (s: string): string[] =>
 
 export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
     const dialogRef = useRef<HTMLDivElement>(null);
+    const { addItem } = useCart();
+    const [selectedSize, setSelectedSize] = useState<string>("");
+
+    const sizes = parseSizes(product?.size || "");
+
+    useEffect(() => {
+        if (isOpen && sizes.length > 0) {
+            setSelectedSize(sizes[0]);
+        }
+    }, [isOpen, product]);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -109,13 +120,17 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                             <div>
                                 <span className="text-sm font-medium text-muted-foreground block mb-2">Tamanhos Disponíveis</span>
                                 <div className="flex flex-wrap gap-2">
-                                    {parseSizes(product.size).map((size) => (
-                                        <div
+                                    {sizes.map((size) => (
+                                        <button
                                             key={size}
-                                            className="w-10 h-10 rounded border border-border flex items-center justify-center font-medium text-sm"
+                                            onClick={() => setSelectedSize(size)}
+                                            className={`w-10 h-10 rounded border flex items-center justify-center font-medium text-sm transition-all
+                                                ${selectedSize === size
+                                                    ? "bg-foreground text-background border-foreground"
+                                                    : "border-border hover:border-foreground"}`}
                                         >
                                             {size}
-                                        </div>
+                                        </button>
                                     ))}
                                 </div>
                             </div>
@@ -128,33 +143,17 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                     </div>
 
                     <div className="mt-8 pt-6 border-t border-border">
-                        {(() => {
-                            const text = `Olá! Tenho interesse no produto *${product.name}* no valor de *${BRL(
-                                product.price
-                            )}*.`;
-                            const wa = `https://wa.me/5511972988072?text=${encodeURIComponent(text)}`;
-                            return (
-                                <a href={wa} target="_blank" rel="noopener noreferrer">
-                                    <Button
-                                        size="lg"
-                                        className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 gap-2"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            className="w-6 h-6"
-                                        >
-                                            <path d="M20 2H4C2.9 2 2 2.9 2 4v16l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                                        </svg>
-                                        COMPRAR NO WHATSAPP
-                                    </Button>
-                                </a>
-                            );
-                        })()}
-                        <p className="text-center text-xs text-muted-foreground mt-3">
-                            Você será redirecionado para o WhatsApp para finalizar a compra.
-                        </p>
+                        <Button
+                            size="lg"
+                            onClick={() => {
+                                addItem(product, selectedSize);
+                                onClose();
+                            }}
+                            className="w-full bg-foreground hover:bg-foreground/90 text-background font-bold text-lg h-14 gap-2"
+                        >
+                            <ShoppingBag className="w-5 h-5" />
+                            ADICIONAR AO CARRINHO
+                        </Button>
                     </div>
                 </div>
             </div>
