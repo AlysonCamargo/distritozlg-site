@@ -412,54 +412,6 @@ export const products: Product[] = [
     isSale: false
   },
   {
-    id: 69,
-    name: 'Camiseta Nike Under Armour',
-    price: 50.00,
-    image: 'https://i.imgur.com/jFrFopE.png',
-    imageFront: 'https://i.imgur.com/jFrFopE.png',
-    imageBack: 'https://i.imgur.com/jFrFopE.png',
-    category: 'dryfit',
-    size: 'P',
-    isNew: false,
-    isSale: false
-  },
-  {
-    id: 70,
-    name: 'Camiseta Nike Under Armour Bege',
-    price: 50.00,
-    image: 'https://i.imgur.com/xt2ffap.png',
-    imageFront: 'https://i.imgur.com/xt2ffap.png',
-    imageBack: 'https://i.imgur.com/A9CuTxd.png',
-    category: 'dryfit',
-    size: 'P M',
-    isNew: false,
-    isSale: false
-  },
-  {
-    id: 71,
-    name: 'Camiseta Nike Preta Logo Pequena',
-    price: 60.00,
-    image: 'https://i.imgur.com/GyCFFvF.png',
-    imageFront: 'https://i.imgur.com/GyCFFvF.png',
-    imageBack: 'https://i.imgur.com/6g5LOKy.png',
-    category: 'dryfit',
-    size: 'P',
-    isNew: false,
-    isSale: false
-  },
-  {
-    id: 72,
-    name: 'Camiseta Adidas Branca',
-    price: 50.00,
-    image: 'https://i.imgur.com/sotwaXy.png',
-    imageFront: 'https://i.imgur.com/sotwaXy.png',
-    imageBack: 'https://i.imgur.com/Wep6aUB.png',
-    category: 'dryfit',
-    size: 'P',
-    isNew: false,
-    isSale: false
-  },
-  {
     id: 73,
     name: "PALM ANGELS Asa Anjo B",
     price: 79.99,
@@ -600,7 +552,7 @@ export const products: Product[] = [
     imageBack: "https://i.imgur.com/eCVSHG2.png",
     category: "dryfit",
     isNew: false,
-    size: "M e G",
+    size: "M",
     isSale: false
   },
   {
@@ -660,7 +612,7 @@ export const products: Product[] = [
     imageBack: "https://i.imgur.com/tdTxyn6.jpeg",
     category: "dryfit",
     isNew: false,
-    size: "P M e G",
+    size: "P",
     isSale: false
   },
   {
@@ -697,18 +649,6 @@ export const products: Product[] = [
     category: "dryfit",
     isNew: false,
     size: "M",
-    isSale: false
-  },
-  {
-    id: 101,
-    name: "Dry Fit Under Armour Azul e Branca",
-    price: 49.99,
-    image: "https://i.imgur.com/fk3h2Yq.jpeg",
-    imageFront: "https://i.imgur.com/fk3h2Yq.jpeg",
-    imageBack: "https://i.imgur.com/a6Mn1xk.jpeg",
-    category: "dryfit",
-    isNew: false,
-    size: "G",
     isSale: false
   },
   {
