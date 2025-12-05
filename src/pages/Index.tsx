@@ -9,6 +9,9 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import ProductModal from '@/components/ProductModal';
+import ChristmasSnow from '@/components/ChristmasSnow';
+import ChristmasLights from '@/components/ChristmasLights';
+import ChristmasBanner from '@/components/ChristmasBanner';
 import { products, Product } from '@/data/products';
 
 const Index = () => {
@@ -34,7 +37,7 @@ const Index = () => {
   const featuredProducts = products.filter(p => p.isNew || p.isSale).slice(0, 4);
 
   const handleProductClick = (product: Product) => {
-    navigate(`/product/${product.id}`);
+    navigate(`/produto/${product.id}`);
   };
 
   const handleCloseModal = () => {
@@ -45,13 +48,19 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Distrito ZLG - Moda Streetwear Premium</title>
-        <meta name="description" content="Descubra o melhor da moda streetwear na Distrito ZLG. Roupas exclusivas, oversized, dryfit e muito mais." />
-        <meta property="og:title" content="Distrito ZLG - Moda Streetwear Premium" />
-        <meta property="og:description" content="Descubra o melhor da moda streetwear na Distrito ZLG. Roupas exclusivas, oversized, dryfit e muito mais." />
+        <title>Distrito ZLG - Presentes de Natal Streetwear 🎄</title>
+        <meta name="description" content="Encontre o presente perfeito neste Natal! Streetwear exclusivo, oversized, dryfit e muito mais. Frete grátis acima de R$ 150." />
+        <meta property="og:title" content="Distrito ZLG - Presentes de Natal Streetwear 🎄" />
+        <meta property="og:description" content="Encontre o presente perfeito neste Natal! Streetwear exclusivo com frete grátis." />
         <meta property="og:type" content="website" />
       </Helmet>
+
+      {/* Christmas Decorations */}
+      <ChristmasSnow />
+      <ChristmasBanner />
+
       <Navigation />
+      <ChristmasLights />
       <Hero />
 
       {/* Featured Section */}
@@ -59,8 +68,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-8">
             <div>
-              <h2 className="font-heading font-bold text-3xl mb-2">Destaques da Semana</h2>
-              <p className="text-muted-foreground">As peças mais cobiçadas do momento.</p>
+              <h2 className="font-heading font-bold text-3xl mb-2 flex items-center gap-2">
+                🎁 Presentes Perfeitos de Natal
+              </h2>
+              <p className="text-muted-foreground">As peças ideais para presentear neste Natal.</p>
             </div>
             <a href="#catalog" className="text-sm font-medium hover:text-accent transition-colors">
               Ver tudo &rarr;

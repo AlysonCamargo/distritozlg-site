@@ -29,8 +29,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
           <div className="flex items-center space-x-2 flex-shrink-0">
-            <div className="w-10 h-10 bg-gradient-urban rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-background">Z</span>
+            <div className="w-10 h-10 bg-gradient-christmas rounded-lg flex items-center justify-center">
+              <span className="text-lg font-bold text-white">Z</span>
             </div>
             <span className="font-heading font-bold text-2xl text-foreground hidden sm:block">
               Distrito ZLG

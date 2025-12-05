@@ -49,8 +49,8 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-3xl">
-            <div className="inline-block px-3 py-1 mb-4 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm animate-fadeIn">
-              <span className="text-accent font-bold text-xs tracking-widest uppercase">Nova Coleção 2025</span>
+            <div className="inline-block px-3 py-1 mb-4 border border-christmas-gold/50 rounded-full bg-gradient-christmas/20 backdrop-blur-sm animate-fadeIn">
+              <span className="text-christmas-gold font-bold text-xs tracking-widest uppercase">🎄 Coleção de Natal 2025</span>
             </div>
 
             <h1 className="font-heading font-black text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight animate-slideUp">
@@ -59,14 +59,14 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-lg leading-relaxed animate-slideUp delay-100 font-light">
-              Streetwear autêntico para quem não segue tendências, <span className="text-foreground font-medium">cria</span>.
+              Streetwear autêntico para <span className="text-christmas-gold font-medium">presentear</span> quem você ama neste Natal.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-slideUp delay-200">
               <a href="#catalog">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-foreground text-background font-bold px-8 py-6 text-lg hover:bg-foreground/90 transition-all duration-300 gap-2 shadow-neon hover:shadow-neon-hover"
+                  className="w-full sm:w-auto bg-gradient-christmas text-white font-bold px-8 py-6 text-lg hover:opacity-90 transition-all duration-300 gap-2 shadow-lg hover:shadow-glow-christmas border-0"
                 >
                   <ShoppingBag className="w-5 h-5" />
                   VER COLEÇÃO
@@ -76,7 +76,7 @@ const Hero = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto border-2 font-bold px-8 py-6 text-lg transition-all duration-300 gap-2 hover:bg-secondary"
+                  className="w-full sm:w-auto border-2 border-christmas-gold text-christmas-gold hover:bg-christmas-gold/10 font-bold px-8 py-6 text-lg transition-all duration-300 gap-2"
                 >
                   SAIBA MAIS
                   <ArrowRight className="w-5 h-5" />

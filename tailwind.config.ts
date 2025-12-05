@@ -102,6 +102,16 @@ export default {
 					pink: 'hsl(var(--neon-pink))',
 					purple: 'hsl(var(--neon-purple))',
 					green: 'hsl(var(--neon-green))'
+				},
+				// Christmas colors
+				christmas: {
+					red: 'hsl(var(--christmas-red))',
+					green: 'hsl(var(--christmas-green))',
+					gold: 'hsl(var(--christmas-gold))',
+					snow: 'hsl(var(--christmas-snow))',
+					ice: 'hsl(var(--christmas-ice))',
+					'dark-red': 'hsl(var(--christmas-dark-red))',
+					'dark-green': 'hsl(var(--christmas-dark-green))'
 				}
 			},
 			fontFamily: {

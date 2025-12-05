@@ -37,17 +37,21 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-urban rounded-lg flex items-center justify-center">
-                <span className="text-lg font-bold text-background">Z</span>
+              <div className="w-10 h-10 bg-gradient-christmas rounded-lg flex items-center justify-center">
+                <span className="text-lg font-bold text-white">Z</span>
               </div>
-            <span className="font-heading font-bold text-2xl text-foreground">
-              Distrito ZLG
-            </span>
+              <span className="font-heading font-bold text-2xl text-foreground">
+                Distrito ZLG
+              </span>
             </div>
-            
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-              Streetwear autêntico para quem vive a cultura urbana. 
+
+            <p className="text-muted-foreground mb-4 max-w-md leading-relaxed">
+              Streetwear autêntico para quem vive a cultura urbana.
               Cada peça é uma declaração, cada estilo conta uma história.
+            </p>
+
+            <p className="text-christmas-gold font-semibold mb-6 flex items-center gap-2">
+              🎅 Feliz Natal! Encontre o presente perfeito aqui.
             </p>
 
             <div className="flex space-x-4">
@@ -137,7 +141,7 @@ const Footer = () => {
             <Heart className="w-4 h-4 text-neon-pink fill-current" />
             <span>na quebrada.</span>
           </div>
-          
+
           <div className="flex space-x-6">
             <span>Todos os direitos reservados</span>
           </div>
