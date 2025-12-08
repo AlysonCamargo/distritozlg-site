@@ -112,18 +112,6 @@ export const products: Product[] = [
     isSale: false
   },
   {
-    id: 21,
-    name: 'Nike Marrom',
-    price: 79.99,
-    image: 'https://i.imgur.com/owa3irz.png',
-    imageFront: 'https://i.imgur.com/owa3irz.png',
-    imageBack: 'https://i.imgur.com/HWUsW7X.png',
-    category: 'oversized',
-    size: 'G',
-    isNew: false,
-    isSale: false
-  },
-  {
     id: 23,
     name: 'Travis Mostarda',
     price: 49.99,
@@ -430,18 +418,6 @@ export const products: Product[] = [
     image: "https://i.imgur.com/nQED1Tx.jpeg",
     imageFront: "https://i.imgur.com/nQED1Tx.jpeg",
     imageBack: "https://i.imgur.com/hlP0eL3.jpeg",
-    category: "oversized",
-    isNew: false,
-    size: "M",
-    isSale: false
-  },
-  {
-    id: 75,
-    name: "PALM ANGELS Ilusão",
-    price: 79.99,
-    image: "https://i.imgur.com/im80xjC.jpeg",
-    imageFront: "https://i.imgur.com/im80xjC.jpeg",
-    imageBack: "https://i.imgur.com/RJMUvm4.jpeg",
     category: "oversized",
     isNew: false,
     size: "M",
@@ -1114,18 +1090,6 @@ export const products: Product[] = [
     image: 'https://lh3.googleusercontent.com/d/1ZilNur3nXZMx6n7Cggu28ca9NTORnzul',
     imageFront: 'https://lh3.googleusercontent.com/d/1ZilNur3nXZMx6n7Cggu28ca9NTORnzul',
     imageBack: 'https://lh3.googleusercontent.com/d/1e4IIt5DyfqF2Jm6LL4nQ6mC87byTEWPp',
-    category: 'Oversized',
-    isNew: true,
-    isSale: false,
-    size: 'G'
-  },
-  {
-    id: 148,
-    name: 'Camiseta Oversized Nike 46',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1K4IsoH6jZspcWbIzCjS7AUB0myeUt9Ts',
-    imageFront: 'https://lh3.googleusercontent.com/d/1K4IsoH6jZspcWbIzCjS7AUB0myeUt9Ts',
-    imageBack: 'https://lh3.googleusercontent.com/d/1vJjlcE8bu56EFTcFNLAGSQ1Oy6OueAzL',
     category: 'Oversized',
     isNew: true,
     isSale: false,
