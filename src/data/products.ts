@@ -1257,7 +1257,7 @@ export const products: Product[] = [
     image: 'https://lh3.googleusercontent.com/d/18VMMwE0Q8Z7POzpb83LS_yIlBBnUDqV4',
     imageFront: 'https://lh3.googleusercontent.com/d/18VMMwE0Q8Z7POzpb83LS_yIlBBnUDqV4',
     imageBack: 'https://lh3.googleusercontent.com/d/1xamIhHbewqLB-hgnE1cNPrI7ysLTwsPH',
-    category: 'Camiseta Surf',
+    category: 'surf',
     size: 'M',
     isNew: true,
     isSale: false,
