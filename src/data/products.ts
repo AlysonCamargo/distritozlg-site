@@ -1200,7 +1200,7 @@ export const products: Product[] = [
 
   {
     id: 157,
-    name: 'Camiseta Oversized NY',
+    name: 'Camiseta Oversized NY 55',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1k8xeOYuOH6QFrMaayuW9PItUr6_pSAWc',
     imageFront: 'https://lh3.googleusercontent.com/d/1k8xeOYuOH6QFrMaayuW9PItUr6_pSAWc',
@@ -1213,7 +1213,7 @@ export const products: Product[] = [
 
   {
     id: 158,
-    name: 'Camiseta Oversized NIKE',
+    name: 'Camiseta Oversized NIKE 56',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1uSiWHqol0PEEO1wP-BQQD6LS187fiIG-',
     imageFront: 'https://lh3.googleusercontent.com/d/1uSiWHqol0PEEO1wP-BQQD6LS187fiIG-',
@@ -1226,7 +1226,7 @@ export const products: Product[] = [
 
   {
     id: 159,
-    name: 'Camiseta Oversized Off White',
+    name: 'Camiseta Oversized Off White 57',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/187H6TPB34JMAS1RjsQ5X_MTa1S5KzAmg',
     imageFront: 'https://lh3.googleusercontent.com/d/187H6TPB34JMAS1RjsQ5X_MTa1S5KzAmg',
@@ -1239,7 +1239,7 @@ export const products: Product[] = [
 
   {
     id: 160,
-    name: 'Camiseta Oversized Adidas',
+    name: 'Camiseta Oversized Adidas 58',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1WtDNczHi5sgFRp6V_GWDAkmgPZyHTNRh',
     imageFront: 'https://lh3.googleusercontent.com/d/1WtDNczHi5sgFRp6V_GWDAkmgPZyHTNRh',
@@ -1252,7 +1252,7 @@ export const products: Product[] = [
 
   {
     id: 161,
-    name: 'Camiseta Dry fit NIKE',
+    name: 'Camiseta Dry fit NIKE 59',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/18VMMwE0Q8Z7POzpb83LS_yIlBBnUDqV4',
     imageFront: 'https://lh3.googleusercontent.com/d/18VMMwE0Q8Z7POzpb83LS_yIlBBnUDqV4',
