@@ -1106,5 +1106,89 @@ export const products: Product[] = [
     isNew: true,
     isSale: false,
     size: 'G'
-  }
+  },
+  {
+    id: 150,
+    name: 'Camiseta Oversized NY 48',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1kLKaeleLlelxHESYKaz526FUZCQyTXDs',
+    imageFront: 'https://lh3.googleusercontent.com/d/1kLKaeleLlelxHESYKaz526FUZCQyTXDs',
+    imageBack: 'https://lh3.googleusercontent.com/d/11FvX5fOxzUShr0Z0dFtII2dPWoqS_HVr',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
+  {
+    id: 151,
+    name: 'Camiseta Oversized Palm Angels 49',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1fA-PaN3qmlHFrIMIyJ14pAcdsjGxO8fV',
+    imageFront: 'https://lh3.googleusercontent.com/d/1fA-PaN3qmlHFrIMIyJ14pAcdsjGxO8fV',
+    imageBack: 'https://lh3.googleusercontent.com/d/1sAayVVfspdA8IxTndmChJ_IluOrg6FsM',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
+  {
+    id: 152,
+    name: 'Camiseta Oversized Palm Angels 50',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1k2dY-sDfWz5lCh0tj9vwG0G3Jgz71T6o',
+    imageFront: 'https://lh3.googleusercontent.com/d/1k2dY-sDfWz5lCh0tj9vwG0G3Jgz71T6o',
+    imageBack: 'https://lh3.googleusercontent.com/d/1S8lySPNIhPjSiyKvoh_I-1t_zolgWtl',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
+  {
+    id: 153,
+    name: 'Camiseta Oversized Palm Angels 51',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1pA9SqTQH1WfDDSja89eOLkYRfTCwccRk',
+    imageFront: 'https://lh3.googleusercontent.com/d/1pA9SqTQH1WfDDSja89eOLkYRfTCwccRk',
+    imageBack: 'https://lh3.googleusercontent.com/d/1YAZsPpCTQe-P2n1M0O9ASedJBx0D8H4z',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
+  {
+    id: 154,
+    name: 'Camiseta Oversized Gangster 52',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1goktT7JnZZ6009xf2KA3EElbT_d_MsHi',
+    imageFront: 'https://lh3.googleusercontent.com/d/1goktT7JnZZ6009xf2KA3EElbT_d_MsHi',
+    imageBack: 'https://lh3.googleusercontent.com/d/1PhyhmtaqJ8b0wFVN1NIWfpRcVLc84oJ9',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
+  {
+    id: 155,
+    name: 'Camiseta Oversized Palm Angels 53',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1XPNz7UdWNc_nhXUJu5-QBzs2_9ERM7L',
+    imageFront: 'https://lh3.googleusercontent.com/d/1XPNz7UdWNc_nhXUJu5-QBzs2_9ERM7L',
+    imageBack: 'https://lh3.googleusercontent.com/d/18h9CRQ7XHQncVCqPAmPu73dZDCvgsZ8Q',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
+  {
+    id: 156,
+    name: 'Camiseta Oversized Gangster 54',
+    price: 79.99,
+    image: 'https://lh3.googleusercontent.com/d/1AFSuzqfuGLV4tAVQ4mBkTsG6YsXxdRYb',
+    imageFront: 'https://lh3.googleusercontent.com/d/1AFSuzqfuGLV4tAVQ4mBkTsG6YsXxdRYb',
+    imageBack: 'https://lh3.googleusercontent.com/d/1-Dh_NR-k25naOPYqcmxB1Yv0WHJD7cFN',
+    category: 'Oversized',
+    isNew: true,
+    isSale: false,
+    size: 'G'
+  },
 ];
