@@ -282,7 +282,7 @@ SOFTWARE.
 **Alyson Camargo**
 
 - GitHub: [@AlysonCamargo](https://github.com/AlysonCamargo)
-- LinkedIn: [Alyson Camargo](https://linkedin.com/in/alysoncamargo)
+- LinkedIn: [Alyson Camargo](https://www.linkedin.com/in/alyson-camargo-49b476242/)
 
 ---
 
