@@ -268,7 +268,7 @@ export default function Catalog() {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as SortKey)}
-                  className="bg-transparent text-sm font-medium border-none focus:ring-0 cursor-pointer text-right"
+                  className="bg-background text-foreground text-sm font-medium border-none focus:ring-0 cursor-pointer text-right [&>option]:bg-background [&>option]:text-foreground"
                 >
                   <option value="relevance">Relevância</option>
                   <option value="newest">Mais Recentes</option>
