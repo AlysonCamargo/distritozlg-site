@@ -61,6 +61,25 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                 <h3 className="font-bold text-lg">Finalizar Pedido</h3>
             </div>
 
+            {/* Order Summary */}
+            <div className="bg-secondary/30 p-4 rounded-lg mb-6">
+                <h4 className="font-medium text-sm mb-2 text-muted-foreground">Resumo do Pedido</h4>
+                <div className="space-y-2 max-h-32 overflow-y-auto pr-2">
+                    {items.map((item) => (
+                        <div key={`${item.id}-${item.selectedSize}`} className="flex justify-between text-sm">
+                            <span className="line-clamp-1 flex-1">
+                                {item.quantity}x {item.name} <span className="text-xs text-muted-foreground">({item.selectedSize})</span>
+                            </span>
+                            <span className="font-medium">{BRL(item.price * item.quantity)}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className="border-t border-border mt-3 pt-2 flex justify-between font-bold">
+                    <span>Total</span>
+                    <span>{BRL(cartTotal)}</span>
+                </div>
+            </div>
+
             <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-6 overflow-y-auto px-1">
                 <div className="space-y-4">
                     <div className="space-y-2">

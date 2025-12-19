@@ -2,7 +2,8 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import { Minus, Plus, Trash2, ShoppingBag, Truck } from "lucide-react";
 import { useState } from "react";
 import OrderForm from "./OrderForm";
 
@@ -29,6 +30,8 @@ export default function CartDrawer() {
                         {items.length === 0 ? "Seu carrinho está vazio." : `${items.length} itens no carrinho.`}
                     </SheetDescription>
                 </SheetHeader>
+
+
 
                 {items.length === 0 ? (
                     <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground gap-4">
