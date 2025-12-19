@@ -185,7 +185,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                     className="group bg-background/95 backdrop-blur-sm rounded-xl overflow-hidden cursor-pointer border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        window.location.href = `/produto/${related.id}`;
+                                        window.location.href = `/product/${related.id}`;
                                     }}
                                 >
                                     <div className="aspect-square relative overflow-hidden">

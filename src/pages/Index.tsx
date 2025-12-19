@@ -37,7 +37,7 @@ const Index = () => {
   const featuredProducts = products.filter(p => p.isNew || p.isSale).slice(0, 4);
 
   const handleProductClick = (product: Product) => {
-    navigate(`/produto/${product.id}`);
+    navigate(`/product/${product.id}`);
   };
 
   const handleCloseModal = () => {
