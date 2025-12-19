@@ -461,18 +461,7 @@ export const products: Product[] = [
     size: "G",
     isSale: false
   },
-  {
-    id: 86,
-    name: "Calça Cargo Azul Claro",
-    price: 109.99,
-    image: "https://i.imgur.com/ZFhmYQe.jpeg",
-    imageFront: "https://i.imgur.com/ZFhmYQe.jpeg",
-    imageBack: "https://i.imgur.com/t9W1Oto.jpeg",
-    category: "calça cargo",
-    isNew: false,
-    size: "G",
-    isSale: false
-  },
+
   {
     id: 87,
     name: "Shorts Dry Fit Azul",
@@ -1267,18 +1256,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false,
   },
-  {
-    id: 170,
-    name: 'Calça cargo azul clara',
-    price: 109.99,
-    image: 'https://lh3.googleusercontent.com/d/1YRpK7x5KX5dpZDFvKwAVY8ce5gYInt37',
-    imageFront: 'https://lh3.googleusercontent.com/d/1YRpK7x5KX5dpZDFvKwAVY8ce5gYInt37',
-    imageBack: 'https://lh3.googleusercontent.com/d/1YN2wuNmHxoWZSQjQuee5dK-05la7aH8g',
-    category: 'calça cargo',
-    size: 'G',
-    isNew: true,
-    isSale: false,
-  },
+
   {
     id: 171,
     name: 'Calça cargo preta',
