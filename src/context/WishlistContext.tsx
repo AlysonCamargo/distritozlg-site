@@ -7,12 +7,15 @@ interface WishlistContextType {
     removeFromWishlist: (productId: number) => void;
     isInWishlist: (productId: number) => boolean;
     toggleWishlist: (product: Product) => void;
+    isWishlistOpen: boolean;
+    setIsWishlistOpen: (isOpen: boolean) => void;
 }
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
 export function WishlistProvider({ children }: { children: ReactNode }) {
     const [items, setItems] = useState<Product[]>([]);
+    const [isWishlistOpen, setIsWishlistOpen] = useState(false);
 
     // Load from localStorage
     useEffect(() => {
@@ -55,7 +58,15 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
     };
 
     return (
-        <WishlistContext.Provider value={{ items, addToWishlist, removeFromWishlist, isInWishlist, toggleWishlist }}>
+        <WishlistContext.Provider value={{
+            items,
+            addToWishlist,
+            removeFromWishlist,
+            isInWishlist,
+            toggleWishlist,
+            isWishlistOpen,
+            setIsWishlistOpen
+        }}>
             {children}
         </WishlistContext.Provider>
     );

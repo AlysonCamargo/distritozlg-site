@@ -3,6 +3,7 @@ import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
 import { SEOProvider } from "@/components/SEOProvider";
 import CartDrawer from "@/components/CartDrawer";
+import WishlistDrawer from "@/components/WishlistDrawer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -26,6 +27,7 @@ export const App = () => (
                 <Toaster />
                 <Sonner />
                 <CartDrawer />
+                <WishlistDrawer />
                 <BrowserRouter>
                   <Routes>
                     <Route path="/" element={<Index />} />

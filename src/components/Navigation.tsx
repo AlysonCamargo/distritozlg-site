@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { cartCount, setIsCartOpen } = useCart();
-  const { items: wishlistItems } = useWishlist();
+  const { items: wishlistItems, setIsWishlistOpen } = useWishlist();
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -63,7 +63,7 @@ const Navigation = () => {
             </div>
 
             <div className="flex items-center gap-4 border-l border-border pl-6">
-              <button className="relative group" onClick={() => { }}>
+              <button className="relative group" onClick={() => setIsWishlistOpen(true)}>
                 <Heart className="w-5 h-5 text-foreground group-hover:text-accent transition-colors" />
                 {wishlistItems.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
