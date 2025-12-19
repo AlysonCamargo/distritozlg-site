@@ -279,18 +279,7 @@ export const products: Product[] = [
     isNew: false,
     isSale: false
   },
-  {
-    id: 50,
-    name: 'Regata Canelada',
-    price: 65.00,
-    image: 'https://i.imgur.com/PIMsnzg.jpeg',
-    imageFront: 'https://i.imgur.com/PIMsnzg.jpeg',
-    imageBack: 'https://i.imgur.com/DX3sV7g.jpeg',
-    category: 'regatas',
-    size: 'P',
-    isNew: false,
-    isSale: false
-  },
+
   {
     id: 53,
     name: 'Short Moletom Nike Branco',
@@ -303,18 +292,7 @@ export const products: Product[] = [
     isNew: false,
     isSale: false
   },
-  {
-    id: 57,
-    name: 'Camiseta Boss Branca Logo Pequeno',
-    price: 60.00,
-    image: 'https://i.imgur.com/VxASolC.jpeg',
-    imageFront: 'https://i.imgur.com/VxASolC.jpeg',
-    imageBack: 'https://i.imgur.com/VxASolC.jpeg',
-    category: 'malha egipcia',
-    size: 'M',
-    isNew: false,
-    isSale: false
-  },
+
   {
     id: 59,
     name: 'Camiseta Diesel Branca Logo Giga',
@@ -963,18 +941,7 @@ export const products: Product[] = [
     isSale: false,
     size: 'M'
   },
-  {
-    id: 131,
-    name: 'Camiseta Lacoste 29',
-    price: 100,
-    image: 'https://lh3.googleusercontent.com/d/1FU7P_lwSw5UX8Y3HGdWc2Bw9UbNJTzZS',
-    imageFront: 'https://lh3.googleusercontent.com/d/1FU7P_lwSw5UX8Y3HGdWc2Bw9UbNJTzZS',
-    imageBack: 'https://lh3.googleusercontent.com/d/1vE0WsrV-Z61rJqFlXUAsEsA8ScEdxJwW',
-    category: 'Peruana',
-    isNew: false,
-    isSale: false,
-    size: 'M'
-  },
+
   {
     id: 132,
     name: 'Camiseta Oversized AMIRI 30',
@@ -1011,18 +978,7 @@ export const products: Product[] = [
     isSale: false,
     size: 'GG'
   },
-  {
-    id: 136,
-    name: 'Camiseta Oversized Adidas 34',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1Hby8Cn9v3sJ_JQVoWyfCNROgU8g-qprP',
-    imageFront: 'https://lh3.googleusercontent.com/d/1Hby8Cn9v3sJ_JQVoWyfCNROgU8g-qprP',
-    imageBack: 'https://lh3.googleusercontent.com/d/1MKRD4S8afNSpVaMSPqBJ4VkYCh9UaW4A',
-    category: 'Oversized',
-    isNew: false,
-    isSale: false,
-    size: 'GG'
-  },
+
   {
     id: 137,
     name: 'Camiseta Oversized Nike 35',
@@ -1120,18 +1076,7 @@ export const products: Product[] = [
     isSale: false,
   },
 
-  {
-    id: 151,
-    name: 'Camiseta oversized Palm angels 49',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1fA-PaN3qmIHFrIMjLy14pAcdsjGxOBfV',
-    imageFront: 'https://lh3.googleusercontent.com/d/1fA-PaN3qmIHFrIMjLy14pAcdsjGxOBfV',
-    imageBack: 'https://lh3.googleusercontent.com/d/1sAayVVfspdA8lxTndmChJ_lluOrg6FsM',
-    category: 'Oversized',
-    size: 'G',
-    isNew: true,
-    isSale: false,
-  },
+
 
   {
     id: 152,
@@ -1185,18 +1130,7 @@ export const products: Product[] = [
     isSale: false,
   },
 
-  {
-    id: 156,
-    name: 'Camiseta oversized Gangster 54',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1AFSuzqfuGLV4tAVQ4mBkTsG6YsXXdRYb',
-    imageFront: 'https://lh3.googleusercontent.com/d/1AFSuzqfuGLV4tAVQ4mBkTsG6YsXXdRYb',
-    imageBack: 'https://lh3.googleusercontent.com/d/1-Dh_NR-k25naOPYgcmxB1Yv0WIHD7cFN',
-    category: 'Oversized',
-    size: 'M',
-    isNew: true,
-    isSale: false,
-  },
+
 
   {
     id: 157,
@@ -1211,18 +1145,7 @@ export const products: Product[] = [
     isSale: false,
   },
 
-  {
-    id: 158,
-    name: 'Camiseta Oversized NIKE 56',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1uSiWHqol0PEEO1wP-BQQD6LS187fiIG-',
-    imageFront: 'https://lh3.googleusercontent.com/d/1uSiWHqol0PEEO1wP-BQQD6LS187fiIG-',
-    imageBack: 'https://lh3.googleusercontent.com/d/1OrwE1TZpSX-rMhfV-wa70Uqf4zNk3FMp',
-    category: 'Oversized',
-    size: 'M',
-    isNew: true,
-    isSale: false,
-  },
+
 
   {
     id: 159,
@@ -1237,18 +1160,7 @@ export const products: Product[] = [
     isSale: false,
   },
 
-  {
-    id: 160,
-    name: 'Camiseta Oversized Adidas 58',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1WtDNczHi5sgFRp6V_GWDAkmgPZyHTNRh',
-    imageFront: 'https://lh3.googleusercontent.com/d/1WtDNczHi5sgFRp6V_GWDAkmgPZyHTNRh',
-    imageBack: 'https://lh3.googleusercontent.com/d/1fryo42Jj4j3w4Xq4aLhAMOjTd6ErbSZe',
-    category: 'Oversized',
-    size: 'M',
-    isNew: true,
-    isSale: false,
-  },
+
 
   {
     id: 161,
