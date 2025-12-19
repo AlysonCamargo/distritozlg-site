@@ -91,7 +91,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                 className="max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-scaleIn flex flex-col gap-8"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="bg-background rounded-2xl shadow-2xl border border-border flex flex-col md:flex-row overflow-hidden relative">
+                <div className="bg-background rounded-2xl shadow-2xl border border-border flex flex-col lg:flex-row overflow-hidden relative shrink-0">
                     <button
                         onClick={onClose}
                         className="absolute top-4 right-4 text-foreground/50 hover:text-foreground z-10 w-8 h-8 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm transition-colors"
@@ -101,12 +101,12 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                     </button>
 
                     {/* Left: Image Carousel */}
-                    <div className="w-full md:w-1/2 bg-secondary/30 p-6 flex items-center justify-center">
+                    <div className="w-full lg:w-1/2 bg-secondary/30 p-4 md:p-6 flex items-center justify-center">
                         <ProductCarousel product={product} />
                     </div>
 
                     {/* Right: Info */}
-                    <div className="w-full md:w-1/2 p-8 flex flex-col">
+                    <div className="w-full lg:w-1/2 p-6 md:p-8 flex flex-col">
                         <div className="mb-auto">
                             <div className="flex items-center gap-2 mb-4">
                                 <Badge variant="outline" className="uppercase tracking-wider text-[10px]">
@@ -168,8 +168,12 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                 </div>
 
                 {/* Related Products */}
+                {/* Related Products */}
                 <div className="w-full">
-                    <h3 className="text-white font-bold text-xl mb-4">Você também pode gostar</h3>
+                    <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-accent rounded-full"></span>
+                        Você também pode gostar
+                    </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {products
                             .filter(p => p.category === product.category && p.id !== product.id)
@@ -178,18 +182,34 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                             .map(related => (
                                 <div
                                     key={related.id}
-                                    className="bg-background rounded-xl overflow-hidden cursor-pointer hover:shadow-lg transition-all"
+                                    className="group bg-background/95 backdrop-blur-sm rounded-xl overflow-hidden cursor-pointer border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         window.location.href = `/produto/${related.id}`;
                                     }}
                                 >
-                                    <div className="aspect-square relative">
-                                        <img src={related.image} alt={related.name} className="object-cover w-full h-full" />
+                                    <div className="aspect-square relative overflow-hidden">
+                                        <img
+                                            src={related.image}
+                                            alt={related.name}
+                                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                        {related.isSale && (
+                                            <div className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-lg">
+                                                SALE
+                                            </div>
+                                        )}
                                     </div>
-                                    <div className="p-3">
-                                        <h4 className="font-medium text-sm line-clamp-1">{related.name}</h4>
-                                        <p className="text-sm font-bold mt-1">{BRL(related.price)}</p>
+                                    <div className="p-4">
+                                        <h4 className="font-medium text-sm line-clamp-1 group-hover:text-accent transition-colors">
+                                            {related.name}
+                                        </h4>
+                                        <div className="flex items-center justify-between mt-2">
+                                            <p className="text-sm font-bold">{BRL(related.price)}</p>
+                                            <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                                <ShoppingBag className="w-4 h-4" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
