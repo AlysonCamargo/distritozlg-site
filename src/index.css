@@ -43,35 +43,21 @@
     --neon-purple: 270 100% 70%;
     --neon-green: 120 100% 50%;
 
-    /* Christmas colors - Urban Festive Palette */
-    --christmas-red: 0 85% 60%;
-    --christmas-green: 145 65% 45%;
-    --christmas-gold: 45 100% 55%;
-    --christmas-snow: 210 20% 98%;
-    --christmas-ice: 195 100% 85%;
-    --christmas-dark-red: 0 70% 45%;
-    --christmas-dark-green: 145 50% 30%;
+
 
     /* Gradients */
     --gradient-urban: linear-gradient(135deg, hsl(174 100% 50%), hsl(330 100% 70%));
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 5%), hsl(220 9% 15%));
     --gradient-card: linear-gradient(145deg, hsl(220 13% 8%), hsl(220 9% 12%));
 
-    /* Christmas gradients */
-    --gradient-christmas: linear-gradient(135deg, hsl(0 85% 60%), hsl(145 65% 45%));
-    --gradient-christmas-gold: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 100% 50%));
-    --gradient-festive: linear-gradient(135deg, hsl(0 85% 60%), hsl(45 100% 55%), hsl(145 65% 45%));
-    --gradient-winter: linear-gradient(180deg, hsl(220 13% 5%), hsl(195 100% 85% / 0.1));
+
 
     /* Shadows and glows */
     --shadow-neon: 0 0 20px hsl(174 100% 50% / 0.3);
     --shadow-card: 0 4px 20px hsl(220 13% 5% / 0.4);
     --glow-accent: 0 0 30px hsl(174 100% 50% / 0.5);
 
-    /* Christmas glows */
-    --glow-christmas: 0 0 30px hsl(0 85% 60% / 0.4);
-    --glow-gold: 0 0 25px hsl(45 100% 55% / 0.5);
-    --glow-snow: 0 0 15px hsl(210 20% 98% / 0.3);
+
 
     /* Typography */
     --font-heading: 'Inter', sans-serif;
@@ -179,46 +165,7 @@
   }
 }
 
-/* Christmas Animations */
-@keyframes snowfall {
-  0% {
-    transform: translateY(-10vh) translateX(0);
-    opacity: 0;
-  }
 
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(110vh) translateX(100px);
-    opacity: 0;
-  }
-}
-
-@keyframes snowfall-left {
-  0% {
-    transform: translateY(-10vh) translateX(0);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(110vh) translateX(-100px);
-    opacity: 0;
-  }
-}
 
 @keyframes twinkle {
 
@@ -234,17 +181,7 @@
   }
 }
 
-@keyframes glow-pulse {
 
-  0%,
-  100% {
-    box-shadow: 0 0 10px hsl(var(--christmas-gold) / 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 20px hsl(var(--christmas-gold) / 0.6);
-  }
-}
 
 @keyframes float-gentle {
 
@@ -314,22 +251,13 @@
   }
 }
 
-/* Utility classes for Christmas theme */
-.animate-snowfall {
-  animation: snowfall linear infinite;
-}
 
-.animate-snowfall-left {
-  animation: snowfall-left linear infinite;
-}
 
 .animate-twinkle {
   animation: twinkle 2s ease-in-out infinite;
 }
 
-.animate-glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
-}
+
 
 .animate-float-gentle {
   animation: float-gentle 3s ease-in-out infinite;

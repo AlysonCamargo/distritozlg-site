@@ -20,38 +20,38 @@ export default {
 		extend: {
 			keyframes: {
 				'accordion-down': {
-				  from: { height: '0' },
-				  to: { height: 'var(--radix-accordion-content-height)' }
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-				  from: { height: 'var(--radix-accordion-content-height)' },
-				  to: { height: '0' }
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				// 👇 Adiciona a animação fade-in
 				'fade-in': {
-				  from: {
-					opacity: '0',
-					transform: 'scale(0.95)'
-				  },
-				  to: {
-					opacity: '1',
-					transform: 'scale(1)'
-				  }
-				  
+					from: {
+						opacity: '0',
+						transform: 'scale(0.95)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+
 				}
-			  },
-			  animation: {
+			},
+			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				// 👇 Registra a animação fade-in
 				'fade-in': 'fade-in 0.3s ease-out'
-			  },
+			},
 			boxShadow: {
 				neon: '0 0 20px var(--neon-green)',
 				'card-urban': 'var(--shadow-card)',
 				'glow': 'var(--glow-accent)'
 			},
-				
+
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -103,16 +103,7 @@ export default {
 					purple: 'hsl(var(--neon-purple))',
 					green: 'hsl(var(--neon-green))'
 				},
-				// Christmas colors
-				christmas: {
-					red: 'hsl(var(--christmas-red))',
-					green: 'hsl(var(--christmas-green))',
-					gold: 'hsl(var(--christmas-gold))',
-					snow: 'hsl(var(--christmas-snow))',
-					ice: 'hsl(var(--christmas-ice))',
-					'dark-red': 'hsl(var(--christmas-dark-red))',
-					'dark-green': 'hsl(var(--christmas-dark-green))'
-				}
+
 			},
 			fontFamily: {
 				heading: 'var(--font-heading)',
@@ -122,7 +113,7 @@ export default {
 			backgroundImage: {
 				'gradient-urban': 'var(--gradient-urban)',
 				'gradient-hero': 'var(--gradient-hero)',
-			// Removed duplicate boxShadow definition
+				// Removed duplicate boxShadow definition
 				'glow': 'var(--glow-accent)'
 			},
 			borderRadius: {
@@ -131,7 +122,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			// Removed duplicate animation property
-			
+
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

@@ -37,8 +37,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-christmas rounded-lg flex items-center justify-center">
-                <span className="text-lg font-bold text-white">Z</span>
+              <div className="w-10 h-10 bg-gradient-urban rounded-lg flex items-center justify-center">
+                <span className="text-lg font-bold text-background">Z</span>
               </div>
               <span className="font-heading font-bold text-2xl text-foreground">
                 Distrito ZLG
@@ -50,8 +50,8 @@ const Footer = () => {
               Cada peça é uma declaração, cada estilo conta uma história.
             </p>
 
-            <p className="text-christmas-gold font-semibold mb-6 flex items-center gap-2">
-              🎅 Feliz Natal! Encontre o presente perfeito aqui.
+            <p className="text-accent font-semibold mb-6 flex items-center gap-2">
+              🔥 Comece 2026 com o melhor do streetwear.
             </p>
 
             <div className="flex space-x-4">
@@ -137,7 +137,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center space-x-1 mb-4 md:mb-0">
-            <span>© 2025 Distrito ZLG. Feito com</span>
+            <span>© 2026 Distrito ZLG. Feito com</span>
             <Heart className="w-4 h-4 text-neon-pink fill-current" />
             <span>na quebrada.</span>
           </div>
