@@ -456,18 +456,7 @@ export const products: Product[] = [
     size: "P e M",
     isSale: false
   },
-  {
-    id: 93,
-    name: "Dry Fit Nike Azul e Branco",
-    price: 49.99,
-    image: "https://i.imgur.com/qaUGh8I.jpeg",
-    imageFront: "https://i.imgur.com/qaUGh8I.jpeg",
-    imageBack: "https://i.imgur.com/0JfatYm.jpeg",
-    category: "dryfit",
-    isNew: false,
-    size: "P",
-    isSale: false
-  },
+
   {
     id: 94,
     name: "Dry Fit Nike Logo na Direita",
@@ -1029,18 +1018,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false,
   },
-  {
-    id: 163,
-    name: 'Camiseta Dry fit NIKE 61',
-    price: 49.99,
-    image: 'https://lh3.googleusercontent.com/d/1-0WMABNrZXjutiJljgWNP-bjM9uCATtB',
-    imageFront: 'https://lh3.googleusercontent.com/d/1-0WMABNrZXjutiJljgWNP-bjM9uCATtB',
-    imageBack: 'https://lh3.googleusercontent.com/d/1shQBS5aec3tsyJW_o-lCUCFCD1b9mqJP',
-    category: 'dryfit',
-    size: 'M',
-    isNew: true,
-    isSale: false,
-  },
+
   {
     id: 164,
     name: 'Camiseta Dry fit NIKE 62',
@@ -1053,18 +1031,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false,
   },
-  {
-    id: 165,
-    name: 'Camiseta Dry fit NIKE 63',
-    price: 49.99,
-    image: 'https://lh3.googleusercontent.com/d/12W5aS477uzAxTN-330-q933sDgpNHhZK',
-    imageFront: 'https://lh3.googleusercontent.com/d/12W5aS477uzAxTN-330-q933sDgpNHhZK',
-    imageBack: 'https://lh3.googleusercontent.com/d/1qoV12O7zE__M_T6tATIokubOJUQBcbv2',
-    category: 'dryfit',
-    size: 'G',
-    isNew: true,
-    isSale: false,
-  },
+
   {
     id: 166,
     name: 'Camiseta malha egipcia 64',
