@@ -421,18 +421,6 @@ export const products: Product[] = [
     isSale: false
   },
   {
-    id: 90,
-    name: "Dry Fit Nike Preta e Cinza",
-    price: 49.99,
-    image: "https://i.imgur.com/qMJRtsJ.png",
-    imageFront: "https://i.imgur.com/qMJRtsJ.png",
-    imageBack: "https://i.imgur.com/eCVSHG2.png",
-    category: "dryfit",
-    isNew: false,
-    size: "M",
-    isSale: false
-  },
-  {
     id: 91,
     name: "Dry Fit Nike Preta e Branca",
     price: 49.99,
@@ -675,18 +663,6 @@ export const products: Product[] = [
     size: 'G',
   },
   {
-    id: 116,
-    name: 'Quiksilver 14',
-    price: 42,
-    image: 'https://i.imgur.com/0ITmJua.jpeg',
-    imageFront: 'https://i.imgur.com/0ITmJua.jpeg',
-    imageBack: 'https://i.imgur.com/muWsKqr.png',
-    category: 'surf',
-    isNew: false,
-    isSale: false,
-    size: 'G',
-  },
-  {
     id: 117,
     name: 'Mizuno 15',
     price: 42,
@@ -863,19 +839,6 @@ export const products: Product[] = [
     image: 'https://lh3.googleusercontent.com/d/1q2mponDlsbjkJUEUpfA7d_-TAlk-PijR',
     imageFront: 'https://lh3.googleusercontent.com/d/1q2mponDlsbjkJUEUpfA7d_-TAlk-PijR',
     imageBack: 'https://lh3.googleusercontent.com/d/1UgOBrCozrcFmSt1OyNGWMPuwADwByb91',
-    category: 'Oversized',
-    isNew: false,
-    isSale: false,
-    size: 'GG'
-  },
-
-  {
-    id: 137,
-    name: 'Camiseta Oversized Nike 35',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1j7smkkwoBxwPkigY_WZAji5IGz2Gtig2',
-    imageFront: 'https://lh3.googleusercontent.com/d/1j7smkkwoBxwPkigY_WZAji5IGz2Gtig2',
-    imageBack: 'https://lh3.googleusercontent.com/d/1GBdCZymM5NY_bZdce6moEjgkpSBem_vt',
     category: 'Oversized',
     isNew: false,
     isSale: false,
