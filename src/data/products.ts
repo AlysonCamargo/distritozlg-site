@@ -151,37 +151,12 @@ export const products: Product[] = [
   },
 
   {
-    id: 37,
-    name: 'Adidas Ronkib',
-    price: 79.99,
-    image: 'https://i.imgur.com/UDFDixY.jpeg',
-    imageFront: 'https://i.imgur.com/UDFDixY.jpeg',
-    imageBack: 'https://i.imgur.com/H4cVTgV.jpeg',
-    category: 'oversized',
-    size: 'GG',
-    isNew: false,
-    isSale: false
-  },
-
-  {
     id: 39,
     name: 'Off White X',
     price: 79.99,
     image: 'https://i.imgur.com/ffsnOic.jpeg',
     imageFront: 'https://i.imgur.com/ffsnOic.jpeg',
     imageBack: 'https://i.imgur.com/uGWqTUk.jpeg',
-    category: 'oversized',
-    size: 'GG',
-    isNew: false,
-    isSale: false
-  },
-  {
-    id: 41,
-    name: 'Adidas Branca',
-    price: 79.99,
-    image: 'https://i.imgur.com/SbihkTZ.jpeg',
-    imageFront: 'https://i.imgur.com/SbihkTZ.jpeg',
-    imageBack: 'https://i.imgur.com/dG5BxYE.jpeg',
     category: 'oversized',
     size: 'GG',
     isNew: false,
@@ -307,7 +282,7 @@ export const products: Product[] = [
     imageFront: 'https://i.imgur.com/24UMzJc.png',
     imageBack: 'https://i.imgur.com/24UMzJc.png',
     category: 'dryfit',
-    size: 'P, M G',
+    size: 'P',
     isNew: false,
     isSale: false
   },
@@ -418,30 +393,6 @@ export const products: Product[] = [
     category: "shorts dry fit",
     isNew: false,
     size: "G",
-    isSale: false
-  },
-  {
-    id: 91,
-    name: "Dry Fit Nike Preta e Branca",
-    price: 49.99,
-    image: "https://i.imgur.com/aRXxU6H.jpeg",
-    imageFront: "https://i.imgur.com/aRXxU6H.jpeg",
-    imageBack: "https://i.imgur.com/jko3hhy.jpeg",
-    category: "dryfit",
-    isNew: false,
-    size: "G",
-    isSale: false
-  },
-  {
-    id: 92,
-    name: "Dry Fit Nike Cinza e Preto",
-    price: 49.99,
-    image: "https://i.imgur.com/zihxEiE.jpeg",
-    imageFront: "https://i.imgur.com/zihxEiE.jpeg",
-    imageBack: "https://i.imgur.com/cy8Pe3T.jpeg",
-    category: "dryfit",
-    isNew: false,
-    size: "P e M",
     isSale: false
   },
 
@@ -757,18 +708,6 @@ export const products: Product[] = [
     isNew: false,
     isSale: false,
     size: 'M',
-  },
-  {
-    id: 126,
-    name: 'Camiseta Lacoste 24',
-    price: 100,
-    image: 'https://lh3.googleusercontent.com/d/1LwrbO7rv8BRgqGSLWjzx22bncUN0YLHm',
-    imageFront: 'https://lh3.googleusercontent.com/d/1LwrbO7rv8BRgqGSLWjzx22bncUN0YLHm',
-    imageBack: 'https://lh3.googleusercontent.com/d/1A5Af4xCPNckAjbsGNupUCbVFuq4gXCwd',
-    category: 'Peruana',
-    isNew: false,
-    isSale: false,
-    size: 'M'
   },
   {
     id: 127,
