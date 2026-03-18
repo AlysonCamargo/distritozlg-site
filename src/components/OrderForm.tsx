@@ -19,6 +19,9 @@ export default function OrderForm({ onBack }: OrderFormProps) {
         phone: "",
         address: "",
         paymentMethod: "pix",
+        deliveryType: "now",
+        scheduleDate: "",
+        scheduleTime: "",
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +37,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
         message += `*Cliente:* ${formData.name}\n`;
         message += `*Telefone:* ${formData.phone}\n`;
         message += `*Endereço:* ${formData.address}\n`;
+        message += `*Entrega:* ${formData.deliveryType === 'now' ? 'Na hora' : `Agendada para ${formData.scheduleDate.split('-').reverse().join('/')} às ${formData.scheduleTime}`}\n`;
         message += `*Pagamento:* ${formData.paymentMethod === 'pix' ? 'PIX' : 'Cartão'}\n\n`;
         message += `*ITENS DO PEDIDO:*\n`;
 
@@ -117,6 +121,51 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                             onChange={handleChange}
                         />
                     </div>
+
+                    <div className="space-y-3">
+                        <Label>Opção de Entrega</Label>
+                        <RadioGroup
+                            defaultValue="now"
+                            onValueChange={(val) => setFormData({ ...formData, deliveryType: val })}
+                            className="flex flex-col gap-2"
+                        >
+                            <div className="flex items-center space-x-2 border p-3 rounded-md cursor-pointer hover:bg-secondary/50">
+                                <RadioGroupItem value="now" id="delivery-now" />
+                                <Label htmlFor="delivery-now" className="cursor-pointer flex-1 font-medium">Entrega na hora</Label>
+                            </div>
+                            <div className="flex items-center space-x-2 border p-3 rounded-md cursor-pointer hover:bg-secondary/50">
+                                <RadioGroupItem value="schedule" id="delivery-schedule" />
+                                <Label htmlFor="delivery-schedule" className="cursor-pointer flex-1 font-medium">Agendar entrega</Label>
+                            </div>
+                        </RadioGroup>
+                    </div>
+
+                    {formData.deliveryType === 'schedule' && (
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="scheduleDate">Data da Entrega</Label>
+                                <Input
+                                    id="scheduleDate"
+                                    name="scheduleDate"
+                                    type="date"
+                                    required={formData.deliveryType === 'schedule'}
+                                    value={formData.scheduleDate}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="scheduleTime">Horário</Label>
+                                <Input
+                                    id="scheduleTime"
+                                    name="scheduleTime"
+                                    type="time"
+                                    required={formData.deliveryType === 'schedule'}
+                                    value={formData.scheduleTime}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                    )}
 
                     <div className="space-y-2">
                         <Label>Forma de Pagamento</Label>
