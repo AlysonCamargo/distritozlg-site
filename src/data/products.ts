@@ -1023,18 +1023,6 @@ export const products: Product[] = [
     isSale: false,
   },
   {
-    id: 174,
-    name: 'camiseta oversized 72',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1hkh1vk8fv8nsUiuU6nftEzfnMfiGd1lK',
-    imageFront: 'https://lh3.googleusercontent.com/d/1hkh1vk8fv8nsUiuU6nftEzfnMfiGd1lK',
-    imageBack: 'https://lh3.googleusercontent.com/d/1VnLVHL9J2T1wiIwsKEpUsU9rQiUiKVpF',
-    category: 'oversized',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
-  {
     id: 175,
     name: 'Camiseta oversized 73',
     price: 79.99,
@@ -1330,18 +1318,6 @@ export const products: Product[] = [
     imageFront: 'https://lh3.googleusercontent.com/d/1Ol9wpmteo_jeVZ984HOLcFxQS-TYmiuU',
     imageBack: 'https://lh3.googleusercontent.com/d/1XEwpBySIYYuKD_IhHRkUOsrQNX0q0lDX',
     category: 'malha egipcia',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
-  {
-    id: 200,
-    name: 'Camiseta nacional brasil 98',
-    price: 49.99,
-    image: 'https://lh3.googleusercontent.com/d/1G5cJNs8oSVBvy1dZck2g3sHst0-NSjbz',
-    imageFront: 'https://lh3.googleusercontent.com/d/1G5cJNs8oSVBvy1dZck2g3sHst0-NSjbz',
-    imageBack: 'https://lh3.googleusercontent.com/d/1-zexaPPD142YOmkNioA59RKcNKtUer_4',
-    category: 'time nacional',
     size: 'M',
     isNew: true,
     isSale: false
