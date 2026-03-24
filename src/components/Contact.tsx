@@ -5,8 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,10 +44,10 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-20 border-b border-border pb-10">
           <h2 className="font-heading font-light text-4xl md:text-6xl mb-6 tracking-tight uppercase">
-            Fale com o <span className="font-bold">Distrito</span>
+            {t('contact.title')} <span className="font-bold">{t('contact.titleHighlight')}</span>
           </h2>
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground max-w-2xl mx-auto">
-            Atendimento exclusivo para clientes e parceiros.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -54,7 +56,7 @@ const Contact = () => {
           <Card className="bg-background border-border rounded-sm shadow-none">
             <CardHeader className="p-8 pb-4">
               <CardTitle className="font-heading font-semibold uppercase tracking-widest text-lg text-foreground">
-                Envie uma Mensagem
+                {t('contact.formTitle')}
               </CardTitle>
             </CardHeader>
             <CardContent className="p-8 pt-0">
@@ -62,7 +64,7 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="name" className="text-foreground font-medium">
-                      Nome *
+                      {t('contact.name')}
                     </Label>
                     <Input
                       id="name"
@@ -72,12 +74,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="mt-1 bg-secondary border-border focus:border-accent"
-                      placeholder="Seu nome"
+                      placeholder={t('contact.namePlaceholder')}
                     />
                   </div>
                   <div>
                     <Label htmlFor="email" className="text-foreground font-medium">
-                      Email *
+                      {t('contact.email')}
                     </Label>
                     <Input
                       id="email"
@@ -87,14 +89,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="mt-1 bg-secondary border-border focus:border-accent"
-                      placeholder="seu@email.com"
+                      placeholder={t('contact.emailPlaceholder')}
                     />
                   </div>
                 </div>
 
                 <div>
                   <Label htmlFor="subject" className="text-foreground font-medium">
-                    Assunto
+                    {t('contact.subject')}
                   </Label>
                   <Input
                     id="subject"
@@ -103,13 +105,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     className="mt-1 bg-secondary border-border focus:border-accent"
-                    placeholder="Sobre o que você quer falar?"
+                    placeholder={t('contact.subjectPlaceholder')}
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="message" className="text-foreground font-medium">
-                    Mensagem *
+                    {t('contact.message')}
                   </Label>
                   <Textarea
                     id="message"
@@ -119,7 +121,7 @@ const Contact = () => {
                     onChange={handleChange}
                     rows={5}
                     className="mt-1 bg-secondary border-border focus:border-accent resize-none"
-                    placeholder="Conte tudo aqui..."
+                    placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
 
@@ -128,7 +130,7 @@ const Contact = () => {
                   size="lg"
                   className="w-full bg-foreground text-background font-semibold uppercase tracking-widest text-xs hover:bg-foreground/90 transition-colors rounded-sm h-14 mt-4"
                 >
-                  Enviar Mensagem
+                  {t('contact.send')}
                 </Button>
               </form>
             </CardContent>
@@ -138,7 +140,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h3 className="font-heading font-semibold tracking-widest uppercase text-lg text-foreground mb-8">
-                Canais Diretos
+                {t('contact.channels')}
               </h3>
               
               <div className="space-y-8">
@@ -148,7 +150,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">Instagram</h4>
-                    <p className="text-muted-foreground text-sm mb-2">Acompanhe nossos lançamentos</p>
+                    <p className="text-muted-foreground text-sm mb-2">{t('contact.instagram')}</p>
                     <a href="https://www.instagram.com/distritozlg/" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-muted-foreground font-medium text-sm transition-colors">@distritozlg</a>
                   </div>
                 </div>
@@ -159,7 +161,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">Email</h4>
-                    <p className="text-muted-foreground text-sm mb-2">Para parcerias e dúvidas</p>
+                    <p className="text-muted-foreground text-sm mb-2">{t('contact.emailDesc')}</p>
                     <a href="mailto:contato@distritozlg.com.br" className="text-foreground underline hover:text-muted-foreground font-medium text-sm transition-colors">contato@zlg.com.br</a>
                   </div>
                 </div>
@@ -170,7 +172,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">WhatsApp</h4>
-                    <p className="text-muted-foreground text-sm mb-2">Atendimento direto</p>
+                    <p className="text-muted-foreground text-sm mb-2">{t('contact.whatsapp')}</p>
                     <a href="https://wa.me/5511972988072" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-muted-foreground font-medium text-sm transition-colors">(11) 97298-8072</a>
                   </div>
                 </div>
@@ -180,8 +182,8 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">Localização</h4>
-                    <p className="text-muted-foreground text-sm">Bragança Paulista - SP</p>
+                    <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">{t('contact.location')}</h4>
+                    <p className="text-muted-foreground text-sm">{t('contact.locationDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -191,20 +193,20 @@ const Contact = () => {
             <Card className="bg-transparent border-border rounded-sm shadow-none mt-12">
               <CardContent className="p-8">
                 <h4 className="font-heading font-semibold tracking-widest uppercase text-sm text-foreground mb-6">
-                  Horários de Atendimento
+                  {t('contact.hours')}
                 </h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Segunda - Sexta</span>
+                    <span className="text-muted-foreground">{t('contact.monFri')}</span>
                     <span className="text-foreground font-medium">9h - 18h</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Sábado</span>
+                    <span className="text-muted-foreground">{t('contact.sat')}</span>
                     <span className="text-foreground font-medium">9h - 14h</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Domingo</span>
-                    <span className="text-muted-foreground">Fechado</span>
+                    <span className="text-muted-foreground">{t('contact.sun')}</span>
+                    <span className="text-muted-foreground">{t('contact.closed')}</span>
                   </div>
                 </div>
               </CardContent>

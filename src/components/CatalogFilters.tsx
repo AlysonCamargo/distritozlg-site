@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
 import { categories } from "@/data/products";
+import { useTranslation } from "react-i18next";
 
 interface CatalogFiltersProps {
     selectedCategory: string;
@@ -24,12 +25,14 @@ export default function CatalogFilters({
     categoryCounts,
     className = "",
 }: CatalogFiltersProps) {
+    const { t } = useTranslation();
+
     return (
         <div className={className}>
             <div className="sticky top-24 space-y-8">
                 {/* Categorias */}
                 <div>
-                    <h3 className="font-bold text-lg mb-4">Categorias</h3>
+                    <h3 className="font-bold text-lg mb-4">{t('catalog.categories')}</h3>
                     <div className="space-y-1">
                         {categories.map((category) => (
                             <button
@@ -40,7 +43,7 @@ export default function CatalogFilters({
                                         : "text-muted-foreground font-medium hover:text-foreground hover:bg-secondary/10"
                                     }`}
                             >
-                                <span>{category.name}</span>
+                                <span>{t(`category.${category.id}`, category.name)}</span>
                                 <span
                                     className={`text-xs px-2 py-0.5 rounded-full ${selectedCategory === category.id ? "bg-background/20" : "bg-secondary"
                                         }`}
@@ -54,7 +57,7 @@ export default function CatalogFilters({
 
                 {/* Filtros */}
                 <div>
-                    <h3 className="font-bold text-lg mb-4">Filtros</h3>
+                    <h3 className="font-bold text-lg mb-4">{t('catalog.filters')}</h3>
 
                     {/* Promoções */}
                     <div className="mb-8">
@@ -68,13 +71,13 @@ export default function CatalogFilters({
                             >
                                 {showOnlySale && <X className="w-3 h-3" />}
                             </div>
-                            <span className="text-xs uppercase tracking-widest font-semibold">Apenas Sale</span>
+                            <span className="text-xs uppercase tracking-widest font-semibold">{t('catalog.onlySale')}</span>
                         </label>
                     </div>
 
                     {/* Tamanhos */}
                     <div>
-                        <h4 className="font-semibold text-xs mb-4 text-foreground uppercase tracking-widest">Tamanhos</h4>
+                        <h4 className="font-semibold text-xs mb-4 text-foreground uppercase tracking-widest">{t('catalog.sizes')}</h4>
                         <div className="grid grid-cols-4 gap-2">
                             {["P", "M", "G", "GG"].map((s) => (
                                 <button

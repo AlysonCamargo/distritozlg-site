@@ -6,10 +6,12 @@ import { Progress } from "@/components/ui/progress";
 import { Minus, Plus, Trash2, ShoppingBag, Truck } from "lucide-react";
 import { useState } from "react";
 import OrderForm from "./OrderForm";
+import { useTranslation } from "react-i18next";
 
 const BRL = (n: number) => new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
 
 export default function CartDrawer() {
+    const { t } = useTranslation();
     const { isCartOpen, setIsCartOpen, items, updateQuantity, removeItem, cartTotal } = useCart();
     const [isCheckingOut, setIsCheckingOut] = useState(false);
 
@@ -24,10 +26,10 @@ export default function CartDrawer() {
                 <SheetHeader>
                     <SheetTitle className="flex items-center gap-3 font-heading font-light uppercase tracking-widest">
                         <ShoppingBag className="w-4 h-4" />
-                        Sacola
+                        {t('cart.title')}
                     </SheetTitle>
                     <SheetDescription>
-                        {items.length === 0 ? "Seu carrinho está vazio." : `${items.length} itens no carrinho.`}
+                        {items.length === 0 ? t('cart.empty') : t('cart.items', { count: items.length })}
                     </SheetDescription>
                 </SheetHeader>
 
@@ -36,9 +38,9 @@ export default function CartDrawer() {
                 {items.length === 0 ? (
                     <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground gap-4">
                         <ShoppingBag className="w-16 h-16 opacity-20" />
-                        <p>Adicione produtos para começar.</p>
+                        <p>{t('cart.addProducts')}</p>
                         <Button variant="outline" onClick={handleClose}>
-                            Continuar Comprando
+                            {t('cart.continueShopping')}
                         </Button>
                     </div>
                 ) : (
@@ -55,7 +57,7 @@ export default function CartDrawer() {
                                                 <div className="flex-1 flex flex-col justify-between py-1">
                                                     <div>
                                                         <h4 className="font-semibold text-sm uppercase tracking-wider line-clamp-1">{item.name}</h4>
-                                                        <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest">Tamanho: {item.selectedSize}</p>
+                                                        <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest">{t('cart.size', { size: item.selectedSize })}</p>
                                                     </div>
                                                     <div className="flex items-center justify-between mt-2">
                                                         <div className="flex items-center gap-1">
@@ -91,11 +93,11 @@ export default function CartDrawer() {
 
                                 <div className="pt-4 border-t border-border space-y-4">
                                     <div className="flex justify-between items-center text-sm font-semibold uppercase tracking-widest">
-                                        <span>Subtotal</span>
+                                        <span>{t('cart.subtotal')}</span>
                                         <span>{BRL(cartTotal)}</span>
                                     </div>
                                     <Button className="w-full h-12 text-sm uppercase tracking-widest font-semibold rounded-sm bg-foreground text-background hover:bg-foreground/90" onClick={() => setIsCheckingOut(true)}>
-                                        Finalizar Compra
+                                        {t('cart.buy')}
                                     </Button>
                                 </div>
                             </>

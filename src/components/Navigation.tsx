@@ -3,18 +3,21 @@ import { Menu, X, Search, ShoppingBag, Heart } from 'lucide-react';
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { useTranslation } from "react-i18next";
 import { Input } from '@/components/ui/input';
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const { cartCount, setIsCartOpen } = useCart();
   const { items: wishlistItems, setIsWishlistOpen } = useWishlist();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Catálogo', href: '#catalog' },
-    { name: 'Sobre Nós', href: '#about' },
-    { name: 'Contato', href: '#contact' },
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.catalog'), href: '#catalog' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -42,7 +45,7 @@ const Navigation = () => {
           <div className="hidden md:flex flex-1 max-w-sm mx-8 relative">
             <Input
               type="text"
-              placeholder="Buscar itens exclusivos..."
+              placeholder={t('nav.searchPlaceholder')}
               className="w-full bg-secondary/30 border-transparent focus:border-foreground pl-10 rounded-sm text-sm"
               onKeyDown={handleSearch}
             />
@@ -64,7 +67,10 @@ const Navigation = () => {
             </div>
 
             <div className="flex items-center gap-5 border-l border-border pl-8">
-              <ThemeToggle />
+              <div className="flex items-center">
+                <ThemeToggle />
+                <LanguageToggle />
+              </div>
               <button className="relative group" onClick={() => setIsWishlistOpen(true)}>
                 <Heart className="w-5 h-5 text-foreground transition-colors" />
                 {wishlistItems.length > 0 && (
@@ -86,7 +92,10 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-5 md:hidden">
-            <ThemeToggle />
+            <div className="flex items-center">
+              <ThemeToggle />
+              <LanguageToggle />
+            </div>
             <button className="relative" onClick={() => setIsCartOpen(true)}>
               <ShoppingBag className="w-5 h-5 text-foreground" />
               {cartCount > 0 && (
@@ -109,7 +118,7 @@ const Navigation = () => {
             <div className="mb-4 relative px-4">
               <Input
                 type="text"
-                placeholder="Buscar produtos..."
+                placeholder={t('nav.searchMobile')}
                 className="w-full bg-secondary/30 border-transparent focus:border-foreground pl-10 rounded-sm text-sm"
                 onKeyDown={handleSearch}
               />

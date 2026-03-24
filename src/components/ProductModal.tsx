@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductCarousel from "./ProductCarousel";
 import { Product, products } from "@/data/products";
+import { useTranslation } from "react-i18next";
 
 interface ProductModalProps {
     product: Product;
@@ -22,6 +23,7 @@ const parseSizes = (s: string): string[] =>
         .filter(Boolean);
 
 export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
+    const { t } = useTranslation();
     const dialogRef = useRef<HTMLDivElement>(null);
     const { addItem } = useCart();
     const [selectedSize, setSelectedSize] = useState<string>("");
@@ -110,10 +112,10 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                         <div className="mb-auto">
                             <div className="flex items-center gap-3 mb-6">
                                 <span className="uppercase tracking-widest text-[10px] font-semibold text-muted-foreground">
-                                    {product.category}
+                                    {t(`category.${product.category}`, product.category)}
                                 </span>
-                                {product.isNew && <Badge variant="secondary" className="px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">New</Badge>}
-                                {product.isSale && <Badge className="bg-foreground text-background px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">Sale</Badge>}
+                                {product.isNew && <Badge variant="secondary" className="px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">{t('product.new')}</Badge>}
+                                {product.isSale && <Badge className="bg-foreground text-background px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">{t('product.sale')}</Badge>}
                             </div>
 
                             <h3 id="product-title" className="text-3xl md:text-4xl font-light font-heading mb-4 leading-tight uppercase tracking-wide">
@@ -127,8 +129,8 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                             <div className="space-y-8">
                                 <div>
                                     <div className="flex justify-between items-center mb-3">
-                                        <span className="text-xs uppercase tracking-widest font-semibold text-foreground">Tamanhos</span>
-                                        <span className="text-[10px] underline cursor-pointer text-muted-foreground hover:text-foreground uppercase tracking-widest">Guia de Medidas</span>
+                                        <span className="text-xs uppercase tracking-widest font-semibold text-foreground">{t('catalog.sizes')}</span>
+                                        <span className="text-[10px] underline cursor-pointer text-muted-foreground hover:text-foreground uppercase tracking-widest">{t('product.sizeGuide')}</span>
                                     </div>
                                     <div className="flex flex-wrap gap-2">
                                         {sizes.map((size) => (
@@ -148,7 +150,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
 
                                 <div className="p-5 border border-border rounded-sm bg-secondary/10 flex flex-col gap-3">
                                     <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-                                        <span className="text-foreground">Envio Expresso</span> / Retorno em 7 dias
+                                        <span className="text-foreground">{t('product.shipping')}</span> / {t('product.returns')}
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +165,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                     }}
                                     className="w-full bg-foreground hover:bg-foreground/90 text-background font-medium text-sm tracking-widest uppercase h-14 rounded-sm"
                                 >
-                                    Adicionar à Sacola
+                                    {t('product.addToCart')}
                                 </Button>
                             </div>
                         </div>
@@ -174,7 +176,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                 <div className="w-full mt-4">
                     <h3 className="text-foreground tracking-widest uppercase font-semibold text-lg mb-6 flex items-center gap-3">
                         <span className="w-8 h-px bg-foreground"></span>
-                        Complete o Visual
+                        {t('product.completeLook')}
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {products
@@ -198,7 +200,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                         />
                                         {related.isSale && (
                                             <div className="absolute top-2 left-2 bg-foreground text-background text-[9px] uppercase tracking-widest font-semibold px-2 py-1 rounded-sm">
-                                                Sale
+                                                {t('product.sale')}
                                             </div>
                                         )}
                                     </div>

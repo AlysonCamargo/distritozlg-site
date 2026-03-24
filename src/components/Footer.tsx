@@ -1,6 +1,8 @@
 import { Instagram, Mail, MapPin, Heart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const socialLinks = [
     {
       name: 'Instagram',
@@ -20,9 +22,9 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'Catálogo', href: '#catalog' },
-    { name: 'Sobre Nós', href: '#about' },
-    { name: 'Contato', href: '#contact' },
+    { name: t('nav.catalog'), href: '#catalog' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' },
     { name: 'Política de Privacidade', href: '#' },
     { name: 'Termos de Uso', href: '#' },
   ];
@@ -43,12 +45,11 @@ const Footer = () => {
             </div>
 
             <p className="text-muted-foreground mb-4 max-w-md leading-relaxed">
-              Streetwear autêntico para quem vive a cultura urbana.
-              Cada peça é uma declaração, cada estilo conta uma história.
+              {t('footer.desc')}
             </p>
 
             <p className="text-foreground font-semibold mb-8 text-xs uppercase tracking-widest">
-              Eleve seu Estilo.
+              {t('footer.tagline')}
             </p>
 
             <div className="flex space-x-3">
@@ -70,7 +71,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-heading font-bold text-lg text-foreground mb-4">
-              Links Rápidos
+              {t('footer.quickLinks')}
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -89,21 +90,20 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="font-heading font-bold text-lg text-foreground mb-4">
-              Contato
+              {t('footer.contactTitle')}
             </h4>
             <div className="space-y-3 text-sm">
               <p className="text-muted-foreground">
-                <strong className="text-foreground">WhatsApp:</strong><br />
+                <strong className="text-foreground">{t('footer.whatsapp')}:</strong><br />
                 (11) 97298-8072
               </p>
               <p className="text-muted-foreground">
-                <strong className="text-foreground">Email:</strong><br />
+                <strong className="text-foreground">{t('footer.email')}:</strong><br />
                 contato@distritozlg.com.br
               </p>
               <p className="text-muted-foreground">
-                <strong className="text-foreground">Localização:</strong><br />
-                Bragança Paulista - SP<br />
-                Interior
+                <strong className="text-foreground">{t('footer.location')}:</strong><br />
+                <span dangerouslySetInnerHTML={{ __html: t('footer.locationDesc') }} />
               </p>
             </div>
           </div>
@@ -113,19 +113,19 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="text-center mb-8">
             <h4 className="font-heading font-bold text-xl text-foreground mb-2">
-              Fique por Dentro dos Lançamentos
+              {t('footer.newsletterTitle')}
             </h4>
             <p className="text-muted-foreground mb-4">
-              Seja o primeiro a saber dos drops exclusivos e promoções especiais
+              {t('footer.newsletterDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-0 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="SEU EMAIL AQUI"
+                placeholder={t('footer.newsletterPlaceholder')}
                 className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-foreground focus:outline-none text-foreground text-xs tracking-widest uppercase placeholder:text-muted-foreground"
               />
               <button className="px-8 py-3 bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors uppercase tracking-widest text-xs">
-                Inscrever
+                {t('footer.subscribe')}
               </button>
             </div>
           </div>
@@ -134,7 +134,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <span className="uppercase tracking-widest text-[10px] font-semibold">© 2026 Distrito ZLG.</span>
+            <span className="uppercase tracking-widest text-[10px] font-semibold">{t('footer.rights')}</span>
             <Heart className="w-3.5 h-3.5 text-muted-foreground" />
           </div>
 

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Filter, X, Grid, List, Search, SlidersHorizontal } from "lucide-react";
 import { products, categories, Product } from "@/data/products";
+import { useTranslation } from "react-i18next";
 
 // ===== Utilitários =====
 const strip = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
@@ -25,6 +26,7 @@ const ITEMS_PER_PAGE = 12;
 
 export default function Catalog() {
   // Estado
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>("todos");
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
@@ -187,10 +189,10 @@ export default function Catalog() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4 border-b border-border pb-6">
           <div>
             <h2 className="font-heading font-light text-3xl md:text-5xl mb-2 tracking-tight uppercase">
-              The <span className="font-bold">Collection</span>
+              {t('catalog.title')}
             </h2>
             <p className="text-muted-foreground font-light">
-              Descubra nossas {products.length} peças exclusivas criadas para o seu lifestyle.
+              {t('catalog.subtitle', { count: products.length })}
             </p>
           </div>
 
@@ -199,7 +201,7 @@ export default function Catalog() {
             <div className="relative w-full md:w-64">
               <Input
                 type="text"
-                placeholder="Pesquisar..."
+                placeholder={t('catalog.search')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-secondary/30 border-transparent focus:border-foreground pl-10 rounded-sm text-sm"
@@ -240,7 +242,7 @@ export default function Catalog() {
             <div className="flex justify-between items-center mb-8 bg-transparent pb-4 border-b border-border/50">
               <div className="flex items-center gap-4">
                 <p className="text-xs tracking-widest uppercase text-muted-foreground font-medium">
-                  {filteredProducts.length} encontrados
+                  {filteredProducts.length} {t('catalog.found')}
                 </p>
 
                 {/* Active Filters Pills */}
@@ -249,7 +251,7 @@ export default function Catalog() {
                     <div className="h-4 w-px bg-border mx-2" />
                     {showOnlySale && (
                       <Badge variant="secondary" className="gap-1 cursor-pointer" onClick={() => setShowOnlySale(false)}>
-                        Promoções <X className="w-3 h-3" />
+                        {t('catalog.sale')} <X className="w-3 h-3" />
                       </Badge>
                     )}
                     {selectedSizes.map(s => (
@@ -258,7 +260,7 @@ export default function Catalog() {
                       </Badge>
                     ))}
                     <button onClick={clearFilters} className="text-xs text-muted-foreground hover:text-foreground underline ml-2">
-                      Limpar tudo
+                      {t('catalog.clearAll')}
                     </button>
                   </div>
                 )}
@@ -270,11 +272,11 @@ export default function Catalog() {
                   onChange={(e) => setSort(e.target.value as SortKey)}
                   className="bg-transparent text-foreground text-xs font-semibold tracking-widest uppercase border-none focus:ring-0 cursor-pointer text-right"
                 >
-                  <option value="relevance">Relevância</option>
-                  <option value="newest">Lançamentos</option>
-                  <option value="price-asc">Menor Preço</option>
-                  <option value="price-desc">Maior Preço</option>
-                  <option value="name-asc">Nome (A-Z)</option>
+                  <option value="relevance">{t('catalog.sort.relevance')}</option>
+                  <option value="newest">{t('catalog.sort.newest')}</option>
+                  <option value="price-asc">{t('catalog.sort.priceAsc')}</option>
+                  <option value="price-desc">{t('catalog.sort.priceDesc')}</option>
+                  <option value="name-asc">{t('catalog.sort.nameAsc')}</option>
                 </select>
 
                 <div className="flex bg-secondary/30 rounded-sm p-1 ml-4 border border-transparent">
@@ -320,7 +322,7 @@ export default function Catalog() {
                     />
 
                     <Button className="w-full mt-4" onClick={() => setShowFilters(false)}>
-                      Ver {filteredProducts.length} resultados
+                      {t('catalog.seeResults', { count: filteredProducts.length })}
                     </Button>
                   </div>
                 </div>

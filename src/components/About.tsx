@@ -1,8 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Zap, Users, Palette, Target } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   const values = [
     {
       icon: Zap,
@@ -32,18 +34,15 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-20 border-b border-border pb-10">
           <h2 className="font-heading font-light text-4xl md:text-6xl mb-6 tracking-tight uppercase">
-            A <span className="font-bold">Essência</span>
-            <br />
-            da <span className="text-foreground">Marca</span>
+            {t('about.title')} <br />
+            <span className="font-bold">{t('about.subtitle')}</span>
           </h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Nascemos nas ruas, crescemos com a cultura. A <strong className="text-accent">Distrito ZLG</strong> é mais 
-              que uma marca - somos um movimento que veste a autenticidade da juventude urbana.
+              {t('about.desc1')}
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Desde 2025, criamos camisetas que falam a linguagem da rua. Cada peça é pensada para quem 
-              não tem medo de se expressar, para quem vive intensamente e quer que sua roupa reflita essa energia.
+              {t('about.desc2')}
             </p>
           </div>
         </div>
@@ -52,14 +51,13 @@ const About = () => {
           <Card className="bg-transparent border-border rounded-sm hover:border-foreground transition-all duration-300 shadow-none">
             <CardContent className="p-10">
               <h3 className="font-heading font-semibold tracking-widest uppercase text-xl text-foreground mb-6">
-                Nossa Origem
+                {t('about.originTitle')}
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Tudo começou quando dois amigos se juntaram no começo de 2025 com uma ideia simples: 
-                criar roupas que representassem nossa vibe, nossa cultura, nosso jeito de ver o mundo.
+                {t('about.originText')}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Das conversas no ponto de ônibus nasceu a Distrito ZLG. O "ZLG" são as iniciais dos fundadores que ousaram sonhar grande.
+                {t('about.originText2')}
               </p>
             </CardContent>
           </Card>
@@ -67,15 +65,13 @@ const About = () => {
           <Card className="bg-transparent border-border rounded-sm hover:border-foreground transition-all duration-300 shadow-none">
             <CardContent className="p-10">
               <h3 className="font-heading font-semibold tracking-widest uppercase text-xl text-foreground mb-6">
-                O Futuro
+                {t('about.futureTitle')}
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Nosso objetivo é simples: ser a marca que representa a juventude urbana brasileira. 
-                Queremos estar em cada quebrada, em cada rolê, em cada momento importante.
+                {t('about.futureText')}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Estamos expandindo, mas sem perder a essência. Cada nova cidade, cada novo cliente, 
-                faz parte da nossa família urbana que só cresce.
+                {t('about.futureText2')}
               </p>
             </CardContent>
           </Card>
@@ -90,10 +86,10 @@ const About = () => {
                   <value.icon className="w-5 h-5 text-foreground group-hover:text-background transition-colors duration-300" />
                 </div>
                 <h4 className="font-semibold uppercase tracking-widest text-sm text-foreground mb-3">
-                  {value.title}
+                  {t(`about.${value.title === 'Autenticidade' ? 'auth' : value.title === 'Criatividade' ? 'creativity' : value.title === 'Comunidade' ? 'community' : 'quality'}Title`)}
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {value.description}
+                  {t(`about.${value.title === 'Autenticidade' ? 'auth' : value.title === 'Criatividade' ? 'creativity' : value.title === 'Comunidade' ? 'community' : 'quality'}Text`)}
                 </p>
               </CardContent>
             </Card>
@@ -107,7 +103,7 @@ const About = () => {
               size="lg" 
               className="bg-foreground text-background rounded-sm tracking-widest uppercase font-semibold px-10 py-7 text-sm hover:bg-foreground/90 transition-all duration-300"
             >
-              Conheça as Peças
+              {t('about.cta')}
             </Button>
           </a>
         </div>

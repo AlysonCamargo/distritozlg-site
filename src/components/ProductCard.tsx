@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { Product } from "@/data/products";
+import { useTranslation } from "react-i18next";
 
 interface ProductCardProps {
   product: Product;
@@ -19,6 +20,7 @@ const BRL = (n: number) =>
   new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
 
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
+  const { t } = useTranslation();
   const { addItem } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const isFav = isInWishlist(product.id);
@@ -63,12 +65,12 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
             {product.isSale && (
               <Badge variant="secondary" className="bg-foreground text-background font-medium rounded-sm px-2 py-0.5 text-[10px] tracking-wider uppercase">
-                Sale
+                {t('product.sale')}
               </Badge>
             )}
             {product.isNew && (
               <Badge variant="secondary" className="bg-background/90 text-foreground font-medium rounded-sm px-2 py-0.5 text-[10px] tracking-wider uppercase backdrop-blur-sm">
-                Novo
+                {t('product.new')}
               </Badge>
             )}
           </div>
@@ -89,7 +91,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-4 opacity-0 bg-gradient-to-t from-background/80 to-transparent p-3 text-center text-foreground transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
             aria-hidden="true"
           >
-            <span className="text-xs sm:text-sm">Passe o mouse para ver o verso</span>
+            <span className="text-xs sm:text-sm">{t('product.hoverView')}</span>
           </div>
         </div>
         <CardContent className="p-4 pt-5">
@@ -109,7 +111,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               variant="outline"
               className="w-full text-xs uppercase tracking-wider h-9"
             >
-              Adicionar
+              {t('product.addToCart')}
             </Button>
           </div>
         </CardContent>

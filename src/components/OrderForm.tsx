@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ArrowLeft, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const BRL = (n: number) => new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);
 
@@ -13,6 +14,7 @@ interface OrderFormProps {
 }
 
 export default function OrderForm({ onBack }: OrderFormProps) {
+    const { t } = useTranslation();
     const { items, cartTotal, clearCart } = useCart();
     const [formData, setFormData] = useState({
         name: "",
@@ -33,19 +35,19 @@ export default function OrderForm({ onBack }: OrderFormProps) {
 
         const phoneNumber = "5511972988072";
 
-        let message = `*NOVO PEDIDO - DISTRITO ZLG*\n\n`;
-        message += `*Cliente:* ${formData.name}\n`;
-        message += `*Telefone:* ${formData.phone}\n`;
-        message += `*Endereço:* ${formData.address}\n`;
-        message += `*Entrega:* ${formData.deliveryType === 'now' ? 'Na hora' : `Agendada para ${formData.scheduleDate.split('-').reverse().join('/')} às ${formData.scheduleTime}`}\n`;
-        message += `*Pagamento:* ${formData.paymentMethod === 'pix' ? 'PIX' : 'Cartão'}\n\n`;
-        message += `*ITENS DO PEDIDO:*\n`;
+        let message = `${t('order.whatsappMessage.intro')}\n\n`;
+        message += `*${t('order.whatsappMessage.client')}:* ${formData.name}\n`;
+        message += `*${t('order.whatsappMessage.phone')}:* ${formData.phone}\n`;
+        message += `*${t('order.whatsappMessage.address')}:* ${formData.address}\n`;
+        message += `*${t('order.whatsappMessage.delivery')}:* ${formData.deliveryType === 'now' ? t('order.whatsappMessage.deliveryNow') : t('order.whatsappMessage.deliveryScheduled', { date: formData.scheduleDate.split('-').reverse().join('/'), time: formData.scheduleTime })}\n`;
+        message += `*${t('order.whatsappMessage.payment')}:* ${formData.paymentMethod === 'pix' ? 'PIX' : t('order.payCard')}\n\n`;
+        message += `*${t('order.whatsappMessage.items')}*\n`;
 
         items.forEach(item => {
             message += `- ${item.quantity}x ${item.name} (${item.selectedSize}) - ${BRL(item.price * item.quantity)}\n`;
         });
 
-        message += `\n*TOTAL: ${BRL(cartTotal)}*`;
+        message += `\n*${t('order.whatsappMessage.total')} ${BRL(cartTotal)}*`;
 
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -62,12 +64,12 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                 <Button variant="ghost" size="icon" onClick={onBack} className="-ml-2">
                     <ArrowLeft className="w-5 h-5" />
                 </Button>
-                <h3 className="font-bold text-lg">Finalizar Pedido</h3>
+                <h3 className="font-bold text-lg">{t('order.checkoutTitle')}</h3>
             </div>
 
             {/* Order Summary */}
             <div className="bg-secondary/10 border border-border p-4 rounded-sm mb-6">
-                <h4 className="font-semibold text-xs tracking-widest uppercase mb-3 text-foreground">Resumo</h4>
+                <h4 className="font-semibold text-xs tracking-widest uppercase mb-3 text-foreground">{t('order.summary')}</h4>
                 <div className="space-y-3 max-h-32 overflow-y-auto pr-2">
                     {items.map((item) => (
                         <div key={`${item.id}-${item.selectedSize}`} className="flex justify-between text-xs text-muted-foreground">
@@ -79,7 +81,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                     ))}
                 </div>
                 <div className="border-t border-border mt-4 pt-3 flex justify-between font-semibold uppercase tracking-widest text-sm">
-                    <span>Total</span>
+                    <span>{t('cart.total')}</span>
                     <span>{BRL(cartTotal)}</span>
                 </div>
             </div>
@@ -87,19 +89,19 @@ export default function OrderForm({ onBack }: OrderFormProps) {
             <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-6 overflow-y-auto px-1">
                 <div className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="name">Nome Completo</Label>
+                        <Label htmlFor="name">{t('order.name')}</Label>
                         <Input
                             id="name"
                             name="name"
                             required
-                            placeholder="Seu nome"
+                            placeholder={t('order.namePlaceholder')}
                             value={formData.name}
                             onChange={handleChange}
                         />
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="phone">Telefone / WhatsApp</Label>
+                        <Label htmlFor="phone">{t('order.phone')}</Label>
                         <Input
                             id="phone"
                             name="phone"
@@ -111,7 +113,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="address">Endereço de Entrega</Label>
+                        <Label htmlFor="address">{t('order.address')}</Label>
                         <Input
                             id="address"
                             name="address"
@@ -123,7 +125,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                     </div>
 
                     <div className="space-y-3">
-                        <Label>Opção de Entrega</Label>
+                        <Label>{t('order.deliveryOptions')}</Label>
                         <RadioGroup
                             defaultValue="now"
                             onValueChange={(val) => setFormData({ ...formData, deliveryType: val })}
@@ -131,11 +133,11 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                         >
                             <div className="flex items-center space-x-2 border p-3 rounded-md cursor-pointer hover:bg-secondary/50">
                                 <RadioGroupItem value="now" id="delivery-now" />
-                                <Label htmlFor="delivery-now" className="cursor-pointer flex-1 font-medium">Entrega na hora</Label>
+                                <Label htmlFor="delivery-now" className="cursor-pointer flex-1 font-medium">{t('order.deliveryNow')}</Label>
                             </div>
                             <div className="flex items-center space-x-2 border p-3 rounded-md cursor-pointer hover:bg-secondary/50">
                                 <RadioGroupItem value="schedule" id="delivery-schedule" />
-                                <Label htmlFor="delivery-schedule" className="cursor-pointer flex-1 font-medium">Agendar entrega</Label>
+                                <Label htmlFor="delivery-schedule" className="cursor-pointer flex-1 font-medium">{t('order.deliverySchedule')}</Label>
                             </div>
                         </RadioGroup>
                     </div>
@@ -143,7 +145,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                     {formData.deliveryType === 'schedule' && (
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label htmlFor="scheduleDate">Data da Entrega</Label>
+                                <Label htmlFor="scheduleDate">{t('order.scheduleDate')}</Label>
                                 <Input
                                     id="scheduleDate"
                                     name="scheduleDate"
@@ -154,7 +156,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                                 />
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="scheduleTime">Horário</Label>
+                                <Label htmlFor="scheduleTime">{t('order.scheduleTime')}</Label>
                                 <Input
                                     id="scheduleTime"
                                     name="scheduleTime"
@@ -168,7 +170,7 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                     )}
 
                     <div className="space-y-2">
-                        <Label>Forma de Pagamento</Label>
+                        <Label>{t('order.paymentMethod')}</Label>
                         <RadioGroup
                             defaultValue="pix"
                             onValueChange={(val) => setFormData({ ...formData, paymentMethod: val })}
@@ -176,11 +178,11 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                         >
                             <div className="flex items-center space-x-2 border p-3 rounded-md cursor-pointer hover:bg-secondary/50">
                                 <RadioGroupItem value="pix" id="pix" />
-                                <Label htmlFor="pix" className="cursor-pointer flex-1 font-medium">PIX (5% de desconto)</Label>
+                                <Label htmlFor="pix" className="cursor-pointer flex-1 font-medium">{t('order.payPix')}</Label>
                             </div>
                             <div className="flex items-center space-x-2 border p-3 rounded-md cursor-pointer hover:bg-secondary/50">
                                 <RadioGroupItem value="card" id="card" />
-                                <Label htmlFor="card" className="cursor-pointer flex-1 font-medium">Cartão de Crédito</Label>
+                                <Label htmlFor="card" className="cursor-pointer flex-1 font-medium">{t('order.payCard')}</Label>
                             </div>
                         </RadioGroup>
                     </div>
@@ -188,15 +190,15 @@ export default function OrderForm({ onBack }: OrderFormProps) {
 
                 <div className="mt-auto pt-6 border-t border-border">
                     <div className="flex justify-between items-center mb-6 text-xs uppercase tracking-widest font-semibold text-muted-foreground">
-                        <span>A Pagar</span>
+                        <span>{t('order.toPay')}</span>
                         <span className="text-lg text-foreground">{BRL(cartTotal)}</span>
                     </div>
                     <Button type="submit" className="w-full h-12 text-sm font-semibold tracking-widest uppercase gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-sm">
                         <Send className="w-4 h-4" />
-                        Finalizar via WhatsApp
+                        {t('order.submit')}
                     </Button>
                     <p className="text-[10px] uppercase tracking-widest text-center text-muted-foreground mt-4">
-                        Você será redirecionado para o WhatsApp.
+                        {t('order.redirect')}
                     </p>
                 </div>
             </form>
