@@ -91,7 +91,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                 className="max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-scaleIn flex flex-col gap-8"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="bg-background rounded-2xl shadow-2xl border border-border flex flex-col lg:flex-row overflow-hidden relative shrink-0">
+                <div className="bg-background rounded-sm shadow-premium border border-border flex flex-col lg:flex-row overflow-hidden relative shrink-0">
                     <button
                         onClick={onClose}
                         className="absolute top-4 right-4 text-foreground/50 hover:text-foreground z-10 w-8 h-8 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm transition-colors"
@@ -108,35 +108,37 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                     {/* Right: Info */}
                     <div className="w-full lg:w-1/2 p-6 md:p-8 flex flex-col">
                         <div className="mb-auto">
-                            <div className="flex items-center gap-2 mb-4">
-                                <Badge variant="outline" className="uppercase tracking-wider text-[10px]">
+                            <div className="flex items-center gap-3 mb-6">
+                                <span className="uppercase tracking-widest text-[10px] font-semibold text-muted-foreground">
                                     {product.category}
-                                </Badge>
-                                {product.isNew && <Badge className="bg-blue-500 hover:bg-blue-600">Novo</Badge>}
-                                {product.isSale && <Badge variant="destructive">Promoção</Badge>}
+                                </span>
+                                {product.isNew && <Badge variant="secondary" className="px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">New</Badge>}
+                                {product.isSale && <Badge className="bg-foreground text-background px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">Sale</Badge>}
                             </div>
 
-                            <h3 id="product-title" className="text-3xl font-black font-heading mb-2 leading-tight">
+                            <h3 id="product-title" className="text-3xl md:text-4xl font-light font-heading mb-4 leading-tight uppercase tracking-wide">
                                 {product.name}
                             </h3>
 
-                            <div className="flex items-baseline gap-2 mb-6">
-                                <span className="text-2xl font-bold text-foreground">{BRL(product.price)}</span>
-                                <span className="text-sm text-muted-foreground">à vista</span>
+                            <div className="flex items-baseline gap-3 mb-8">
+                                <span className="text-2xl font-medium text-foreground">{BRL(product.price)}</span>
                             </div>
 
-                            <div className="space-y-6">
+                            <div className="space-y-8">
                                 <div>
-                                    <span className="text-sm font-medium text-muted-foreground block mb-2">Tamanhos Disponíveis</span>
+                                    <div className="flex justify-between items-center mb-3">
+                                        <span className="text-xs uppercase tracking-widest font-semibold text-foreground">Tamanhos</span>
+                                        <span className="text-[10px] underline cursor-pointer text-muted-foreground hover:text-foreground uppercase tracking-widest">Guia de Medidas</span>
+                                    </div>
                                     <div className="flex flex-wrap gap-2">
                                         {sizes.map((size) => (
                                             <button
                                                 key={size}
                                                 onClick={() => setSelectedSize(size)}
-                                                className={`w-10 h-10 rounded border flex items-center justify-center font-medium text-sm transition-all
+                                                className={`w-12 h-12 rounded-sm border flex items-center justify-center font-semibold text-sm transition-all
                                                     ${selectedSize === size
                                                         ? "bg-foreground text-background border-foreground"
-                                                        : "border-border hover:border-foreground"}`}
+                                                        : "bg-transparent border-border hover:border-foreground text-muted-foreground hover:text-foreground"}`}
                                             >
                                                 {size}
                                             </button>
@@ -144,35 +146,35 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                     </div>
                                 </div>
 
-                                <div className="p-4 bg-secondary/30 rounded-lg text-sm text-muted-foreground">
-                                    <p>🚚 Frete grátis para compras acima de R$ 299</p>
-                                    <p className="mt-2">🔄 Troca grátis em até 7 dias</p>
+                                <div className="p-5 border border-border rounded-sm bg-secondary/10 flex flex-col gap-3">
+                                    <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
+                                        <span className="text-foreground">Envio Expresso</span> / Retorno em 7 dias
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mt-8 pt-6 border-t border-border">
-                            <Button
-                                size="lg"
-                                onClick={() => {
-                                    addItem(product, selectedSize);
-                                    onClose();
-                                }}
-                                className="w-full bg-foreground hover:bg-foreground/90 text-background font-bold text-lg h-14 gap-2"
-                            >
-                                <ShoppingBag className="w-5 h-5" />
-                                ADICIONAR AO CARRINHO
-                            </Button>
+                        <div className="mt-8 pt-8 border-t border-border">
+                                <Button
+                                    size="lg"
+                                    onClick={() => {
+                                        addItem(product, selectedSize);
+                                        onClose();
+                                    }}
+                                    className="w-full bg-foreground hover:bg-foreground/90 text-background font-medium text-sm tracking-widest uppercase h-14 rounded-sm"
+                                >
+                                    Adicionar à Sacola
+                                </Button>
+                            </div>
                         </div>
-                    </div>
                 </div>
 
                 {/* Related Products */}
                 {/* Related Products */}
-                <div className="w-full">
-                    <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
-                        <span className="w-1 h-6 bg-accent rounded-full"></span>
-                        Você também pode gostar
+                <div className="w-full mt-4">
+                    <h3 className="text-foreground tracking-widest uppercase font-semibold text-lg mb-6 flex items-center gap-3">
+                        <span className="w-8 h-px bg-foreground"></span>
+                        Complete o Visual
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {products
@@ -182,33 +184,30 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                             .map(related => (
                                 <div
                                     key={related.id}
-                                    className="group bg-background/95 backdrop-blur-sm rounded-xl overflow-hidden cursor-pointer border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                                    className="group bg-background rounded-sm overflow-hidden cursor-pointer hover:shadow-premium transition-all duration-300"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         window.location.href = `/product/${related.id}`;
                                     }}
                                 >
-                                    <div className="aspect-square relative overflow-hidden">
+                                    <div className="aspect-[3/4] relative overflow-hidden bg-secondary/20">
                                         <img
                                             src={related.image}
                                             alt={related.name}
-                                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                                         />
                                         {related.isSale && (
-                                            <div className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-lg">
-                                                SALE
+                                            <div className="absolute top-2 left-2 bg-foreground text-background text-[9px] uppercase tracking-widest font-semibold px-2 py-1 rounded-sm">
+                                                Sale
                                             </div>
                                         )}
                                     </div>
                                     <div className="p-4">
-                                        <h4 className="font-medium text-sm line-clamp-1 group-hover:text-accent transition-colors">
+                                        <h4 className="font-medium text-xs uppercase tracking-wider line-clamp-1 group-hover:text-muted-foreground transition-colors">
                                             {related.name}
                                         </h4>
                                         <div className="flex items-center justify-between mt-2">
-                                            <p className="text-sm font-bold">{BRL(related.price)}</p>
-                                            <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-                                                <ShoppingBag className="w-4 h-4" />
-                                            </div>
+                                            <p className="text-sm font-semibold">{BRL(related.price)}</p>
                                         </div>
                                     </div>
                                 </div>

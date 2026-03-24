@@ -30,11 +30,11 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   const backSrc = product.imageBack || product.image;
 
   return (
-    <motion.div whileHover={{ scale: 1.02 }} className="group overflow-hidden border hover:shadow-lg transition will-change-transform">
-      <Card className="overflow-hidden">
-        <div className="relative aspect-square overflow-hidden bg-secondary/40">
+    <motion.div whileHover={{ y: -4 }} className="group overflow-hidden bg-background hover:shadow-premium transition-all duration-300">
+      <Card className="overflow-hidden border-transparent shadow-none hover:border-border transition-colors">
+        <div className="relative aspect-[3/4] overflow-hidden bg-secondary/20">
           {!frontLoaded && (
-            <div className="absolute inset-0 animate-pulse bg-gradient-to-b from-neutral-800/30 to-neutral-700/30" aria-hidden="true" />
+            <div className="absolute inset-0 animate-pulse bg-secondary/30" aria-hidden="true" />
           )}
           <img
             src={frontSrc}
@@ -60,15 +60,15 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               className={`absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 ${backLoaded ? "" : "will-change-opacity"}`}
             />
           )}
-          <div className="absolute top-2 left-2 z-10 flex flex-col gap-1">
+          <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
             {product.isSale && (
-              <Badge variant="destructive" className="bg-red-600 text-white font-bold rounded-full px-3 py-1 text-xs">
-                PROMOÇÃO
+              <Badge variant="secondary" className="bg-foreground text-background font-medium rounded-sm px-2 py-0.5 text-[10px] tracking-wider uppercase">
+                Sale
               </Badge>
             )}
             {product.isNew && (
-              <Badge className="bg-indigo-500 text-white font-bold rounded-full px-3 py-1 text-xs">
-                NOVO
+              <Badge variant="secondary" className="bg-background/90 text-foreground font-medium rounded-sm px-2 py-0.5 text-[10px] tracking-wider uppercase backdrop-blur-sm">
+                Novo
               </Badge>
             )}
           </div>
@@ -80,36 +80,36 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             }}
             aria-pressed={isFav}
             aria-label={isFav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
-            className="absolute right-2 top-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/40 backdrop-blur text-white transition hover:bg-black/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-sm bg-background/80 backdrop-blur text-foreground transition-all hover:bg-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            <Heart className={`h-5 w-5 ${isFav ? "fill-current text-red-500" : ""}`} />
+            <Heart className={`h-4 w-4 ${isFav ? "fill-current text-foreground" : ""}`} />
             <span className="sr-only">Favorito</span>
           </button>
           <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 opacity-0 bg-gradient-to-t from-black/70 to-transparent p-2 text-center text-white transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
+            className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-4 opacity-0 bg-gradient-to-t from-background/80 to-transparent p-3 text-center text-foreground transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
             aria-hidden="true"
           >
             <span className="text-xs sm:text-sm">Passe o mouse para ver o verso</span>
           </div>
         </div>
-        <CardContent className="p-4">
-          <h3 className="text-base font-semibold leading-tight line-clamp-1">{product.name}</h3>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {product.category} • Tam: {product.size}
+        <CardContent className="p-4 pt-5">
+          <h3 className="text-sm font-medium leading-tight line-clamp-1 font-heading uppercase tracking-wide">{product.name}</h3>
+          <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider">
+            {product.category}
           </p>
-          <div className="mt-3 flex items-center justify-between">
-            <div className={`text-lg font-bold ${product.isSale ? "text-green-500" : ""}`}>{BRL(product.price)}</div>
-            <span className="text-xs text-muted-foreground">À vista</span>
+          <div className="mt-2 flex items-center justify-between">
+            <div className={`text-base font-medium ${product.isSale ? "text-destructive" : ""}`}>{BRL(product.price)}</div>
           </div>
-          <div className="mt-4 flex flex-col gap-2">
+          <div className="mt-4 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Button
               onClick={(e) => {
                 e.stopPropagation();
                 addItem(product, product.size.split(",")[0].trim());
               }}
-              className="w-full bg-foreground hover:bg-foreground/90 text-background font-bold"
+              variant="outline"
+              className="w-full text-xs uppercase tracking-wider h-9"
             >
-              Adicionar ao Carrinho
+              Adicionar
             </Button>
           </div>
         </CardContent>

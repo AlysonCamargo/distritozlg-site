@@ -27,14 +27,14 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-hero">
+    <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
-            <span className="text-foreground">NOSSA</span>
+        <div className="text-center mb-20 border-b border-border pb-10">
+          <h2 className="font-heading font-light text-4xl md:text-6xl mb-6 tracking-tight uppercase">
+            A <span className="font-bold">Essência</span>
             <br />
-            <span className="bg-gradient-urban bg-clip-text text-transparent">HISTÓRIA</span>
+            da <span className="text-foreground">Marca</span>
           </h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -48,12 +48,11 @@ const About = () => {
           </div>
         </div>
 
-        {/* Story Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <Card className="bg-gradient-card border-border hover:border-accent/50 transition-all duration-300">
-            <CardContent className="p-8">
-              <h3 className="font-heading font-bold text-2xl text-accent mb-4">
-                De Onde Viemos
+          <Card className="bg-transparent border-border rounded-sm hover:border-foreground transition-all duration-300 shadow-none">
+            <CardContent className="p-10">
+              <h3 className="font-heading font-semibold tracking-widest uppercase text-xl text-foreground mb-6">
+                Nossa Origem
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Tudo começou quando dois amigos se juntaram no começo de 2025 com uma ideia simples: 
@@ -65,10 +64,10 @@ const About = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-border hover:border-accent/50 transition-all duration-300">
-            <CardContent className="p-8">
-              <h3 className="font-heading font-bold text-2xl text-neon-pink mb-4">
-                Para Onde Vamos
+          <Card className="bg-transparent border-border rounded-sm hover:border-foreground transition-all duration-300 shadow-none">
+            <CardContent className="p-10">
+              <h3 className="font-heading font-semibold tracking-widest uppercase text-xl text-foreground mb-6">
+                O Futuro
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Nosso objetivo é simples: ser a marca que representa a juventude urbana brasileira. 
@@ -85,12 +84,12 @@ const About = () => {
         {/* Values */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {values.map((value, index) => (
-            <Card key={index} className="bg-gradient-card border-border hover:border-accent/50 transition-all duration-300 group">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-urban rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300">
-                  <value.icon className="w-8 h-8 text-background" />
+            <Card key={index} className="bg-transparent border-none shadow-none group">
+              <CardContent className="p-2 text-center">
+                <div className="w-12 h-12 bg-secondary rounded-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-foreground transition-colors duration-300">
+                  <value.icon className="w-5 h-5 text-foreground group-hover:text-background transition-colors duration-300" />
                 </div>
-                <h4 className="font-heading font-bold text-lg text-foreground mb-3">
+                <h4 className="font-semibold uppercase tracking-widest text-sm text-foreground mb-3">
                   {value.title}
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -103,12 +102,12 @@ const About = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <a href="#contact">
+          <a href="#catalog">
             <Button 
               size="lg" 
-              className="bg-gradient-urban text-background font-bold px-8 py-6 text-lg hover:shadow-glow transition-all duration-300"
+              className="bg-foreground text-background rounded-sm tracking-widest uppercase font-semibold px-10 py-7 text-sm hover:bg-foreground/90 transition-all duration-300"
             >
-              Faça Parte da Crew
+              Conheça as Peças
             </Button>
           </a>
         </div>

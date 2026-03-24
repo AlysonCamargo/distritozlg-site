@@ -43,13 +43,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				// 👇 Registra a animação fade-in
 				'fade-in': 'fade-in 0.3s ease-out'
 			},
 			boxShadow: {
-				neon: '0 0 20px var(--neon-green)',
-				'card-urban': 'var(--shadow-card)',
-				'glow': 'var(--glow-accent)'
+				'premium': '0 4px 20px rgba(0, 0, 0, 0.05)',
+				'premium-hover': '0 10px 40px rgba(0, 0, 0, 0.08)'
 			},
 
 			colors: {
@@ -106,15 +104,12 @@ export default {
 
 			},
 			fontFamily: {
-				heading: 'var(--font-heading)',
-				body: 'var(--font-body)',
+				heading: ['Outfit', 'sans-serif'],
+				body: ['Inter', 'sans-serif'],
 				sans: ['Inter', 'sans-serif']
 			},
 			backgroundImage: {
-				'gradient-urban': 'var(--gradient-urban)',
-				'gradient-hero': 'var(--gradient-hero)',
-				// Removed duplicate boxShadow definition
-				'glow': 'var(--glow-accent)'
+				'gradient-premium': 'linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary)))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

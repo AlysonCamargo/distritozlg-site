@@ -28,53 +28,53 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2 flex-shrink-0">
-            <div className="w-10 h-10 bg-gradient-urban rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold text-background">Z</span>
+          <div className="flex items-center space-x-3 flex-shrink-0">
+            <div className="w-8 h-8 bg-foreground flex items-center justify-center">
+              <span className="text-sm font-bold text-background font-heading tracking-tighter">ZLG</span>
             </div>
-            <span className="font-heading font-bold text-2xl text-foreground hidden sm:block">
-              Distrito ZLG
+            <span className="font-heading font-medium tracking-[0.15em] text-lg uppercase text-foreground hidden sm:block">
+              Distrito
             </span>
           </div>
 
           {/* Search Bar (Desktop) */}
-          <div className="hidden md:flex flex-1 max-w-md mx-4 relative">
+          <div className="hidden md:flex flex-1 max-w-sm mx-8 relative">
             <Input
               type="text"
-              placeholder="O que você procura hoje?"
-              className="w-full bg-secondary border-border focus:border-accent pl-10 rounded-full"
+              placeholder="Buscar itens exclusivos..."
+              className="w-full bg-secondary/30 border-transparent focus:border-foreground pl-10 rounded-sm text-sm"
               onKeyDown={handleSearch}
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8">
+            <div className="flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium text-sm"
+                  className="text-foreground hover:text-muted-foreground transition-colors duration-200 text-xs font-semibold tracking-widest uppercase"
                 >
                   {item.name}
                 </a>
               ))}
             </div>
 
-            <div className="flex items-center gap-4 border-l border-border pl-6">
+            <div className="flex items-center gap-5 border-l border-border pl-8">
               <button className="relative group" onClick={() => setIsWishlistOpen(true)}>
-                <Heart className="w-5 h-5 text-foreground group-hover:text-accent transition-colors" />
+                <Heart className="w-5 h-5 text-foreground transition-colors" />
                 {wishlistItems.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-foreground text-background text-[10px] font-medium w-4 h-4 flex items-center justify-center rounded-sm">
                     {wishlistItems.length}
                   </span>
                 )}
               </button>
               <button className="relative group" onClick={() => setIsCartOpen(true)}>
-                <ShoppingBag className="w-5 h-5 text-foreground group-hover:text-accent transition-colors" />
+                <ShoppingBag className="w-5 h-5 text-foreground transition-colors" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-foreground text-background text-[10px] font-medium w-4 h-4 flex items-center justify-center rounded-sm">
                     {cartCount}
                   </span>
                 )}
@@ -83,11 +83,11 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-4 md:hidden">
+          <div className="flex items-center space-x-5 md:hidden">
             <button className="relative" onClick={() => setIsCartOpen(true)}>
-              <ShoppingBag className="w-6 h-6 text-foreground" />
+              <ShoppingBag className="w-5 h-5 text-foreground" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 bg-foreground text-background text-[10px] font-medium w-4 h-4 flex items-center justify-center rounded-sm">
                   {cartCount}
                 </span>
               )}
@@ -96,22 +96,21 @@ const Navigation = () => {
               className="text-foreground"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fadeIn">
-            <div className="mb-4 relative">
+          <div className="md:hidden py-4 border-t border-border animate-fadeIn bg-background">
+            <div className="mb-4 relative px-4">
               <Input
                 type="text"
                 placeholder="Buscar produtos..."
-                className="w-full bg-secondary border-border focus:border-accent pl-10 rounded-full"
+                className="w-full bg-secondary/30 border-transparent focus:border-foreground pl-10 rounded-sm text-sm"
                 onKeyDown={handleSearch}
               />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Search className="absolute left-7 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             </div>
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (

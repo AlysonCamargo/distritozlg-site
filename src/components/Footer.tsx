@@ -6,19 +6,16 @@ const Footer = () => {
       name: 'Instagram',
       href: 'https://instagram.com/distritozlg',
       icon: Instagram,
-      color: 'text-neon-pink hover:text-neon-pink/80'
     },
     {
       name: 'Email',
       href: 'mailto:contato@distritozlg.com.br',
       icon: Mail,
-      color: 'text-neon-cyan hover:text-neon-cyan/80'
     },
     {
       name: 'Localização',
       href: 'https://maps.app.goo.gl/87cntHo8MpEvmwTZ6',
       icon: MapPin,
-      color: 'text-neon-purple hover:text-neon-purple/80'
     }
   ];
 
@@ -31,17 +28,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-hero border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-background border-t border-border pt-16">
+      <div className="container mx-auto px-4 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-urban rounded-lg flex items-center justify-center">
-                <span className="text-lg font-bold text-background">Z</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-8 h-8 bg-foreground flex items-center justify-center">
+                <span className="text-sm font-bold text-background font-heading tracking-tighter">ZLG</span>
               </div>
-              <span className="font-heading font-bold text-2xl text-foreground">
-                Distrito ZLG
+              <span className="font-heading font-medium tracking-[0.15em] text-lg uppercase text-foreground">
+                Distrito
               </span>
             </div>
 
@@ -50,21 +47,21 @@ const Footer = () => {
               Cada peça é uma declaração, cada estilo conta uma história.
             </p>
 
-            <p className="text-accent font-semibold mb-6 flex items-center gap-2">
-              🔥 Comece 2026 com o melhor do streetwear.
+            <p className="text-foreground font-semibold mb-8 text-xs uppercase tracking-widest">
+              Eleve seu Estilo.
             </p>
 
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-10 h-10 bg-secondary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.color}`}
+                  className="w-10 h-10 bg-transparent border border-border text-muted-foreground hover:text-foreground hover:border-foreground rounded-sm flex items-center justify-center transition-all duration-300"
                   aria-label={social.name}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -121,13 +118,13 @@ const Footer = () => {
             <p className="text-muted-foreground mb-4">
               Seja o primeiro a saber dos drops exclusivos e promoções especiais
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-0 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Seu email aqui"
-                className="flex-1 px-4 py-2 bg-secondary border border-border rounded-lg focus:border-accent focus:outline-none text-foreground"
+                placeholder="SEU EMAIL AQUI"
+                className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-foreground focus:outline-none text-foreground text-xs tracking-widest uppercase placeholder:text-muted-foreground"
               />
-              <button className="px-6 py-2 bg-gradient-urban text-background font-medium rounded-lg hover:shadow-glow transition-all duration-300">
+              <button className="px-8 py-3 bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors uppercase tracking-widest text-xs">
                 Inscrever
               </button>
             </div>
@@ -136,10 +133,9 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <div className="flex items-center space-x-1 mb-4 md:mb-0">
-            <span>© 2026 Distrito ZLG. Feito com</span>
-            <Heart className="w-4 h-4 text-neon-pink fill-current" />
-            <span>na quebrada.</span>
+          <div className="flex items-center space-x-2 mb-4 md:mb-0">
+            <span className="uppercase tracking-widest text-[10px] font-semibold">© 2026 Distrito ZLG.</span>
+            <Heart className="w-3.5 h-3.5 text-muted-foreground" />
           </div>
 
           <div className="flex space-x-6">

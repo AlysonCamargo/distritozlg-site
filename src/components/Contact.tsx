@@ -37,30 +37,27 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 bg-secondary/10">
+      <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-black text-4xl md:text-6xl mb-6">
-            <span className="text-foreground">FALE</span>
-            <br />
-            <span className="bg-gradient-urban bg-clip-text text-transparent">CONOSCO</span>
+        <div className="text-center mb-20 border-b border-border pb-10">
+          <h2 className="font-heading font-light text-4xl md:text-6xl mb-6 tracking-tight uppercase">
+            Fale com o <span className="font-bold">Distrito</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tem uma ideia? Quer colaborar? Ou só quer trocar uma ideia sobre streetwear? 
-            Manda mensagem, a gente responde rapidinho!
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground max-w-2xl mx-auto">
+            Atendimento exclusivo para clientes e parceiros.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="bg-gradient-card border-border">
-            <CardHeader>
-              <CardTitle className="font-heading font-bold text-2xl text-foreground">
-                Envie sua Mensagem
+          <Card className="bg-background border-border rounded-sm shadow-none">
+            <CardHeader className="p-8 pb-4">
+              <CardTitle className="font-heading font-semibold uppercase tracking-widest text-lg text-foreground">
+                Envie uma Mensagem
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-8 pt-0">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -129,7 +126,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg"
-                  className="w-full bg-gradient-urban text-background font-bold hover:shadow-glow transition-all duration-300"
+                  className="w-full bg-foreground text-background font-semibold uppercase tracking-widest text-xs hover:bg-foreground/90 transition-colors rounded-sm h-14 mt-4"
                 >
                   Enviar Mensagem
                 </Button>
@@ -140,88 +137,60 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="font-heading font-bold text-2xl text-foreground mb-6">
-                Outras Formas de Contato
+              <h3 className="font-heading font-semibold tracking-widest uppercase text-lg text-foreground mb-8">
+                Canais Diretos
               </h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-urban rounded-full flex items-center justify-center flex-shrink-0">
-                    <Instagram className="w-6 h-6 text-background" />
+              <div className="space-y-8">
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-transparent border border-border rounded-sm flex items-center justify-center flex-shrink-0">
+                    <Instagram className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Instagram</h4>
-                    <p className="text-muted-foreground mb-2">
-                      Acompanhe nossos lançamentos e bastidores
-                    </p>
-                    <a 
-                      href="https://www.instagram.com/distritozlg/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-accent hover:text-accent/80 font-medium transition-colors"
-                    >
-                      @distritozlg
-                    </a>
+                    <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">Instagram</h4>
+                    <p className="text-muted-foreground text-sm mb-2">Acompanhe nossos lançamentos</p>
+                    <a href="https://www.instagram.com/distritozlg/" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-muted-foreground font-medium text-sm transition-colors">@distritozlg</a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-neon-pink/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-neon-pink" />
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-transparent border border-border rounded-sm flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                    <p className="text-muted-foreground mb-2">
-                      Para parcerias e dúvidas
-                    </p>
-                    <a 
-                      href="mailto:contato@distritozlg.com.br" 
-                      className="text-accent hover:text-accent/80 font-medium transition-colors"
-                    >
-                      contato@zlg.com.br
-                    </a>
+                    <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">Email</h4>
+                    <p className="text-muted-foreground text-sm mb-2">Para parcerias e dúvidas</p>
+                    <a href="mailto:contato@distritozlg.com.br" className="text-foreground underline hover:text-muted-foreground font-medium text-sm transition-colors">contato@zlg.com.br</a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-neon-purple/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-neon-purple" />
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-transparent border border-border rounded-sm flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">WhatsApp</h4>
-                    <p className="text-muted-foreground mb-2">
-                      Atendimento direto e rápido
-                    </p>
-                    <a 
-                      href="https://wa.me/5511972988072" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-accent hover:text-accent/80 font-medium transition-colors"
-                    >
-                      (11) 97298-8072
-                    </a>
+                    <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">WhatsApp</h4>
+                    <p className="text-muted-foreground text-sm mb-2">Atendimento direto</p>
+                    <a href="https://wa.me/5511972988072" target="_blank" rel="noopener noreferrer" className="text-foreground underline hover:text-muted-foreground font-medium text-sm transition-colors">(11) 97298-8072</a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-accent" />
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-transparent border border-border rounded-sm flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Localização</h4>
-                    <p className="text-muted-foreground">
-                      Bragança Paulista - SP<br />
-                      Interior representa!
-                    </p>
+                    <h4 className="font-semibold text-xs uppercase tracking-widest text-foreground mb-1">Localização</h4>
+                    <p className="text-muted-foreground text-sm">Bragança Paulista - SP</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Business Hours */}
-            <Card className="bg-gradient-card border-border">
-              <CardContent className="p-6">
-                <h4 className="font-heading font-bold text-lg text-foreground mb-4">
+            <Card className="bg-transparent border-border rounded-sm shadow-none mt-12">
+              <CardContent className="p-8">
+                <h4 className="font-heading font-semibold tracking-widest uppercase text-sm text-foreground mb-6">
                   Horários de Atendimento
                 </h4>
                 <div className="space-y-2 text-sm">

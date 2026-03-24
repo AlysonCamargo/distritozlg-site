@@ -56,17 +56,17 @@ const Index = () => {
       <Hero />
 
       {/* Featured Section */}
-      <section className="py-16 bg-secondary/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-border pb-4">
             <div>
-              <h2 className="font-heading font-bold text-3xl mb-2 flex items-center gap-2">
-                🔥 Destaques da Coleção
+              <h2 className="font-heading font-light text-3xl md:text-4xl tracking-tight uppercase">
+                Trending <span className="font-bold">Now</span>
               </h2>
-              <p className="text-muted-foreground">As peças mais quentes para começar o ano.</p>
+              <p className="text-muted-foreground mt-2 font-light">As peças mais desejadas da temporada.</p>
             </div>
-            <a href="#catalog" className="text-sm font-medium hover:text-accent transition-colors">
-              Ver tudo &rarr;
+            <a href="#catalog" className="text-sm font-medium uppercase tracking-widest hover:text-muted-foreground transition-colors mt-4 md:mt-0">
+              Ver Coleção Completa &rarr;
             </a>
           </div>
 

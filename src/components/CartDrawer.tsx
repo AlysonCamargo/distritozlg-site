@@ -22,9 +22,9 @@ export default function CartDrawer() {
         <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
             <SheetContent className="w-full sm:max-w-md flex flex-col h-full">
                 <SheetHeader>
-                    <SheetTitle className="flex items-center gap-2">
-                        <ShoppingBag className="w-5 h-5" />
-                        Seu Carrinho
+                    <SheetTitle className="flex items-center gap-3 font-heading font-light uppercase tracking-widest">
+                        <ShoppingBag className="w-4 h-4" />
+                        Sacola
                     </SheetTitle>
                     <SheetDescription>
                         {items.length === 0 ? "Seu carrinho está vazio." : `${items.length} itens no carrinho.`}
@@ -49,35 +49,35 @@ export default function CartDrawer() {
                                     <div className="space-y-4">
                                         {items.map((item) => (
                                             <div key={`${item.id}-${item.selectedSize}`} className="flex gap-4 py-4 border-b border-border/50">
-                                                <div className="w-20 h-20 bg-secondary rounded-md overflow-hidden shrink-0">
+                                                <div className="w-20 h-24 bg-secondary/50 rounded-sm overflow-hidden shrink-0">
                                                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                                                 </div>
-                                                <div className="flex-1 flex flex-col justify-between">
+                                                <div className="flex-1 flex flex-col justify-between py-1">
                                                     <div>
-                                                        <h4 className="font-medium line-clamp-1">{item.name}</h4>
-                                                        <p className="text-sm text-muted-foreground">Tamanho: {item.selectedSize}</p>
+                                                        <h4 className="font-semibold text-sm uppercase tracking-wider line-clamp-1">{item.name}</h4>
+                                                        <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest">Tamanho: {item.selectedSize}</p>
                                                     </div>
                                                     <div className="flex items-center justify-between mt-2">
-                                                        <div className="flex items-center gap-2">
+                                                        <div className="flex items-center gap-1">
                                                             <button
                                                                 onClick={() => updateQuantity(item.id, item.selectedSize, item.quantity - 1)}
-                                                                className="w-6 h-6 rounded-full border border-border flex items-center justify-center hover:bg-secondary"
+                                                                className="w-6 h-6 rounded-sm border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
                                                             >
                                                                 <Minus className="w-3 h-3" />
                                                             </button>
-                                                            <span className="text-sm w-4 text-center">{item.quantity}</span>
+                                                            <span className="text-xs w-6 text-center font-medium">{item.quantity}</span>
                                                             <button
                                                                 onClick={() => updateQuantity(item.id, item.selectedSize, item.quantity + 1)}
-                                                                className="w-6 h-6 rounded-full border border-border flex items-center justify-center hover:bg-secondary"
+                                                                className="w-6 h-6 rounded-sm border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
                                                             >
                                                                 <Plus className="w-3 h-3" />
                                                             </button>
                                                         </div>
-                                                        <div className="flex items-center gap-3">
-                                                            <span className="font-medium">{BRL(item.price * item.quantity)}</span>
+                                                        <div className="flex items-center gap-4">
+                                                            <span className="font-semibold text-sm">{BRL(item.price * item.quantity)}</span>
                                                             <button
                                                                 onClick={() => removeItem(item.id, item.selectedSize)}
-                                                                className="text-muted-foreground hover:text-destructive transition-colors"
+                                                                className="text-muted-foreground hover:text-foreground transition-colors"
                                                             >
                                                                 <Trash2 className="w-4 h-4" />
                                                             </button>
@@ -90,11 +90,11 @@ export default function CartDrawer() {
                                 </ScrollArea>
 
                                 <div className="pt-4 border-t border-border space-y-4">
-                                    <div className="flex justify-between items-center text-lg font-bold">
-                                        <span>Total</span>
+                                    <div className="flex justify-between items-center text-sm font-semibold uppercase tracking-widest">
+                                        <span>Subtotal</span>
                                         <span>{BRL(cartTotal)}</span>
                                     </div>
-                                    <Button className="w-full h-12 text-lg font-bold" onClick={() => setIsCheckingOut(true)}>
+                                    <Button className="w-full h-12 text-sm uppercase tracking-widest font-semibold rounded-sm bg-foreground text-background hover:bg-foreground/90" onClick={() => setIsCheckingOut(true)}>
                                         Finalizar Compra
                                     </Button>
                                 </div>

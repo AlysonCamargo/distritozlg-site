@@ -184,13 +184,13 @@ export default function Catalog() {
     <section id="catalog" className="py-12 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4 border-b border-border pb-6">
           <div>
-            <h2 className="font-heading font-black text-3xl md:text-5xl mb-2">
-              <span className="text-foreground">NOSSO</span> <span className="text-transparent bg-clip-text bg-gradient-urban">CATÁLOGO</span>
+            <h2 className="font-heading font-light text-3xl md:text-5xl mb-2 tracking-tight uppercase">
+              The <span className="font-bold">Collection</span>
             </h2>
-            <p className="text-muted-foreground">
-              Encontre seu estilo entre nossas {products.length} peças exclusivas.
+            <p className="text-muted-foreground font-light">
+              Descubra nossas {products.length} peças exclusivas criadas para o seu lifestyle.
             </p>
           </div>
 
@@ -199,13 +199,13 @@ export default function Catalog() {
             <div className="relative w-full md:w-64">
               <Input
                 type="text"
-                placeholder="Buscar..."
+                placeholder="Pesquisar..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-secondary border-border focus:border-accent pl-10 rounded-full"
+                className="w-full bg-secondary/30 border-transparent focus:border-foreground pl-10 rounded-sm text-sm"
               />
               <Search
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground"
               />
             </div>
 
@@ -237,10 +237,10 @@ export default function Catalog() {
           {/* Conteúdo principal */}
           <div className="flex-1">
             {/* Toolbar */}
-            <div className="flex justify-between items-center mb-6 bg-secondary/30 p-3 rounded-xl">
+            <div className="flex justify-between items-center mb-8 bg-transparent pb-4 border-b border-border/50">
               <div className="flex items-center gap-4">
-                <p className="text-sm text-muted-foreground font-medium">
-                  {filteredProducts.length} resultados
+                <p className="text-xs tracking-widest uppercase text-muted-foreground font-medium">
+                  {filteredProducts.length} encontrados
                 </p>
 
                 {/* Active Filters Pills */}
@@ -268,27 +268,27 @@ export default function Catalog() {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as SortKey)}
-                  className="bg-background text-foreground text-sm font-medium border-none focus:ring-0 cursor-pointer text-right [&>option]:bg-background [&>option]:text-foreground"
+                  className="bg-transparent text-foreground text-xs font-semibold tracking-widest uppercase border-none focus:ring-0 cursor-pointer text-right"
                 >
                   <option value="relevance">Relevância</option>
-                  <option value="newest">Mais Recentes</option>
+                  <option value="newest">Lançamentos</option>
                   <option value="price-asc">Menor Preço</option>
                   <option value="price-desc">Maior Preço</option>
                   <option value="name-asc">Nome (A-Z)</option>
                 </select>
 
-                <div className="flex bg-background rounded-lg border border-border p-1">
+                <div className="flex bg-secondary/30 rounded-sm p-1 ml-4 border border-transparent">
                   <button
                     onClick={() => setViewMode("grid")}
-                    className={`p-1.5 rounded ${viewMode === "grid" ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                    className={`p-1.5 rounded-sm transition-colors ${viewMode === "grid" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
                   >
-                    <Grid className="w-4 h-4" />
+                    <Grid className="w-3.5 h-3.5" />
                   </button>
                   <button
                     onClick={() => setViewMode("list")}
-                    className={`p-1.5 rounded ${viewMode === "list" ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                    className={`p-1.5 rounded-sm transition-colors ${viewMode === "list" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
                   >
-                    <List className="w-4 h-4" />
+                    <List className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>

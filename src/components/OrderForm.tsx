@@ -66,19 +66,19 @@ export default function OrderForm({ onBack }: OrderFormProps) {
             </div>
 
             {/* Order Summary */}
-            <div className="bg-secondary/30 p-4 rounded-lg mb-6">
-                <h4 className="font-medium text-sm mb-2 text-muted-foreground">Resumo do Pedido</h4>
-                <div className="space-y-2 max-h-32 overflow-y-auto pr-2">
+            <div className="bg-secondary/10 border border-border p-4 rounded-sm mb-6">
+                <h4 className="font-semibold text-xs tracking-widest uppercase mb-3 text-foreground">Resumo</h4>
+                <div className="space-y-3 max-h-32 overflow-y-auto pr-2">
                     {items.map((item) => (
-                        <div key={`${item.id}-${item.selectedSize}`} className="flex justify-between text-sm">
-                            <span className="line-clamp-1 flex-1">
-                                {item.quantity}x {item.name} <span className="text-xs text-muted-foreground">({item.selectedSize})</span>
+                        <div key={`${item.id}-${item.selectedSize}`} className="flex justify-between text-xs text-muted-foreground">
+                            <span className="line-clamp-1 flex-1 uppercase tracking-wider">
+                                {item.quantity}x {item.name} <span className="font-medium">({item.selectedSize})</span>
                             </span>
-                            <span className="font-medium">{BRL(item.price * item.quantity)}</span>
+                            <span className="font-semibold text-foreground">{BRL(item.price * item.quantity)}</span>
                         </div>
                     ))}
                 </div>
-                <div className="border-t border-border mt-3 pt-2 flex justify-between font-bold">
+                <div className="border-t border-border mt-4 pt-3 flex justify-between font-semibold uppercase tracking-widest text-sm">
                     <span>Total</span>
                     <span>{BRL(cartTotal)}</span>
                 </div>
@@ -186,17 +186,17 @@ export default function OrderForm({ onBack }: OrderFormProps) {
                     </div>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-border">
-                    <div className="flex justify-between items-center mb-4 text-sm text-muted-foreground">
-                        <span>Total a pagar:</span>
-                        <span className="text-xl font-bold text-foreground">{BRL(cartTotal)}</span>
+                <div className="mt-auto pt-6 border-t border-border">
+                    <div className="flex justify-between items-center mb-6 text-xs uppercase tracking-widest font-semibold text-muted-foreground">
+                        <span>A Pagar</span>
+                        <span className="text-lg text-foreground">{BRL(cartTotal)}</span>
                     </div>
-                    <Button type="submit" className="w-full h-12 text-lg font-bold gap-2 bg-green-600 hover:bg-green-700 text-white">
-                        <Send className="w-5 h-5" />
-                        Enviar Pedido no WhatsApp
+                    <Button type="submit" className="w-full h-12 text-sm font-semibold tracking-widest uppercase gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-sm">
+                        <Send className="w-4 h-4" />
+                        Finalizar via WhatsApp
                     </Button>
-                    <p className="text-xs text-center text-muted-foreground mt-3">
-                        Você será redirecionado para o WhatsApp para confirmar o pagamento.
+                    <p className="text-[10px] uppercase tracking-widest text-center text-muted-foreground mt-4">
+                        Você será redirecionado para o WhatsApp.
                     </p>
                 </div>
             </form>
