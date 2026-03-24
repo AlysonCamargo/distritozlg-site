@@ -9,9 +9,9 @@
   },
   "hero": {
     "badge": "Nova Coleção 2026",
-    "title": "ELEVATE YOUR <br className=\"hidden md:block\" />\n<span className=\"italic font-light\">EVERYDAY</span>",
+    "title": "ELEVE O SEU <br className=\"hidden md:block\" />\n<span className=\"italic font-light\">ESTILO</span>",
     "subtitle": "Streetwear minimalista desenhado para durar. A fusão perfeita entre conforto absoluto e design atemporal.",
-    "cta1": "Shop Collection",
+    "cta1": "Ver Coleção",
     "cta2": "A Marca",
     "features": {
       "qualityTitle": "Qualidade Premium",
@@ -32,7 +32,7 @@
     "seeResults": "Ver {{count}} resultados",
     "categories": "Categorias",
     "filters": "Filtros",
-    "onlySale": "Apenas Sale",
+    "onlySale": "Apenas Ofertas",
     "sizes": "Tamanhos",
     "sort": {
       "relevance": "Relevância",
@@ -52,7 +52,7 @@
   },
   "product": {
     "new": "NOVO",
-    "sale": "SALE",
+    "sale": "OFERTA",
     "hoverView": "Passe o mouse para ver o verso",
     "soldOut": "ESGOTADO",
     "addToCart": "Adicionar",
