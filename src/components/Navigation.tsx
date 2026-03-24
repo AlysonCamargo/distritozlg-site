@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Search, ShoppingBag, Heart } from 'lucide-react';
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Input } from '@/components/ui/input';
 
 const Navigation = () => {
@@ -63,6 +64,7 @@ const Navigation = () => {
             </div>
 
             <div className="flex items-center gap-5 border-l border-border pl-8">
+              <ThemeToggle />
               <button className="relative group" onClick={() => setIsWishlistOpen(true)}>
                 <Heart className="w-5 h-5 text-foreground transition-colors" />
                 {wishlistItems.length > 0 && (
@@ -84,6 +86,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-5 md:hidden">
+            <ThemeToggle />
             <button className="relative" onClick={() => setIsCartOpen(true)}>
               <ShoppingBag className="w-5 h-5 text-foreground" />
               {cartCount > 0 && (

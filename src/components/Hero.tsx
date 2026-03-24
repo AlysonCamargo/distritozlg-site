@@ -8,7 +8,7 @@ const Hero = () => {
       <section id="home" className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
         {/* Full Bleed Background Image with subtle overlay for contrast */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[20s] hover:scale-105"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-black/40" />

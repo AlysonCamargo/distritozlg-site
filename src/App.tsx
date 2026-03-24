@@ -12,6 +12,8 @@ import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 const queryClient = new QueryClient();
 
 export const App = () => (
@@ -20,9 +22,10 @@ export const App = () => (
       Skip to main content
     </a>
     <div id="main-content">
-      <QueryClientProvider client={queryClient}>
-        <SEOProvider>
-          <CartProvider>
+      <ThemeProvider defaultTheme="light" storageKey="distritozlg-theme">
+        <QueryClientProvider client={queryClient}>
+          <SEOProvider>
+            <CartProvider>
             <WishlistProvider>
               <TooltipProvider>
                 <Toaster />
@@ -42,7 +45,8 @@ export const App = () => (
             </WishlistProvider>
           </CartProvider>
         </SEOProvider>
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
       <Analytics />
     </div>
   </>
