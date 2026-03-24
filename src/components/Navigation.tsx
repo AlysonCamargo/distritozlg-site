@@ -14,10 +14,10 @@ const Navigation = () => {
   const { items: wishlistItems, setIsWishlistOpen } = useWishlist();
 
   const navItems = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.catalog'), href: '#catalog' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: t('nav.home'), href: '/#home' },
+    { name: t('nav.catalog'), href: '/#catalog' },
+    { name: t('nav.about'), href: '/#about' },
+    { name: t('nav.contact'), href: '/#contact' },
   ];
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -32,14 +32,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3 flex-shrink-0">
+          <a href="/" className="flex items-center space-x-3 flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity">
             <div className="w-8 h-8 bg-foreground flex items-center justify-center">
               <span className="text-sm font-bold text-background font-heading tracking-tighter">ZLG</span>
             </div>
             <span className="font-heading font-medium tracking-[0.15em] text-lg uppercase text-foreground hidden sm:block">
               Distrito
             </span>
-          </div>
+          </a>
 
           {/* Search Bar (Desktop) */}
           <div className="hidden md:flex flex-1 max-w-sm mx-8 relative">

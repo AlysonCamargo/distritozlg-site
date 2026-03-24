@@ -166,6 +166,41 @@
     "newsletterDesc": "Seja o primeiro a saber dos drops exclusivos e promoções especiais",
     "newsletterPlaceholder": "SEU EMAIL AQUI",
     "subscribe": "Inscrever",
-    "rights": "© 2026 Distrito ZLG."
+    "rights": "© 2026 Distrito ZLG.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "intro": "Esta Política de Privacidade descreve como a Distrito ZLG coleta, usa e protege suas informações pessoais quando você utiliza nosso site e serviços.",
+    "h1": "1. Informações que Coletamos",
+    "p1": "Ao realizar compras ou se cadastrar, coletamos apenas os dados necessários: nome, e-mail, telefone e endereço de entrega. Não armazenamos informações sensíveis de pagamento em nossos servidores.",
+    "h2": "2. Uso das Informações",
+    "p2": "Utilizamos suas informações exclusivamente para:<br />\n- Processar e entregar seus pedidos<br />\n- Enviar atualizações sobre sua compra<br />\n- Disponibilizar promoções e novidades (apenas se autorizado)",
+    "h3": "3. Proteção e Segurança",
+    "p3": "Empregamos medidas de segurança padrão do setor para proteger as informações pessoais que você nos fornece. O acesso aos dados é restrito e realizado apenas por partes necessárias para a conclusão de sua compra.",
+    "h4": "4. Compartilhamento de Dados",
+    "p4": "Não vendemos nem alugamos suas informações para terceiros. O compartilhamento ocorre apenas com empresas terceirizadas de logística e pagamento estritamente para viabilizar e entregar sua encomenda.",
+    "updated": "Última atualização: Março de 2026."
+  },
+  "terms": {
+    "title": "Termos de Uso",
+    "intro": "Estes Termos e Condições regem o seu uso do site da Distrito ZLG e a aquisição de nossos produtos.",
+    "h1": "1. Aceitação dos Termos",
+    "p1": "Ao utilizar nosso site e efetuar compras, você concorda legalmente em cumprir estes termos em sua totalidade. Caso não concorde com alguma disposição estabelecida, por favor descontinue o uso do site.",
+    "h2": "2. Produtos e Disponibilidade",
+    "p2": "Todas as nossas peças são limitadas e podem esgotar. Não garantimos a reposição de itens específicos. As cores dos produtos podem variar ligeiramente dependendo do monitor ou tela onde estão sendo visualizadas.",
+    "h3": "3. Preços e Pagamentos",
+    "p3": "Os preços estão sujeitos a alterações sem aviso prévio. O preço cobrado será o exibido no momento da confirmação do pedido e pagamento.",
+    "h4": "4. Trocas e Devoluções",
+    "p4": "O cliente tem até 7 dias corridos após o recebimento para solicitar troca ou devolução do produto por arrependimento. O item deve estar na embalagem original, com as etiquetas, e sem indícios de uso ou lavagem.",
+    "updated": "Última atualização: Março de 2026."
+  },
+  "sizeGuide": {
+    "desc": "Consulte as medidas aproximadas (em cm) para escolher o tamanho ideal.",
+    "size": "Tamanho",
+    "chest": "Tórax",
+    "length": "Comprimento",
+    "sleeve": "Manga"
   }
 }

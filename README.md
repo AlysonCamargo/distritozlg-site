@@ -23,16 +23,20 @@
 ### ✨ Principais Features
 
 - 🛍️ **Catálogo Completo** - Navegação por categorias com filtros avançados
+- 🌍 **Internacionalização (i18n)** - Suporte nativo para múltiplos idiomas (Português e Inglês)
+- 🌓 **Modo Escuro/Claro** - Alternância de tema fluída com persistência de preferências
 - 🔍 **Busca Inteligente** - Sistema de busca com normalização de texto e resultados instantâneos
 - 🎯 **Filtros Dinâmicos** - Filtragem por categoria, tamanho, promoções e novidades
 - 📱 **Design Responsivo** - Interface otimizada para desktop, tablet e mobile
 - 🎨 **UI/UX Premium** - Design moderno com animações suaves e micro-interações
 - 🛒 **Carrinho de Compras** - Gerenciamento completo de produtos com persistência local
 - ❤️ **Lista de Desejos** - Salve seus produtos favoritos para comprar depois
+- 📏 **Guia de Medidas** - Consulta rápida de dimensionamento diretamente nos produtos
 - 📦 **Integração WhatsApp** - Finalização de pedidos via WhatsApp Business
 - 🎄 **Temas Sazonais** - Decorações e animações especiais para datas comemorativas
 - ⚡ **Performance Otimizada** - Carregamento rápido e paginação incremental
-- 🔒 **SEO Otimizado** - Meta tags dinâmicas e URLs amigáveis para mecanismos de busca
+- 🔒 **Páginas Institucionais** - Políticas de Privacidade e Termos de Uso configurados
+- 🚀 **SEO Otimizado** - Meta tags dinâmicas e URLs amigáveis para mecanismos de busca
 
 ---
 

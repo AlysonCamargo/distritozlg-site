@@ -22,11 +22,11 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: t('nav.catalog'), href: '#catalog' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.contact'), href: '#contact' },
-    { name: 'Política de Privacidade', href: '#' },
-    { name: 'Termos de Uso', href: '#' },
+    { name: t('nav.catalog'), href: '/#catalog' },
+    { name: t('nav.about'), href: '/#about' },
+    { name: t('nav.contact'), href: '/#contact' },
+    { name: t('footer.privacy'), href: '/politica-de-privacidade' },
+    { name: t('footer.terms'), href: '/termos-de-uso' },
   ];
 
   return (

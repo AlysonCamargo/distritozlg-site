@@ -4,6 +4,7 @@ import { X, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ProductCarousel from "./ProductCarousel";
 import { Product, products } from "@/data/products";
 import { useTranslation } from "react-i18next";
@@ -130,7 +131,63 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                 <div>
                                     <div className="flex justify-between items-center mb-3">
                                         <span className="text-xs uppercase tracking-widest font-semibold text-foreground">{t('catalog.sizes')}</span>
-                                        <span className="text-[10px] underline cursor-pointer text-muted-foreground hover:text-foreground uppercase tracking-widest">{t('product.sizeGuide')}</span>
+                                        <Dialog>
+                                            <DialogTrigger asChild>
+                                                <span className="text-[10px] underline cursor-pointer text-muted-foreground hover:text-foreground uppercase tracking-widest">{t('product.sizeGuide')}</span>
+                                            </DialogTrigger>
+                                            <DialogContent className="sm:max-w-md z-[100]">
+                                                <DialogHeader>
+                                                    <DialogTitle className="uppercase tracking-widest font-heading text-xl">{t('product.sizeGuide')}</DialogTitle>
+                                                    <DialogDescription>
+                                                        Consulte as medidas aproximadas (em cm) para escolher o tamanho ideal.
+                                                    </DialogDescription>
+                                                </DialogHeader>
+                                                <div className="overflow-x-auto mt-4">
+                                                    <table className="w-full text-sm text-center">
+                                                        <thead className="bg-secondary/50 uppercase tracking-widest text-[10px]">
+                                                            <tr>
+                                                                <th className="px-4 py-3 text-left">Tamanho</th>
+                                                                <th className="px-4 py-3">Tórax</th>
+                                                                <th className="px-4 py-3">Comprimento</th>
+                                                                <th className="px-4 py-3">Manga</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr className="border-b border-border">
+                                                                <td className="px-4 py-3 font-medium text-left">P</td>
+                                                                <td className="px-4 py-3">52</td>
+                                                                <td className="px-4 py-3">70</td>
+                                                                <td className="px-4 py-3">22</td>
+                                                            </tr>
+                                                            <tr className="border-b border-border bg-secondary/10">
+                                                                <td className="px-4 py-3 font-medium text-left">M</td>
+                                                                <td className="px-4 py-3">54</td>
+                                                                <td className="px-4 py-3">72</td>
+                                                                <td className="px-4 py-3">23</td>
+                                                            </tr>
+                                                            <tr className="border-b border-border">
+                                                                <td className="px-4 py-3 font-medium text-left">G</td>
+                                                                <td className="px-4 py-3">56</td>
+                                                                <td className="px-4 py-3">74</td>
+                                                                <td className="px-4 py-3">24</td>
+                                                            </tr>
+                                                            <tr className="border-b border-border bg-secondary/10">
+                                                                <td className="px-4 py-3 font-medium text-left">GG</td>
+                                                                <td className="px-4 py-3">58</td>
+                                                                <td className="px-4 py-3">76</td>
+                                                                <td className="px-4 py-3">25</td>
+                                                            </tr>
+                                                            <tr className="border-b border-border">
+                                                                <td className="px-4 py-3 font-medium text-left">XG</td>
+                                                                <td className="px-4 py-3">60</td>
+                                                                <td className="px-4 py-3">78</td>
+                                                                <td className="px-4 py-3">26</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </DialogContent>
+                                        </Dialog>
                                     </div>
                                     <div className="flex flex-wrap gap-2">
                                         {sizes.map((size) => (

@@ -166,6 +166,41 @@
     "newsletterDesc": "Be the first to know about exclusive drops and special promos",
     "newsletterPlaceholder": "YOUR EMAIL HERE",
     "subscribe": "Subscribe",
-    "rights": "© 2026 Distrito ZLG."
+    "rights": "© 2026 Distrito ZLG.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "This Privacy Policy describes how Distrito ZLG collects, uses, and protects your personal information when you use our website and services.",
+    "h1": "1. Information We Collect",
+    "p1": "When making purchases or registering, we collect only the necessary data: name, email, phone, and delivery address. We do not store sensitive payment information on our servers.",
+    "h2": "2. Use of Information",
+    "p2": "We use your information exclusively to:<br />\n- Process and deliver your orders<br />\n- Send updates about your purchase<br />\n- Provide promotions and news (only if authorized)",
+    "h3": "3. Protection and Security",
+    "p3": "We use industry-standard security measures to protect the personal information you provide to us. Access to data is restricted and performed only by parties necessary to complete your purchase.",
+    "h4": "4. Data Sharing",
+    "p4": "We do not sell or rent your information to third parties. Sharing occurs only with third-party logistics and payment companies strictly to enable and deliver your order.",
+    "updated": "Last updated: March 2026."
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "intro": "These Terms and Conditions govern your use of the Distrito ZLG website and the purchase of our products.",
+    "h1": "1. Acceptance of Terms",
+    "p1": "By using our website and making purchases, you legally agree to comply with these terms in their entirety. If you do not agree with any provision set forth, please discontinue use of the site.",
+    "h2": "2. Products and Availability",
+    "p2": "All our pieces are limited and may sell out. We do not guarantee the restock of specific items. Product colors may vary slightly depending on the monitor or screen on which they are being viewed.",
+    "h3": "3. Pricing and Payments",
+    "p3": "Prices are subject to change without notice. The price charged will be the one displayed at the time of order confirmation and payment.",
+    "h4": "4. Returns and Exchanges",
+    "p4": "Customers have up to 7 calendar days after receipt to request an exchange or return of the product due to regret. The item must be in its original packaging, with tags, and without signs of use or washing.",
+    "updated": "Last updated: March 2026."
+  },
+  "sizeGuide": {
+    "desc": "Check the approximate measurements (in cm) to choose the ideal size.",
+    "size": "Size",
+    "chest": "Chest",
+    "length": "Length",
+    "sleeve": "Sleeve"
   }
 }

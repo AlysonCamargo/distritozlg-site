@@ -11,6 +11,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -37,6 +39,8 @@ export const App = () => (
                     <Route path="/" element={<Index />} />
                     <Route path="/product/:id" element={<Index />} />
                     <Route path="/produto/:id" element={<Index />} />
+                    <Route path="/politica-de-privacidade" element={<Privacy />} />
+                    <Route path="/termos-de-uso" element={<Terms />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
                   </Routes>
