@@ -33,7 +33,7 @@ export const products: Product[] = [
 
   {
     id: 10,
-    name: 'Adidas Bordada',
+    name: 'Camiseta Adidas Classic Bordada',
     price: 79.90,
     image: 'https://i.imgur.com/PA0Z5AE.png',
     imageFront: 'https://i.imgur.com/PA0Z5AE.png',
@@ -45,7 +45,7 @@ export const products: Product[] = [
   },
   {
     id: 13,
-    name: 'Adidas Logo',
+    name: 'Camiseta Adidas Logo Minimal',
     price: 49.90,
     image: 'https://i.imgur.com/q4bGbT5.png',
     imageFront: 'https://i.imgur.com/q4bGbT5.png',
@@ -57,7 +57,7 @@ export const products: Product[] = [
   },
   {
     id: 14,
-    name: 'Lacoste',
+    name: 'Camiseta Lacoste Essential',
     price: 49.90,
     image: 'https://i.imgur.com/1seksbz.png',
     imageFront: 'https://i.imgur.com/1seksbz.png',
@@ -69,7 +69,7 @@ export const products: Product[] = [
   },
   {
     id: 15,
-    name: 'Palm Angels Olho',
+    name: 'T-Shirt Palm Angels Eye Concept',
     price: 49.90,
     image: 'https://i.imgur.com/7NjoZ6Y.png',
     imageFront: 'https://i.imgur.com/7NjoZ6Y.png',
@@ -81,7 +81,7 @@ export const products: Product[] = [
   },
   {
     id: 16,
-    name: 'Off White Pinóquio',
+    name: 'T-Shirt Off White Pinocchio Edition',
     price: 49.90,
     image: 'https://i.imgur.com/5d0Kk57.png',
     imageFront: 'https://i.imgur.com/5d0Kk57.png',
@@ -93,7 +93,7 @@ export const products: Product[] = [
   },
   {
     id: 17,
-    name: 'Air Bordado',
+    name: 'Camiseta Air Classic Bordada',
     price: 79.90,
     image: 'https://i.imgur.com/nVkpglz.png',
     imageFront: 'https://i.imgur.com/nVkpglz.png',
@@ -105,7 +105,7 @@ export const products: Product[] = [
   },
   {
     id: 23,
-    name: 'Travis Mostarda',
+    name: 'T-Shirt Travis Scott Mustard Edition',
     price: 49.99,
     image: 'https://i.imgur.com/wz6eGVK.png',
     imageFront: 'https://i.imgur.com/wz6eGVK.png',
@@ -117,7 +117,7 @@ export const products: Product[] = [
   },
   {
     id: 24,
-    name: 'Travis Bege',
+    name: 'T-Shirt Travis Scott Beige Edition',
     price: 49.99,
     image: 'https://i.imgur.com/CZdjuoW.png',
     imageFront: 'https://i.imgur.com/CZdjuoW.png',
@@ -130,7 +130,7 @@ export const products: Product[] = [
 
   {
     id: 31,
-    name: 'Adidas Jerry',
+    name: 'Camiseta Adidas Jerry Edition',
     price: 49.99,
     image: 'https://i.imgur.com/Dd6Pthx.jpeg',
     imageFront: 'https://i.imgur.com/Dd6Pthx.jpeg',
@@ -142,7 +142,7 @@ export const products: Product[] = [
   },
   {
     id: 32,
-    name: 'Neymar',
+    name: 'Camiseta Neymar Jr Exclusiva',
     price: 49.99,
     image: 'https://i.imgur.com/My9k0UL.jpeg',
     imageFront: 'https://i.imgur.com/My9k0UL.jpeg',
@@ -155,7 +155,7 @@ export const products: Product[] = [
 
   {
     id: 39,
-    name: 'Off White X',
+    name: 'T-Shirt Off White X Cross',
     price: 79.99,
     image: 'https://i.imgur.com/ffsnOic.jpeg',
     imageFront: 'https://i.imgur.com/ffsnOic.jpeg',
@@ -167,7 +167,7 @@ export const products: Product[] = [
   },
   {
     id: 43,
-    name: 'Los Angeles 32',
+    name: 'Camiseta Los Angeles 32 Athletics',
     price: 79.99,
     image: 'https://i.imgur.com/bNnjDQ0.jpeg',
     imageFront: 'https://i.imgur.com/bNnjDQ0.jpeg',
@@ -219,7 +219,7 @@ export const products: Product[] = [
 
   {
     id: 62,
-    name: 'Camiseta Boss Branca Logo Medio Direit',
+    name: 'Camiseta Boss Branca Logo Frontal',
     price: 60.00,
     image: 'https://i.imgur.com/mqQb7XU.jpeg',
     imageFront: 'https://i.imgur.com/mqQb7XU.jpeg',
@@ -231,7 +231,7 @@ export const products: Product[] = [
   },
   {
     id: 63,
-    name: 'Camiseta Boss Preta Logo Pequeno',
+    name: 'Camiseta Boss Preta Minimalista',
     price: 60.00,
     image: 'https://i.imgur.com/zwQ2DuO.jpeg',
     imageFront: 'https://i.imgur.com/zwQ2DuO.jpeg',
@@ -255,7 +255,7 @@ export const products: Product[] = [
   },
   {
     id: 65,
-    name: 'Camiseta Boss Bege Logo Branco',
+    name: 'Camiseta Boss Bege Essential',
     price: 60.00,
     image: 'https://i.imgur.com/pGE39wd.jpeg',
     imageFront: 'https://i.imgur.com/pGE39wd.jpeg',
@@ -267,7 +267,7 @@ export const products: Product[] = [
   },
   {
     id: 66,
-    name: 'Camiseta Boss Marrom Logo Peluciado',
+    name: 'Camiseta Boss Marrom Premium',
     price: 60.00,
     image: 'https://i.imgur.com/IMfUmPy.jpeg',
     imageFront: 'https://i.imgur.com/IMfUmPy.jpeg',
@@ -279,7 +279,7 @@ export const products: Product[] = [
   },
   {
     id: 68,
-    name: 'Camiseta Nike Preta Logo Grande',
+    name: 'Camiseta Nike Preta Classic Logo',
     price: 60.00,
     image: 'https://i.imgur.com/24UMzJc.png',
     imageFront: 'https://i.imgur.com/24UMzJc.png',
@@ -291,7 +291,7 @@ export const products: Product[] = [
   },
   {
     id: 73,
-    name: "PALM ANGELS Asa Anjo B",
+    name: 'T-Shirt Palm Angels Wings Edition',
     price: 79.99,
     image: "https://i.imgur.com/iMQdTPL.jpeg",
     imageFront: "https://i.imgur.com/iMQdTPL.jpeg",
@@ -303,7 +303,7 @@ export const products: Product[] = [
   },
   {
     id: 74,
-    name: "JORDAN Chicago",
+    name: 'T-Shirt Jordan Chicago Bulls',
     price: 79.99,
     image: "https://i.imgur.com/nQED1Tx.jpeg",
     imageFront: "https://i.imgur.com/nQED1Tx.jpeg",
@@ -315,7 +315,7 @@ export const products: Product[] = [
   },
   {
     id: 77,
-    name: "CASA BLANCA Tenis",
+    name: 'T-Shirt Casablanca Tennis Club',
     price: 79.99,
     image: "https://i.imgur.com/xl8wO5Y.jpeg",
     imageFront: "https://i.imgur.com/xl8wO5Y.jpeg",
@@ -327,7 +327,7 @@ export const products: Product[] = [
   },
   {
     id: 79,
-    name: "HIGH",
+    name: 'Camiseta High Company Original',
     price: 79.99,
     image: "https://i.imgur.com/nJqmA2I.jpeg",
     imageFront: "https://i.imgur.com/nJqmA2I.jpeg",
@@ -339,7 +339,7 @@ export const products: Product[] = [
   },
   {
     id: 80,
-    name: "SUPREME Products",
+    name: 'T-Shirt Supreme Products Classic',
     price: 79.99,
     image: "https://i.imgur.com/gE6fSM5.jpeg",
     imageFront: "https://i.imgur.com/gE6fSM5.jpeg",
@@ -351,7 +351,7 @@ export const products: Product[] = [
   },
   {
     id: 81,
-    name: "PALM ANGELS Dólar Rosas",
+    name: 'T-Shirt Palm Angels Money Rose',
     price: 79.99,
     image: "https://i.imgur.com/xLTe9Eb.jpeg",
     imageFront: "https://i.imgur.com/xLTe9Eb.jpeg",
@@ -363,7 +363,7 @@ export const products: Product[] = [
   },
   {
     id: 84,
-    name: "BALENCIAGA BB",
+    name: 'T-Shirt Balenciaga BB Paris',
     price: 79.99,
     image: "https://i.imgur.com/Cpi43xP.jpeg",
     imageFront: "https://i.imgur.com/Cpi43xP.jpeg",
@@ -376,7 +376,7 @@ export const products: Product[] = [
 
   {
     id: 87,
-    name: "Shorts Dry Fit Azul",
+    name: 'Bermuda Dry Fit Performance',
     price: 69.99,
     image: "https://i.imgur.com/rykWcyt.png",
     imageFront: "https://i.imgur.com/rykWcyt.png",
@@ -388,7 +388,7 @@ export const products: Product[] = [
   },
   {
     id: 88,
-    name: "Shorts Dry Fit Cinza",
+    name: 'Bermuda Dry Fit Performance',
     price: 69.99,
     image: "https://i.imgur.com/UB0tJEb.png",
     imageFront: "https://i.imgur.com/UB0tJEb.png",
@@ -401,7 +401,7 @@ export const products: Product[] = [
 
   {
     id: 94,
-    name: "Dry Fit Nike Logo na Direita",
+    name: 'Camiseta Dry Fit Nike Sport',
     price: 49.99,
     image: "https://i.imgur.com/f3o8rg2.jpeg",
     imageFront: "https://i.imgur.com/f3o8rg2.jpeg",
@@ -413,7 +413,7 @@ export const products: Product[] = [
   },
   {
     id: 97,
-    name: "Dry Fit Nike Logo Central",
+    name: 'Camiseta Dry Fit Nike Central',
     price: 49.99,
     image: "https://i.imgur.com/f3o8rg2.jpeg",
     imageFront: "https://i.imgur.com/f3o8rg2.jpeg",
@@ -425,7 +425,7 @@ export const products: Product[] = [
   },
   {
     id: 98,
-    name: "Dry Fit Adidas Branca",
+    name: 'Camiseta Dry Fit Adidas Essential',
     price: 49.99,
     image: "https://i.imgur.com/3eUq5w7.jpeg",
     imageFront: "https://i.imgur.com/3eUq5w7.jpeg",
@@ -437,7 +437,7 @@ export const products: Product[] = [
   },
   {
     id: 99,
-    name: "Dry Fit Nike Bege",
+    name: 'Camiseta Dry Fit Nike Basic Bege',
     price: 49.99,
     image: "https://i.imgur.com/1KeOXiB.jpeg",
     imageFront: "https://i.imgur.com/1KeOXiB.jpeg",
@@ -449,7 +449,7 @@ export const products: Product[] = [
   },
   {
     id: 100,
-    name: "Dry Fit Under Armour Bege",
+    name: 'Camiseta Dry Fit Under Armour Bege',
     price: 49.99,
     image: "https://i.imgur.com/4zxeSIo.jpeg",
     imageFront: "https://i.imgur.com/4zxeSIo.jpeg",
@@ -461,7 +461,7 @@ export const products: Product[] = [
   },
   {
     id: 102,
-    name: 'Nike Sombras',
+    name: 'Camiseta Nike Shadows Edition',
     price: 79.90,
     image: 'https://i.imgur.com/Fq8DnNj.png',
     imageFront: 'https://i.imgur.com/Fq8DnNj.png',
@@ -473,7 +473,7 @@ export const products: Product[] = [
   },
   {
     id: 103,
-    name: 'Quiksilver Preta 1',
+    name: 'Camiseta Quiksilver Classic Preta',
     price: 42.90,
     image: 'https://i.imgur.com/WLICRrX.jpeg',
     imageFront: 'https://i.imgur.com/WLICRrX.jpeg',
@@ -485,7 +485,7 @@ export const products: Product[] = [
   },
   {
     id: 104,
-    name: 'Quiksilver 2',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42.90,
     image: 'https://i.imgur.com/1ciQTsP.png',
     imageFront: 'https://i.imgur.com/1ciQTsP.png',
@@ -497,7 +497,7 @@ export const products: Product[] = [
   },
   {
     id: 105,
-    name: 'Quiksilver 3',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42.90,
     image: 'https://i.imgur.com/SwT2Pm9.png',
     imageFront: 'https://i.imgur.com/SwT2Pm9.png',
@@ -509,7 +509,7 @@ export const products: Product[] = [
   },
   {
     id: 106,
-    name: 'Ripcurl 4',
+    name: 'Camiseta Rip Curl Surf Series',
     price: 42.90,
     image: 'https://i.imgur.com/FIpGUxX.png',
     imageFront: 'https://i.imgur.com/FIpGUxX.png',
@@ -521,7 +521,7 @@ export const products: Product[] = [
   },
   {
     id: 107,
-    name: 'Quiksilver 5',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42.90,
     image: 'https://i.imgur.com/kSHLRjj.png',
     imageFront: 'https://i.imgur.com/kSHLRjj.png',
@@ -533,7 +533,7 @@ export const products: Product[] = [
   },
   {
     id: 108,
-    name: 'Hang Loose 6',
+    name: 'Camiseta Hang Loose Authentic',
     price: 42.90,
     image: 'https://i.imgur.com/wI6igDT.png',
     imageFront: 'https://i.imgur.com/wI6igDT.png',
@@ -545,7 +545,7 @@ export const products: Product[] = [
   },
   {
     id: 109,
-    name: 'Quiksilver 7',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42.90,
     image: 'https://i.imgur.com/DanbNVI.png',
     imageFront: 'https://i.imgur.com/DanbNVI.png',
@@ -558,7 +558,7 @@ export const products: Product[] = [
 
   {
     id: 111,
-    name: 'Quiksilver 9',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42,
     image: 'https://i.imgur.com/EVfq0vI.png',
     imageFront: 'https://i.imgur.com/EVfq0vI.png',
@@ -570,7 +570,7 @@ export const products: Product[] = [
   },
   {
     id: 112,
-    name: 'Quiksilver 10',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42,
     image: 'https://i.imgur.com/6k0NNtc.png',
     imageFront: 'https://i.imgur.com/6k0NNtc.png',
@@ -582,7 +582,7 @@ export const products: Product[] = [
   },
   {
     id: 113,
-    name: 'Quiksilver 11',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42,
     image: 'https://i.imgur.com/FylymIS.png',
     imageFront: 'https://i.imgur.com/FylymIS.png',
@@ -594,7 +594,7 @@ export const products: Product[] = [
   },
   {
     id: 114,
-    name: 'Quiksilver 12',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42,
     image: 'https://i.imgur.com/il7OSoO.jpeg',
     imageFront: 'https://i.imgur.com/il7OSoO.jpeg',
@@ -606,7 +606,7 @@ export const products: Product[] = [
   },
   {
     id: 115,
-    name: 'Town&Country 13',
+    name: 'Camiseta Town & Country Original',
     price: 42,
     image: 'https://i.imgur.com/tz9ZLV5.jpeg',
     imageFront: 'https://i.imgur.com/tz9ZLV5.jpeg',
@@ -618,7 +618,7 @@ export const products: Product[] = [
   },
   {
     id: 117,
-    name: 'Mizuno 15',
+    name: 'Camiseta Mizuno Sport Classic',
     price: 42,
     image: 'https://i.imgur.com/SzsAclK.jpeg',
     imageFront: 'https://i.imgur.com/SzsAclK.jpeg',
@@ -630,7 +630,7 @@ export const products: Product[] = [
   },
   {
     id: 118,
-    name: 'Quiksilver 16',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42,
     image: 'https://i.imgur.com/FIz8CIX.jpeg',
     imageFront: 'https://i.imgur.com/FIz8CIX.jpeg',
@@ -645,7 +645,7 @@ export const products: Product[] = [
 
   {
     id: 122,
-    name: 'Quiksilver 20',
+    name: 'Camiseta Quiksilver Surf Original',
     price: 42,
     image: 'https://i.imgur.com/1qdFR3b.jpeg',
     imageFront: 'https://i.imgur.com/1qdFR3b.jpeg',
@@ -658,7 +658,7 @@ export const products: Product[] = [
 
   {
     id: 124,
-    name: 'Lacoste 22',
+    name: 'Lacoste',
     price: 100,
     image: 'https://i.imgur.com/pFmQhPv.jpeg',
     imageFront: 'https://i.imgur.com/pFmQhPv.jpeg',
@@ -670,7 +670,7 @@ export const products: Product[] = [
   },
   {
     id: 127,
-    name: 'Camiseta Lacoste 25',
+    name: 'Camiseta Lacoste Premium',
     price: 100,
     image: 'https://lh3.googleusercontent.com/d/1NxpgZbvUUrWjvFF_8LVS6_3Q0skrVewF',
     imageFront: 'https://lh3.googleusercontent.com/d/1NxpgZbvUUrWjvFF_8LVS6_3Q0skrVewF',
@@ -683,7 +683,7 @@ export const products: Product[] = [
 
   {
     id: 129,
-    name: 'Camiseta Diesel 27',
+    name: 'Camiseta Diesel Essential',
     price: 100,
     image: 'https://lh3.googleusercontent.com/d/13f_frkQpHn9XU7bxYPMplTyFNNscZ_y9',
     imageFront: 'https://lh3.googleusercontent.com/d/13f_frkQpHn9XU7bxYPMplTyFNNscZ_y9',
@@ -695,7 +695,7 @@ export const products: Product[] = [
   },
   {
     id: 130,
-    name: 'Camiseta Lacoste 28',
+    name: 'Camiseta Lacoste Premium',
     price: 100,
     image: 'https://lh3.googleusercontent.com/d/1mMVSycysAa2KQK_LJyvxhl-zsK2pZlbm',
     imageFront: 'https://lh3.googleusercontent.com/d/1mMVSycysAa2KQK_LJyvxhl-zsK2pZlbm',
@@ -708,7 +708,7 @@ export const products: Product[] = [
 
   {
     id: 132,
-    name: 'Camiseta Oversized AMIRI 30',
+    name: 'Camiseta Oversized Amiri Concept',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1MQAWMewYtZ_Anpk7uL2Q-4eMJVn4TE8X',
     imageFront: 'https://lh3.googleusercontent.com/d/1MQAWMewYtZ_Anpk7uL2Q-4eMJVn4TE8X',
@@ -720,7 +720,7 @@ export const products: Product[] = [
   },
   {
     id: 133,
-    name: 'Camiseta Oversized AMIRI 31',
+    name: 'Camiseta Oversized Amiri Concept',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1DcUHgkSWMoDbY4KNK8ZYxvZvcSqVDuWm',
     imageFront: 'https://lh3.googleusercontent.com/d/1DcUHgkSWMoDbY4KNK8ZYxvZvcSqVDuWm',
@@ -732,7 +732,7 @@ export const products: Product[] = [
   },
   {
     id: 134,
-    name: 'Camiseta Oversized Nike 32',
+    name: 'Camiseta Oversized Nike Street',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1q2mponDlsbjkJUEUpfA7d_-TAlk-PijR',
     imageFront: 'https://lh3.googleusercontent.com/d/1q2mponDlsbjkJUEUpfA7d_-TAlk-PijR',
@@ -744,7 +744,7 @@ export const products: Product[] = [
   },
   {
     id: 139,
-    name: 'Camiseta Oversized Nike 37',
+    name: 'Camiseta Oversized Nike Street',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1RKRfTffK77_Sbv2p_NkSyyHMSt5fW0bj',
     imageFront: 'https://lh3.googleusercontent.com/d/1RKRfTffK77_Sbv2p_NkSyyHMSt5fW0bj',
@@ -756,7 +756,7 @@ export const products: Product[] = [
   },
   {
     id: 141,
-    name: 'Camiseta Oversized Nike 39',
+    name: 'Camiseta Oversized Nike Street',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1ufDOETEomYsSbQ-1qthr0USWKvkWscHo',
     imageFront: 'https://lh3.googleusercontent.com/d/1ufDOETEomYsSbQ-1qthr0USWKvkWscHo',
@@ -768,7 +768,7 @@ export const products: Product[] = [
   },
   {
     id: 143,
-    name: 'Camiseta Oversized Nike 41',
+    name: 'Camiseta Oversized Nike Street',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1uSjZ0E-nqKyBfv4oSyTR0OxiTWxnJed_',
     imageFront: 'https://lh3.googleusercontent.com/d/1uSjZ0E-nqKyBfv4oSyTR0OxiTWxnJed_',
@@ -780,7 +780,7 @@ export const products: Product[] = [
   },
   {
     id: 144,
-    name: 'Camiseta Oversized 42',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/16nvCazOWx03b9OwYX1MXMeqMFSlyZoBY',
     imageFront: 'https://lh3.googleusercontent.com/d/16nvCazOWx03b9OwYX1MXMeqMFSlyZoBY',
@@ -792,7 +792,7 @@ export const products: Product[] = [
   },
   {
     id: 145,
-    name: 'Camiseta Oversized Adidas 43',
+    name: 'Camiseta Oversized Adidas Originals',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1ZilNur3nXZMx6n7Cggu28ca9NTORnzul',
     imageFront: 'https://lh3.googleusercontent.com/d/1ZilNur3nXZMx6n7Cggu28ca9NTORnzul',
@@ -809,7 +809,7 @@ export const products: Product[] = [
 
   {
     id: 152,
-    name: 'Camiseta oversized Palm angels 50',
+    name: 'Camiseta Oversized Palm Angels Signature',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1k2dY-sDfWz5lCh0tj9vwG0G3Jgz71T6o',
     imageFront: 'https://lh3.googleusercontent.com/d/1k2dY-sDfWz5lCh0tj9vwG0G3Jgz71T6o',
@@ -824,7 +824,7 @@ export const products: Product[] = [
 
   {
     id: 154,
-    name: 'Camiseta oversized Gangster 52',
+    name: 'Camiseta Oversized Gangster Urban',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1goktT7JnZZ60O9xf2KA3EEIbT_d_MsHi',
     imageFront: 'https://lh3.googleusercontent.com/d/1goktT7JnZZ60O9xf2KA3EEIbT_d_MsHi',
@@ -845,7 +845,7 @@ export const products: Product[] = [
 
   {
     id: 159,
-    name: 'Camiseta Oversized Off White 57',
+    name: 'Camiseta Oversized Off White Edition',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/187H6TPB34JMAS1RjsQ5X_MTa1S5KzAmg',
     imageFront: 'https://lh3.googleusercontent.com/d/187H6TPB34JMAS1RjsQ5X_MTa1S5KzAmg',
@@ -857,7 +857,7 @@ export const products: Product[] = [
   },
   {
     id: 161,
-    name: 'Camiseta Dry fit NIKE 59',
+    name: 'Camiseta Dry Fit Nike Performance',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/18VMMwE0Q8Z7POzpb83LS_yIlBBnUDqV4',
     imageFront: 'https://lh3.googleusercontent.com/d/18VMMwE0Q8Z7POzpb83LS_yIlBBnUDqV4',
@@ -869,7 +869,7 @@ export const products: Product[] = [
   },
   {
     id: 162,
-    name: 'Camiseta Dry fit NIKE 60',
+    name: 'Camiseta Dry Fit Nike Performance',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1zRpqvw3LAhynX-KapK0sTcb5DbLMrDs6',
     imageFront: 'https://lh3.googleusercontent.com/d/1zRpqvw3LAhynX-KapK0sTcb5DbLMrDs6',
@@ -882,7 +882,7 @@ export const products: Product[] = [
 
   {
     id: 164,
-    name: 'Camiseta Dry fit NIKE 62',
+    name: 'Camiseta Dry Fit Nike Performance',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1uPrGAWejKaev7TCP6XF8nfopdbUzRUfj',
     imageFront: 'https://lh3.googleusercontent.com/d/1uPrGAWejKaev7TCP6XF8nfopdbUzRUfj',
@@ -895,7 +895,7 @@ export const products: Product[] = [
 
   {
     id: 166,
-    name: 'Camiseta malha egipcia 64',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1Sjmz5JL7rn-naeGv2R1yTYgKyigIeP6r',
     imageFront: 'https://lh3.googleusercontent.com/d/1Sjmz5JL7rn-naeGv2R1yTYgKyigIeP6r',
@@ -907,7 +907,7 @@ export const products: Product[] = [
   },
   {
     id: 167,
-    name: 'Camiseta malha egipcia 65',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/15DMrEO4yLaPv2ehK0ejOVN1kWMAb37JM',
     imageFront: 'https://lh3.googleusercontent.com/d/15DMrEO4yLaPv2ehK0ejOVN1kWMAb37JM',
@@ -919,7 +919,7 @@ export const products: Product[] = [
   },
   {
     id: 168,
-    name: 'Camiseta malha egipcia 66',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1WjXbBdxGpUcQgHdTovqpoDhvjkdYHzKf',
     imageFront: 'https://lh3.googleusercontent.com/d/1WjXbBdxGpUcQgHdTovqpoDhvjkdYHzKf',
@@ -931,7 +931,7 @@ export const products: Product[] = [
   },
   {
     id: 169,
-    name: 'Calça cargo azul',
+    name: 'Calça Cargo Azul',
     price: 109.99,
     image: 'https://lh3.googleusercontent.com/d/1wq6YfgtneK4-eHsqv1V1QMZB7TLdcFsk',
     imageFront: 'https://lh3.googleusercontent.com/d/1wq6YfgtneK4-eHsqv1V1QMZB7TLdcFsk',
@@ -944,7 +944,7 @@ export const products: Product[] = [
 
   {
     id: 171,
-    name: 'Calça cargo preta',
+    name: 'Calça Cargo Preta',
     price: 109.99,
     image: 'https://lh3.googleusercontent.com/d/17aLrr6cQoeNCRW_p9siZbwSbIV6mY68O',
     imageFront: 'https://lh3.googleusercontent.com/d/17aLrr6cQoeNCRW_p9siZbwSbIV6mY68O',
@@ -956,7 +956,7 @@ export const products: Product[] = [
   },
   {
     id: 172,
-    name: 'Calça cargo preta detalhes brancos',
+    name: 'Calça Cargo Preta Detalhes Brancos',
     price: 109.99,
     image: 'https://lh3.googleusercontent.com/d/1Ad_v_kzUEW6ixxm6lgRSLG3ZE7_IPF3h',
     imageFront: 'https://lh3.googleusercontent.com/d/1Ad_v_kzUEW6ixxm6lgRSLG3ZE7_IPF3h',
@@ -968,7 +968,7 @@ export const products: Product[] = [
   },
   {
     id: 173,
-    name: 'Calça cargo grafite',
+    name: 'Calça Cargo Grafite',
     price: 109.99,
     image: 'https://lh3.googleusercontent.com/d/1n7b2eyXWQ6CtoVdlV7_KF0agK3Zb1kCq',
     imageFront: 'https://lh3.googleusercontent.com/d/1n7b2eyXWQ6CtoVdlV7_KF0agK3Zb1kCq',
@@ -980,7 +980,7 @@ export const products: Product[] = [
   },
   {
     id: 175,
-    name: 'Camiseta oversized 73',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1_4IX1gZSWnkRiYnJzOhO99vTM07uVgLA',
     imageFront: 'https://lh3.googleusercontent.com/d/1_4IX1gZSWnkRiYnJzOhO99vTM07uVgLA',
@@ -992,7 +992,7 @@ export const products: Product[] = [
   },
   {
     id: 176,
-    name: 'Camiseta oversized 74',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/13vksgkufszcC5-ugy5rbSYfuMsHKoYGH',
     imageFront: 'https://lh3.googleusercontent.com/d/13vksgkufszcC5-ugy5rbSYfuMsHKoYGH',
@@ -1004,7 +1004,7 @@ export const products: Product[] = [
   },
   {
     id: 177,
-    name: 'Camiseta oversized 75',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1CYMoFV8St_AupcTxPfd12t7rISMVg74z',
     imageFront: 'https://lh3.googleusercontent.com/d/1CYMoFV8St_AupcTxPfd12t7rISMVg74z',
@@ -1016,7 +1016,7 @@ export const products: Product[] = [
   },
   {
     id: 178,
-    name: 'Camiseta oversized 76',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1BMwzIrnTkX7jqWnLhKvv8fMYf-qSX3Lj',
     imageFront: 'https://lh3.googleusercontent.com/d/1BMwzIrnTkX7jqWnLhKvv8fMYf-qSX3Lj',
@@ -1028,7 +1028,7 @@ export const products: Product[] = [
   },
   {
     id: 179,
-    name: 'Camiseta oversized 77',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1RxokJytenH2fr_rrjtwUFxmBnD2UiF2E',
     imageFront: 'https://lh3.googleusercontent.com/d/1RxokJytenH2fr_rrjtwUFxmBnD2UiF2E',
@@ -1040,7 +1040,7 @@ export const products: Product[] = [
   },
   {
     id: 180,
-    name: 'Camiseta oversized 78',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1ERjbKEjlxQU2ViqHwGOB_vxEbnuPOvd9',
     imageFront: 'https://lh3.googleusercontent.com/d/1ERjbKEjlxQU2ViqHwGOB_vxEbnuPOvd9',
@@ -1052,7 +1052,7 @@ export const products: Product[] = [
   },
   {
     id: 181,
-    name: 'Camiseta overisized 79',
+    name: 'Camiseta Overisized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1GrKM4ei36vIDTzk5VZiQxnVconoe6wjP',
     imageFront: 'https://lh3.googleusercontent.com/d/1GrKM4ei36vIDTzk5VZiQxnVconoe6wjP',
@@ -1064,7 +1064,7 @@ export const products: Product[] = [
   },
   {
     id: 182,
-    name: 'Camiseta oversized 80',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1V51sg4X_HU7lKP-uIiLOUU-J4TIS5COH',
     imageFront: 'https://lh3.googleusercontent.com/d/1V51sg4X_HU7lKP-uIiLOUU-J4TIS5COH',
@@ -1076,7 +1076,7 @@ export const products: Product[] = [
   },
   {
     id: 183,
-    name: 'Camiseta oversized 81',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1SBLb6IyqXmbIFNWeuhVNNV9hp0NxNHYO',
     imageFront: 'https://lh3.googleusercontent.com/d/1SBLb6IyqXmbIFNWeuhVNNV9hp0NxNHYO',
@@ -1088,7 +1088,7 @@ export const products: Product[] = [
   },
   {
     id: 184,
-    name: 'Camiseta oversized 82',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/166dALV6kGgLYMcTr_5ae5gBdZMWij4uB',
     imageFront: 'https://lh3.googleusercontent.com/d/166dALV6kGgLYMcTr_5ae5gBdZMWij4uB',
@@ -1100,7 +1100,7 @@ export const products: Product[] = [
   },
   {
     id: 185,
-    name: 'Camiseta oversized 83',
+    name: 'Camiseta Oversized',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1Ex6gx9tPnD9sk3GX94drgoYWIct977Wj',
     imageFront: 'https://lh3.googleusercontent.com/d/1Ex6gx9tPnD9sk3GX94drgoYWIct977Wj',
@@ -1112,7 +1112,7 @@ export const products: Product[] = [
   },
   {
     id: 186,
-    name: 'Camiseta malha egípcia 84',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/15pNYLlIPGHcmS90AMt2IPgC3NOcC9qZu',
     imageFront: 'https://lh3.googleusercontent.com/d/15pNYLlIPGHcmS90AMt2IPgC3NOcC9qZu',
@@ -1124,7 +1124,7 @@ export const products: Product[] = [
   },
   {
     id: 187,
-    name: 'Camiseta malha egípcia 85',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1cIZQUwibAqBBoTFGwhTCFKLUIqslTyTw',
     imageFront: 'https://lh3.googleusercontent.com/d/1cIZQUwibAqBBoTFGwhTCFKLUIqslTyTw',
@@ -1136,7 +1136,7 @@ export const products: Product[] = [
   },
   {
     id: 188,
-    name: 'Camiseta malha egípcia 86',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1oajg56w3VVbUdrDiC05fQvESYO51Xcb_',
     imageFront: 'https://lh3.googleusercontent.com/d/1oajg56w3VVbUdrDiC05fQvESYO51Xcb_',
@@ -1148,7 +1148,7 @@ export const products: Product[] = [
   },
   {
     id: 189,
-    name: 'Camiseta malha egípcia 87',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1UwvHfsfo78YlpEypwIRFEHAmZpk8HW1R',
     imageFront: 'https://lh3.googleusercontent.com/d/1UwvHfsfo78YlpEypwIRFEHAmZpk8HW1R',
@@ -1160,7 +1160,7 @@ export const products: Product[] = [
   },
   {
     id: 190,
-    name: 'Camiseta malha egípcia 88',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1Zi1CTriWFFCzfCViFYYYvMYfxjaQ1Lb3',
     imageFront: 'https://lh3.googleusercontent.com/d/1Zi1CTriWFFCzfCViFYYYvMYfxjaQ1Lb3',
@@ -1173,7 +1173,7 @@ export const products: Product[] = [
 
   {
     id: 192,
-    name: 'Camiseta malha egípcia 90',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1TCw0LM4imKT5nYptyhTnzT1n66mnTFYu',
     imageFront: 'https://lh3.googleusercontent.com/d/1TCw0LM4imKT5nYptyhTnzT1n66mnTFYu',
@@ -1185,7 +1185,7 @@ export const products: Product[] = [
   },
   {
     id: 193,
-    name: 'Camiseta malha egípcia 91',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1MURKq3LDCqTjOwavtIyMYyQDcT7zyejH',
     imageFront: 'https://lh3.googleusercontent.com/d/1MURKq3LDCqTjOwavtIyMYyQDcT7zyejH',
@@ -1197,7 +1197,7 @@ export const products: Product[] = [
   },
   {
     id: 194,
-    name: 'Camiseta malha egípcia 92',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/17GP2fNMIc7MB5z3zq8O6XwqTZqfpdi4V',
     imageFront: 'https://lh3.googleusercontent.com/d/17GP2fNMIc7MB5z3zq8O6XwqTZqfpdi4V',
@@ -1209,7 +1209,7 @@ export const products: Product[] = [
   },
   {
     id: 195,
-    name: 'Camiseta malha egípcia 93',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1jUgrcH6Zivi-KvRIP4zCFL08dgmmCych',
     imageFront: 'https://lh3.googleusercontent.com/d/1jUgrcH6Zivi-KvRIP4zCFL08dgmmCych',
@@ -1221,7 +1221,7 @@ export const products: Product[] = [
   },
   {
     id: 196,
-    name: 'Camiseta malha egípcia 94',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1FAO7FlYqyK-39YgUz84sWOa2O7bpgDu6',
     imageFront: 'https://lh3.googleusercontent.com/d/1FAO7FlYqyK-39YgUz84sWOa2O7bpgDu6',
@@ -1234,7 +1234,7 @@ export const products: Product[] = [
 
   {
     id: 198,
-    name: 'Camiseta malha egípcia 96',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1uEw0SEKek878k18jQ7o0qqynD3FiUNBf',
     imageFront: 'https://lh3.googleusercontent.com/d/1uEw0SEKek878k18jQ7o0qqynD3FiUNBf',
@@ -1246,7 +1246,7 @@ export const products: Product[] = [
   },
   {
     id: 199,
-    name: 'Camiseta malha egípcia 97',
+    name: 'Camiseta Malha Egípcia Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1Ol9wpmteo_jeVZ984HOLcFxQS-TYmiuU',
     imageFront: 'https://lh3.googleusercontent.com/d/1Ol9wpmteo_jeVZ984HOLcFxQS-TYmiuU',
@@ -1258,7 +1258,7 @@ export const products: Product[] = [
   },
   {
     id: 201,
-    name: 'Camiseta nacional brasil 99',
+    name: 'Camiseta Brasil Torcedor Classic',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1yNbpJ9H6x7szlWHxxqiR3uvc834KO1Om',
     imageFront: 'https://lh3.googleusercontent.com/d/1yNbpJ9H6x7szlWHxxqiR3uvc834KO1Om',
@@ -1270,7 +1270,7 @@ export const products: Product[] = [
   },
   {
     id: 202,
-    name: 'Camiseta nacional brasil 100',
+    name: 'Camiseta Brasil Torcedor Classic',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1Va4I_qWrhVf_OoIVxz10AFFsIFmcMuQ3',
     imageFront: 'https://lh3.googleusercontent.com/d/1Va4I_qWrhVf_OoIVxz10AFFsIFmcMuQ3',
@@ -1282,7 +1282,7 @@ export const products: Product[] = [
   },
   {
     id: 203,
-    name: 'Camiseta nacional brasil 101',
+    name: 'Camiseta Brasil Torcedor Classic',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1WOspdljtXFfTfBNK7oKaDLEv04CcFHnP',
     imageFront: 'https://lh3.googleusercontent.com/d/1WOspdljtXFfTfBNK7oKaDLEv04CcFHnP',
@@ -1294,7 +1294,7 @@ export const products: Product[] = [
   },
   {
     id: 204,
-    name: 'Camiseta nacional brasil 102',
+    name: 'Camiseta Brasil Torcedor Classic',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1O2Wz4zGAhQ6W3VBp0kZwJn4Cbm8WrHT1',
     imageFront: 'https://lh3.googleusercontent.com/d/1O2Wz4zGAhQ6W3VBp0kZwJn4Cbm8WrHT1',
@@ -1307,7 +1307,7 @@ export const products: Product[] = [
 
   {
     id: 206,
-    name: 'Camiseta street 104',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1cxqMzIaJX5pQbCIyVbX2FE-mRGcD-l5H',
     imageFront: 'https://lh3.googleusercontent.com/d/1cxqMzIaJX5pQbCIyVbX2FE-mRGcD-l5H',
@@ -1319,7 +1319,7 @@ export const products: Product[] = [
   },
   {
     id: 207,
-    name: 'Camiseta street 105',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1THDFqBZ_ZFeDzmF53waj0_TQeJtx1vQ0',
     imageFront: 'https://lh3.googleusercontent.com/d/1THDFqBZ_ZFeDzmF53waj0_TQeJtx1vQ0',
@@ -1331,7 +1331,7 @@ export const products: Product[] = [
   },
   {
     id: 208,
-    name: 'Camiseta street 106',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1M6UidJbJMRvgwnFeFfKa724K0kYYwzKl',
     imageFront: 'https://lh3.googleusercontent.com/d/1M6UidJbJMRvgwnFeFfKa724K0kYYwzKl',
@@ -1343,7 +1343,7 @@ export const products: Product[] = [
   },
   {
     id: 209,
-    name: 'Camiseta street 107',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1C8VUZ1R3741-Eos-qh9hEoftM1z3kWVG',
     imageFront: 'https://lh3.googleusercontent.com/d/1C8VUZ1R3741-Eos-qh9hEoftM1z3kWVG',
@@ -1355,7 +1355,7 @@ export const products: Product[] = [
   },
   {
     id: 210,
-    name: 'Camiseta street 108',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1daVBRVYrX9omNm-rdpkjD68eGS8TDbOP',
     imageFront: 'https://lh3.googleusercontent.com/d/1daVBRVYrX9omNm-rdpkjD68eGS8TDbOP',
@@ -1367,7 +1367,7 @@ export const products: Product[] = [
   },
   {
     id: 211,
-    name: 'Camiseta street 109',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/17DFDsZIGuHR9vqgGWHRbHxWs-iv56JrH',
     imageFront: 'https://lh3.googleusercontent.com/d/17DFDsZIGuHR9vqgGWHRbHxWs-iv56JrH',
@@ -1379,7 +1379,7 @@ export const products: Product[] = [
   },
   {
     id: 212,
-    name: 'Camiseta street 110',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1iTJK4TiVlFE81t-f9KJdrcOKO7Aw1EEd',
     imageFront: 'https://lh3.googleusercontent.com/d/1iTJK4TiVlFE81t-f9KJdrcOKO7Aw1EEd',
@@ -1391,7 +1391,7 @@ export const products: Product[] = [
   },
   {
     id: 213,
-    name: 'Camiseta street 111',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1IJRFiCm3uCcSuMC9veJVk94Dlmyn6QWa',
     imageFront: 'https://lh3.googleusercontent.com/d/1IJRFiCm3uCcSuMC9veJVk94Dlmyn6QWa',
@@ -1403,7 +1403,7 @@ export const products: Product[] = [
   },
   {
     id: 214,
-    name: 'Camiseta street 112',
+    name: 'Camiseta Streetwear Essential',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1GBOOH3t48cyskHXjKAW19UxC8qEqqUCx',
     imageFront: 'https://lh3.googleusercontent.com/d/1GBOOH3t48cyskHXjKAW19UxC8qEqqUCx',
@@ -1416,7 +1416,7 @@ export const products: Product[] = [
 
   {
     id: 216,
-    name: 'Regata canelada 114',
+    name: 'Regata Canelada Fit',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1cfJXp-hfFC-4X27qf35mJrgvWqx1mjI6',
     imageFront: 'https://lh3.googleusercontent.com/d/1cfJXp-hfFC-4X27qf35mJrgvWqx1mjI6',
@@ -1428,7 +1428,7 @@ export const products: Product[] = [
   },
   {
     id: 217,
-    name: 'Regata canelada 115',
+    name: 'Regata Canelada Fit',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/17aY5f97UOQOrjS5nEhMMm39LuiEDoyJj',
     imageFront: 'https://lh3.googleusercontent.com/d/17aY5f97UOQOrjS5nEhMMm39LuiEDoyJj',
@@ -1440,7 +1440,7 @@ export const products: Product[] = [
   },
   {
     id: 218,
-    name: 'Regata canelada 116',
+    name: 'Regata Canelada Fit',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1CGwth9cJPBTRdoKp2lmV14YGC1Qv6mYf',
     imageFront: 'https://lh3.googleusercontent.com/d/1CGwth9cJPBTRdoKp2lmV14YGC1Qv6mYf',
@@ -1452,7 +1452,7 @@ export const products: Product[] = [
   },
   {
     id: 219,
-    name: 'Regata canelada 117',
+    name: 'Regata Canelada Fit',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1ninj_YLEWqSynRYCgCUBf6lnWzxgE9KH',
     imageFront: 'https://lh3.googleusercontent.com/d/1ninj_YLEWqSynRYCgCUBf6lnWzxgE9KH',
@@ -1464,7 +1464,7 @@ export const products: Product[] = [
   },
   {
     id: 220,
-    name: 'Regata canelada 118',
+    name: 'Regata Canelada Fit',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1oM8ySBeWwkyL9DAteMDA0SSp3Kq_-SRY',
     imageFront: 'https://lh3.googleusercontent.com/d/1oM8ySBeWwkyL9DAteMDA0SSp3Kq_-SRY',
@@ -1476,7 +1476,7 @@ export const products: Product[] = [
   },
   {
     id: 221,
-    name: 'Regata canelada 119',
+    name: 'Regata Canelada Fit',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
     imageFront: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
@@ -1488,7 +1488,7 @@ export const products: Product[] = [
   },
   {
     id: 222,
-    name: 'Camiseta canelada 120',
+    name: 'Camiseta Canelada Minimalista',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1nSUwbZNAQ5yckMfiaKPOXEyb5iQFx2zS',
     imageFront: 'https://lh3.googleusercontent.com/d/1nSUwbZNAQ5yckMfiaKPOXEyb5iQFx2zS',
@@ -1500,7 +1500,7 @@ export const products: Product[] = [
   },
   {
     id: 223,
-    name: 'Camiseta canelada 121',
+    name: 'Camiseta Canelada Minimalista',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
     imageFront: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
@@ -1512,7 +1512,7 @@ export const products: Product[] = [
   },
   {
     id: 224,
-    name: 'Camiseta canelada 122',
+    name: 'Camiseta Canelada Minimalista',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
     imageFront: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
@@ -1524,7 +1524,7 @@ export const products: Product[] = [
   },
   {
     id: 225,
-    name: 'Camiseta canelada 123',
+    name: 'Camiseta Canelada Minimalista',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1-KFnW-OD_T7Dke1KvJhd6sye9B4jDPP5',
     imageFront: 'https://lh3.googleusercontent.com/d/1-KFnW-OD_T7Dke1KvJhd6sye9B4jDPP5',
@@ -1536,7 +1536,7 @@ export const products: Product[] = [
   },
   {
     id: 226,
-    name: 'Shorts dry 124',
+    name: 'Bermuda Dry Fit Performance',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1EPr8pYdCtLut-FxtA41Z-nO_H3tvu7Uf',
     imageFront: 'https://lh3.googleusercontent.com/d/1EPr8pYdCtLut-FxtA41Z-nO_H3tvu7Uf',
@@ -1548,7 +1548,7 @@ export const products: Product[] = [
   },
   {
     id: 227,
-    name: 'Shorts dry 125',
+    name: 'Bermuda Dry Fit Performance',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1yk2ZsdyCG1AWxX9lSmcls_heXB_AJT4w',
     imageFront: 'https://lh3.googleusercontent.com/d/1yk2ZsdyCG1AWxX9lSmcls_heXB_AJT4w',
@@ -1560,7 +1560,7 @@ export const products: Product[] = [
   },
   {
     id: 228,
-    name: 'Shorts dry 126',
+    name: 'Bermuda Dry Fit Performance',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1ipX46Rw9B-DMZqH4jl1TzQwFQ_U3ygBE',
     imageFront: 'https://lh3.googleusercontent.com/d/1ipX46Rw9B-DMZqH4jl1TzQwFQ_U3ygBE',
@@ -1572,7 +1572,7 @@ export const products: Product[] = [
   },
   {
     id: 229,
-    name: 'Cinto LV 127',
+    name: 'Cinto Louis Vuitton Emblem Detail',
     price: 35,
     image: 'https://lh3.googleusercontent.com/d/1uRw660ZXJiu7SBhBRKxI1Cb6Uz78aQf3',
     imageFront: 'https://lh3.googleusercontent.com/d/1uRw660ZXJiu7SBhBRKxI1Cb6Uz78aQf3',
@@ -1584,7 +1584,7 @@ export const products: Product[] = [
   },
   {
     id: 230,
-    name: 'Cinto QUIK 128',
+    name: 'Cinto Quiksilver Surf Classic',
     price: 35,
     image: 'https://lh3.googleusercontent.com/d/1-tjB1jIpt4tdYCff5_1jv7yd5-mFJhlC',
     imageFront: 'https://lh3.googleusercontent.com/d/1-tjB1jIpt4tdYCff5_1jv7yd5-mFJhlC',
@@ -1596,7 +1596,7 @@ export const products: Product[] = [
   },
   {
     id: 231,
-    name: 'Cinto NIKE 129',
+    name: 'Cinto Nike Sport Essential',
     price: 35,
     image: 'https://lh3.googleusercontent.com/d/1NPmIU2T2pjArGFoi-iv71tN6U5F-sRHs',
     imageFront: 'https://lh3.googleusercontent.com/d/1NPmIU2T2pjArGFoi-iv71tN6U5F-sRHs',
@@ -1608,7 +1608,7 @@ export const products: Product[] = [
   },
   {
     id: 232,
-    name: 'Cinto OAKLEY 130',
+    name: 'Cinto Oakley Tactical Logo',
     price: 35,
     image: 'https://lh3.googleusercontent.com/d/1zsQprF3CLR8BXRbEnePwYGsLdwFgAiGl',
     imageFront: 'https://lh3.googleusercontent.com/d/1zsQprF3CLR8BXRbEnePwYGsLdwFgAiGl',
