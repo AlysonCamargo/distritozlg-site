@@ -124,7 +124,14 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                             </h3>
 
                             <div className="flex items-baseline gap-3 mb-8">
-                                <span className="text-2xl font-medium text-foreground">{BRL(product.price)}</span>
+                                {product.isSale && (
+                                    <span className="text-xl text-muted-foreground line-through opacity-70">
+                                        {BRL(product.price * 1.35)}
+                                    </span>
+                                )}
+                                <span className={`text-2xl font-medium ${product.isSale ? "text-red-600 dark:text-red-500 font-bold text-4xl" : "text-foreground"}`}>
+                                    {BRL(product.price)}
+                                </span>
                             </div>
 
                             <div className="space-y-8">
@@ -265,8 +272,15 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                         <h4 className="font-medium text-xs uppercase tracking-wider line-clamp-1 group-hover:text-muted-foreground transition-colors">
                                             {related.name}
                                         </h4>
-                                        <div className="flex items-center justify-between mt-2">
-                                            <p className="text-sm font-semibold">{BRL(related.price)}</p>
+                                        <div className="flex flex-col mt-2">
+                                            {related.isSale && (
+                                                <span className="text-[10px] text-muted-foreground line-through opacity-70">
+                                                    {BRL(related.price * 1.35)}
+                                                </span>
+                                            )}
+                                            <p className={`text-sm font-semibold ${related.isSale ? "text-red-600 dark:text-red-500 font-bold text-base" : ""}`}>
+                                                {BRL(related.price)}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

@@ -100,7 +100,16 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             {product.category}
           </p>
           <div className="mt-2 flex items-center justify-between">
-            <div className={`text-base font-medium ${product.isSale ? "text-destructive font-bold" : ""}`}>{BRL(product.price)}</div>
+            <div className="flex flex-col">
+              {product.isSale && (
+                <span className="text-[10px] text-muted-foreground line-through opacity-70">
+                  {BRL(product.price * 1.35)}
+                </span>
+              )}
+              <div className={`text-base font-medium ${product.isSale ? "text-red-600 dark:text-red-500 font-bold text-lg" : ""}`}>
+                {BRL(product.price)}
+              </div>
+            </div>
           </div>
           <div className="mt-4 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Button
