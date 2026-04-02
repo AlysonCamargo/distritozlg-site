@@ -640,42 +640,9 @@ export const products: Product[] = [
     isSale: false,
     size: 'G',
   },
-  {
-    id: 119,
-    name: 'Quiksilver 17',
-    price: 42,
-    image: 'https://i.imgur.com/ejlXAG3.jpeg',
-    imageFront: 'https://i.imgur.com/ejlXAG3.jpeg',
-    imageBack: 'https://i.imgur.com/ejlXAG3.jpeg',
-    category: 'surf',
-    isNew: false,
-    isSale: false,
-    size: 'GG',
-  },
-  {
-    id: 120,
-    name: 'Quiksilver 18',
-    price: 42,
-    image: 'https://i.imgur.com/kOpZVhQ.jpeg',
-    imageFront: 'https://i.imgur.com/kOpZVhQ.jpeg',
-    imageBack: 'https://i.imgur.com/kOpZVhQ.jpeg',
-    category: 'surf',
-    isNew: false,
-    isSale: false,
-    size: 'GG',
-  },
-  {
-    id: 121,
-    name: 'Quiksilver 19',
-    price: 42,
-    image: 'https://i.imgur.com/yC5t3lK.jpeg',
-    imageFront: 'https://i.imgur.com/yC5t3lK.jpeg',
-    imageBack: 'https://i.imgur.com/ms2H1gQ.png',
-    category: 'surf',
-    isNew: false,
-    isSale: false,
-    size: 'GG',
-  },
+
+
+
   {
     id: 122,
     name: 'Quiksilver 20',
@@ -688,18 +655,7 @@ export const products: Product[] = [
     isSale: false,
     size: 'GG',
   },
-  {
-    id: 123,
-    name: 'Quiksilver 21',
-    price: 42,
-    image: 'https://i.imgur.com/3kPRRY1.jpeg',
-    imageFront: 'https://i.imgur.com/3kPRRY1.jpeg',
-    imageBack: 'https://i.imgur.com/5sJUVEi.png',
-    category: 'surf',
-    isNew: false,
-    isSale: false,
-    size: 'GG',
-  },
+
   {
     id: 124,
     name: 'Lacoste 22',
@@ -1214,18 +1170,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 191,
-    name: 'Camiseta malha egípcia 89',
-    price: 49.99,
-    image: 'https://lh3.googleusercontent.com/d/1oP3eibVtyLZvclQGyqduLEgI8YKBtDl1',
-    imageFront: 'https://lh3.googleusercontent.com/d/1oP3eibVtyLZvclQGyqduLEgI8YKBtDl1',
-    imageBack: 'https://lh3.googleusercontent.com/d/184YxTR42KK70JU5bvQ8KUgAvKjKGHBzx',
-    category: 'malha egipcia',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 192,
     name: 'Camiseta malha egípcia 90',
@@ -1286,18 +1231,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 197,
-    name: 'Camiseta malha egípcia 95',
-    price: 49.99,
-    image: 'https://lh3.googleusercontent.com/d/1nOUuD0hcI4JbinUoKYGpI38BQDifkiO_',
-    imageFront: 'https://lh3.googleusercontent.com/d/1nOUuD0hcI4JbinUoKYGpI38BQDifkiO_',
-    imageBack: 'https://lh3.googleusercontent.com/d/1FCj9wrooKOLMHEtguueGa1zO9elyOYpL',
-    category: 'malha egipcia',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 198,
     name: 'Camiseta malha egípcia 96',
@@ -1370,18 +1304,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 205,
-    name: 'Camiseta street 103',
-    price: 59.99,
-    image: 'https://lh3.googleusercontent.com/d/13OReRRRJ3aps8t4Yq6XLyrehRrs74Qru',
-    imageFront: 'https://lh3.googleusercontent.com/d/13OReRRRJ3aps8t4Yq6XLyrehRrs74Qru',
-    imageBack: 'https://lh3.googleusercontent.com/d/1WQ86AOPb8y5yhrW-zmzUqUmj8ovVrtiI',
-    category: 'street',
-    size: 'G',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 206,
     name: 'Camiseta street 104',
@@ -1490,18 +1413,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 215,
-    name: 'Regata canelada 113',
-    price: 45,
-    image: 'https://lh3.googleusercontent.com/d/1rjKLY-evZzNTi_f3dwJShybKKR4POV_6',
-    imageFront: 'https://lh3.googleusercontent.com/d/1rjKLY-evZzNTi_f3dwJShybKKR4POV_6',
-    imageBack: 'https://lh3.googleusercontent.com/d/1rjKLY-evZzNTi_f3dwJShybKKR4POV_6',
-    category: 'caneladas',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 216,
     name: 'Regata canelada 114',
