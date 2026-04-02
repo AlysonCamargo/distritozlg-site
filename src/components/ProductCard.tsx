@@ -64,7 +64,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           )}
           <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
             {product.isSale && (
-              <Badge variant="secondary" className="bg-foreground text-background font-medium rounded-sm px-2 py-0.5 text-[10px] tracking-wider uppercase">
+              <Badge variant="destructive" className="bg-destructive text-destructive-foreground font-semibold rounded-sm px-3 py-1 text-[10px] tracking-widest uppercase shadow-sm border border-destructive/50 animate-pulse">
                 {t('product.sale')}
               </Badge>
             )}
@@ -100,7 +100,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             {product.category}
           </p>
           <div className="mt-2 flex items-center justify-between">
-            <div className={`text-base font-medium ${product.isSale ? "text-destructive" : ""}`}>{BRL(product.price)}</div>
+            <div className={`text-base font-medium ${product.isSale ? "text-destructive font-bold" : ""}`}>{BRL(product.price)}</div>
           </div>
           <div className="mt-4 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Button

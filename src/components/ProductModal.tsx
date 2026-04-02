@@ -116,7 +116,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                     {t(`category.${product.category}`, product.category)}
                                 </span>
                                 {product.isNew && <Badge variant="secondary" className="px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">{t('product.new')}</Badge>}
-                                {product.isSale && <Badge className="bg-foreground text-background px-2 py-0.5 text-[10px] rounded-sm font-medium tracking-widest uppercase">{t('product.sale')}</Badge>}
+                                {product.isSale && <Badge variant="destructive" className="bg-destructive text-destructive-foreground px-3 py-1 text-[10px] rounded-sm font-semibold tracking-widest uppercase shadow-sm border border-destructive/50 animate-pulse">{t('product.sale')}</Badge>}
                             </div>
 
                             <h3 id="product-title" className="text-3xl md:text-4xl font-light font-heading mb-4 leading-tight uppercase tracking-wide">
@@ -256,7 +256,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                             className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                                         />
                                         {related.isSale && (
-                                            <div className="absolute top-2 left-2 bg-foreground text-background text-[9px] uppercase tracking-widest font-semibold px-2 py-1 rounded-sm">
+                                            <div className="absolute top-2 left-2 bg-destructive text-destructive-foreground text-[9px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm shadow-sm border border-destructive/50 animate-pulse">
                                                 {t('product.sale')}
                                             </div>
                                         )}
