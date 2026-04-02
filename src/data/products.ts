@@ -388,7 +388,7 @@ export const products: Product[] = [
   },
   {
     id: 88,
-    name: 'Bermuda Dry Fit Performance',
+    name: 'Bermuda Dry Fit Performance Premium',
     price: 69.99,
     image: "https://i.imgur.com/UB0tJEb.png",
     imageFront: "https://i.imgur.com/UB0tJEb.png",
@@ -497,7 +497,7 @@ export const products: Product[] = [
   },
   {
     id: 105,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Premium',
     price: 42.90,
     image: 'https://i.imgur.com/SwT2Pm9.png',
     imageFront: 'https://i.imgur.com/SwT2Pm9.png',
@@ -521,7 +521,7 @@ export const products: Product[] = [
   },
   {
     id: 107,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Classic',
     price: 42.90,
     image: 'https://i.imgur.com/kSHLRjj.png',
     imageFront: 'https://i.imgur.com/kSHLRjj.png',
@@ -545,7 +545,7 @@ export const products: Product[] = [
   },
   {
     id: 109,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Vintage',
     price: 42.90,
     image: 'https://i.imgur.com/DanbNVI.png',
     imageFront: 'https://i.imgur.com/DanbNVI.png',
@@ -558,7 +558,7 @@ export const products: Product[] = [
 
   {
     id: 111,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Urban',
     price: 42,
     image: 'https://i.imgur.com/EVfq0vI.png',
     imageFront: 'https://i.imgur.com/EVfq0vI.png',
@@ -570,7 +570,7 @@ export const products: Product[] = [
   },
   {
     id: 112,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Concept',
     price: 42,
     image: 'https://i.imgur.com/6k0NNtc.png',
     imageFront: 'https://i.imgur.com/6k0NNtc.png',
@@ -582,7 +582,7 @@ export const products: Product[] = [
   },
   {
     id: 113,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Edition',
     price: 42,
     image: 'https://i.imgur.com/FylymIS.png',
     imageFront: 'https://i.imgur.com/FylymIS.png',
@@ -594,7 +594,7 @@ export const products: Product[] = [
   },
   {
     id: 114,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Signature',
     price: 42,
     image: 'https://i.imgur.com/il7OSoO.jpeg',
     imageFront: 'https://i.imgur.com/il7OSoO.jpeg',
@@ -630,7 +630,7 @@ export const products: Product[] = [
   },
   {
     id: 118,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Sport',
     price: 42,
     image: 'https://i.imgur.com/FIz8CIX.jpeg',
     imageFront: 'https://i.imgur.com/FIz8CIX.jpeg',
@@ -645,7 +645,7 @@ export const products: Product[] = [
 
   {
     id: 122,
-    name: 'Camiseta Quiksilver Surf Original',
+    name: 'Camiseta Quiksilver Surf Original Authentic',
     price: 42,
     image: 'https://i.imgur.com/1qdFR3b.jpeg',
     imageFront: 'https://i.imgur.com/1qdFR3b.jpeg',
@@ -695,7 +695,7 @@ export const products: Product[] = [
   },
   {
     id: 130,
-    name: 'Camiseta Lacoste Premium',
+    name: 'Camiseta Lacoste Premium Classic',
     price: 100,
     image: 'https://lh3.googleusercontent.com/d/1mMVSycysAa2KQK_LJyvxhl-zsK2pZlbm',
     imageFront: 'https://lh3.googleusercontent.com/d/1mMVSycysAa2KQK_LJyvxhl-zsK2pZlbm',
@@ -720,7 +720,7 @@ export const products: Product[] = [
   },
   {
     id: 133,
-    name: 'Camiseta Oversized Amiri Concept',
+    name: 'Camiseta Oversized Amiri Concept Premium',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1DcUHgkSWMoDbY4KNK8ZYxvZvcSqVDuWm',
     imageFront: 'https://lh3.googleusercontent.com/d/1DcUHgkSWMoDbY4KNK8ZYxvZvcSqVDuWm',
@@ -744,7 +744,7 @@ export const products: Product[] = [
   },
   {
     id: 139,
-    name: 'Camiseta Oversized Nike Street',
+    name: 'Camiseta Oversized Nike Street Premium',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1RKRfTffK77_Sbv2p_NkSyyHMSt5fW0bj',
     imageFront: 'https://lh3.googleusercontent.com/d/1RKRfTffK77_Sbv2p_NkSyyHMSt5fW0bj',
@@ -756,7 +756,7 @@ export const products: Product[] = [
   },
   {
     id: 141,
-    name: 'Camiseta Oversized Nike Street',
+    name: 'Camiseta Oversized Nike Street Classic',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1ufDOETEomYsSbQ-1qthr0USWKvkWscHo',
     imageFront: 'https://lh3.googleusercontent.com/d/1ufDOETEomYsSbQ-1qthr0USWKvkWscHo',
@@ -768,7 +768,7 @@ export const products: Product[] = [
   },
   {
     id: 143,
-    name: 'Camiseta Oversized Nike Street',
+    name: 'Camiseta Oversized Nike Street Vintage',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1uSjZ0E-nqKyBfv4oSyTR0OxiTWxnJed_',
     imageFront: 'https://lh3.googleusercontent.com/d/1uSjZ0E-nqKyBfv4oSyTR0OxiTWxnJed_',
@@ -869,7 +869,7 @@ export const products: Product[] = [
   },
   {
     id: 162,
-    name: 'Camiseta Dry Fit Nike Performance',
+    name: 'Camiseta Dry Fit Nike Performance Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1zRpqvw3LAhynX-KapK0sTcb5DbLMrDs6',
     imageFront: 'https://lh3.googleusercontent.com/d/1zRpqvw3LAhynX-KapK0sTcb5DbLMrDs6',
@@ -882,7 +882,7 @@ export const products: Product[] = [
 
   {
     id: 164,
-    name: 'Camiseta Dry Fit Nike Performance',
+    name: 'Camiseta Dry Fit Nike Performance Classic',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1uPrGAWejKaev7TCP6XF8nfopdbUzRUfj',
     imageFront: 'https://lh3.googleusercontent.com/d/1uPrGAWejKaev7TCP6XF8nfopdbUzRUfj',
@@ -907,7 +907,7 @@ export const products: Product[] = [
   },
   {
     id: 167,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Classic',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/15DMrEO4yLaPv2ehK0ejOVN1kWMAb37JM',
     imageFront: 'https://lh3.googleusercontent.com/d/15DMrEO4yLaPv2ehK0ejOVN1kWMAb37JM',
@@ -919,7 +919,7 @@ export const products: Product[] = [
   },
   {
     id: 168,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Vintage',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1WjXbBdxGpUcQgHdTovqpoDhvjkdYHzKf',
     imageFront: 'https://lh3.googleusercontent.com/d/1WjXbBdxGpUcQgHdTovqpoDhvjkdYHzKf',
@@ -980,7 +980,7 @@ export const products: Product[] = [
   },
   {
     id: 175,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Premium',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1_4IX1gZSWnkRiYnJzOhO99vTM07uVgLA',
     imageFront: 'https://lh3.googleusercontent.com/d/1_4IX1gZSWnkRiYnJzOhO99vTM07uVgLA',
@@ -992,7 +992,7 @@ export const products: Product[] = [
   },
   {
     id: 176,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Classic',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/13vksgkufszcC5-ugy5rbSYfuMsHKoYGH',
     imageFront: 'https://lh3.googleusercontent.com/d/13vksgkufszcC5-ugy5rbSYfuMsHKoYGH',
@@ -1004,7 +1004,7 @@ export const products: Product[] = [
   },
   {
     id: 177,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Vintage',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1CYMoFV8St_AupcTxPfd12t7rISMVg74z',
     imageFront: 'https://lh3.googleusercontent.com/d/1CYMoFV8St_AupcTxPfd12t7rISMVg74z',
@@ -1016,7 +1016,7 @@ export const products: Product[] = [
   },
   {
     id: 178,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Urban',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1BMwzIrnTkX7jqWnLhKvv8fMYf-qSX3Lj',
     imageFront: 'https://lh3.googleusercontent.com/d/1BMwzIrnTkX7jqWnLhKvv8fMYf-qSX3Lj',
@@ -1028,7 +1028,7 @@ export const products: Product[] = [
   },
   {
     id: 179,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Concept',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1RxokJytenH2fr_rrjtwUFxmBnD2UiF2E',
     imageFront: 'https://lh3.googleusercontent.com/d/1RxokJytenH2fr_rrjtwUFxmBnD2UiF2E',
@@ -1040,7 +1040,7 @@ export const products: Product[] = [
   },
   {
     id: 180,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Edition',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1ERjbKEjlxQU2ViqHwGOB_vxEbnuPOvd9',
     imageFront: 'https://lh3.googleusercontent.com/d/1ERjbKEjlxQU2ViqHwGOB_vxEbnuPOvd9',
@@ -1064,7 +1064,7 @@ export const products: Product[] = [
   },
   {
     id: 182,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Signature',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1V51sg4X_HU7lKP-uIiLOUU-J4TIS5COH',
     imageFront: 'https://lh3.googleusercontent.com/d/1V51sg4X_HU7lKP-uIiLOUU-J4TIS5COH',
@@ -1076,7 +1076,7 @@ export const products: Product[] = [
   },
   {
     id: 183,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Sport',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1SBLb6IyqXmbIFNWeuhVNNV9hp0NxNHYO',
     imageFront: 'https://lh3.googleusercontent.com/d/1SBLb6IyqXmbIFNWeuhVNNV9hp0NxNHYO',
@@ -1088,7 +1088,7 @@ export const products: Product[] = [
   },
   {
     id: 184,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Authentic',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/166dALV6kGgLYMcTr_5ae5gBdZMWij4uB',
     imageFront: 'https://lh3.googleusercontent.com/d/166dALV6kGgLYMcTr_5ae5gBdZMWij4uB',
@@ -1100,7 +1100,7 @@ export const products: Product[] = [
   },
   {
     id: 185,
-    name: 'Camiseta Oversized',
+    name: 'Camiseta Oversized Pro',
     price: 79.99,
     image: 'https://lh3.googleusercontent.com/d/1Ex6gx9tPnD9sk3GX94drgoYWIct977Wj',
     imageFront: 'https://lh3.googleusercontent.com/d/1Ex6gx9tPnD9sk3GX94drgoYWIct977Wj',
@@ -1112,7 +1112,7 @@ export const products: Product[] = [
   },
   {
     id: 186,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Urban',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/15pNYLlIPGHcmS90AMt2IPgC3NOcC9qZu',
     imageFront: 'https://lh3.googleusercontent.com/d/15pNYLlIPGHcmS90AMt2IPgC3NOcC9qZu',
@@ -1124,7 +1124,7 @@ export const products: Product[] = [
   },
   {
     id: 187,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Concept',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1cIZQUwibAqBBoTFGwhTCFKLUIqslTyTw',
     imageFront: 'https://lh3.googleusercontent.com/d/1cIZQUwibAqBBoTFGwhTCFKLUIqslTyTw',
@@ -1136,7 +1136,7 @@ export const products: Product[] = [
   },
   {
     id: 188,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Edition',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1oajg56w3VVbUdrDiC05fQvESYO51Xcb_',
     imageFront: 'https://lh3.googleusercontent.com/d/1oajg56w3VVbUdrDiC05fQvESYO51Xcb_',
@@ -1148,7 +1148,7 @@ export const products: Product[] = [
   },
   {
     id: 189,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Signature',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1UwvHfsfo78YlpEypwIRFEHAmZpk8HW1R',
     imageFront: 'https://lh3.googleusercontent.com/d/1UwvHfsfo78YlpEypwIRFEHAmZpk8HW1R',
@@ -1160,7 +1160,7 @@ export const products: Product[] = [
   },
   {
     id: 190,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Sport',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1Zi1CTriWFFCzfCViFYYYvMYfxjaQ1Lb3',
     imageFront: 'https://lh3.googleusercontent.com/d/1Zi1CTriWFFCzfCViFYYYvMYfxjaQ1Lb3',
@@ -1173,7 +1173,7 @@ export const products: Product[] = [
 
   {
     id: 192,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Authentic',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1TCw0LM4imKT5nYptyhTnzT1n66mnTFYu',
     imageFront: 'https://lh3.googleusercontent.com/d/1TCw0LM4imKT5nYptyhTnzT1n66mnTFYu',
@@ -1185,7 +1185,7 @@ export const products: Product[] = [
   },
   {
     id: 193,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Pro',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1MURKq3LDCqTjOwavtIyMYyQDcT7zyejH',
     imageFront: 'https://lh3.googleusercontent.com/d/1MURKq3LDCqTjOwavtIyMYyQDcT7zyejH',
@@ -1197,7 +1197,7 @@ export const products: Product[] = [
   },
   {
     id: 194,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Minimal',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/17GP2fNMIc7MB5z3zq8O6XwqTZqfpdi4V',
     imageFront: 'https://lh3.googleusercontent.com/d/17GP2fNMIc7MB5z3zq8O6XwqTZqfpdi4V',
@@ -1209,7 +1209,7 @@ export const products: Product[] = [
   },
   {
     id: 195,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Exclusive',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1jUgrcH6Zivi-KvRIP4zCFL08dgmmCych',
     imageFront: 'https://lh3.googleusercontent.com/d/1jUgrcH6Zivi-KvRIP4zCFL08dgmmCych',
@@ -1221,7 +1221,7 @@ export const products: Product[] = [
   },
   {
     id: 196,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Elite',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1FAO7FlYqyK-39YgUz84sWOa2O7bpgDu6',
     imageFront: 'https://lh3.googleusercontent.com/d/1FAO7FlYqyK-39YgUz84sWOa2O7bpgDu6',
@@ -1234,7 +1234,7 @@ export const products: Product[] = [
 
   {
     id: 198,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Series',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1uEw0SEKek878k18jQ7o0qqynD3FiUNBf',
     imageFront: 'https://lh3.googleusercontent.com/d/1uEw0SEKek878k18jQ7o0qqynD3FiUNBf',
@@ -1246,7 +1246,7 @@ export const products: Product[] = [
   },
   {
     id: 199,
-    name: 'Camiseta Malha Egípcia Premium',
+    name: 'Camiseta Malha Egípcia Premium Advanced',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1Ol9wpmteo_jeVZ984HOLcFxQS-TYmiuU',
     imageFront: 'https://lh3.googleusercontent.com/d/1Ol9wpmteo_jeVZ984HOLcFxQS-TYmiuU',
@@ -1270,7 +1270,7 @@ export const products: Product[] = [
   },
   {
     id: 202,
-    name: 'Camiseta Brasil Torcedor Classic',
+    name: 'Camiseta Brasil Torcedor Classic Premium',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1Va4I_qWrhVf_OoIVxz10AFFsIFmcMuQ3',
     imageFront: 'https://lh3.googleusercontent.com/d/1Va4I_qWrhVf_OoIVxz10AFFsIFmcMuQ3',
@@ -1282,7 +1282,7 @@ export const products: Product[] = [
   },
   {
     id: 203,
-    name: 'Camiseta Brasil Torcedor Classic',
+    name: 'Camiseta Brasil Torcedor Classic Vintage',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1WOspdljtXFfTfBNK7oKaDLEv04CcFHnP',
     imageFront: 'https://lh3.googleusercontent.com/d/1WOspdljtXFfTfBNK7oKaDLEv04CcFHnP',
@@ -1294,7 +1294,7 @@ export const products: Product[] = [
   },
   {
     id: 204,
-    name: 'Camiseta Brasil Torcedor Classic',
+    name: 'Camiseta Brasil Torcedor Classic Urban',
     price: 49.99,
     image: 'https://lh3.googleusercontent.com/d/1O2Wz4zGAhQ6W3VBp0kZwJn4Cbm8WrHT1',
     imageFront: 'https://lh3.googleusercontent.com/d/1O2Wz4zGAhQ6W3VBp0kZwJn4Cbm8WrHT1',
@@ -1319,7 +1319,7 @@ export const products: Product[] = [
   },
   {
     id: 207,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Premium',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1THDFqBZ_ZFeDzmF53waj0_TQeJtx1vQ0',
     imageFront: 'https://lh3.googleusercontent.com/d/1THDFqBZ_ZFeDzmF53waj0_TQeJtx1vQ0',
@@ -1331,7 +1331,7 @@ export const products: Product[] = [
   },
   {
     id: 208,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Classic',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1M6UidJbJMRvgwnFeFfKa724K0kYYwzKl',
     imageFront: 'https://lh3.googleusercontent.com/d/1M6UidJbJMRvgwnFeFfKa724K0kYYwzKl',
@@ -1343,7 +1343,7 @@ export const products: Product[] = [
   },
   {
     id: 209,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Vintage',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1C8VUZ1R3741-Eos-qh9hEoftM1z3kWVG',
     imageFront: 'https://lh3.googleusercontent.com/d/1C8VUZ1R3741-Eos-qh9hEoftM1z3kWVG',
@@ -1355,7 +1355,7 @@ export const products: Product[] = [
   },
   {
     id: 210,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Urban',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1daVBRVYrX9omNm-rdpkjD68eGS8TDbOP',
     imageFront: 'https://lh3.googleusercontent.com/d/1daVBRVYrX9omNm-rdpkjD68eGS8TDbOP',
@@ -1367,7 +1367,7 @@ export const products: Product[] = [
   },
   {
     id: 211,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Concept',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/17DFDsZIGuHR9vqgGWHRbHxWs-iv56JrH',
     imageFront: 'https://lh3.googleusercontent.com/d/17DFDsZIGuHR9vqgGWHRbHxWs-iv56JrH',
@@ -1379,7 +1379,7 @@ export const products: Product[] = [
   },
   {
     id: 212,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Edition',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1iTJK4TiVlFE81t-f9KJdrcOKO7Aw1EEd',
     imageFront: 'https://lh3.googleusercontent.com/d/1iTJK4TiVlFE81t-f9KJdrcOKO7Aw1EEd',
@@ -1391,7 +1391,7 @@ export const products: Product[] = [
   },
   {
     id: 213,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Signature',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1IJRFiCm3uCcSuMC9veJVk94Dlmyn6QWa',
     imageFront: 'https://lh3.googleusercontent.com/d/1IJRFiCm3uCcSuMC9veJVk94Dlmyn6QWa',
@@ -1403,7 +1403,7 @@ export const products: Product[] = [
   },
   {
     id: 214,
-    name: 'Camiseta Streetwear Essential',
+    name: 'Camiseta Streetwear Essential Sport',
     price: 59.99,
     image: 'https://lh3.googleusercontent.com/d/1GBOOH3t48cyskHXjKAW19UxC8qEqqUCx',
     imageFront: 'https://lh3.googleusercontent.com/d/1GBOOH3t48cyskHXjKAW19UxC8qEqqUCx',
@@ -1428,7 +1428,7 @@ export const products: Product[] = [
   },
   {
     id: 217,
-    name: 'Regata Canelada Fit',
+    name: 'Regata Canelada Fit Premium',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/17aY5f97UOQOrjS5nEhMMm39LuiEDoyJj',
     imageFront: 'https://lh3.googleusercontent.com/d/17aY5f97UOQOrjS5nEhMMm39LuiEDoyJj',
@@ -1440,7 +1440,7 @@ export const products: Product[] = [
   },
   {
     id: 218,
-    name: 'Regata Canelada Fit',
+    name: 'Regata Canelada Fit Classic',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1CGwth9cJPBTRdoKp2lmV14YGC1Qv6mYf',
     imageFront: 'https://lh3.googleusercontent.com/d/1CGwth9cJPBTRdoKp2lmV14YGC1Qv6mYf',
@@ -1452,7 +1452,7 @@ export const products: Product[] = [
   },
   {
     id: 219,
-    name: 'Regata Canelada Fit',
+    name: 'Regata Canelada Fit Vintage',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1ninj_YLEWqSynRYCgCUBf6lnWzxgE9KH',
     imageFront: 'https://lh3.googleusercontent.com/d/1ninj_YLEWqSynRYCgCUBf6lnWzxgE9KH',
@@ -1464,7 +1464,7 @@ export const products: Product[] = [
   },
   {
     id: 220,
-    name: 'Regata Canelada Fit',
+    name: 'Regata Canelada Fit Urban',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1oM8ySBeWwkyL9DAteMDA0SSp3Kq_-SRY',
     imageFront: 'https://lh3.googleusercontent.com/d/1oM8ySBeWwkyL9DAteMDA0SSp3Kq_-SRY',
@@ -1476,7 +1476,7 @@ export const products: Product[] = [
   },
   {
     id: 221,
-    name: 'Regata Canelada Fit',
+    name: 'Regata Canelada Fit Concept',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
     imageFront: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
@@ -1500,7 +1500,7 @@ export const products: Product[] = [
   },
   {
     id: 223,
-    name: 'Camiseta Canelada Minimalista',
+    name: 'Camiseta Canelada Minimalista Premium',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
     imageFront: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
@@ -1512,7 +1512,7 @@ export const products: Product[] = [
   },
   {
     id: 224,
-    name: 'Camiseta Canelada Minimalista',
+    name: 'Camiseta Canelada Minimalista Classic',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
     imageFront: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
@@ -1524,7 +1524,7 @@ export const products: Product[] = [
   },
   {
     id: 225,
-    name: 'Camiseta Canelada Minimalista',
+    name: 'Camiseta Canelada Minimalista Vintage',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1-KFnW-OD_T7Dke1KvJhd6sye9B4jDPP5',
     imageFront: 'https://lh3.googleusercontent.com/d/1-KFnW-OD_T7Dke1KvJhd6sye9B4jDPP5',
@@ -1536,7 +1536,7 @@ export const products: Product[] = [
   },
   {
     id: 226,
-    name: 'Bermuda Dry Fit Performance',
+    name: 'Bermuda Dry Fit Performance Classic',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1EPr8pYdCtLut-FxtA41Z-nO_H3tvu7Uf',
     imageFront: 'https://lh3.googleusercontent.com/d/1EPr8pYdCtLut-FxtA41Z-nO_H3tvu7Uf',
@@ -1548,7 +1548,7 @@ export const products: Product[] = [
   },
   {
     id: 227,
-    name: 'Bermuda Dry Fit Performance',
+    name: 'Bermuda Dry Fit Performance Vintage',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1yk2ZsdyCG1AWxX9lSmcls_heXB_AJT4w',
     imageFront: 'https://lh3.googleusercontent.com/d/1yk2ZsdyCG1AWxX9lSmcls_heXB_AJT4w',
@@ -1560,7 +1560,7 @@ export const products: Product[] = [
   },
   {
     id: 228,
-    name: 'Bermuda Dry Fit Performance',
+    name: 'Bermuda Dry Fit Performance Urban',
     price: 45,
     image: 'https://lh3.googleusercontent.com/d/1ipX46Rw9B-DMZqH4jl1TzQwFQ_U3ygBE',
     imageFront: 'https://lh3.googleusercontent.com/d/1ipX46Rw9B-DMZqH4jl1TzQwFQ_U3ygBE',
