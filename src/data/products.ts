@@ -153,18 +153,7 @@ export const products: Product[] = [
     isSale: true,
   },
 
-  {
-    id: 39,
-    name: 'T-Shirt Off White X Cross',
-    price: 79.99,
-    image: 'https://i.imgur.com/ffsnOic.jpeg',
-    imageFront: 'https://i.imgur.com/ffsnOic.jpeg',
-    imageBack: 'https://i.imgur.com/uGWqTUk.jpeg',
-    category: 'oversized',
-    size: 'GG',
-    isNew: false,
-    isSale: false
-  },
+
   {
     id: 43,
     name: 'Camiseta Los Angeles 32 Athletics',
@@ -325,18 +314,7 @@ export const products: Product[] = [
     size: "GG",
     isSale: false
   },
-  {
-    id: 79,
-    name: 'Camiseta High Company Original',
-    price: 79.99,
-    image: "https://i.imgur.com/nJqmA2I.jpeg",
-    imageFront: "https://i.imgur.com/nJqmA2I.jpeg",
-    imageBack: "https://i.imgur.com/iDaaxBA.jpeg",
-    category: "oversized",
-    isNew: false,
-    size: "GG",
-    isSale: false
-  },
+
   {
     id: 80,
     name: 'T-Shirt Supreme Products Classic',
@@ -807,33 +785,11 @@ export const products: Product[] = [
 
 
 
-  {
-    id: 152,
-    name: 'Camiseta Oversized Palm Angels Signature',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1k2dY-sDfWz5lCh0tj9vwG0G3Jgz71T6o',
-    imageFront: 'https://lh3.googleusercontent.com/d/1k2dY-sDfWz5lCh0tj9vwG0G3Jgz71T6o',
-    imageBack: 'https://lh3.googleusercontent.com/d/1S8lySPNlihPjSiyKvoh_I-1t_zoIqWtI',
-    category: 'Oversized',
-    size: 'G',
-    isNew: true,
-    isSale: false,
-  },
 
 
 
-  {
-    id: 154,
-    name: 'Camiseta Oversized Gangster Urban',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1goktT7JnZZ60O9xf2KA3EEIbT_d_MsHi',
-    imageFront: 'https://lh3.googleusercontent.com/d/1goktT7JnZZ60O9xf2KA3EEIbT_d_MsHi',
-    imageBack: 'https://lh3.googleusercontent.com/d/1PhyhmtagJ8b0wFVN1NIWfpRcVLc84oJ9',
-    category: 'Oversized',
-    size: 'GG',
-    isNew: true,
-    isSale: false,
-  },
+
+
 
 
 
@@ -990,18 +946,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 176,
-    name: 'Camiseta Oversized Classic',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/13vksgkufszcC5-ugy5rbSYfuMsHKoYGH',
-    imageFront: 'https://lh3.googleusercontent.com/d/13vksgkufszcC5-ugy5rbSYfuMsHKoYGH',
-    imageBack: 'https://lh3.googleusercontent.com/d/1OWbCPJEnnCc65zltAOwF5Blq15N6DJ00',
-    category: 'oversized',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 177,
     name: 'Camiseta Oversized Vintage',
@@ -1086,42 +1031,9 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 184,
-    name: 'Camiseta Oversized Authentic',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/166dALV6kGgLYMcTr_5ae5gBdZMWij4uB',
-    imageFront: 'https://lh3.googleusercontent.com/d/166dALV6kGgLYMcTr_5ae5gBdZMWij4uB',
-    imageBack: 'https://lh3.googleusercontent.com/d/1g_b7eccP0tyJKSvJg_PXjwYny-1Xlm3-',
-    category: 'oversized',
-    size: 'G',
-    isNew: true,
-    isSale: false
-  },
-  {
-    id: 185,
-    name: 'Camiseta Oversized Pro',
-    price: 79.99,
-    image: 'https://lh3.googleusercontent.com/d/1Ex6gx9tPnD9sk3GX94drgoYWIct977Wj',
-    imageFront: 'https://lh3.googleusercontent.com/d/1Ex6gx9tPnD9sk3GX94drgoYWIct977Wj',
-    imageBack: 'https://lh3.googleusercontent.com/d/1mqXk8MTPOxAODS6cGPnNPdH7KHCHtYPj',
-    category: 'oversized',
-    size: 'G',
-    isNew: true,
-    isSale: false
-  },
-  {
-    id: 186,
-    name: 'Camiseta Malha Egípcia Premium Urban',
-    price: 49.99,
-    image: 'https://lh3.googleusercontent.com/d/15pNYLlIPGHcmS90AMt2IPgC3NOcC9qZu',
-    imageFront: 'https://lh3.googleusercontent.com/d/15pNYLlIPGHcmS90AMt2IPgC3NOcC9qZu',
-    imageBack: 'https://lh3.googleusercontent.com/d/1ITsaXApbL6qRn3OaAfdPJgVZi7v7aHFR',
-    category: 'malha egipcia',
-    size: 'P',
-    isNew: true,
-    isSale: false
-  },
+
+
+
   {
     id: 187,
     name: 'Camiseta Malha Egípcia Premium Concept',
@@ -1474,18 +1386,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 221,
-    name: 'Regata Canelada Fit Concept',
-    price: 45,
-    image: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
-    imageFront: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
-    imageBack: 'https://lh3.googleusercontent.com/d/1MzQelDzWKZhQj6s1pLPhR4hJ8F_Cm3O6',
-    category: 'caneladas',
-    size: 'G',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 222,
     name: 'Camiseta Canelada Minimalista',
@@ -1498,30 +1399,8 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 223,
-    name: 'Camiseta Canelada Minimalista Premium',
-    price: 45,
-    image: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
-    imageFront: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
-    imageBack: 'https://lh3.googleusercontent.com/d/1wrJ9SHywLzVdamXeeEHQxTomaHg8qL8q',
-    category: 'caneladas',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
-  {
-    id: 224,
-    name: 'Camiseta Canelada Minimalista Classic',
-    price: 45,
-    image: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
-    imageFront: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
-    imageBack: 'https://lh3.googleusercontent.com/d/1YsVFwHaFfxcIWXmRUd7pJVSg6cDOv5dw',
-    category: 'caneladas',
-    size: 'M',
-    isNew: true,
-    isSale: false
-  },
+
+
   {
     id: 225,
     name: 'Camiseta Canelada Minimalista Vintage',
@@ -1570,18 +1449,7 @@ export const products: Product[] = [
     isNew: true,
     isSale: false
   },
-  {
-    id: 229,
-    name: 'Cinto Louis Vuitton Emblem Detail',
-    price: 35,
-    image: 'https://lh3.googleusercontent.com/d/1uRw660ZXJiu7SBhBRKxI1Cb6Uz78aQf3',
-    imageFront: 'https://lh3.googleusercontent.com/d/1uRw660ZXJiu7SBhBRKxI1Cb6Uz78aQf3',
-    imageBack: 'https://lh3.googleusercontent.com/d/1uRw660ZXJiu7SBhBRKxI1Cb6Uz78aQf3',
-    category: 'cintos',
-    size: 'G',
-    isNew: true,
-    isSale: false
-  },
+
   {
     id: 230,
     name: 'Cinto Quiksilver Surf Classic',
