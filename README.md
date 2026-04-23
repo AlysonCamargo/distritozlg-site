@@ -45,9 +45,9 @@
 ### Core Stack
 
 - **[React 18.3](https://react.dev/)** - Biblioteca JavaScript para construção de interfaces
-- **[TypeScript 5.6](https://www.typescriptlang.org/)** - Superset JavaScript com tipagem estática
+- **[TypeScript 5.8](https://www.typescriptlang.org/)** - Superset JavaScript com tipagem estática
 - **[Vite 5.4](https://vitejs.dev/)** - Build tool e dev server de alta performance
-- **[React Router 7.1](https://reactrouter.com/)** - Roteamento declarativo para React
+- **[React Router 6.30](https://reactrouter.com/)** - Roteamento declarativo para React
 
 ### Estilização & UI
 
@@ -119,28 +119,41 @@ distritozlg-site/
 │   ├── logo.png                # Logo da marca
 │   └── ...                     # Outros assets públicos
 ├── src/
+│   ├── assets/                 # Imagens e mídia da aplicação
 │   ├── components/             # Componentes React
-│   │   ├── ui/                # Componentes base (shadcn/ui)
-│   │   ├── About.tsx          # Seção sobre a loja
-│   │   ├── CartDrawer.tsx     # Drawer do carrinho de compras
-│   │   ├── Catalog.tsx        # Catálogo principal de produtos
-│   │   ├── CatalogFilters.tsx # Filtros do catálogo
-│   │   ├── CatalogGrid.tsx    # Grid de produtos
-│   │   ├── Contact.tsx        # Seção de contato
-│   │   ├── Footer.tsx         # Rodapé do site
-│   │   ├── Hero.tsx           # Seção hero/banner principal
-│   │   ├── Navigation.tsx     # Barra de navegação
-│   │   ├── OrderForm.tsx      # Formulário de pedido
-│   │   ├── ProductCard.tsx    # Card de produto
-│   │   ├── ProductModal.tsx   # Modal de detalhes do produto
-│   │   └── SEOProvider.tsx    # Provider de SEO
-│   ├── data/
-│   │   └── products.ts        # Dados dos produtos
-│   ├── lib/
-│   │   └── utils.ts           # Funções utilitárias
-│   ├── App.tsx                # Componente principal
-│   ├── main.tsx               # Ponto de entrada
-│   └── index.css              # Estilos globais
+│   │   ├── ui/                 # Componentes base (shadcn/ui)
+│   │   ├── About.tsx           # Seção sobre a loja
+│   │   ├── CartDrawer.tsx      # Drawer do carrinho de compras
+│   │   ├── Catalog.tsx         # Catálogo principal de produtos
+│   │   ├── CatalogFilters.tsx  # Filtros do catálogo
+│   │   ├── CatalogGrid.tsx     # Grid de produtos
+│   │   ├── Contact.tsx         # Seção de contato
+│   │   ├── Footer.tsx          # Rodapé do site
+│   │   ├── Hero.tsx            # Seção hero/banner principal
+│   │   ├── LanguageToggle.tsx  # Alternador de idiomas
+│   │   ├── Navigation.tsx      # Barra de navegação
+│   │   ├── OrderForm.tsx       # Formulário de pedido
+│   │   ├── ProductCard.tsx     # Card de produto
+│   │   ├── ProductCarousel.tsx # Carrossel de produtos (mobile)
+│   │   ├── ProductModal.tsx    # Modal de detalhes do produto
+│   │   ├── SEOProvider.tsx     # Provider de SEO
+│   │   ├── ThemeProvider.tsx   # Provider de modo dark/light
+│   │   ├── ThemeToggle.tsx     # Alternador de tema
+│   │   └── WishlistDrawer.tsx  # Drawer da lista de desejos
+│   ├── context/                # Contextos globais (Cart, Wishlist)
+│   ├── data/                   # Dados estáticos (products.ts)
+│   ├── hooks/                  # Custom React Hooks
+│   ├── lib/                    # Funções utilitárias e helper
+│   ├── locales/                # Arquivos JSON de internacionalização
+│   ├── pages/                  # Páginas da aplicação (Roteamento)
+│   │   ├── Index.tsx           # Página principal
+│   │   ├── NotFound.tsx        # Página de erro 404
+│   │   ├── Privacy.tsx         # Política de Privacidade
+│   │   └── Terms.tsx           # Termos de Uso
+│   ├── App.tsx                 # Componente principal
+│   ├── i18n.ts                 # Configuração do i18next
+│   ├── main.tsx                # Ponto de entrada
+│   └── index.css               # Estilos globais
 ├── .eslintrc.cjs              # Configuração ESLint
 ├── .gitignore                 # Arquivos ignorados pelo Git
 ├── index.html                 # HTML principal
