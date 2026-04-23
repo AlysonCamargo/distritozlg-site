@@ -24,7 +24,7 @@ const Hero = () => {
               {t('hero.badge')}
             </span>
 
-            <h1 
+            <h1
               className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl mb-6 leading-none tracking-tight text-white animate-slideUp"
               dangerouslySetInnerHTML={{ __html: t('hero.title') }}
             >

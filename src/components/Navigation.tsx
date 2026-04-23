@@ -129,7 +129,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium text-lg"
+                  className="text-foreground hover:bg-secondary/50 transition-colors duration-200 font-medium text-lg py-3 px-4 rounded-sm block"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

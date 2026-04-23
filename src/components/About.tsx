@@ -99,8 +99,8 @@ const About = () => {
         {/* CTA */}
         <div className="text-center">
           <a href="#catalog">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-foreground text-background rounded-sm tracking-widest uppercase font-semibold px-10 py-7 text-sm hover:bg-foreground/90 transition-all duration-300"
             >
               {t('about.cta')}

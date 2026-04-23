@@ -1,51 +1,63 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi
+} from "@/components/ui/carousel";
+import { Product } from "@/data/products";
 
-const ProductCarousel = ({ product }) => {
-  const images = [product.imageFront, product.imageBack];
-  const [currentIndex, setCurrentIndex] = useState(0);
+const ProductCarousel = ({ product }: { product: Product }) => {
+  const images = [product.imageFront, product.imageBack].filter(Boolean);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
 
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
 
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
-    <div className="relative w-full mb-4 mt-10">
-      <img
-        src={images[currentIndex]}
-        alt={product.name}
-        className="w-full h-auto rounded-lg shadow-md"
-      />
+    <div className="relative w-full">
+      <Carousel setApi={setApi} className="w-full relative">
+        <CarouselContent>
+          {images.map((img, idx) => (
+            <CarouselItem key={idx}>
+              <img
+                src={img}
+                alt={`${product.name} - Imagem ${idx + 1}`}
+                className="w-full h-auto rounded-sm shadow-sm"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        {images.length > 1 && (
+            <>
+                <CarouselPrevious className="hidden md:flex left-4" />
+                <CarouselNext className="hidden md:flex right-4" />
+            </>
+        )}
+      </Carousel>
 
-      {/* Botões de navegação */}
-      <button
-        onClick={prevImage}
-        className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
-      >
-        <ChevronLeft size={20} />
-      </button>
-      <button
-        onClick={nextImage}
-        className="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
-      >
-        <ChevronRight size={20} />
-      </button>
-
-      {/* Indicadores */}
-      <div className="flex justify-center mt-2 gap-2">
-        {images.map((_, idx) => (
-          <div
-            key={idx}
-            className={`w-2 h-2 rounded-full ${
-              idx === currentIndex ? "bg-green-500" : "bg-gray-500"
-            }`}
-          />
-        ))}
-      </div>
+      {images.length > 1 && (
+        <div className="flex justify-center mt-6 gap-2">
+            {images.map((_, idx) => (
+            <div
+                key={idx}
+                className={`w-2 h-2 rounded-full transition-colors ${idx === current ? "bg-foreground" : "bg-border"}`}
+            />
+            ))}
+        </div>
+      )}
     </div>
   );
 };

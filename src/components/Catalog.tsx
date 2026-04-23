@@ -213,11 +213,11 @@ export default function Catalog() {
 
             <Button
               variant="outline"
-              size="icon"
               onClick={() => setShowFilters(!showFilters)}
-              className="md:hidden shrink-0"
+              className="md:hidden shrink-0 flex items-center gap-2 h-10 px-4"
             >
               <SlidersHorizontal className="w-4 h-4" />
+              <span className="text-xs font-semibold uppercase tracking-widest">{t('catalog.filter', 'Filtros')}</span>
             </Button>
           </div>
         </div>

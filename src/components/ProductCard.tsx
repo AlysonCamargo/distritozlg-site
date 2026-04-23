@@ -88,7 +88,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             <span className="sr-only">Favorito</span>
           </button>
           <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-4 opacity-0 bg-gradient-to-t from-background/80 to-transparent p-3 text-center text-foreground transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
+            className="pointer-events-none absolute inset-x-0 bottom-0 lg:translate-y-4 hidden lg:flex opacity-0 bg-gradient-to-t from-background/80 to-transparent p-3 justify-center text-foreground transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
             aria-hidden="true"
           >
             <span className="text-xs sm:text-sm">{t('product.hoverView')}</span>
@@ -111,14 +111,14 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               </div>
             </div>
           </div>
-          <div className="mt-4 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="mt-4 flex flex-col lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
             <Button
               onClick={(e) => {
                 e.stopPropagation();
                 addItem(product, product.size.split(",")[0].trim());
               }}
               variant="outline"
-              className="w-full text-xs uppercase tracking-wider h-9"
+              className="w-full text-xs lg:text-[10px] uppercase tracking-wider h-11 lg:h-9"
             >
               {t('product.addToCart')}
             </Button>

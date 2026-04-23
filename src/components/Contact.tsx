@@ -125,8 +125,8 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   size="lg"
                   className="w-full bg-foreground text-background font-semibold uppercase tracking-widest text-xs hover:bg-foreground/90 transition-colors rounded-sm h-14 mt-4"
                 >
@@ -142,7 +142,7 @@ const Contact = () => {
               <h3 className="font-heading font-semibold tracking-widest uppercase text-lg text-foreground mb-8">
                 {t('contact.channels')}
               </h3>
-              
+
               <div className="space-y-8">
                 <div className="flex items-start space-x-6">
                   <div className="w-12 h-12 bg-transparent border border-border rounded-sm flex items-center justify-center flex-shrink-0">

@@ -97,10 +97,10 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                 <div className="bg-background rounded-sm shadow-premium border border-border flex flex-col lg:flex-row overflow-hidden relative shrink-0">
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 text-foreground/50 hover:text-foreground z-10 w-8 h-8 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm transition-colors"
+                        className="absolute top-2 right-2 md:top-4 md:right-4 text-foreground/50 hover:text-foreground z-10 w-12 h-12 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm transition-colors"
                         aria-label="Fechar"
                     >
-                        <X className="w-5 h-5" />
+                        <X className="w-6 h-6 md:w-5 md:h-5" />
                     </button>
 
                     {/* Left: Image Carousel */}
@@ -221,18 +221,18 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                         </div>
 
                         <div className="mt-8 pt-8 border-t border-border">
-                                <Button
-                                    size="lg"
-                                    onClick={() => {
-                                        addItem(product, selectedSize);
-                                        onClose();
-                                    }}
-                                    className="w-full bg-foreground hover:bg-foreground/90 text-background font-medium text-sm tracking-widest uppercase h-14 rounded-sm"
-                                >
-                                    {t('product.addToCart')}
-                                </Button>
-                            </div>
+                            <Button
+                                size="lg"
+                                onClick={() => {
+                                    addItem(product, selectedSize);
+                                    onClose();
+                                }}
+                                className="w-full bg-foreground hover:bg-foreground/90 text-background font-medium text-sm tracking-widest uppercase h-14 rounded-sm"
+                            >
+                                {t('product.addToCart')}
+                            </Button>
                         </div>
+                    </div>
                 </div>
 
                 {/* Related Products */}
